@@ -1,0 +1,9 @@
+#files
+*.gfo
+Prop.pgf
+
+#folders
+alltenses/*
+prelude/*
+present/*
+.stack-work/*

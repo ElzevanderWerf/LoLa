@@ -116,6 +116,9 @@ lin
   IUniv k = {s = mkNP every_Det k ; isSymbolic = False} ;
   IExist k = {s = mkNP someSg_Det k ; isSymbolic = False} ;
 
+  Everything_IUniv = {s = everything_NP ; isSymbolic = False} ; -- Elze: for inSituWithoutKind
+  Something_IExist = {s = something_NP ; isSymbolic = False} ; -- Elze: for inSituWithoutKind
+
   ConjInd co xs = {s = mkNP co.s xs ; isSymbolic = False} ;
 
   ModKind k m = mkCN m k ;

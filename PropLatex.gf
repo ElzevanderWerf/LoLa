@@ -1,5 +1,6 @@
 concrete PropLatex of Prop = open Prelude, Formal in {
 
+
 lincat
   Prop = TermPrec ;
   Atom = Bool => Str ;
@@ -43,7 +44,7 @@ lincat
     = Str ;
 
 lin
-  AKind k x = table {b => top x ++ "\\in" ++ k} ;  ---- fix negation of \in
+  AKind k x = table {True => top x ++ "\\in" ++ k ; False => top (prefix 3 "\\sim" (constant (top x ++ "\\in" ++ k)))} ;  ---- Elze fixed negation of in
 
   PConjs c ps = constant (c ++ "[" ++ ps ++ "]") ;
   PUnivs vs k = prefix 4 (parenth ("\\forall" ++ vs ++ "\\in" ++ k)) ;
@@ -74,11 +75,14 @@ lin
   IUniv k = constant (parenth ("\\forall" ++ k)) ;
   IExist k = constant (parenth ("\\exists" ++ k)) ;
 
+  Everything_IUniv = constant (parenth ("\\forall")) ; --Elze inSituWithoutKind
+  Something_IExist = constant (parenth ("\\exists")) ; --Elze inSituWithoutKind
+
   ConjInd c ps = constant (c ++ bracket ps) ;
 
---  ModKind k m = \\n => m ++ k ! n ;
+  ModKind k m = (m ! True) ++ k ; --changed by Elze
 
---  PartPred f y = f ++ "to" ++ y.s ;
+  PartPred f y = \\b => (f ! b)  ++ "to" ++ (top y) ; --changed by Elze
 
 -- test lexicon
 
@@ -92,7 +96,7 @@ lin
   Centre = slash  "centre" ;
   Intersection = slash  "intersection" ;
 
-  Set k = appLatex ("\\set") k ;
+  Set k = appLatex "\\set" k ;
 
   Even = slash "even" ;
   Odd = slash "odd" ;
@@ -111,7 +115,7 @@ oper
   slash = overload {
     slash : Str -> Str = \f -> "\\" + f ;
     slash : Str -> TermPrec = \f -> constant ("\\" + f) ;
-    slash : Str -> Bool => Str = \f -> \\_ => "\\" + f ;
+    slash : Str -> Bool => Str = \f -> table {True => "\\" + f ; False => top (prefix 3 "\\sim" (constant ("\\" + f)))} ; --changed by Elze
     slash : Str -> Str -> Bool => Str = \f,g -> table {True => "\\" + f ; False => "\\" + g} ; 
     } ;
 

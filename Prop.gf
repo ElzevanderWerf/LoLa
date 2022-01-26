@@ -63,6 +63,9 @@ fun
   IUniv  : Kind -> Ind ;
   IExist : Kind -> Ind ;
 
+  Everything_IUniv : Ind ; --Elze: for inSituWithoutKind
+  Something_IExist : Ind ; --Elze: for inSituWithoutKind
+
   ConjInd : Conj -> [Ind] -> Ind ;
 
   ModKind : Kind -> Pred1 -> Kind ;

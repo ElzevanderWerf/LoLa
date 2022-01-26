@@ -41,6 +41,8 @@ optimize t = case t of
     let (km,pm) = getKindMod x k p in optimize $ GPUnivs (GListVar [x]) km pm
   GPExist x (GPConj GCAnd (GPAtom (GAKind k (GIVar y))) p) | y == x -> 
     optimize $ GPExists (GListVar [x]) k p
+  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- Elze
+  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- Elze
   GPUnivs  (GListVar [x]) k p -> inSitu GPUnivs  (GIUniv k)  k x $ optimize p 
   GPExists (GListVar [x]) k p -> inSitu GPExists (GIExist k) k x $ optimize p 
   _ -> composOp optimize t
@@ -70,6 +72,20 @@ inSitu quant qp k x b = case b of
   GPAtom (GAPred2 f z y) | y == vx && notFree x z -> GPAtom (GAPred2 f z qp)
   GPAtom (GAPred2 f z y) | z == vx && notFree x y -> GPAtom (GAPred2 f qp y)
   _ -> quant (GListVar [x]) k b
+ where 
+  vx = GIVar x
+
+-- Elze inSitu without kind:
+inSituWithoutKind :: (GVar -> GProp -> GProp) -> GInd -> GVar -> GProp -> GProp
+inSituWithoutKind quant qp x b = case b of
+  GPAtom (GAPred1 (GPartPred f y) z)              -> inSituWithoutKind quant qp x (GPAtom (GAPred2 f z y))
+  GPAtom (GAPred1 f y)   | y == vx                -> GPAtom (GAPred1 f qp)
+  GPAtom (GAPred1 f (GIFun1 h y))   | y == vx     -> GPAtom (GAPred1 f (GIFun1 h qp))
+  GPAtom (GAKind  f y)   | y == vx                -> GPAtom (GAKind f qp)
+  GPAtom (GAPredRefl f z)| z == vx                -> GPAtom (GAPredRefl f qp)
+  GPAtom (GAPred2 f z y) | y == vx && notFree x z -> GPAtom (GAPred2 f z qp)
+  GPAtom (GAPred2 f z y) | z == vx && notFree x y -> GPAtom (GAPred2 f qp y)
+  _ -> quant x b
  where 
   vx = GIVar x
 

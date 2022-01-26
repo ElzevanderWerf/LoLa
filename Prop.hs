@@ -87,6 +87,7 @@ data Tree :: * -> * where
   GProduct :: Tree GFun2_
   GSum :: Tree GFun2_
   GConjInd :: GConj -> GListInd -> Tree GInd_
+  GEverything_IUniv :: Tree GInd_
   GIExist :: GKind -> Tree GInd_
   GIFun1 :: GFun1 -> GInd -> Tree GInd_
   GIFun2 :: GFun2 -> GInd -> GInd -> Tree GInd_
@@ -94,6 +95,7 @@ data Tree :: * -> * where
   GIInt :: GInt -> Tree GInd_
   GIUniv :: GKind -> Tree GInd_
   GIVar :: GVar -> Tree GInd_
+  GSomething_IExist :: Tree GInd_
   GLine :: Tree GKind_
   GModKind :: GKind -> GPred1 -> Tree GKind_
   GNat :: Tree GKind_
@@ -141,6 +143,7 @@ instance Eq (Tree a) where
     (GProduct,GProduct) -> and [ ]
     (GSum,GSum) -> and [ ]
     (GConjInd x1 x2,GConjInd y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GEverything_IUniv,GEverything_IUniv) -> and [ ]
     (GIExist x1,GIExist y1) -> and [ x1 == y1 ]
     (GIFun1 x1 x2,GIFun1 y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GIFun2 x1 x2 x3,GIFun2 y1 y2 y3) -> and [ x1 == y1 , x2 == y2 , x3 == y3 ]
@@ -148,6 +151,7 @@ instance Eq (Tree a) where
     (GIInt x1,GIInt y1) -> and [ x1 == y1 ]
     (GIUniv x1,GIUniv y1) -> and [ x1 == y1 ]
     (GIVar x1,GIVar y1) -> and [ x1 == y1 ]
+    (GSomething_IExist,GSomething_IExist) -> and [ ]
     (GLine,GLine) -> and [ ]
     (GModKind x1 x2,GModKind y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GNat,GNat) -> and [ ]
@@ -239,6 +243,7 @@ instance Gf GFun2 where
 
 instance Gf GInd where
   gf (GConjInd x1 x2) = mkApp (mkCId "ConjInd") [gf x1, gf x2]
+  gf GEverything_IUniv = mkApp (mkCId "Everything_IUniv") []
   gf (GIExist x1) = mkApp (mkCId "IExist") [gf x1]
   gf (GIFun1 x1 x2) = mkApp (mkCId "IFun1") [gf x1, gf x2]
   gf (GIFun2 x1 x2 x3) = mkApp (mkCId "IFun2") [gf x1, gf x2, gf x3]
@@ -246,10 +251,12 @@ instance Gf GInd where
   gf (GIInt x1) = mkApp (mkCId "IInt") [gf x1]
   gf (GIUniv x1) = mkApp (mkCId "IUniv") [gf x1]
   gf (GIVar x1) = mkApp (mkCId "IVar") [gf x1]
+  gf GSomething_IExist = mkApp (mkCId "Something_IExist") []
 
   fg t =
     case unApp t of
       Just (i,[x1,x2]) | i == mkCId "ConjInd" -> GConjInd (fg x1) (fg x2)
+      Just (i,[]) | i == mkCId "Everything_IUniv" -> GEverything_IUniv 
       Just (i,[x1]) | i == mkCId "IExist" -> GIExist (fg x1)
       Just (i,[x1,x2]) | i == mkCId "IFun1" -> GIFun1 (fg x1) (fg x2)
       Just (i,[x1,x2,x3]) | i == mkCId "IFun2" -> GIFun2 (fg x1) (fg x2) (fg x3)
@@ -257,6 +264,7 @@ instance Gf GInd where
       Just (i,[x1]) | i == mkCId "IInt" -> GIInt (fg x1)
       Just (i,[x1]) | i == mkCId "IUniv" -> GIUniv (fg x1)
       Just (i,[x1]) | i == mkCId "IVar" -> GIVar (fg x1)
+      Just (i,[]) | i == mkCId "Something_IExist" -> GSomething_IExist 
 
 
       _ -> error ("no Ind " ++ show t)
