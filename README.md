@@ -1,10 +1,6 @@
-aarne vid chalmers punkt se
+13-06-2022
 
-13/4/2011 - 20/4
-
-updated 2/6/2017 for gf-contrib at GitHub
-
-## Code to accompany the paper
+## Based on code of Ranta (2011)
 
 _Translating between language and logic: what is easy and what is difficult._
 A Ranta - International Conference on Automated Deduction, 2011, LNCS/LNAI.
@@ -12,6 +8,10 @@ A Ranta - International Conference on Automated Deduction, 2011, LNCS/LNAI.
 http://www.cse.chalmers.se/~aarne/articles/cade2011.pdf
 
 Experimental program for translating between language and logic.
+
+The original version of Ranta's code is taken from https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011. The file ImprovementsReport.txt lists all bug fixes and changes to the original code.
+
+The
 
 ### Compile globally
 
@@ -49,6 +49,7 @@ To test
 
   -- concrete syntax
   PropI.gf       -- concrete syntax, functor with RGL
+  PropDut.gf	 -- concrete syntax, Dutch with RGL functor
   PropEng.gf     -- concrete syntax, English with RGL functor
   PropFin.gf     -- concrete syntax, Finnish with RGL functor
   PropFre.gf     -- concrete syntax, French  with RGL functor
@@ -67,9 +68,3 @@ To test
 ```
   Prop.hs        -- abstract syntax in Haskell
 ```
-
-### TODO
-
-  - web demo
-  - integration with MOLTO math library
-  - bullet-based conjunctions are a hack now - should be supported better by RGL

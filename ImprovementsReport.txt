@@ -1,19 +1,19 @@
-!!! Note that all differences to the original code are commented with "Elze" and an optional explanation
+!!! All differences to the original code (at https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011) are commented with "Elze" and an optional explanation
 
-***BUG FIXES AND TODOS
-1. 	PropLatex --> PropLatexNew) Comment of Ranta "fix negation of in" at lin AKind: "1 \in N" is parsed+linearized as both "1 is a number" and "1 is not a number". New code:
+BUG FIXES AND TODOS
+1. 	PropLatex) Comment of Ranta "fix negation of in" at lin AKind: "1 \in N" is parsed and linearized as both "1 is a number" and "1 is not a number". New code:
 			AKind k x = table {True => top x ++ "\\in" ++ k ; False => top (prefix 3 "\\sim" (constant (top x ++ "\\in" ++ k)))}
-	Now it only returns "1 is a number"
-2. 	PropLatex --> PropLatexNew) The linearization functions of ModKind and PartPred were wrong and commented out. New code:
+	Now it only returns "1 is a number".
+2. 	PropLatex) The linearization functions of ModKind and PartPred were wrong and commented out. New code:
 			ModKind k m = (m ! True) ++ k ;
 			PartPred f y = \\b => (f ! b)  ++ "to" ++ (top y) ;
-3.	PropLatex --> PropLatexNew) "\even { 2 }" translates to "2 is even" (PAtom (APred1  Even (IInt 2)) AND "2 is not even" (PNegAtom (APred1 Even (IInt 2))). This happened because of wrong code in the slash 	oper (3rd function). New code: 
+3.	PropLatex) "\even { 2 }" translates to "2 is even" (PAtom (APred1  Even (IInt 2)) AND "2 is not even" (PNegAtom (APred1 Even (IInt 2))). This happened because of wrong code in the slash oper (3rd case of the overload). New code: 
 			slash : Str -> Bool => Str = \f -> table {True => "\\" + f ; False => top (prefix 3 "\\sim" (constant ("\\" + f)))} ;
 		
-***LANGUAGE DUTCH ADDED TO THE REPO: the file is called PropDut.gf
+LANGUAGE DUTCH ADDED TO THE REPO: the file is called 'PropDut.gf'.
 		
 		
-***IMPROVING TRANSLATIONS
+IMPROVING TRANSLATIONS
 1. TransProp.hs) In-situ quantification for quantifiers without a kind is not in the list of conversions, but should be added to avoid bad translations such as "for all x, x is even" (should be "everything is even"). This is how I changed it:
 		- In Prop.gf, I added the following functions:
 			Everything_IUniv : Ind ;
@@ -46,7 +46,7 @@
 			  vx = GIVar x
 	
 	
-****TODOs left:
+TODOs left:
 - Extend lexicon? More-place predicates? Higher-order functions? Iff? Equality function?
 - Fix bug:
 		>echo|set /p="everything is equal to 0" | stack run trans
@@ -74,3 +74,6 @@
 
 		MNormalize:
 		trans.EXE: TransProp.hs:(157,12)-(171,17): Non-exhaustive patterns in case
+- Formulas such as 'P \& Q \vee R are accepted by the system, but actually are not well-formed (they are ambiguous because they miss parentheses). Solve this.
+- ( \forall x \in N ) ( \even { x } \supset \sim \odd { x } ) translates to 'for all numbers x , if x is even , then x is not odd'. This happens because x occurs twice in the quantified proposition. Solution: use anaphora to make it exactly one occurrence: "for all numbers x, if x is even, then it is not odd". Now in-situ quantification can be done.
+- Improve readability of this file.
