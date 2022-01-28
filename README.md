@@ -1,17 +1,12 @@
 13-06-2022
 
-## Based on code of Ranta (2011)
+## Grammatical Framework application grammar for translating between language and predicate logic
 
+This system is based on the study of Ranta (2011):
 _Translating between language and logic: what is easy and what is difficult._
-A Ranta - International Conference on Automated Deduction, 2011, LNCS/LNAI.
+A Ranta - International Conference on Automated Deduction, 2011, LNCS/LNAI. See http://www.cse.chalmers.se/~aarne/articles/cade2011.pdf.
 
-http://www.cse.chalmers.se/~aarne/articles/cade2011.pdf
-
-Experimental program for translating between language and logic.
-
-The original version of Ranta's code is taken from https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011. The file ImprovementsReport.txt lists all bug fixes and changes to the original code.
-
-The
+The original version of Ranta's code is taken from [cade-2011](https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011). The file `ImprovementsReport.md` lists all bug fixes and changes to the original code.
 
 ### Compile globally
 
