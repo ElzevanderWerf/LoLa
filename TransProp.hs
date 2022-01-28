@@ -41,8 +41,12 @@ optimize t = case t of
     let (km,pm) = getKindMod x k p in optimize $ GPUnivs (GListVar [x]) km pm
   GPExist x (GPConj GCAnd (GPAtom (GAKind k (GIVar y))) p) | y == x -> 
     optimize $ GPExists (GListVar [x]) k p
-  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- Elze
-  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- Elze
+
+  -- Elze: These two cases only happen if the universal is not followed by a kind predicate 
+  -- (bc if that is true, then it will land up in the previous case of GPUniv or GPExist)
+  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- Elze: if x is a free variable in p, then do in-situ quantification
+  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- Elze: if x is a free variable in p, then do in-situ quantification
+
   GPUnivs  (GListVar [x]) k p -> inSitu GPUnivs  (GIUniv k)  k x $ optimize p 
   GPExists (GListVar [x]) k p -> inSitu GPExists (GIExist k) k x $ optimize p 
   _ -> composOp optimize t
@@ -75,7 +79,7 @@ inSitu quant qp k x b = case b of
  where 
   vx = GIVar x
 
--- Elze inSitu without kind:
+-- Elze inSitu without kind (almost the same code as normal inSitu):
 inSituWithoutKind :: (GVar -> GProp -> GProp) -> GInd -> GVar -> GProp -> GProp
 inSituWithoutKind quant qp x b = case b of
   GPAtom (GAPred1 (GPartPred f y) z)              -> inSituWithoutKind quant qp x (GPAtom (GAPred2 f z y))
@@ -157,6 +161,8 @@ iInd :: GInd -> (Ind -> Prop) -> Prop
 iInd q f = case q of
   GIUniv  k -> let x = newVar 1 in GPUnivs  (GListVar [x]) k (f (GIVar x))
   GIExist k -> let x = newVar 2 in GPExists (GListVar [x]) k (f (GIVar x))
+  GEverything_IUniv -> let x = newVar 3 in GPUniv  x (f (GIVar x))  -- Elze
+  GSomething_IExist -> let x = newVar 4 in GPExist x (f (GIVar x))  -- Elze
   GIFun1 g r -> iInd r (\x -> f (GIFun1 g x)) 
   GIFun2 g r s -> iInd r (\x -> iInd s (\y -> f (GIFun2 g x y))) 
   GIFunC g (GListInd rs) -> wind rs (\x y -> f (GIFun2 g x y)) where
