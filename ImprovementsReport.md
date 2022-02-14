@@ -64,4 +64,5 @@ I added the Dutch language to the application grammar: file `PropDut.gf`.
 ## TODOs left:
 - Extend lexicon? More-place predicates? Higher-order functions? Iff? Equality function?
 - Formulas such as *P \& Q \vee R* are accepted by the system, but actually are not well-formed (they are ambiguous because they miss parentheses). Solve this.
-- *( \forall x \in N ) ( \even { x } \supset \sim \odd { x } )* translates to *for all numbers x , if x is even , then x is not odd*. This happens because x occurs twice in the quantified proposition. Solution: use anaphora to make it exactly one occurrence: *for all numbers x, if x is even, then it is not odd*. Now in-situ quantification can be done.
+- *( \forall x \in N ) ( \even { x } \supset \sim \odd { x } )* translates to *for all numbers x , if x is even , then x is not odd*. This happens because x occurs twice in the quantified proposition. Solution: use anaphora (?) to make it exactly one occurrence: *for all numbers x, if x is even, then it is not odd*. Now in-situ quantification can be done. But the problem remains for longer formulas with more occurrences of the variable.
+- *\sim \forall* and *\sim \exists* formulas could be translated better. 
