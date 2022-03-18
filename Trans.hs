@@ -14,4 +14,4 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
  where
    display m l u = unlines $ (show m ++ ":") : 
      showExpr [] u : [s | la <- languages pgf, let s = linearize pgf la u]
-   transfers t = [(transfer m t,m) | m <- [MNone, MOptimize, MNormalize, MMinimalize]]
+   transfers t = [(transfer m t,m) | m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify]] -- Elze added MSimplify

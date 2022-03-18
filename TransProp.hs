@@ -14,8 +14,9 @@ transfer m = gf . trans . fg where
     MMinimalize -> minimalizeP . normalizeP
     MNormalize  -> normalizeP 
     MOptimize   -> optimizeP
+    MSimplify   -> simplifyP      -- Elze TODO add: . optimizeP
 
-data Mode = MNone | MOptimize | MMinimalize | MNormalize deriving Show
+data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify deriving Show    -- Elze added MSimplify
 
 noFreeVars :: PGF.Tree -> Bool
 noFreeVars = null . freeVarsP . fg
@@ -201,4 +202,16 @@ notFree x t = notElem x (freeVars t)
 
 --composOpMPlus :: (Compos t, MonadPlus m) => (forall a. t a -> m b) -> t c -> m b
 --composOpM :: (Compos t, Monad m) => (forall a. t a -> m (t a)) -> t c -> m (t c)
+
+----------------------------------------------------------------------------------------
+-- Simplification by Elze
+
+simplifyP :: GProp -> GProp
+simplifyP = simplify
+
+simplify :: forall c. Tree c -> Tree c
+simplify t = case t of
+  GPNeg (GPNeg p) -> p
+  GPNeg (GPNegAtom a) -> GPAtom a 
+  _ -> composOp simplify t
 
