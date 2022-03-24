@@ -1,6 +1,0 @@
-Condition;Source language;Incorrect translation
-Filler wrong symbol;¬ ∃ x ( SameShape ( a , b ) → SameRow ( c , c ) );it is not the case that there is an element x such that a is in the same shape as b and c is in the same row as itself
-Filler missing info;∀ x ( Tet ( x ) ∨ Prime ( a ) ) ∨ ∃ x ( Person ( x ) → Student ( a ) );for all x , x is a tetrahedron or a is a prime or there is an element x such that a is a student
-Filler extra info;∃ x ∀ y Larger ( x , a ) ∧ ∀ y ¬ Pet ( b );there is an element x such that for all y , x is larger than a and there is an element x such that for all y , b is not a pet
-Filler missing info;∃ x ( ( ( SameShape ( x , a ) ∧ Tet ( x ) ) → Adjoins ( x , a ) );for all x , if x is of the same shape as a, then x is adjacent to a
-Filler missing and wrong;∃ x Cube ( x ) ( Person ( a ) → Adjoins ( x , a ) );there is a cube such that a is a person or x is adjacent to a
