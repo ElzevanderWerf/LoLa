@@ -1,0 +1,1999 @@
+PNeg (PAtom (APred1 Even (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (AKind Nat (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APred1 Even (IExist Nat)))
+
+PNeg (PNegAtom (AKind Nat (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (AKind Nat (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Even) Even) (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PNeg (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNegAtom (APred1 (ConjPred1 CAnd (BasePred1 Odd Even)) (IInt 999))
+
+PNegAtom (APred1 Odd (IExist Nat))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PConj COr (PAtom (APred1 Odd (IInt 999))) (PAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IUniv Nat))
+
+PNegAtom (APredRefl Equal (IExist (ModKind Nat Odd)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Even) Even) (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PImpl (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Even (IExist Nat)))
+
+PImpl (PAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PNeg (PNegAtom (APred1 Even (IExist Nat)))
+
+PNeg (PAtom (APred1 Even (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat Odd) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNegAtom (APred1 Even (IExist (ModKind Nat Even)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Odd) (ConjPred1 CAnd (BasePred1 Even Odd))) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APred1 Even (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNeg (PNegAtom (AKind Nat (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PNeg (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IExist Nat) (IInt 999))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) (ConjPred1 CAnd (BasePred1 Even Odd))) (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred1 Even (IFun1 Square (IInt 999)))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IVar (VString "Foo")))
+
+PNegAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Odd) Even) (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNeg (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNeg (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IInt 999))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Even) (PAtom (APred1 Odd (IUniv Nat)))
+
+PImpl (PNegAtom (APred1 Odd (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PAtom (AKind Nat (IUniv Nat))) (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PAtom (APredRefl Equal (IExist Nat))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) (ConjPred1 CAnd (BasePred1 Odd Odd))) (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PNegAtom (APred1 Odd (IUniv (ModKind Nat Odd)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (PartPred Equal (IInt 999))) (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PAtom (AKind Nat (IVar (VString "Foo")))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IExist Nat))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (AKind Nat (IInt 999)))
+
+PImpl (PAtom (APred2 Equal (IInt 999) (IExist Nat))) (PAtom (APred1 Odd (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Odd) (PartPred Equal (IExist Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Even) Even) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Even) (PAtom (AKind Nat (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat (ConjPred1 CAnd (BasePred1 Odd Even))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred2 Equal (IFun1 Square (IUniv Nat)) (IFun1 Square (IInt 999)))
+
+PConj COr (PAtom (AKind Nat (IUniv Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PNeg (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Odd) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Even) Odd) (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PImpl (PNegAtom (AKind Nat (IInt 999))) (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat Odd) (PAtom (AKind Nat (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IExist Nat))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IExist Nat)))
+
+PAtom (APred2 Equal (IFun1 Square (IUniv Nat)) (IVar (VString "Foo")))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Even) (PartPred Equal (IUniv Nat))) (PNegAtom (AKind Nat (IInt 999)))
+
+PAtom (APred1 Odd (IExist (ModKind Nat Odd)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) Odd) (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PAtom (APredColl Equal (BaseInd (IUniv Nat) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (AKind Nat (IUniv Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PNegAtom (APred1 Even (IInt 999))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PConj CAnd (PAtom (AKind Nat (IExist Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNeg (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Even) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PConj COr (PNegAtom (AKind (ModKind Nat Even) (IInt 999))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PImpl (PNegAtom (APred1 Even (IUniv Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PAtom (AKind (ModKind Nat Even) (IUniv (ModKind Nat Odd)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PNeg (PAtom (AKind Nat (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Odd (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IInt 999)))
+
+PConj COr (PAtom (APred2 Equal (IInt 999) (IInt 999))) (PAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (AKind (ModKind Nat Odd) (IUniv (ModKind Nat Even)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Odd) Even) (PNegAtom (APred1 Even (IInt 999)))
+
+PNegAtom (APredRefl Equal (IInt 999))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Even) Even) (PartPred Equal (IExist Nat))) (PAtom (APred1 Odd (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Odd) Even) (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PNegAtom (APred2 Equal (IExist Nat) (IFun2 Sum (IInt 999) (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IInt 999)))
+
+PNegAtom (AKind Nat (IUniv (ModKind Nat Even)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (APred1 Even (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APred1 Odd (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (ConjPred1 COr (BasePred1 Odd Odd))) (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PConj COr (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IExist Nat)))
+
+PNeg (PNegAtom (APred1 Odd (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (AKind Nat (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PNegAtom (AKind (ModKind Nat Odd) (IFun2 Sum (IExist Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APred1 Odd (IExist Nat))) (PNegAtom (APred1 Even (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (ConjPred1 COr (BasePred1 Odd Odd))) (PAtom (AKind Nat (IUniv Nat)))
+
+PImpl (PNegAtom (APred1 Odd (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) Even) (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Even) Even) (PartPred Equal (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APred1 Even (IInt 999))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PAtom (AKind Nat (IFun1 Square (IInt 999)))
+
+PConj COr (PAtom (APred1 Odd (IInt 999))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PAtom (AKind Nat (IInt 999))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (PartPred Equal (IUniv Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PAtom (APred1 (ConjPred1 COr (BasePred1 Odd Even)) (IFun1 Square (IExist Nat)))
+
+PConj COr (PAtom (APred1 Even (IUniv Nat))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PNegAtom (AKind Nat (IExist Nat))) (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNegAtom (AKind (ModKind Nat Odd) (IFun2 Sum (IInt 999) (IUniv Nat)))
+
+PAtom (APredRefl Equal (IFun2 Product (IExist Nat) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (PartPred Equal (IExist Nat))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PImpl (PAtom (AKind Nat (IExist Nat))) (PAtom (AKind Nat (IInt 999)))
+
+PAtom (AKind Nat (IInt 999))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PAtom (APredRefl Equal (IExist Nat)))
+
+PConj CAnd (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred1 Odd (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (AKind Nat (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IUniv (ModKind Nat Even)))
+
+PConj CAnd (PNegAtom (APred1 Odd (IInt 999))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (AKind Nat (IInt 999))) (PAtom (AKind Nat (IUniv Nat)))
+
+PConj CAnd (PAtom (APredRefl Equal (IExist Nat))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IInt 999) (IExist Nat))) (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PNeg (PAtom (APredRefl Equal (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Odd) (IInt 999))) (PAtom (AKind Nat (IExist Nat)))
+
+PAtom (APred2 Equal (IFun2 Product (IInt 999) (IExist Nat)) (IFun2 Product (IInt 999) (IUniv Nat)))
+
+PImpl (PNegAtom (APred1 Even (IExist Nat))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APred1 Odd (IInt 999))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PAtom (APred1 (ConjPred1 CAnd (BasePred1 Even Odd)) (IFun2 Sum (IExist Nat) (IInt 999)))
+
+PNeg (PNegAtom (APred1 Even (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PImpl (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNeg (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind Nat (IExist Nat)))
+
+PNegAtom (APred1 (ConjPred1 COr (BasePred1 Even Even)) (IExist (ModKind Nat Even)))
+
+PNeg (PNegAtom (AKind Nat (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PNeg (PAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PAtom (AKind (ModKind Nat Odd) (IFun1 Square (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (PartPred Equal (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) (ConjPred1 CAnd (BasePred1 Even Even))) (PAtom (APred1 Even (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (AKind Nat (IUniv Nat)))
+
+PNeg (PAtom (APredRefl Equal (IExist Nat)))
+
+PConj COr (PNegAtom (APred1 Even (IInt 999))) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Even) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PNegAtom (APred1 Even (IInt 999))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APred2 Equal (IUniv (ModKind Nat Even)) (IFun1 Square (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Even) (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (APred1 (ConjPred1 COr (BasePred1 Odd Even)) (IFun1 Square (IExist Nat)))
+
+PAtom (AKind Nat (IExist Nat))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IInt 999))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PNegAtom (AKind Nat (IExist Nat)))
+
+PAtom (APred1 Odd (IExist Nat))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IInt 999))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PConj COr (PNegAtom (APred1 Even (IExist Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PConj COr (PAtom (APred2 Equal (IExist Nat) (IInt 999))) (PAtom (APredRefl Equal (IInt 999)))
+
+PConj COr (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APredRefl Equal (IFun2 Product (IInt 999) (IUniv Nat)))
+
+PConj CAnd (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IExist (ModKind Nat Even)) (IVar (VString "Foo")))
+
+PImpl (PAtom (APred1 Even (IExist Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PAtom (APred2 Equal (IFun1 Square (IUniv Nat)) (IExist Nat))
+
+PNegAtom (AKind Nat (IInt 999))
+
+PNeg (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PNegAtom (APred1 Even (IExist Nat)))
+
+PConj COr (PNegAtom (APredRefl Equal (IInt 999))) (PAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNeg (PAtom (APredRefl Equal (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PConj CAnd (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PAtom (AKind Nat (IExist Nat)))
+
+PAtom (APred1 (ConjPred1 CAnd (BasePred1 Even Even)) (IFun1 Square (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (AKind Nat (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IInt 999)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (AKind Nat (IExist Nat))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Odd) Even) (IExist Nat))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (AKind Nat (IInt 999)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PExist (VString "Foo") (PAtom (APred1 Even (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APredRefl Equal (IUniv Nat))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Even (IUniv Nat)))
+
+PImpl (PAtom (APred2 Equal (IInt 999) (IExist Nat))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PConj COr (PNegAtom (AKind (ModKind Nat Odd) (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) (PartPred Equal (IUniv Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PNeg (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PConj COr (PAtom (APred1 Even (IExist Nat))) (PNegAtom (AKind Nat (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IUniv Nat))) (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IExist Nat))) (PNegAtom (APred1 Even (IExist Nat)))
+
+PAtom (AKind Nat (IUniv Nat))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Even) (PartPred Equal (IUniv Nat))) (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (AKind Nat (IExist Nat)))
+
+PImpl (PAtom (APred1 Even (IExist Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APred2 Equal (IExist Nat) (IFun2 Product (IUniv Nat) (IInt 999)))
+
+PImpl (PNegAtom (APredRefl Equal (IExist Nat))) (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Even (IInt 999)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PConj CAnd (PAtom (APred2 Equal (IInt 999) (IExist Nat))) (PAtom (AKind Nat (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred2 Equal (IUniv Nat) (IVar (VString "Foo")))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Odd (IExist Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Even) Odd) (IFun2 Sum (IInt 999) (IUniv Nat)))
+
+PAtom (APred1 (ConjPred1 CAnd (BasePred1 Even Odd)) (IExist Nat))
+
+PNegAtom (APred2 Equal (IExist Nat) (IInt 999))
+
+PNegAtom (APred1 (ConjPred1 CAnd (BasePred1 Even Even)) (IFun1 Square (IInt 999)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Odd) (PNegAtom (APred1 Even (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PAtom (AKind (ModKind (ModKind Nat Even) Odd) (IVar (VString "Foo")))
+
+PImpl (PNegAtom (AKind Nat (IUniv Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PImpl (PAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IInt 999)))
+
+PConj COr (PNegAtom (APred1 Even (IUniv Nat))) (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (AKind Nat (IInt 999)))
+
+PNegAtom (AKind (ModKind Nat Even) (IVar (VString "Foo")))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Even) (IFun2 Sum (IInt 999) (IInt 999)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Even) Odd) (IFun2 Product (IUniv Nat) (IInt 999)))
+
+PConj CAnd (PAtom (AKind (ModKind Nat Even) (IInt 999))) (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Even (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PImpl (PNegAtom (APred1 Even (IExist Nat))) (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Odd) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IUniv (ModKind Nat Even)) (IInt 999))
+
+PNegAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PNeg (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PNeg (PNegAtom (AKind Nat (IInt 999)))
+
+PAtom (APred1 Even (IFun2 Sum (IExist Nat) (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat (ConjPred1 CAnd (BasePred1 Even Even))) (PAtom (APred1 Even (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IInt 999)))
+
+PAtom (APredColl Equal (BaseInd (IUniv Nat) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (PartPred Equal (IInt 999))) (PAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PConj COr (PNegAtom (AKind Nat (IInt 999))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PConj COr (PAtom (AKind Nat (IExist Nat))) (PAtom (APred1 Odd (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IVar (VString "Foo")))
+
+PNegAtom (APredRefl Equal (IUniv (ModKind Nat Even)))
+
+PConj COr (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (AKind (ModKind Nat Even) (IFun2 Product (IExist Nat) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PNeg (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Even (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Even) Odd) Even) (PNegAtom (APred1 Odd (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNegAtom (APred1 Even (IExist (ModKind Nat Odd)))
+
+PImpl (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (AKind Nat (IInt 999))) (PAtom (AKind Nat (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (APred2 Equal (IVar (VString "Foo")) (IUniv (ModKind Nat Odd)))
+
+PNegAtom (APred2 Equal (IExist Nat) (IFun2 Product (IUniv Nat) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IFun1 Square (IUniv Nat)) (IFun2 Sum (IUniv Nat) (IUniv Nat)))
+
+PNeg (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IUniv Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (APred1 Odd (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PConj COr (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) Odd) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (AKind Nat (IUniv (ModKind Nat Odd)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat Odd) (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PNegAtom (APred1 Even (IFun1 Square (IInt 999)))
+
+PNeg (PAtom (AKind Nat (IExist Nat)))
+
+PConj COr (PAtom (APred1 Odd (IExist Nat))) (PAtom (APred1 Even (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (AKind Nat (IInt 999))) (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Even) (IExist Nat))) (PAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (AKind (ModKind Nat Even) (IFun2 Product (IInt 999) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PConj CAnd (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind Nat (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred1 Even (IInt 999)))
+
+PImpl (PNegAtom (APred1 Even (IUniv Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PImpl (PAtom (APred1 Odd (IInt 999))) (PAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (APred1 (PartPred Equal (IExist Nat)) (IVar (VString "Foo")))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (ConjPred1 COr (BasePred1 Even Even))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred2 Equal (IExist (ModKind Nat Even)) (IExist (ModKind Nat Even)))
+
+PUniv (VString "Foo") (PNegAtom (AKind Nat (IExist Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Odd) (IUniv Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (APredRefl Equal (IExist (ModKind Nat Even)))
+
+PNegAtom (APred2 Equal (IVar (VString "Foo")) (IExist (ModKind Nat Even)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred1 Even (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IInt 999))) (PAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PNeg (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (APredRefl Equal (IExist Nat))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IExist Nat)))
+
+PNeg (PAtom (APred1 Even (IInt 999)))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) (ConjPred1 COr (BasePred1 Even Odd))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PImpl (PAtom (APred1 Odd (IExist Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PAtom (APred1 Even (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PImpl (PNegAtom (APred1 Even (IUniv Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PAtom (APred1 Even (IUniv Nat))) (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Odd (IInt 999)))
+
+PAtom (APredRefl Equal (IExist Nat))
+
+PExist (VString "Foo") (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PConj COr (PAtom (APred1 Odd (IInt 999))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IExist Nat))) (PAtom (APred1 Odd (IExist Nat)))
+
+PConj COr (PAtom (APredRefl Equal (IInt 999))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Even) (IInt 999))) (PAtom (AKind Nat (IExist Nat)))
+
+PNeg (PNegAtom (AKind Nat (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Even) (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PImpl (PAtom (APred1 Even (IExist Nat))) (PNegAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat))) (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IExist Nat))
+
+PAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PConj COr (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (PartPred Equal (IUniv Nat))) (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Odd) (IExist Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PImpl (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IUniv Nat) (IInt 999))
+
+PConj COr (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IExist Nat)))
+
+PNeg (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PNeg (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IInt 999))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Odd) Odd) (PAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (AKind Nat (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (AKind Nat (IUniv Nat))) (PAtom (AKind Nat (IUniv Nat)))
+
+PAtom (APred2 Equal (IFun2 Product (IExist Nat) (IUniv Nat)) (IFun1 Square (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IUniv Nat))) (PAtom (APred1 Odd (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PAtom (APredRefl Equal (IUniv (ModKind Nat Odd)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (ConjPred1 COr (BasePred1 Odd Odd))) (PAtom (AKind Nat (IInt 999)))
+
+PNeg (PAtom (AKind Nat (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PExist (VString "Foo") (PNegAtom (APred1 Odd (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IUniv Nat) (IInt 999)))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IFun1 Square (IInt 999)))
+
+PExist (VString "Foo") (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PAtom (APred2 Equal (IVar (VString "Foo")) (IFun1 Square (IInt 999)))
+
+PImpl (PNegAtom (APred1 Even (IInt 999))) (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PAtom (APred1 Odd (IFun1 Square (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Even) Even) (PAtom (APred1 Odd (IUniv Nat)))
+
+PConj COr (PNegAtom (AKind (ModKind Nat Even) (IExist Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Even) Odd) Odd) (PNegAtom (APred1 Even (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat Odd) (PAtom (APred1 Even (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IUniv Nat))) (PAtom (APred1 Odd (IInt 999)))
+
+PConj CAnd (PAtom (APredRefl Equal (IInt 999))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (APred1 Even (IUniv Nat)))
+
+PConj COr (PNegAtom (APred1 Odd (IInt 999))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PImpl (PAtom (AKind Nat (IUniv Nat))) (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PConj COr (PAtom (APred2 Equal (IExist Nat) (IInt 999))) (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PImpl (PNegAtom (APred1 Odd (IUniv Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Even) (PNegAtom (APred1 Even (IInt 999)))
+
+PConj COr (PNegAtom (APred1 Odd (IUniv Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PAtom (APred1 Odd (IFun1 Square (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Even) (IExist Nat))) (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) Odd) (PNegAtom (AKind Nat (IInt 999)))
+
+PNeg (PAtom (APred1 Even (IUniv Nat)))
+
+PAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APred1 Odd (IInt 999))
+
+PNeg (PNegAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PConj CAnd (PAtom (APredRefl Equal (IInt 999))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APred1 Even (IFun2 Sum (IExist Nat) (IExist Nat)))
+
+PNeg (PAtom (APred1 Odd (IInt 999)))
+
+PConj CAnd (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PAtom (APred1 Odd (IExist Nat)))
+
+PAtom (APred2 Equal (IFun2 Product (IInt 999) (IUniv Nat)) (IFun1 Square (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PNeg (PNegAtom (AKind Nat (IUniv Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IInt 999) (IExist Nat))) (PAtom (APred1 Even (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IInt 999) (IInt 999))) (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IInt 999))) (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PConj CAnd (PNegAtom (APred1 Even (IInt 999))) (PNegAtom (APred1 Even (IExist Nat)))
+
+PImpl (PAtom (APred1 Odd (IUniv Nat))) (PNegAtom (APred1 Even (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IUniv Nat) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IExist Nat)))
+
+PNeg (PNegAtom (APred1 Odd (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PAtom (APredRefl Equal (IExist Nat)))
+
+PConj CAnd (PAtom (APred2 Equal (IExist Nat) (IUniv Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PConj COr (PAtom (APred1 Odd (IUniv Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred2 Equal (IFun1 Square (IUniv Nat)) (IFun2 Product (IExist Nat) (IExist Nat)))
+
+PAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PNeg (PAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PConj CAnd (PAtom (AKind Nat (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PConj COr (PAtom (AKind Nat (IUniv Nat))) (PAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PNegAtom (AKind Nat (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IUniv Nat))
+
+PExist (VString "Foo") (PNegAtom (APred1 Odd (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind Nat (IInt 999)))
+
+PConj COr (PAtom (APred1 Even (IExist Nat))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Odd) Even) (PNegAtom (AKind Nat (IExist Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Odd) (IUniv Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PAtom (APred2 Equal (IUniv (ModKind Nat Even)) (IFun1 Square (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat))) (PAtom (AKind Nat (IExist Nat)))
+
+PAtom (APred2 Equal (IExist Nat) (IExist Nat))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IUniv Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat))) (PNegAtom (AKind Nat (IExist Nat)))
+
+PAtom (APred1 Odd (IUniv (ModKind Nat Odd)))
+
+PConj COr (PNegAtom (APred1 Even (IExist Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) (PartPred Equal (IInt 999))) (PAtom (APred1 Even (IUniv Nat)))
+
+PNeg (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Odd) (PAtom (APred1 Even (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IInt 999))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNegAtom (APred1 Odd (IVar (VString "Foo")))
+
+PImpl (PNegAtom (APredRefl Equal (IUniv Nat))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IInt 999)))
+
+PNegAtom (APred1 Even (IExist Nat))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PConj CAnd (PAtom (APredRefl Equal (IExist Nat))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (AKind Nat (IFun1 Square (IInt 999)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Odd) (PNegAtom (AKind Nat (IExist Nat)))
+
+PAtom (AKind (ModKind Nat Odd) (IInt 999))
+
+PConj CAnd (PAtom (APred2 Equal (IInt 999) (IExist Nat))) (PAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PNeg (PAtom (APred1 Odd (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred1 Odd (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IExist Nat)))
+
+PAtom (AKind Nat (IUniv Nat))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IUniv Nat)))
+
+PImpl (PAtom (APred1 Even (IExist Nat))) (PNegAtom (APred1 Odd (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PAtom (APred1 Odd (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Even) Even) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PConj CAnd (PNegAtom (APred1 Even (IUniv Nat))) (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNeg (PNegAtom (APred1 Odd (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IInt 999))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PConj COr (PAtom (AKind Nat (IInt 999))) (PAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PNegAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PAtom (APred1 (PartPred Equal (IExist Nat)) (IInt 999))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred1 Odd (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PAtom (APred2 Equal (IFun2 Sum (IUniv Nat) (IExist Nat)) (IVar (VString "Foo")))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Even) Even) (IUniv (ModKind Nat Even)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (ConjPred1 CAnd (BasePred1 Even Even))) (PAtom (APred1 Even (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IExist Nat))) (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNeg (PNegAtom (APred1 Even (IUniv Nat)))
+
+PConj COr (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PConj COr (PNegAtom (AKind Nat (IInt 999))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Odd (IExist Nat)))
+
+PImpl (PAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind Nat (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Even) Even) (IVar (VString "Foo")))
+
+PImpl (PAtom (APred1 Odd (IInt 999))) (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Odd) Even) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PImpl (PAtom (AKind (ModKind Nat Even) (IInt 999))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PImpl (PNegAtom (AKind Nat (IExist Nat))) (PAtom (AKind Nat (IExist Nat)))
+
+PConj COr (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IExist Nat)))
+
+PImpl (PNegAtom (APred1 Even (IExist Nat))) (PAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (APred2 Equal (IInt 999) (IFun2 Product (IUniv Nat) (IUniv Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat))) (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PImpl (PAtom (APred1 Odd (IUniv Nat))) (PAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PNeg (PNegAtom (AKind Nat (IInt 999)))
+
+PNeg (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PNeg (PAtom (AKind Nat (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IUniv Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Even) Odd) Odd) (PAtom (APred1 Even (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IUniv Nat) (IExist (ModKind Nat Odd)))
+
+PImpl (PNegAtom (APred1 Odd (IInt 999))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PConj CAnd (PAtom (AKind (ModKind Nat Even) (IInt 999))) (PAtom (AKind Nat (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PNegAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PNegAtom (APredRefl Equal (IExist (ModKind Nat Odd)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PAtom (APred2 Equal (IFun1 Square (IExist Nat)) (IVar (VString "Foo")))
+
+PAtom (APred2 Equal (IFun2 Product (IInt 999) (IUniv Nat)) (IFun2 Sum (IExist Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PAtom (APredRefl Equal (IFun1 Square (IUniv Nat)))
+
+PAtom (AKind Nat (IFun1 Square (IExist Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PNegAtom (AKind Nat (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (AKind (ModKind Nat Odd) (IVar (VString "Foo")))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Even) (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PAtom (APred2 Equal (IExist Nat) (IFun1 Square (IExist Nat)))
+
+PNegAtom (APred1 (PartPred Equal (IUniv Nat)) (IUniv (ModKind Nat Even)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (AKind Nat (IExist Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IUniv Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Even) Odd) Even) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNeg (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Even (IUniv Nat)))
+
+PNegAtom (APred1 Even (IInt 999))
+
+PImpl (PAtom (AKind (ModKind Nat Odd) (IUniv Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PConj COr (PNegAtom (APred1 Even (IExist Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PAtom (APredColl Equal (BaseInd (IInt 999) (IInt 999)))
+
+PImpl (PAtom (APred1 Even (IExist Nat))) (PNegAtom (APred1 Even (IExist Nat)))
+
+PConj COr (PAtom (AKind (ModKind Nat Odd) (IExist Nat))) (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PConj CAnd (PAtom (APredRefl Equal (IInt 999))) (PAtom (AKind Nat (IExist Nat)))
+
+PNeg (PAtom (APredRefl Equal (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Even) Odd) (PartPred Equal (IUniv Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PImpl (PAtom (APred2 Equal (IInt 999) (IExist Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PNegAtom (AKind (ModKind Nat Even) (IInt 999))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PConj COr (PAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred1 Odd (IVar (VString "Foo")))
+
+PAtom (APred1 (ConjPred1 CAnd (BasePred1 Odd Odd)) (IFun2 Product (IInt 999) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind Nat (IExist Nat)))
+
+PNegAtom (APred2 Equal (IExist Nat) (IExist (ModKind Nat Odd)))
+
+PImpl (PNegAtom (APred2 Equal (IExist Nat) (IInt 999))) (PNegAtom (APred1 Even (IExist Nat)))
+
+PNegAtom (APred1 (PartPred Equal (IExist Nat)) (IFun1 Square (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APredRefl Equal (IExist Nat)))
+
+PConj COr (PAtom (AKind Nat (IInt 999))) (PAtom (AKind Nat (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) Even) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (AKind Nat (IVar (VString "Foo")))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) Odd) (PAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PAtom (AKind Nat (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind Nat (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IUniv Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IInt 999)))
+
+PNeg (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PNegAtom (APred1 Even (IVar (VString "Foo")))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Odd) (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PNeg (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PAtom (APred2 Equal (IVar (VString "Foo")) (IUniv Nat))
+
+PConj COr (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IFun1 Square (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat (ConjPred1 COr (BasePred1 Even Even))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PNegAtom (AKind Nat (IUniv (ModKind Nat Even)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNeg (PNegAtom (APred1 Even (IExist Nat)))
+
+PConj COr (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IInt 999)))
+
+PNegAtom (APred2 Equal (IExist (ModKind Nat Odd)) (IFun1 Square (IExist Nat)))
+
+PAtom (APred2 Equal (IInt 999) (IFun2 Sum (IExist Nat) (IInt 999)))
+
+PImpl (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PAtom (AKind Nat (IInt 999)))
+
+PConj COr (PAtom (APred1 Even (IExist Nat))) (PAtom (APred1 Even (IExist Nat)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PAtom (APredRefl Equal (IInt 999)))
+
+PExist (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PImpl (PNegAtom (APred1 Odd (IExist Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PAtom (AKind Nat (IExist Nat))
+
+PNeg (PNegAtom (APred1 Odd (IExist Nat)))
+
+PNeg (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APredRefl Equal (IUniv (ModKind Nat Even)))
+
+PConj COr (PNegAtom (APred1 Odd (IExist Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Odd) (ConjPred1 CAnd (BasePred1 Odd Odd))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APred1 (ConjPred1 CAnd (BasePred1 Even Even)) (IFun1 Square (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PAtom (AKind (ModKind Nat Even) (IUniv Nat))) (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat (PartPred Equal (IUniv Nat))) (PAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PConj COr (PAtom (APred1 Even (IExist Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (ConjPred1 COr (BasePred1 Even Odd))) (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred1 Even (IInt 999)))
+
+PNegAtom (AKind (ModKind (ModKind Nat Even) Even) (IInt 999))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (PartPred Equal (IExist Nat))) (PAtom (AKind Nat (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Even) (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PAtom (AKind Nat (IUniv (ModKind Nat Even)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PNegAtom (AKind Nat (IFun1 Square (IExist Nat)))
+
+PAtom (APred1 Odd (IUniv (ModKind Nat Odd)))
+
+PConj CAnd (PAtom (AKind (ModKind Nat Even) (IUniv Nat))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IUniv Nat)))
+
+PNegAtom (APred1 (PartPred Equal (IExist Nat)) (IInt 999))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (AKind (ModKind Nat Odd) (IFun1 Square (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind Nat (IExist Nat)))
+
+PAtom (APred2 Equal (IFun1 Square (IInt 999)) (IInt 999))
+
+PAtom (AKind Nat (IExist (ModKind Nat Even)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) Even) (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Even) (IUniv Nat))) (PAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PConj COr (PAtom (APred1 Even (IExist Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Even) Even) (PNegAtom (APred1 Odd (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (APred1 Odd (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IExist Nat))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IInt 999) (IFun2 Sum (IInt 999) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IExist Nat)))
+
+PConj COr (PNegAtom (APred1 Even (IInt 999))) (PNegAtom (AKind Nat (IInt 999)))
+
+PAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PImpl (PNegAtom (AKind (ModKind Nat Even) (IExist Nat))) (PAtom (APredRefl Equal (IInt 999)))
+
+PAtom (APredRefl Equal (IFun2 Product (IUniv Nat) (IInt 999)))
+
+PAtom (APred2 Equal (IVar (VString "Foo")) (IUniv Nat))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) Even) (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Even) Odd) (ConjPred1 CAnd (BasePred1 Even Odd))) (PAtom (APred1 Odd (IUniv Nat)))
+
+PConj COr (PAtom (APred1 Odd (IUniv Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PNegAtom (APred1 (ConjPred1 COr (BasePred1 Odd Even)) (IUniv (ModKind Nat Odd)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IUniv Nat)))
+
+PConj COr (PNegAtom (AKind Nat (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IUniv Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APred1 Odd (IInt 999))) (PNegAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Even (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APredRefl Equal (IUniv Nat)))
+
+PConj COr (PNegAtom (APredRefl Equal (IInt 999))) (PAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind Nat Odd) (PNegAtom (AKind Nat (IExist Nat)))
+
+PAtom (APredRefl Equal (IExist Nat))
+
+PImpl (PAtom (APred2 Equal (IExist Nat) (IInt 999))) (PAtom (AKind Nat (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PAtom (APred1 Odd (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (ConjPred1 CAnd (BasePred1 Even Even))) (PNegAtom (APred1 Odd (IInt 999)))
+
+PImpl (PNegAtom (APredRefl Equal (IUniv Nat))) (PAtom (AKind Nat (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind Nat (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PNegAtom (APred1 (ConjPred1 CAnd (BasePred1 Odd Odd)) (IInt 999))
+
+PAtom (APred2 Equal (IFun1 Square (IInt 999)) (IVar (VString "Foo")))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IExist Nat)))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APred1 Odd (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PConj COr (PAtom (APredRefl Equal (IInt 999))) (PAtom (APred1 Even (IInt 999)))
+
+PNeg (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Even (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IExist Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Even) (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Odd) (PartPred Equal (IExist Nat))) (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IExist Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PNeg (PAtom (APred1 Even (IInt 999)))
+
+PAtom (APredRefl Equal (IExist (ModKind Nat Even)))
+
+PImpl (PNegAtom (APredRefl Equal (IExist Nat))) (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Even) (IExist Nat))) (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PAtom (AKind Nat (IInt 999)))
+
+PImpl (PAtom (APred1 Even (IInt 999))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APred2 Equal (IFun1 Square (IInt 999)) (IFun2 Product (IInt 999) (IUniv Nat)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PAtom (APred1 Odd (IInt 999)))
+
+PNeg (PAtom (APred1 Even (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Odd) (PNegAtom (APred1 Odd (IInt 999)))
+
+PImpl (PNegAtom (AKind Nat (IExist Nat))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PImpl (PAtom (APredRefl Equal (IUniv Nat))) (PAtom (APred1 Even (IUniv Nat)))
+
+PAtom (APredRefl Equal (IFun2 Sum (IInt 999) (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IInt 999)))
+
+PAtom (APred1 (ConjPred1 COr (BasePred1 Odd Even)) (IFun1 Square (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PConj CAnd (PAtom (APredRefl Equal (IExist Nat))) (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IUniv Nat)))
+
+PConj COr (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Even) Even) Even) (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PNeg (PNegAtom (AKind (ModKind Nat Odd) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (ConjPred1 CAnd (BasePred1 Odd Odd))) (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PConj COr (PNegAtom (AKind Nat (IExist Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PNegAtom (APred2 Equal (IInt 999) (IExist Nat))
+
+PConj CAnd (PAtom (AKind Nat (IUniv Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PAtom (APred1 (PartPred Equal (IExist Nat)) (IVar (VString "Foo")))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IInt 999)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PImpl (PNegAtom (APred1 Odd (IUniv Nat))) (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (ConjPred1 COr (BasePred1 Even Even))) (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IInt 999))) (PNegAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IExist Nat))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind Nat Even) Odd) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PConj CAnd (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IExist Nat) (IUniv (ModKind Nat Even)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Odd (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APred1 (PartPred Equal (IInt 999)) (IVar (VString "Foo")))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind Nat (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Odd (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (AKind Nat (IInt 999)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APred1 Even (IUniv Nat)))
+
+PNeg (PAtom (AKind Nat (IUniv Nat)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Odd) (IInt 999))) (PNegAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PAtom (APredRefl Equal (IExist Nat))
+
+PNeg (PAtom (AKind Nat (IInt 999)))
+
+PNeg (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PImpl (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat))) (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PAtom (APred2 Equal (IExist Nat) (IUniv (ModKind Nat Odd)))
+
+PNeg (PNegAtom (AKind Nat (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred2 Equal (IUniv Nat) (IExist Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PAtom (AKind Nat (IExist Nat))
+
+PNeg (PAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PNegAtom (APred1 Even (IInt 999)))
+
+PConj COr (PAtom (APred2 Equal (IInt 999) (IUniv Nat))) (PNegAtom (APred1 Even (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (APred1 Even (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind Nat Odd) Even) (PAtom (AKind Nat (IExist Nat)))
+
+PNeg (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PExist (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PNegAtom (APred2 Equal (IExist (ModKind Nat Even)) (IInt 999))
+
+PConj CAnd (PAtom (AKind Nat (IExist Nat))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PNegAtom (APredRefl Equal (IVar (VString "Foo")))
+
+PAtom (APredRefl Equal (IUniv (ModKind Nat Odd)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PNegAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PNeg (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APred1 Even (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) (PartPred Equal (IUniv Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PNegAtom (AKind Nat (IFun1 Square (IUniv Nat)))
+
+PNeg (PNegAtom (APred2 Equal (IInt 999) (IUniv Nat)))
+
+PConj CAnd (PNegAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PAtom (APred1 (PartPred Equal (IExist Nat)) (IFun2 Sum (IInt 999) (IInt 999)))
+
+PAtom (APred2 Equal (IFun1 Square (IInt 999)) (IFun1 Square (IInt 999)))
+
+PConj CAnd (PNegAtom (APred1 Odd (IExist Nat))) (PAtom (APred1 Odd (IInt 999)))
+
+PAtom (APred2 Equal (IExist (ModKind Nat Even)) (IFun1 Square (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Odd (IExist Nat)))
+
+PNeg (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IUniv Nat) (IInt 999)))
+
+PImpl (PNegAtom (AKind (ModKind Nat Odd) (IInt 999))) (PNegAtom (APred1 Odd (IExist Nat)))
+
+PConj COr (PNegAtom (APredRefl Equal (IInt 999))) (PAtom (AKind Nat (IUniv Nat)))
+
+PImpl (PNegAtom (APredRefl Equal (IExist Nat))) (PAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PAtom (AKind (ModKind (ModKind Nat Odd) Odd) (IFun2 Sum (IUniv Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IInt 999)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Odd) (ConjPred1 CAnd (BasePred1 Even Odd))) (PNegAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PConj CAnd (PAtom (APredRefl Equal (IInt 999))) (PNegAtom (APred1 Odd (IExist Nat)))
+
+PImpl (PAtom (AKind (ModKind Nat Odd) (IExist Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Odd) (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IExist Nat)))
+
+PAtom (AKind Nat (IVar (VString "Foo")))
+
+PExists (BaseVar (VString "Foo")) (ModKind (ModKind (ModKind Nat Odd) Even) Even) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IInt 999) (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IInt 999)))
+
+PConj CAnd (PAtom (APred1 Odd (IExist Nat))) (PAtom (APred1 Even (IUniv Nat)))
+
+PAtom (AKind (ModKind Nat Even) (IVar (VString "Foo")))
+
+PImpl (PNegAtom (AKind Nat (IUniv Nat))) (PAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNeg (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PConj CAnd (PAtom (APred2 Equal (IExist Nat) (IExist Nat))) (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Even) (PAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNeg (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (AKind (ModKind Nat Odd) (IInt 999)))
+
+PConj COr (PNegAtom (APred1 Odd (IInt 999))) (PAtom (AKind (ModKind Nat Even) (IInt 999)))
+
+PNegAtom (APredRefl Equal (IFun1 Square (IExist Nat)))
+
+PNegAtom (AKind Nat (IUniv Nat))
+
+PExist (VString "Foo") (PNegAtom (APred1 Even (IUniv Nat)))
+
+PExist (VString "Foo") (PAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PAtom (APred1 Even (IExist Nat)))
+
+PExist (VString "Foo") (PAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) Nat (PAtom (APredRefl Equal (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IInt 999)))
+
+PNeg (PAtom (APred2 Equal (IUniv Nat) (IInt 999)))
+
+PImpl (PAtom (APred2 Equal (IUniv Nat) (IExist Nat))) (PNegAtom (AKind (ModKind Nat Even) (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (APredRefl Equal (IFun2 Sum (IUniv Nat) (IInt 999)))
+
+PNegAtom (APredColl Equal (BaseInd (IExist Nat) (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (AKind (ModKind Nat Even) (IExist Nat)))
+
+PNeg (PAtom (APred1 Even (IExist Nat)))
+
+PConj CAnd (PNegAtom (APred2 Equal (IInt 999) (IExist Nat))) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUniv (VString "Foo") (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (APredRefl Equal (IInt 999))
+
+PAtom (APredColl Equal (BaseInd (IExist Nat) (IExist Nat)))
+
+PConj COr (PNegAtom (AKind (ModKind Nat Even) (IExist Nat))) (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PExists (BaseVar (VString "Foo")) Nat (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) (PartPred Equal (IUniv Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PExist (VString "Foo") (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PNeg (PNegAtom (APred2 Equal (IExist Nat) (IExist Nat)))
+
+PNegAtom (APredRefl Equal (IUniv (ModKind Nat Even)))
+
+PImpl (PAtom (APredRefl Equal (IExist Nat))) (PNegAtom (APred1 Even (IInt 999)))
+
+PAtom (APred2 Equal (IExist (ModKind Nat Odd)) (IFun2 Product (IInt 999) (IExist Nat)))
+
+PNeg (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IInt 999))) (PAtom (APredRefl Equal (IUniv Nat)))
+
+PAtom (APredRefl Equal (IExist Nat))
+
+PExists (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PAtom (APredRefl Equal (IInt 999)))
+
+PNeg (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred2 Equal (IExist Nat) (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (AKind Nat (IUniv Nat)))
+
+PUniv (VString "Foo") (PAtom (APred1 Even (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat Even) (PNegAtom (APredRefl Equal (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) Nat (PNegAtom (AKind Nat (IUniv Nat)))
+
+PNegAtom (APredColl Equal (BaseInd (IUniv Nat) (IInt 999)))
+
+PImpl (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PAtom (APred2 Equal (IUniv Nat) (IUniv Nat)))
+
+PNeg (PAtom (APred1 Odd (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (APredRefl Equal (IUniv Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat Even) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PConj COr (PAtom (AKind Nat (IExist Nat))) (PNegAtom (AKind Nat (IUniv Nat)))
+
+PConj CAnd (PAtom (APred1 Odd (IUniv Nat))) (PAtom (APred2 Equal (IInt 999) (IInt 999)))
+
+PConj CAnd (PNegAtom (APred1 Odd (IExist Nat))) (PAtom (APred2 Equal (IExist Nat) (IInt 999)))
+
+PNeg (PAtom (APred2 Equal (IInt 999) (IExist Nat)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind Nat (PartPred Equal (IExist Nat))) (PAtom (APred1 Even (IInt 999)))
+
+PConj CAnd (PAtom (APredRefl Equal (IUniv Nat))) (PNegAtom (APredRefl Equal (IExist Nat)))
+
+PUnivs (BaseVar (VString "Foo")) (ModKind Nat (ConjPred1 CAnd (BasePred1 Even Even))) (PNegAtom (AKind Nat (IExist Nat)))
+
+PImpl (PNegAtom (APred2 Equal (IUniv Nat) (IUniv Nat))) (PAtom (APredRefl Equal (IExist Nat)))
+
+PImpl (PAtom (APredRefl Equal (IInt 999))) (PAtom (APredRefl Equal (IInt 999)))
+
+PUnivs (ConsVar (VString "Foo") (BaseVar (VString "Foo"))) (ModKind (ModKind (ModKind Nat Odd) Even) (PartPred Equal (IUniv Nat))) (PAtom (AKind Nat (IUniv Nat)))
+
+PNeg (PAtom (APredRefl Equal (IUniv Nat)))
+
+PUniv (VString "Foo") (PNegAtom (AKind Nat (IUniv Nat)))

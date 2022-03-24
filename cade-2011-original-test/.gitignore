@@ -1,0 +1,15 @@
+#files and file types
+*.gfo
+Prop.pgf
+*.xlsx
+translationcorpus-1.0.1.csv
+*.JPG
+*.png
+*.jpg
+exp1/Legend.JPG
+
+#folders
+.stack-work/*
+cade-2011-original/*
+cade-2011-original-test/*
+.spyproject/*

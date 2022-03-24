@@ -1,0 +1,26 @@
+,Condition,Formula,Translation
+0,GGC,"∀ y ∃ x ( Dodec ( y ) → ( Cube ( x ) ∧ SameSize ( y , x ) ) )","for all y , there is an element x such that if y is a dodecahedron , then x is a cube and y is of the same size as x"
+1,GGC,( ¬ Cube ( a ) ∨ ¬ Cube ( c ) ∨ ¬ Cube ( e ) ) → ( Cube ( a ) ∨ Cube ( c ) ∨ Cube ( e ) ),"if a is not a cube , c is not a cube or e is not a cube , then a is a cube , c is a cube or e is a cube"
+2,GGC,"¬ ∃ x ∃ y ∃ z ( BackOf ( x , y ) ∧ Cube ( y ) ∧ FrontOf ( x , z ) ∧ Cube ( z ) ∧ Large ( x ) )","it is not the case that there is an element x such that there is an element y such that there is an element z such that x is in back of y , y is a cube , x is in front of z , z is a cube and x is large"
+3,GGC,"∀ x ∀ y ( RightOf ( y , x ) → ¬ Cube ( y ) )","for all x , for all y , if y is to the right of x , then y is not a cube"
+4,GGC,∃ x ∃ y ( Cube ( x ) ∧ Tet ( y ) ∧ ∀ z ( Tet ( z ) ∨ Cube ( z ) ) ),"there is an element x such that there is an element y such that x is a cube , y is a tetrahedron and for all z , z is a tetrahedron or z is a cube"
+5,GGC,"∀ x ( ∃ y ∃ z ( Cube ( y ) ∧ Cube ( z ) ∧ FrontOf ( x , y ) ∧ FrontOf ( z , x ) ) → ¬ Large ( x ) )","for all x , if there is an element y such that there is an element z such that y is a cube , z is a cube , x is in front of y and z is in front of x , then x is not large"
+6,GGC,"LeftOf ( a , f ) ∧ LeftOf ( f , b )",a is to the left of f and f is to the left of b
+7,GGC,Medium ( c ) → ( ¬ Cube ( d ) ∧ ¬ ( Cube ( e ) ∨ Cube ( f ) ) ),"if c is medium , then d is not a cube and it is not the case that e is a cube or f is a cube"
+8,GGC,"∃ z ( RightOf ( b , z ) ∧ Cube ( z ) ∧ Large ( z ) )","there is an element z such that b is to the right of z , z is a cube and z is large"
+9,GGC,"∀ x ∀ y ( BackOf ( y , x ) → ( SameSize ( y , x ) ∨ Larger ( y , x ) ) )","for all x , for all y , if y is in back of x , then y is of the same size as x or larger than x"
+10,RG,∃ x ( Large ( x ) → Small ( x ) ) ∨ ∃ y ( Tet ( y ) ∧ Tet ( y ) ),"there is an element x such that if x is large , then x is small or some tetrahedron is a tetrahedron"
+11,RG,"∃ x ( FrontOf ( x , a ) ∨ Small ( a ) ) → ¬ Prime ( a )","if there is an element x such that x is in front of a or a is small , then a is not a prime"
+12,RG,¬ ( ∀ x Student ( a ) ∧ ¬ Small ( b ) ),"it is not the case that for all x , a is a student and b is not small"
+13,RG,"∃ x ( LeftOf ( x , a ) ∧ SameShape ( b , x ) ) ∨ ∃ x ¬ Smaller ( x , x )",there is an element x such that x is to the left of a and b is of the same shape as x or there is an element x such that x is not smaller than x
+14,RG,"∀ x ( ¬ Larger ( x , x ) → ( Student ( a ) ∨ Cube ( a ) ) )","for all x , if x is not larger than x , then a is a student or a is a cube"
+15,RG,"¬ LeftOf ( a , a ) ∧ ( ∃ x Cube ( x ) → ∀ x Smaller ( x , b ) )","all these hold : \n\t• a is not to the left of a \n\t• if there is an element x such that x is a cube , then for all x , x is smaller than b"
+16,RG,"¬ ( Even ( a ) → Medium ( b ) ) ∨ ( ∀ x Even ( x ) ∧ ( SameSize ( a , a ) ∨ Cube ( c ) ) )","it is not the case that if a is even , then b is medium or all these hold : \n\t• for all x , x is even \n\t• a is of the same size as itself or c is a cube"
+17,RG,"¬ ¬ BackOf ( a , a )",it is not the case that a is not in back of a
+18,RG,∀ x ∀ y Dodec ( y ) ∨ ( ¬ Large ( a ) → ∀ y Large ( y ) ),"at least one of these holds : \n\t• for all x , for all y , y is a dodecahedron \n\t• if a is not large , then for all y , y is large"
+19,RG,"( ∃ x SameRow ( a , x ) ∧ ( Student ( a ) ∧ Even ( a ) ) ) → Prime ( a )","if there is an element x such that a is in the same row as x , a is a student and a is even , then a is a prime"
+20,Filler,"¬ ∃ x ( SameShape ( a , b ) → SameRow ( c , c ) )",it is not the case that there is an element x such that a is in the same shape as b and c is in the same row as itself
+21,Filler,∀ x ( Tet ( x ) ∨ Prime ( a ) ) ∨ ∃ x ( Person ( x ) → Student ( a ) ),"for all x , x is a tetrahedron or a is a prime or there is an element x such that a is a student"
+22,Filler,"∃ x ∀ y Larger ( x , a ) ∧ ∀ y ¬ Pet ( b )","there is an element x such that for all y , x is larger than a and there is an element x such that for all y , b is not a pet"
+23,Filler,"∃ x ( ( ( SameShape ( x , a ) ∧ Tet ( x ) ) → Adjoins ( x , a ) )","for all x , if x is of the same shape as a, then x is adjacent to a"
+24,Filler,"∃ x Cube ( x ) ( Person ( a ) → Adjoins ( x , a ) )",there is a cube such that a is a person or x is adjacent to a

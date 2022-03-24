@@ -1,0 +1,26 @@
+,Unnamed: 0,Condition,Formula,Translation,Correct?,Clear?,Fluent?,Post-Edit
+0,0,GGC,"∀ u ( Cube ( u ) → ( FrontOf ( u , e ) ∨ FrontOf ( e , u ) ) )","for all cubes u , u is in front of e or e is in front of u",Yes,5,4,every cube is in front of e or e is in front of u
+1,1,GGC,"¬ ∃ x ∃ z ( LeftOf ( x , a ) ∧ Smaller ( x , z ) ∧ LeftOf ( z , b ) )","it is not the case that there is an element x such that there is an element z such that x is to the left of a , x is smaller than z and z is to the left of b",Yes,4,1,Nothing is to the left of a and smaller than something else that is the left of b
+2,2,GGC,"¬ Tet ( a ) ∨ ( FrontOf ( a , b ) ∧ Tet ( a ) )",at least one of these holds : \n\t• a is not a tetrahedron \n\t• a is in front of b and a is a tetrahedron,Yes,5,4,
+3,3,GGC,"∀ x ∃ y ( Cube ( x ) → ( RightOf ( y , x ) ∧ Tet ( y ) ∧ SameSize ( y , x ) ) )","for all x , there is an element y such that if x is a cube , then y is to the right of x , y is a tetrahedron and y is of the same size as x",Yes,3,1,"If something is a cube, then to the right of the cube there is a tetrahedron of the same size."
+4,4,GGC,"∀ x ∀ y ( Cube ( y ) → ( Cube ( x ) → SameCol ( x , y ) ) )","for all x , for all cubes y , if x is a cube , then x is in the same column as y",Yes,4,2,"If y is a cube, then if x is a cube, then both cubes are in the same column"
+5,5,GGC,"∀ x ∃ y ( ( Cube ( x ) ∧ ( Tet ( y ) → FrontOf ( x , y ) ) ) → Large ( x ) )","for all x , there is an element y such that if all these hold : \n\t• x is a cube \n\t• if y is a tetrahedron , then x is in front of y , then x is large",No,3,1,"if there is some tetrahedron in front of a cube, then the cube is large "
+6,6,GGC,"∀ x ( Tet ( x ) → ∀ z ( Dodec ( z ) → FrontOf ( x , z ) ) )",every tetrahedron is in front of every dodecahedron,Yes,5,5,
+7,7,GGC,"∀ x ¬ ( Tet ( x ) ∧ ∃ z ( Cube ( z ) ∧ SameSize ( x , z ) ) )","for all x , it is not the case that x is a tetrahedron and x is of the same size as some cube",Yes,4,2,Something is not a tetrahedron if it has the same size as a cube
+8,8,GGC,∀ y ( Cube ( y ) → Small ( y ) ),every cube is small,Yes,5,5,
+9,9,GGC,"Larger ( a , c ) ∧ Larger ( c , e )",a is larger than c and c is larger than e,Yes,5,5,
+10,10,RG,"¬ ∃ x ∃ x RightOf ( x , x )",it is not the case that there is an element x such that there is an element x such that x is to the right of itself,No,1,1,There is no element for which it is the case that it is next to some element
+11,11,RG,"∃ x ( ¬ SameShape ( a , a ) → LeftOf ( x , b ) )","there is an element x such that if a is not of the same shape as a , then x is to the left of b",Yes,4,2,"For some element it is that case that if a has not the same shape as itself, then the element is to the left of b"
+12,12,RG,¬ ( ( Dodec ( a ) → Medium ( a ) ) ∧ Medium ( b ) ),"it is not the case that all these hold : \n\t• if a is a dodecahedron , then a is medium \n\t• b is medium",Yes,5,5,
+13,13,RG,"∃ x ( ( Small ( x ) ∨ LeftOf ( a , x ) ) ∨ Person ( a ) )","there is an element x such that x is small , a is to the left of x or a is a person",Yes,3,3,"something is small, or to the left of a, or a is a person"
+14,14,RG,"∀ x ( Pet ( a ) → Medium ( x ) ) → ¬ LeftOf ( a , a )","if for all x , if a is a pet , then x is medium , then a is not to the left of a",Yes,4,2,"if it is the case that, if a is a pet then all x are medium, then a is not to the left of a"
+15,15,RG,¬ ( ( Person ( a ) ∧ Even ( b ) ) → ¬ Medium ( b ) ),"it is not the case that if a is a person and b is even , then b is not medium",Yes,5,4,
+16,16,RG,"( ¬ Large ( a ) ∧ ¬ Cube ( a ) ) ∧ ¬ ( BackOf ( b , c ) ∧ Medium ( b ) )","a is not large , a is not a cube and it is not the case that b is in back of c and medium",Yes,5,4,
+17,17,RG,"∀ x ( Large ( a ) → ¬ SameShape ( b , x ) )","for all x , if a is large , then b is not of the same shape as x",Yes,5,4,"If a is large, then b is not of the same shape as any element x"
+18,18,RG,"∀ x SameSize ( x , a )","for all x , x is of the same size as a",Yes,5,3,
+19,19,RG,"( Dodec ( a ) ∧ ( Person ( a ) ∨ Dodec ( a ) ) ) ∨ ∀ x ( Prime ( a ) → LeftOf ( x , b ) )","all these hold : \n\t• a is a dodecahedron \n\t• a is a person or a is a dodecahedron or for all x , if a is a prime , then x is to the left of b",Yes,5,4,
+20,20,Filler,"¬ ∃ x ( SameShape ( a , b ) → SameRow ( c , c ) )",it is not the case that there is an element x such that a is in the same shape as b and c is in the same row as itself,Yes,3,2,
+21,21,Filler,∀ x ( Tet ( x ) ∨ Prime ( a ) ) ∨ ∃ x ( Person ( x ) → Student ( a ) ),"for all x , x is a tetrahedron or a is a prime or there is an element x such that a is a student",Yes,1,1,
+22,22,Filler,"∃ x ∀ y Larger ( x , a ) ∧ ∀ y ¬ Pet ( b )","there is an element x such that for all y , x is larger than a and there is an element x such that for all y , b is not a pet",Yes,2,1,something is larger than a and b is not a pet
+23,23,Filler,"∃ x ( ( ( SameShape ( x , a ) ∧ Tet ( x ) ) → Adjoins ( x , a ) )","for all x , if x is of the same shape as a, then x is adjacent to a",No,4,3,"For something it is the case that if it is of the same shape as a and a Tet, then it is adjacent to a"
+24,24,Filler,"∃ x Cube ( x ) ( Person ( a ) → Adjoins ( x , a ) )",there is a cube such that a is a person or x is adjacent to a,No,1,2,There is a cube that is adjacent to a if a is a person

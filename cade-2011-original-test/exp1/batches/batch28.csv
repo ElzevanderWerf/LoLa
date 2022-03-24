@@ -1,0 +1,26 @@
+,Condition,Formula,Translation
+0,GGC,∃ x ( Prime ( x ) ∧ ¬ Even ( x ) ),there is a prime x such that x is not even
+1,GGC,"¬ ∃ y ( Tet ( y ) ∧ ∃ z ( Cube ( z ) ∧ SameSize ( z , y ) ) )",it is not the case that some cube is of the same size as some tetrahedron
+2,GGC,"∀ x ( Dodec ( x ) → ( ∃ y RightOf ( y , x ) ∨ Small ( x ) ) )","for all dodecahedrons x , there is an element y such that y is to the right of x or x is small"
+3,GGC,"∀ y ( Cube ( y ) → ∀ x ( Tet ( x ) → LeftOf ( y , x ) ) )",every cube is to the left of every tetrahedron
+4,GGC,"∀ y ( Cube ( y ) → ( BackOf ( y , e ) ∨ FrontOf ( y , e ) ) )",every cube is in back of e or in front of e
+5,GGC,"Smaller ( a , b ) ∧ Smaller ( e , b ) ∧ Larger ( b , a ) ∧ Larger ( b , e )","a is smaller than b , e is smaller than b , b is larger than a and b is larger than e"
+6,GGC,"∃ x ( Cube ( x ) ∧ ∀ w ( Tet ( w ) → FrontOf ( x , w ) ) )",some cube is in front of every tetrahedron
+7,GGC,"Cube ( d ) ∧ SameShape ( d , c ) ∧ ¬ ( Small ( d ) ∨ Small ( c ) )","d is a cube , d is of the same shape as c and it is not the case that d or c is small"
+8,GGC,"∀ u ( Dodec ( u ) → ∃ w ( Cube ( w ) ∧ SameSize ( u , w ) ) )",every dodecahedron is of the same size as some cube
+9,GGC,( Large ( f ) ∧ ( Cube ( f ) ∨ Dodec ( f ) ) ) ∨ ¬ Large ( f ),all these hold : \n\t• f is large \n\t• f is a cube or f is a dodecahedron or f is not large
+10,RG,"∀ x ( ¬ RightOf ( x , a ) ∧ ( Even ( x ) ∧ Smaller ( a , x ) ) )","for all x , x is not to the right of a , x is even and a is smaller than x"
+11,RG,"∃ x ( ( BackOf ( x , a ) ∨ SameSize ( x , x ) ) ∨ ∃ y Dodec ( b ) )","there is an element x such that x is in back of a , x is of the same size as itself or there is an element y such that b is a dodecahedron"
+12,RG,"( ( Medium ( a ) ∨ Prime ( b ) ) ∧ ∃ x Large ( a ) ) ∧ ¬ ( Small ( b ) ∨ BackOf ( b , c ) )","all these hold : \n\t• a is medium or b is a prime , there is an element x such that a is large \n\t• it is not the case that b is small or in back of c"
+13,RG,¬ ∀ x Large ( x ) → Even ( a ),"if it is not the case that for all x , x is large , then a is even"
+14,RG,"∃ x ∃ y ¬ Smaller ( a , x )",there is an element x such that there is an element y such that a is not smaller than x
+15,RG,"∀ x ∀ y Pet ( y ) → ∃ z ( SameRow ( z , a ) ∨ Smaller ( z , a ) )","if for all x , for all y , y is a pet , then there is an element z such that z is in the same row as a or smaller than a"
+16,RG,¬ Dodec ( a ) ∨ ∃ x ( Tet ( b ) ∨ Tet ( x ) ),a is not a dodecahedron or there is an element x such that b is a tetrahedron or x is a tetrahedron
+17,RG,"Small ( a ) → ∃ x ( Even ( b ) ∨ SameSize ( b , x ) )","if a is small , then there is an element x such that b is even or of the same size as x"
+18,RG,∀ x ¬ ∀ y Prime ( a ),"for all x , it is not the case that for all y , a is a prime"
+19,RG,"Adjoins ( a , a ) ∨ ∀ x ∀ x Dodec ( x )","a is adjacent to itself or for all x , for all x , x is a dodecahedron"
+20,Filler,"¬ ∃ x ( SameShape ( a , b ) → SameRow ( c , c ) )",it is not the case that there is an element x such that a is in the same shape as b and c is in the same row as itself
+21,Filler,∀ x ( Tet ( x ) ∨ Prime ( a ) ) ∨ ∃ x ( Person ( x ) → Student ( a ) ),"for all x , x is a tetrahedron or a is a prime or there is an element x such that a is a student"
+22,Filler,"∃ x ∀ y Larger ( x , a ) ∧ ∀ y ¬ Pet ( b )","there is an element x such that for all y , x is larger than a and there is an element x such that for all y , b is not a pet"
+23,Filler,"∃ x ( ( ( SameShape ( x , a ) ∧ Tet ( x ) ) → Adjoins ( x , a ) )","for all x , if x is of the same shape as a, then x is adjacent to a"
+24,Filler,"∃ x Cube ( x ) ( Person ( a ) → Adjoins ( x , a ) )",there is a cube such that a is a person or x is adjacent to a

@@ -1,0 +1,26 @@
+,Condition,Formula,Translation
+0,GGC,"∃ x ¬ Adjoins ( x , a )",there is an element x such that x is not adjacent to a
+1,GGC,"¬ FrontOf ( b , d ) → ( Dodec ( b ) → ( ¬ BackOf ( b , d ) ∧ ¬ FrontOf ( b , d ) ) )","if b is not in front of d , then if b is a dodecahedron , then b is not in back of d and b is not in front of d"
+2,GGC,"∀ y ∃ x ( Dodec ( y ) → ( Cube ( x ) ∧ SameSize ( x , y ) ) )","for all y , there is an element x such that if y is a dodecahedron , then x is a cube and x is of the same size as y"
+3,GGC,"SameCol ( a , d ) ∧ SameRow ( d , e ) ∧ SameCol ( e , b )","a is in the same column as d , d is in the same row as e and e is in the same column as b"
+4,GGC,"∀ x ∃ y ( Cube ( x ) → ( RightOf ( y , x ) ∧ Tet ( y ) ∧ SameRow ( x , y ) ) )","for all x , there is an element y such that if x is a cube , then y is to the right of x , y is a tetrahedron and x is in the same row as y"
+5,GGC,"∀ x ( ¬ Adjoins ( a , x ) ∧ ¬ Adjoins ( a , b ) ∧ ¬ Adjoins ( a , c ) )","for all x , a is not adjacent to x , a is not adjacent to b and a is not adjacent to c"
+6,GGC,"∀ x ¬ ∃ y ( Cube ( x ) ∧ RightOf ( x , y ) )","for all x , it is not the case that there is an element y such that x is a cube and x is to the right of y"
+7,GGC,¬ ∀ y ¬ ( Dodec ( y ) ∧ Small ( y ) ),"it is not the case that for all y , it is not the case that y is a dodecahedron and y is small"
+8,GGC,"∀ z ( Cube ( z ) → ¬ ( SameCol ( z , a ) ∨ SameCol ( z , b ) ) )","for all cubes z , it is not the case that z is in the same column as a or in the same column as b"
+9,GGC,"¬ ∀ x ∀ z ( ( Tet ( x ) ∧ Tet ( z ) ) → SameCol ( x , z ) )","it is not the case that for all x , for all z , if x is a tetrahedron and z is a tetrahedron , then x is in the same column as z"
+10,RG,∃ x ( Student ( x ) ∧ ¬ Student ( a ) ),there is a student x such that a is not a student
+11,RG,"∃ x ∀ y Larger ( a , x ) ∨ ∃ x ∃ z Large ( x )","there is an element x such that for all y , a is larger than x or there is an element x such that there is an element z such that x is large"
+12,RG,"∀ x ¬ ( Smaller ( x , x ) ∨ Adjoins ( x , a ) )","for all x , it is not the case that x is smaller than itself or x is adjacent to a"
+13,RG,"∃ x ( Large ( x ) ∧ Prime ( a ) ) → ¬ ∀ x Smaller ( x , a )","if there is an element x such that x is large and a is a prime , then it is not the case that for all x , x is smaller than a"
+14,RG,¬ ∀ x Medium ( a ) ∨ ¬ ( Medium ( a ) → Person ( b ) ),"it is not the case that for all x , a is medium or it is not the case that if a is medium , then b is a person"
+15,RG,¬ ∀ x Pet ( x ) ∧ ( ( Student ( a ) → Pet ( a ) ) ∧ ( Prime ( b ) → Medium ( b ) ) ),"all these hold : \n\t• it is not the case that for all x , x is a pet , if a is a student , then a is a pet \n\t• if b is a prime , then b is medium"
+16,RG,"∀ x ¬ ( LeftOf ( x , a ) → SameShape ( x , x ) )","for all x , it is not the case that if x is to the left of a , then x is of the same shape as itself"
+17,RG,"∃ x FrontOf ( x , a )",there is an element x such that x is in front of a
+18,RG,"∀ x ∀ y LeftOf ( a , a ) → Tet ( b )","if for all x , for all y , a is to the left of itself , then b is a tetrahedron"
+19,RG,"( ¬ Person ( a ) → ( SameSize ( a , a ) → Cube ( b ) ) ) ∧ ∃ x ¬ BackOf ( x , x )","all these hold : \n\t• if a is not a person , then if a is of the same size as itself , then b is a cube \n\t• there is an element x such that x is not in back of x"
+20,Filler,"¬ ∃ x ( SameShape ( a , b ) → SameRow ( c , c ) )",it is not the case that there is an element x such that a is in the same shape as b and c is in the same row as itself
+21,Filler,∀ x ( Tet ( x ) ∨ Prime ( a ) ) ∨ ∃ x ( Person ( x ) → Student ( a ) ),"for all x , x is a tetrahedron or a is a prime or there is an element x such that a is a student"
+22,Filler,"∃ x ∀ y Larger ( x , a ) ∧ ∀ y ¬ Pet ( b )","there is an element x such that for all y , x is larger than a and there is an element x such that for all y , b is not a pet"
+23,Filler,"∃ x ( ( ( SameShape ( x , a ) ∧ Tet ( x ) ) → Adjoins ( x , a ) )","for all x , if x is of the same shape as a, then x is adjacent to a"
+24,Filler,"∃ x Cube ( x ) ( Person ( a ) → Adjoins ( x , a ) )",there is a cube such that a is a person or x is adjacent to a

@@ -1,0 +1,1001 @@
+,Latex formula,English translation 1,English translation 2,English translation 3,English translation 4,English translation 5,English translation 6,English translation 7,English translation 8,English translation 9,English translation 10
+0,\sim ( \even { ( \exists N ) } ),some number is not even,0,0,0,0,0,0,0,0,0
+1,"( \exists Foo , Foo \in N ) ( \sim ( \exists N ) \in N )",there is a number Foo and Foo such that some number is not a number,0,0,0,0,0,0,0,0,0
+2,( \forall Foo \in N ) ( \even { ( \exists N ) } ),"for all numbers Foo , some number is even",0,0,0,0,0,0,0,0,0
+3,\sim ( \sim ( \exists N ) \in N ),it is not the case that some number is not a number,0,0,0,0,0,0,0,0,0
+4,( \forall Foo ) ( \notequal { 999 } { ( \forall N ) } ),"for all Foo , 999 is not equal to every number",0,0,0,0,0,0,0,0,0
+5,( \notequal { 999 } { 999 } ) \& ( \sim ( \exists N ) \in N ),999 is not equal to 999 and some number is not a number,999 is not equal to itself and some number is not a number,0,0,0,0,0,0,0,0
+6,( \forall Foo \in \even \even N ) ( \sim ( \forall N ) \in \even N ),"for all even even numbers Foo , every number is not an even number",0,0,0,0,0,0,0,0,0
+7,\sim ( ( \exists N ) \in \even N ),some number is not an even number,0,0,0,0,0,0,0,0,0
+8,"\& [ \odd , \even ] { 999 }",999 is not odd and even,999 is odd and even,0,0,0,0,0,0,0,0
+9,\sim \odd { ( \exists N ) },some number is not odd,0,0,0,0,0,0,0,0,0
+10,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+11,( \odd { 999 } ) \vee ( ( \exists N ) \in \odd N ),999 is odd or some number is an odd number,0,0,0,0,0,0,0,0,0
+12,( \exists Foo \in N ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is a number Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+13,( \forall N ) \in \odd \odd N,every number is an odd odd number,0,0,0,0,0,0,0,0,0
+14,\notequal { ( \exists \odd N ) } { ( \exists \odd N ) },some odd number is not equal to itself,0,0,0,0,0,0,0,0,0
+15,"( \exists Foo , Foo \in \even \even N ) ( \notequal { ( \forall N ) } { ( \forall N ) } )",there is an even even number Foo and Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+16,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \sim ( \exists N ) \in \odd N,"if every number is equal to itself , then some number is not an odd number",0,0,0,0,0,0,0,0,0
+17,"( \forall Foo , Foo \in N ) ( ( \forall N ) \in \even N )","for all numbers Foo and Foo , every number is an even number",0,0,0,0,0,0,0,0,0
+18,( \exists Foo ) ( \even { ( \exists N ) } ),there is an element Foo such that some number is even,0,0,0,0,0,0,0,0,0
+19,( \equal { ( \forall N ) } { 999 } ) \supset \sim ( \forall N ) \in N,"if every number is equal to 999 , then every number is not a number",0,0,0,0,0,0,0,0,0
+20,\sim ( \sim \even { ( \exists N ) } ),it is not the case that some number is not even,0,0,0,0,0,0,0,0,0
+21,\sim ( \even { ( \forall N ) } ),every number is not even,0,0,0,0,0,0,0,0,0
+22,( \exists Foo \in \odd N ) ( \notequal { ( \exists N ) } { ( \forall N ) } ),there is an odd number Foo such that some number is not equal to every number,0,0,0,0,0,0,0,0,0
+23,( \exists Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is a number Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+24,\sim \even { ( \exists \even N ) },some even number is not even,0,0,0,0,0,0,0,0,0
+25,"( \exists Foo , Foo \in \& [ \even , \odd ] \odd N ) ( \notequal { ( \exists N ) } { ( \forall N ) } )",there is an even and odd odd number Foo and Foo such that some number is not equal to every number,0,0,0,0,0,0,0,0,0
+26,( \forall Foo \in N ) ( \even { ( \forall N ) } ),"for all numbers Foo , every number is even",0,0,0,0,0,0,0,0,0
+27,"\notequal { 999 , ( \forall N ) }",999 and every number are not equal,0,0,0,0,0,0,0,0,0
+28,( \forall Foo ) ( \notequal { 999 } { ( \forall N ) } ),"for all Foo , 999 is not equal to every number",0,0,0,0,0,0,0,0,0
+29,( \exists Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+30,\sim ( \sim ( \exists N ) \in N ),it is not the case that some number is not a number,0,0,0,0,0,0,0,0,0
+31,( \forall Foo ) ( \odd { ( \forall N ) } ),"for all Foo , every number is odd",0,0,0,0,0,0,0,0,0
+32,\sim ( \equal { ( \forall N ) } { ( \forall N ) } ),every number is not equal to itself,every number is not equal to every number,0,0,0,0,0,0,0,0
+33,( \notequal { ( \exists N ) } { 999 } ) \supset \sim ( \forall N ) \in N,"if some number is not equal to 999 , then every number is not a number",0,0,0,0,0,0,0,0,0
+34,"( \forall Foo , Foo \in \& [ \even , \odd ] \even \odd N ) ( \notequal { ( \forall N ) } { 999 } )","for all even and odd even odd numbers Foo and Foo , every number is not equal to 999",0,0,0,0,0,0,0,0,0
+35,( \exists Foo ) ( \odd { 999 } ),there is an element Foo such that 999 is odd,0,0,0,0,0,0,0,0,0
+36,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+37,\even { \square { 999 } },the square of 999 is even,0,0,0,0,0,0,0,0,0
+38,Foo \in \odd \odd N,Foo is an odd odd number,0,0,0,0,0,0,0,0,0
+39,\notequal { Foo } { Foo },Foo is not equal to itself,0,0,0,0,0,0,0,0,0
+40,"( \exists Foo , Foo \in \even \odd N ) ( 999 \in \odd N )",there is an even odd number Foo and Foo such that 999 is an odd number,0,0,0,0,0,0,0,0,0
+41,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+42,\sim ( \equal { 999 } { ( \forall N ) } ),999 is not equal to every number,0,0,0,0,0,0,0,0,0
+43,( \exists Foo ) ( \notequal { 999 } { ( \exists N ) } ),there is an element Foo such that 999 is not equal to some number,0,0,0,0,0,0,0,0,0
+44,\sim ( \sim \odd { ( \forall N ) } ),it is not the case that every number is not odd,0,0,0,0,0,0,0,0,0
+45,( \forall Foo ) ( \notequal { 999 } { ( \exists N ) } ),"for all Foo , 999 is not equal to some number",0,0,0,0,0,0,0,0,0
+46,\notequal { 999 } { 999 },999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+47,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+48,( \exists Foo ) ( \notequal { ( \forall N ) } { ( \exists N ) } ),there is an element Foo such that every number is not equal to some number,0,0,0,0,0,0,0,0,0
+49,( \forall Foo \in \even N ) ( \odd { ( \forall N ) } ),"for all even numbers Foo , every number is odd",0,0,0,0,0,0,0,0,0
+50,( \sim \odd { 999 } ) \supset \notequal { 999 } { 999 },"if 999 is not odd , then 999 is not equal to 999","if 999 is not odd , then 999 is not equal to itself",0,0,0,0,0,0,0,0
+51,( ( \forall N ) \in N ) \supset ( \exists N ) \in \even N,"if every number is a number , then some number is an even number",0,0,0,0,0,0,0,0,0
+52,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+53,( \forall Foo ) ( \notequal { ( \forall N ) } { 999 } ),"for all Foo , every number is not equal to 999",0,0,0,0,0,0,0,0,0
+54,"( \exists Foo \in \& [ \odd , \odd ] \even \odd N ) ( \equal { ( \forall N ) } { ( \forall N ) } )",there is an odd and odd even odd number Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+55,\sim \odd { ( \forall \odd N ) },every odd number is not odd,0,0,0,0,0,0,0,0,0
+56,"( \exists Foo , Foo \in \equal to 999 N ) ( \equal { ( \exists N ) } { 999 } )",there is a number equal to 999 Foo and Foo such that some number is equal to 999,0,0,0,0,0,0,0,0,0
+57,Foo \in N,Foo is a number,0,0,0,0,0,0,0,0,0
+58,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \sim ( \forall N ) \in N,"if some number is equal to itself , then every number is not a number",0,0,0,0,0,0,0,0,0
+59,( \exists Foo ) ( \notequal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+60,( \exists Foo ) ( \equal { 999 } { 999 } ),there is an element Foo such that 999 is equal to itself,there is an element Foo such that 999 is equal to 999,0,0,0,0,0,0,0,0
+61,( \forall Foo ) ( \sim 999 \in N ),"for all Foo , 999 is not a number",0,0,0,0,0,0,0,0,0
+62,( \equal { 999 } { ( \exists N ) } ) \supset \odd { 999 },"if 999 is equal to some number , then 999 is odd",0,0,0,0,0,0,0,0,0
+63,( \forall Foo \in \equal to ( \exists N ) \odd \odd N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all odd odd numbers equal to some number Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+64,( \exists Foo ) ( \even { ( \forall N ) } ),there is an element Foo such that every number is even,0,0,0,0,0,0,0,0,0
+65,( \exists Foo \in N ) ( \sim 999 \in \odd N ),there is a number Foo such that 999 is not an odd number,0,0,0,0,0,0,0,0,0
+66,"( \forall Foo , Foo \in \even \even N ) ( \notequal { ( \forall N ) } { ( \forall N ) } )","for all even even numbers Foo and Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+67,( \forall Foo \in \even N ) ( ( \exists N ) \in N ),"for all even numbers Foo , some number is a number",0,0,0,0,0,0,0,0,0
+68,( \exists Foo ) ( \notequal { 999 } { 999 } ),there is an element Foo such that 999 is not equal to itself,there is an element Foo such that 999 is not equal to 999,0,0,0,0,0,0,0,0
+69,"( \exists Foo \in \& [ \odd , \even ] N ) ( \equal { ( \exists N ) } { ( \exists N ) } )",there is an odd and even number Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+70,\equal { \square { ( \forall N ) } } { \square { 999 } },the square of every number is equal to the square of 999,0,0,0,0,0,0,0,0,0
+71,( ( \forall N ) \in N ) \vee ( \notequal { ( \exists N ) } { 999 } ),every number is a number or some number is not equal to 999,0,0,0,0,0,0,0,0,0
+72,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+73,( \forall Foo \in \odd N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all odd numbers Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+74,( \forall Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+75,"( \exists Foo , Foo \in \odd \even N ) ( \notequal { 999 } { ( \forall N ) } )",there is an odd even number Foo and Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+76,( \sim 999 \in N ) \supset \equal { ( \exists N ) } { 999 },"if 999 is not a number , then some number is equal to 999",0,0,0,0,0,0,0,0,0
+77,( \exists Foo \in \odd N ) ( ( \exists N ) \in N ),there is an odd number Foo such that some number is a number,0,0,0,0,0,0,0,0,0
+78,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+79,\notequal { ( \exists N ) } { ( \exists N ) },some number is not equal to itself,0,0,0,0,0,0,0,0,0
+80,( \forall Foo ) ( \sim \even { ( \exists N ) } ),"for all Foo , some number is not even",0,0,0,0,0,0,0,0,0
+81,\equal { \square { ( \forall N ) } } { Foo },the square of every number is equal to Foo,0,0,0,0,0,0,0,0,0
+82,( \exists Foo \in \equal to ( \forall N ) \even N ) ( \sim 999 \in N ),there is an even number equal to every number Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+83,\odd { ( \exists \odd N ) },some odd number is odd,0,0,0,0,0,0,0,0,0
+84,( \forall Foo \in \odd \even \odd N ) ( \notequal { ( \exists N ) } { 999 } ),"for all odd even odd numbers Foo , some number is not equal to 999",0,0,0,0,0,0,0,0,0
+85,"\equal { ( \forall N ) , ( \forall N ) }",every number and every number are equal,0,0,0,0,0,0,0,0,0
+86,( \exists Foo ) ( ( \forall N ) \in N ),there is an element Foo such that every number is a number,0,0,0,0,0,0,0,0,0
+87,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \sim ( \forall N ) \in N,"if some number is equal to itself , then every number is not a number",0,0,0,0,0,0,0,0,0
+88,"( \exists Foo , Foo \in N ) ( \sim \odd { 999 } )",there is a number Foo and Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+89,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+90,\sim \even { 999 },999 is not even,0,0,0,0,0,0,0,0,0
+91,( \exists Foo ) ( \equal { ( \forall N ) } { 999 } ),there is an element Foo such that every number is equal to 999,0,0,0,0,0,0,0,0,0
+92,( ( \exists N ) \in N ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),some number is a number and some number is not equal to itself,0,0,0,0,0,0,0,0,0
+93,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+94,( \forall Foo \in \even N ) ( \notequal { 999 } { 999 } ),"for all even numbers Foo , 999 is not equal to 999","for all even numbers Foo , 999 is not equal to itself",0,0,0,0,0,0,0,0
+95,( \forall Foo ) ( \sim ( \forall N ) \in \odd N ),"for all Foo , every number is not an odd number",0,0,0,0,0,0,0,0,0
+96,( \sim 999 \in \even N ) \vee ( \notequal { ( \forall N ) } { ( \forall N ) } ),999 is not an even number or every number is not equal to itself,0,0,0,0,0,0,0,0,0
+97,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+98,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \notequal { ( \exists N ) } { ( \exists N ) },"if some number is equal to itself , then some number is not equal to itself",0,0,0,0,0,0,0,0,0
+99,\sim ( \equal { ( \forall N ) } { 999 } ),every number is not equal to 999,0,0,0,0,0,0,0,0,0
+100,( \sim \even { ( \forall N ) } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if every number is not even , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+101,( \forall Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+102,( \forall Foo ) ( \sim \odd { ( \forall N ) } ),"for all Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+103,( \forall \odd N ) \in \even N,every odd number is an even number,0,0,0,0,0,0,0,0,0
+104,( \forall Foo ) ( \even { ( \forall N ) } ),"for all Foo , every number is even",0,0,0,0,0,0,0,0,0
+105,( \notequal { 999 } { 999 } ) \supset \notequal { 999 } { ( \forall N ) },"if 999 is not equal to 999 , then 999 is not equal to every number","if 999 is not equal to itself , then 999 is not equal to every number",0,0,0,0,0,0,0,0
+106,\sim ( ( \forall N ) \in N ),every number is not a number,0,0,0,0,0,0,0,0,0
+107,"( \forall Foo , Foo \in N ) ( \sim \odd { ( \exists N ) } )","for all numbers Foo and Foo , some number is not odd",0,0,0,0,0,0,0,0,0
+108,( \exists Foo ) ( \sim 999 \in N ),there is an element Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+109,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+110,( \exists Foo ) ( \odd { 999 } ),there is an element Foo such that 999 is odd,0,0,0,0,0,0,0,0,0
+111,( \equal { 999 } { 999 } ) \vee ( \equal { 999 } { 999 } ),999 is equal to 999 or 999 is equal to 999,999 is equal to 999 or 999 is equal to itself,999 is equal to itself or 999 is equal to itself,999 is equal to itself or 999 is equal to 999,999 is equal to 999 or equal to 999,0,0,0,0,0
+112,\sim ( \forall \even N ) \in \odd N,every even number is not an odd number,0,0,0,0,0,0,0,0,0
+113,"( \forall Foo , Foo \in \even \odd N ) ( \sim \even { 999 } )","for all even odd numbers Foo and Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+114,\notequal { 999 } { 999 },999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+115,( \notequal { ( \forall N ) } { ( \exists N ) } ) \supset \equal { 999 } { ( \exists N ) },"if every number is not equal to some number , then 999 is equal to some number",0,0,0,0,0,0,0,0,0
+116,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+117,( \exists Foo \in \equal to ( \exists N ) \even \even N ) ( \odd { 999 } ),there is an even even number equal to some number Foo such that 999 is odd,0,0,0,0,0,0,0,0,0
+118,"( \forall Foo , Foo \in \even \odd N ) ( \sim ( \forall N ) \in \even N )","for all even odd numbers Foo and Foo , every number is not an even number",0,0,0,0,0,0,0,0,0
+119,( \exists Foo ) ( \notequal { ( \forall N ) } { ( \exists N ) } ),there is an element Foo such that every number is not equal to some number,0,0,0,0,0,0,0,0,0
+120,\notequal { ( \exists N ) } { \sum { 999 } { 999 } },some number is not equal to the sum of 999 and 999,0,0,0,0,0,0,0,0,0
+121,( \forall Foo ) ( \even { 999 } ),"for all Foo , 999 is even",0,0,0,0,0,0,0,0,0
+122,\sim ( \forall \even N ) \in N,every even number is not a number,0,0,0,0,0,0,0,0,0
+123,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \even { ( \forall N ) },"if every number is equal to itself , then every number is even",0,0,0,0,0,0,0,0,0
+124,( \exists Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is a number Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+125,( \forall Foo \in N ) ( \odd { ( \forall N ) } ),"for all numbers Foo , every number is odd",0,0,0,0,0,0,0,0,0
+126,"( \forall Foo , Foo \in \vee [ \odd , \odd ] N ) ( \notequal { ( \exists N ) } { 999 } )","for all odd or odd numbers Foo and Foo , some number is not equal to 999",0,0,0,0,0,0,0,0,0
+127,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is equal to itself or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+128,( \exists Foo ) ( \sim ( \exists N ) \in N ),there is an element Foo such that some number is not a number,0,0,0,0,0,0,0,0,0
+129,\sim ( \sim \odd { 999 } ),it is not the case that 999 is not odd,0,0,0,0,0,0,0,0,0
+130,"( \exists Foo , Foo \in N ) ( \sim ( \forall N ) \in N )",there is a number Foo and Foo such that every number is not a number,0,0,0,0,0,0,0,0,0
+131,"\notequal { 999 , ( \exists N ) }",999 and some number are not equal,0,0,0,0,0,0,0,0,0
+132,"\equal { 999 , 999 }",999 and 999 are equal,0,0,0,0,0,0,0,0,0
+133,\sim \sum { ( \exists N ) } { ( \exists N ) } \in \odd N,the sum of some number and some number is not an odd number,0,0,0,0,0,0,0,0,0
+134,( \forall Foo ) ( \equal { ( \forall N ) } { ( \exists N ) } ),"for all Foo , every number is equal to some number",0,0,0,0,0,0,0,0,0
+135,"( \forall Foo , Foo \in N ) ( \sim \odd { 999 } )","for all numbers Foo and Foo , 999 is not odd",0,0,0,0,0,0,0,0,0
+136,( \forall Foo \in N ) ( ( \forall N ) \in \odd N ),"for all numbers Foo , every number is an odd number",0,0,0,0,0,0,0,0,0
+137,"( \forall Foo , Foo \in \odd N ) ( \notequal { ( \forall N ) } { ( \exists N ) } )","for all odd numbers Foo and Foo , every number is not equal to some number",0,0,0,0,0,0,0,0,0
+138,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+139,( \odd { ( \exists N ) } ) \supset \sim \even { 999 },"if some number is odd , then 999 is not even",0,0,0,0,0,0,0,0,0
+140,( \forall Foo \in N ) ( \equal { ( \forall N ) } { 999 } ),"for all numbers Foo , every number is equal to 999",0,0,0,0,0,0,0,0,0
+141,"( \forall Foo \in \vee [ \odd , \odd ] \odd N ) ( ( \forall N ) \in N )","for all odd or odd odd numbers Foo , every number is a number",0,0,0,0,0,0,0,0,0
+142,( \sim \odd { 999 } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if 999 is not odd , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+143,( \exists Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is a number Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+144,( \forall Foo \in \even \odd N ) ( \equal { ( \forall N ) } { 999 } ),"for all even odd numbers Foo , every number is equal to 999",0,0,0,0,0,0,0,0,0
+145,( \forall Foo \in \equal to 999 \even \even N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all even even numbers equal to 999 Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+146,( \even { 999 } ) \supset \sim \even { ( \forall N ) },"if 999 is even , then every number is not even",0,0,0,0,0,0,0,0,0
+147,\square { 999 } \in N,the square of 999 is a number,0,0,0,0,0,0,0,0,0
+148,( \odd { 999 } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is odd or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+149,( \notequal { 999 } { 999 } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if 999 is not equal to itself , then every number is not equal to itself","if 999 is not equal to 999 , then every number is not equal to itself",0,0,0,0,0,0,0,0
+150,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \sim ( \forall N ) \in N,"if some number is equal to itself , then every number is not a number",0,0,0,0,0,0,0,0,0
+151,999 \in N,999 is a number,0,0,0,0,0,0,0,0,0
+152,( \exists Foo \in \equal to ( \forall N ) \odd N ) ( \notequal { 999 } { 999 } ),there is an odd number equal to every number Foo such that 999 is not equal to 999,there is an odd number equal to every number Foo such that 999 is not equal to itself,0,0,0,0,0,0,0,0
+153,"\vee [ \odd , \even ] { \square { ( \exists N ) } }",the square of some number is not odd or even,the square of some number is odd or even,0,0,0,0,0,0,0,0
+154,( \even { ( \forall N ) } ) \vee ( \sim \even { ( \forall N ) } ),every number is even or every number is not even,0,0,0,0,0,0,0,0,0
+155,( \forall Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+156,( \sim ( \exists N ) \in N ) \supset \notequal { 999 } { ( \exists N ) },"if some number is not a number , then 999 is not equal to some number",0,0,0,0,0,0,0,0,0
+157,\sim \sum { 999 } { ( \forall N ) } \in \odd N,the sum of 999 and every number is not an odd number,0,0,0,0,0,0,0,0,0
+158,\equal { \product { ( \exists N ) } { ( \exists N ) } } { \product { ( \exists N ) } { ( \exists N ) } },the product of some number and some number is equal to itself,0,0,0,0,0,0,0,0,0
+159,( \exists Foo \in \equal to ( \exists N ) \odd N ) ( \odd { ( \forall N ) } ),there is an odd number equal to some number Foo such that every number is odd,0,0,0,0,0,0,0,0,0
+160,( ( \exists N ) \in N ) \supset 999 \in N,"if some number is a number , then 999 is a number",0,0,0,0,0,0,0,0,0
+161,999 \in N,999 is a number,0,0,0,0,0,0,0,0,0
+162,"( \forall Foo , Foo \in \odd N ) ( \equal { ( \exists N ) } { ( \exists N ) } )","for all odd numbers Foo and Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+163,( \equal { ( \forall N ) } { ( \forall N ) } ) \& ( \sim \odd { ( \exists N ) } ),every number is equal to itself and some number is not odd,0,0,0,0,0,0,0,0,0
+164,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \sim ( \exists N ) \in N,"if every number is equal to itself , then some number is not a number",0,0,0,0,0,0,0,0,0
+165,( \exists Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+166,\sim ( \forall \even N ) \in \odd \odd N,every even number is not an odd odd number,0,0,0,0,0,0,0,0,0
+167,( \sim \odd { 999 } ) \& ( \equal { ( \exists N ) } { ( \exists N ) } ),999 is not odd and some number is equal to itself,0,0,0,0,0,0,0,0,0
+168,( 999 \in N ) \supset ( \forall N ) \in N,"if 999 is a number , then every number is a number",0,0,0,0,0,0,0,0,0
+169,( \equal { ( \exists N ) } { ( \exists N ) } ) \& ( \odd { ( \forall N ) } ),some number is equal to itself and every number is odd,0,0,0,0,0,0,0,0,0
+170,( \notequal { 999 } { ( \exists N ) } ) \supset ( \forall N ) \in \odd N,"if 999 is not equal to some number , then every number is an odd number",0,0,0,0,0,0,0,0,0
+171,\sim ( \equal { 999 } { 999 } ),999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+172,"( \exists Foo , Foo \in N ) ( ( \exists N ) \in \even N )",there is a number Foo and Foo such that some number is an even number,0,0,0,0,0,0,0,0,0
+173,( \forall Foo ) ( \sim 999 \in \odd N ),"for all Foo , 999 is not an odd number",0,0,0,0,0,0,0,0,0
+174,( \sim 999 \in \odd N ) \supset ( \exists N ) \in N,"if 999 is not an odd number , then some number is a number",0,0,0,0,0,0,0,0,0
+175,\equal { \product { 999 } { ( \exists N ) } } { \product { 999 } { ( \forall N ) } },the product of 999 and some number is equal to the product of 999 and every number,0,0,0,0,0,0,0,0,0
+176,( \sim \even { ( \exists N ) } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if some number is not even , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+177,( \odd { 999 } ) \supset 999 \in \even N,"if 999 is odd , then 999 is an even number",0,0,0,0,0,0,0,0,0
+178,"\& [ \even , \odd ] { \sum { ( \exists N ) } { 999 } }",the sum of some number and 999 is even and odd,the sum of some number and 999 is not even and odd,0,0,0,0,0,0,0,0
+179,\sim ( \sim \even { 999 } ),it is not the case that 999 is not even,0,0,0,0,0,0,0,0,0
+180,"( \forall Foo , Foo \in N ) ( \equal { ( \forall N ) } { 999 } )","for all numbers Foo and Foo , every number is equal to 999",0,0,0,0,0,0,0,0,0
+181,( \notequal { 999 } { ( \forall N ) } ) \supset \even { 999 },"if 999 is not equal to every number , then 999 is even",0,0,0,0,0,0,0,0,0
+182,"( \exists Foo , Foo \in \odd N ) ( \equal { 999 } { ( \exists N ) } )",there is an odd number Foo and Foo such that 999 is equal to some number,0,0,0,0,0,0,0,0,0
+183,\sim ( \sim ( \forall N ) \in \odd N ),it is not the case that every number is not an odd number,0,0,0,0,0,0,0,0,0
+184,( \forall Foo ) ( ( \exists N ) \in N ),"for all Foo , some number is a number",0,0,0,0,0,0,0,0,0
+185,"\vee [ \even , \even ] { ( \exists \even N ) }",some even number is even or even,some even number is not even or even,0,0,0,0,0,0,0,0
+186,\sim ( \sim 999 \in N ),it is not the case that 999 is not a number,0,0,0,0,0,0,0,0,0
+187,( \exists Foo ) ( \sim ( \forall N ) \in \odd N ),there is an element Foo such that every number is not an odd number,0,0,0,0,0,0,0,0,0
+188,\sim ( \odd { ( \forall N ) } ),every number is not odd,0,0,0,0,0,0,0,0,0
+189,"\notequal { 999 , ( \exists N ) }",999 and some number are not equal,0,0,0,0,0,0,0,0,0
+190,( \exists Foo ) ( \notequal { 999 } { 999 } ),there is an element Foo such that 999 is not equal to itself,there is an element Foo such that 999 is not equal to 999,0,0,0,0,0,0,0,0
+191,( \notequal { ( \forall N ) } { ( \exists N ) } ) \& ( \notequal { 999 } { 999 } ),every number is not equal to some number and 999 is not equal to itself,every number is not equal to some number and 999 is not equal to 999,0,0,0,0,0,0,0,0
+192,\square { ( \forall N ) } \in \odd N,the square of every number is an odd number,0,0,0,0,0,0,0,0,0
+193,"( \exists Foo , Foo \in \equal to 999 N ) ( \notequal { 999 } { 999 } )",there is a number equal to 999 Foo and Foo such that 999 is not equal to itself,there is a number equal to 999 Foo and Foo such that 999 is not equal to 999,0,0,0,0,0,0,0,0
+194,( \exists Foo ) ( \sim \even { ( \exists N ) } ),there is an element Foo such that some number is not even,0,0,0,0,0,0,0,0,0
+195,"( \exists Foo , Foo \in \& [ \even , \even ] \even \odd N ) ( \even { ( \forall N ) } )",there is an even and even even odd number Foo and Foo such that every number is even,0,0,0,0,0,0,0,0,0
+196,( \exists Foo \in N ) ( ( \forall N ) \in N ),there is a number Foo such that every number is a number,0,0,0,0,0,0,0,0,0
+197,\sim ( \equal { ( \exists N ) } { ( \exists N ) } ),some number is not equal to some number,some number is not equal to itself,0,0,0,0,0,0,0,0
+198,( \sim \even { 999 } ) \vee ( \notequal { ( \exists N ) } { ( \forall N ) } ),999 is not even or some number is not equal to every number,0,0,0,0,0,0,0,0,0
+199,"( \forall Foo , Foo \in \even N ) ( \sim \even { ( \forall N ) } )","for all even numbers Foo and Foo , every number is not even",0,0,0,0,0,0,0,0,0
+200,\sim \even { 999 },999 is not even,0,0,0,0,0,0,0,0,0
+201,( \exists Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+202,( \forall Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all numbers Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+203,\equal { ( \forall \even N ) } { \square { ( \exists N ) } },every even number is equal to the square of some number,0,0,0,0,0,0,0,0,0
+204,"( \forall Foo , Foo \in \even N ) ( \equal { 999 } { ( \exists N ) } )","for all even numbers Foo and Foo , 999 is equal to some number",0,0,0,0,0,0,0,0,0
+205,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+206,"\vee [ \odd , \even ] { \square { ( \exists N ) } }",the square of some number is not odd or even,the square of some number is odd or even,0,0,0,0,0,0,0,0
+207,( \exists N ) \in N,some number is a number,0,0,0,0,0,0,0,0,0
+208,( \forall Foo ) ( \sim ( \forall N ) \in \odd N ),"for all Foo , every number is not an odd number",0,0,0,0,0,0,0,0,0
+209,( \notequal { 999 } { 999 } ) \supset \odd { ( \forall N ) },"if 999 is not equal to 999 , then every number is odd","if 999 is not equal to itself , then every number is odd",0,0,0,0,0,0,0,0
+210,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+211,\sim ( \sim ( \exists N ) \in N ),it is not the case that some number is not a number,0,0,0,0,0,0,0,0,0
+212,\odd { ( \exists N ) },some number is odd,0,0,0,0,0,0,0,0,0
+213,( \forall Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+214,( \equal { ( \exists N ) } { 999 } ) \supset 999 \in \even N,"if some number is equal to 999 , then 999 is an even number",0,0,0,0,0,0,0,0,0
+215,"( \exists Foo , Foo \in N ) ( \notequal { ( \forall N ) } { 999 } )",there is a number Foo and Foo such that every number is not equal to 999,0,0,0,0,0,0,0,0,0
+216,( \sim \even { ( \exists N ) } ) \vee ( \notequal { ( \forall N ) } { ( \forall N ) } ),some number is not even or every number is not equal to itself,0,0,0,0,0,0,0,0,0
+217,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+218,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+219,\sim ( \equal { ( \forall N ) } { ( \exists N ) } ),every number is not equal to some number,0,0,0,0,0,0,0,0,0
+220,( \forall Foo ) ( \odd { ( \forall N ) } ),"for all Foo , every number is odd",0,0,0,0,0,0,0,0,0
+221,( \exists Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+222,( \equal { ( \exists N ) } { 999 } ) \vee ( \equal { 999 } { 999 } ),some number is equal to 999 or 999 is equal to itself,some number or 999 is equal to 999,some number is equal to 999 or 999 is equal to 999,0,0,0,0,0,0,0
+223,( \sim ( \exists N ) \in \odd N ) \vee ( \equal { ( \exists N ) } { ( \exists N ) } ),some number is not an odd number or some number is equal to itself,0,0,0,0,0,0,0,0,0
+224,\equal { \product { 999 } { ( \forall N ) } } { \product { 999 } { ( \forall N ) } },the product of 999 and every number is equal to the product of 999 and every number,the product of 999 and every number is equal to itself,0,0,0,0,0,0,0,0
+225,( \equal { 999 } { ( \forall N ) } ) \& ( \sim ( \forall N ) \in \even N ),999 is equal to every number and every number is not an even number,0,0,0,0,0,0,0,0,0
+226,\notequal { ( \exists \even N ) } { Foo },some even number is not equal to Foo,0,0,0,0,0,0,0,0,0
+227,( \even { ( \exists N ) } ) \supset \even { 999 },"if some number is even , then 999 is even",0,0,0,0,0,0,0,0,0
+228,\equal { \square { ( \forall N ) } } { ( \exists N ) },the square of every number is equal to some number,0,0,0,0,0,0,0,0,0
+229,\sim 999 \in N,999 is not a number,0,0,0,0,0,0,0,0,0
+230,\sim ( \equal { ( \forall N ) } { ( \forall N ) } ),every number is not equal to itself,every number is not equal to every number,0,0,0,0,0,0,0,0
+231,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \sim \even { ( \exists N ) },"if some number is equal to itself , then some number is not even",0,0,0,0,0,0,0,0,0
+232,( \notequal { 999 } { 999 } ) \vee ( \equal { ( \exists N ) } { ( \exists N ) } ),999 is not equal to 999 or some number is equal to itself,999 is not equal to itself or some number is equal to itself,0,0,0,0,0,0,0,0
+233,\sim ( \equal { ( \exists N ) } { ( \exists N ) } ),some number is not equal to some number,some number is not equal to itself,0,0,0,0,0,0,0,0
+234,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+235,( \equal { 999 } { ( \forall N ) } ) \& ( ( \exists N ) \in N ),999 is equal to every number and some number is a number,0,0,0,0,0,0,0,0,0
+236,"\& [ \even , \even ] { \square { ( \exists N ) } }",the square of some number is even and even,the square of some number is not even and even,0,0,0,0,0,0,0,0
+237,"( \exists Foo , Foo \in N ) ( \sim ( \forall N ) \in N )",there is a number Foo and Foo such that every number is not a number,0,0,0,0,0,0,0,0,0
+238,( \exists Foo ) ( \odd { 999 } ),there is an element Foo such that 999 is odd,0,0,0,0,0,0,0,0,0
+239,( \notequal { ( \forall N ) } { ( \exists N ) } ) \& ( \equal { ( \exists N ) } { 999 } ),every number is not equal to some number and some number is equal to 999,0,0,0,0,0,0,0,0,0
+240,( \forall Foo ) ( \odd { ( \forall N ) } ),"for all Foo , every number is odd",0,0,0,0,0,0,0,0,0
+241,\sim ( \exists N ) \in N,some number is not a number,0,0,0,0,0,0,0,0,0
+242,"\notequal { ( \exists N ) , ( \exists N ) }",some number and some number are not equal,0,0,0,0,0,0,0,0,0
+243,\sim ( \exists N ) \in \even \odd N,some number is not an even odd number,0,0,0,0,0,0,0,0,0
+244,( \exists Foo \in N ) ( \sim 999 \in N ),there is a number Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+245,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+246,( \exists Foo ) ( \even { ( \exists N ) } ),there is an element Foo such that some number is even,0,0,0,0,0,0,0,0,0
+247,( \forall Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+248,\equal { ( \forall N ) } { ( \forall N ) },every number is equal to itself,0,0,0,0,0,0,0,0,0
+249,"( \exists Foo , Foo \in N ) ( \sim \even { ( \forall N ) } )",there is a number Foo and Foo such that every number is not even,0,0,0,0,0,0,0,0,0
+250,( \equal { 999 } { ( \exists N ) } ) \supset \sim \even { ( \forall N ) },"if 999 is equal to some number , then every number is not even",0,0,0,0,0,0,0,0,0
+251,( \sim 999 \in \odd N ) \vee ( \notequal { 999 } { 999 } ),999 is not an odd number or 999 is not equal to 999,999 is not an odd number or 999 is not equal to itself,0,0,0,0,0,0,0,0
+252,( \forall Foo \in \equal to ( \forall N ) \even \odd N ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all even odd numbers equal to every number Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+253,"( \exists Foo , Foo \in N ) ( \sim \odd { 999 } )",there is a number Foo and Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+254,( \exists Foo ) ( \sim ( \forall N ) \in N ),there is an element Foo such that every number is not a number,0,0,0,0,0,0,0,0,0
+255,( \forall Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),"for all numbers Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+256,"\equal { ( \exists N ) , ( \exists N ) }",some number and some number are equal,0,0,0,0,0,0,0,0,0
+257,( \exists Foo ) ( \equal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is equal to every number,0,0,0,0,0,0,0,0,0
+258,\sim ( \sim ( \forall N ) \in \odd N ),it is not the case that every number is not an odd number,0,0,0,0,0,0,0,0,0
+259,( \even { ( \exists N ) } ) \vee ( \sim 999 \in N ),some number is even or 999 is not a number,0,0,0,0,0,0,0,0,0
+260,( \forall Foo \in \equal to ( \forall N ) N ) ( \equal { ( \exists N ) } { ( \forall N ) } ),"for all numbers equal to every number Foo , some number is equal to every number",0,0,0,0,0,0,0,0,0
+261,( \notequal { ( \exists N ) } { ( \exists N ) } ) \& ( \sim \even { ( \exists N ) } ),some number is not equal to itself and some number is not even,0,0,0,0,0,0,0,0,0
+262,( \forall N ) \in N,every number is a number,0,0,0,0,0,0,0,0,0
+263,"( \exists Foo , Foo \in \equal to ( \forall N ) \even N ) ( \sim ( \exists N ) \in \odd N )",there is an even number equal to every number Foo and Foo such that some number is not an odd number,0,0,0,0,0,0,0,0,0
+264,( \equal { 999 } { 999 } ) \supset ( \exists N ) \in N,"if 999 is equal to itself , then some number is a number","if 999 is equal to 999 , then some number is a number",0,0,0,0,0,0,0,0
+265,( \even { ( \exists N ) } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if some number is even , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+266,\equal { ( \exists N ) } { \product { ( \forall N ) } { 999 } },some number is equal to the product of every number and 999,0,0,0,0,0,0,0,0,0
+267,( \notequal { ( \exists N ) } { ( \exists N ) } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if some number is not equal to itself , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+268,"( \forall Foo , Foo \in N ) ( \sim \even { 999 } )","for all numbers Foo and Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+269,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+270,( \equal { 999 } { ( \exists N ) } ) \& ( 999 \in N ),999 is equal to some number and 999 is a number,0,0,0,0,0,0,0,0,0
+271,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+272,\equal { ( \forall N ) } { Foo },every number is equal to Foo,0,0,0,0,0,0,0,0,0
+273,( \exists Foo ) ( \notequal { 999 } { ( \exists N ) } ),there is an element Foo such that 999 is not equal to some number,0,0,0,0,0,0,0,0,0
+274,( \exists Foo ) ( \sim \odd { ( \exists N ) } ),there is an element Foo such that some number is not odd,0,0,0,0,0,0,0,0,0
+275,"\notequal { ( \exists N ) , ( \exists N ) }",some number and some number are not equal,0,0,0,0,0,0,0,0,0
+276,( \forall Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+277,\sim \sum { 999 } { ( \forall N ) } \in \odd \even N,the sum of 999 and every number is not an odd even number,0,0,0,0,0,0,0,0,0
+278,"\& [ \even , \odd ] { ( \exists N ) }",some number is even and odd,some number is not even and odd,0,0,0,0,0,0,0,0
+279,\notequal { ( \exists N ) } { 999 },some number is not equal to 999,0,0,0,0,0,0,0,0,0
+280,"\& [ \even , \even ] { \square { 999 } }",the square of 999 is not even and even,the square of 999 is even and even,0,0,0,0,0,0,0,0
+281,( \sim ( \exists N ) \in \odd N ) \supset \odd { ( \forall N ) },"if some number is not an odd number , then every number is odd",0,0,0,0,0,0,0,0,0
+282,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+283,( \exists Foo ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is an element Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+284,( \forall Foo \in \odd N ) ( \sim \even { 999 } ),"for all odd numbers Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+285,( \forall Foo ) ( \sim ( \exists N ) \in \odd N ),"for all Foo , some number is not an odd number",0,0,0,0,0,0,0,0,0
+286,Foo \in \odd \even N,Foo is an odd even number,0,0,0,0,0,0,0,0,0
+287,( \sim ( \forall N ) \in N ) \supset \even { 999 },"if every number is not a number , then 999 is even",0,0,0,0,0,0,0,0,0
+288,( \equal { ( \forall N ) } { 999 } ) \supset \notequal { ( \exists N ) } { ( \forall N ) },"if every number is equal to 999 , then some number is not equal to every number",0,0,0,0,0,0,0,0,0
+289,( \exists Foo ) ( \equal { 999 } { 999 } ),there is an element Foo such that 999 is equal to itself,there is an element Foo such that 999 is equal to 999,0,0,0,0,0,0,0,0
+290,( \sim \even { ( \forall N ) } ) \vee ( \sim ( \exists N ) \in \odd N ),every number is not even or some number is not an odd number,0,0,0,0,0,0,0,0,0
+291,( \exists Foo ) ( 999 \in N ),there is an element Foo such that 999 is a number,0,0,0,0,0,0,0,0,0
+292,\sim Foo \in \even N,Foo is not an even number,0,0,0,0,0,0,0,0,0
+293,\sum { 999 } { 999 } \in \even \odd N,the sum of 999 and 999 is an even odd number,0,0,0,0,0,0,0,0,0
+294,\sim \product { ( \forall N ) } { 999 } \in \odd \even N,the product of every number and 999 is not an odd even number,0,0,0,0,0,0,0,0,0
+295,( 999 \in \even N ) \& ( \sim ( \forall N ) \in \even N ),999 is an even number and every number is not an even number,0,0,0,0,0,0,0,0,0
+296,( \forall Foo \in N ) ( \sim \even { 999 } ),"for all numbers Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+297,( \forall Foo ) ( ( \forall N ) \in \odd N ),"for all Foo , every number is an odd number",0,0,0,0,0,0,0,0,0
+298,( \sim \even { ( \exists N ) } ) \supset 999 \in \odd N,"if some number is not even , then 999 is an odd number",0,0,0,0,0,0,0,0,0
+299,( \exists Foo ) ( \sim ( \forall N ) \in \odd N ),there is an element Foo such that every number is not an odd number,0,0,0,0,0,0,0,0,0
+300,( \forall Foo \in \odd N ) ( \sim \odd { ( \forall N ) } ),"for all odd numbers Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+301,\notequal { ( \forall \even N ) } { 999 },every even number is not equal to 999,0,0,0,0,0,0,0,0,0
+302,\notequal { Foo } { Foo },Foo is not equal to itself,0,0,0,0,0,0,0,0,0
+303,\sim ( \sim ( \exists N ) \in \odd N ),it is not the case that some number is not an odd number,0,0,0,0,0,0,0,0,0
+304,\sim ( \sim 999 \in N ),it is not the case that 999 is not a number,0,0,0,0,0,0,0,0,0
+305,\even { \sum { ( \exists N ) } { ( \forall N ) } },the sum of some number and every number is even,0,0,0,0,0,0,0,0,0
+306,"( \exists Foo \in \& [ \even , \even ] N ) ( \even { ( \forall N ) } )",there is an even and even number Foo such that every number is even,0,0,0,0,0,0,0,0,0
+307,( \forall Foo ) ( \equal { 999 } { 999 } ),"for all Foo , 999 is equal to itself","for all Foo , 999 is equal to 999",0,0,0,0,0,0,0,0
+308,"\equal { ( \forall N ) , ( \forall N ) }",every number and every number are equal,0,0,0,0,0,0,0,0,0
+309,( \forall Foo \in \equal to 999 \odd N ) ( \equal { 999 } { 999 } ),"for all odd numbers equal to 999 Foo , 999 is equal to itself","for all odd numbers equal to 999 Foo , 999 is equal to 999",0,0,0,0,0,0,0,0
+310,( \sim 999 \in N ) \vee ( \sim \even { ( \forall N ) } ),999 is not a number or every number is not even,0,0,0,0,0,0,0,0,0
+311,( \forall Foo ) ( \notequal { ( \exists N ) } { 999 } ),"for all Foo , some number is not equal to 999",0,0,0,0,0,0,0,0,0
+312,( ( \exists N ) \in N ) \vee ( \odd { ( \exists N ) } ),some number is a number or some number is odd,0,0,0,0,0,0,0,0,0
+313,"( \forall Foo , Foo \in N ) ( \sim 999 \in \odd N )","for all numbers Foo and Foo , 999 is not an odd number",0,0,0,0,0,0,0,0,0
+314,Foo \in \odd \odd N,Foo is an odd odd number,0,0,0,0,0,0,0,0,0
+315,\notequal { ( \forall \even N ) } { ( \forall \even N ) },every even number is not equal to itself,0,0,0,0,0,0,0,0,0
+316,( \notequal { 999 } { 999 } ) \vee ( \notequal { ( \forall N ) } { ( \forall N ) } ),999 is not equal to 999 or every number is not equal to itself,999 is not equal to itself or every number is not equal to itself,0,0,0,0,0,0,0,0
+317,\sim \product { ( \exists N ) } { ( \forall N ) } \in \even N,the product of some number and every number is not an even number,0,0,0,0,0,0,0,0,0
+318,( \exists Foo ) ( \even { ( \forall N ) } ),there is an element Foo such that every number is even,0,0,0,0,0,0,0,0,0
+319,\sim ( \equal { ( \exists N ) } { 999 } ),some number is not equal to 999,0,0,0,0,0,0,0,0,0
+320,( \forall Foo \in N ) ( \sim \even { ( \exists N ) } ),"for all numbers Foo , some number is not even",0,0,0,0,0,0,0,0,0
+321,"\equal { ( \exists N ) , ( \exists N ) }",some number and some number are equal,0,0,0,0,0,0,0,0,0
+322,( \exists Foo \in \even \odd \even N ) ( \sim \odd { 999 } ),there is an even odd even number Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+323,( \forall Foo \in N ) ( \equal { 999 } { ( \exists N ) } ),"for all numbers Foo , 999 is equal to some number",0,0,0,0,0,0,0,0,0
+324,\sim \even { ( \exists \odd N ) },some odd number is not even,0,0,0,0,0,0,0,0,0
+325,( \notequal { 999 } { 999 } ) \supset \notequal { 999 } { 999 },"if 999 is not equal to 999 , then 999 is not equal to 999","if 999 is not equal to itself , then 999 is not equal to 999","if 999 is not equal to itself , then 999 is not equal to itself","if 999 is not equal to 999 , then 999 is not equal to itself",0,0,0,0,0,0
+326,( \notequal { 999 } { 999 } ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is not equal to 999 and some number is not equal to itself,999 is not equal to itself and some number is not equal to itself,0,0,0,0,0,0,0,0
+327,( 999 \in N ) \supset 999 \in N,"if 999 is a number , then 999 is a number",0,0,0,0,0,0,0,0,0
+328,( \exists Foo \in N ) ( \equal { ( \forall N ) } { 999 } ),there is a number Foo such that every number is equal to 999,0,0,0,0,0,0,0,0,0
+329,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+330,\notequal { Foo } { ( \forall \odd N ) },Foo is not equal to every odd number,0,0,0,0,0,0,0,0,0
+331,\notequal { ( \exists N ) } { \product { ( \forall N ) } { ( \exists N ) } },some number is not equal to the product of every number and some number,0,0,0,0,0,0,0,0,0
+332,( \exists Foo \in N ) ( \equal { 999 } { ( \exists N ) } ),there is a number Foo such that 999 is equal to some number,0,0,0,0,0,0,0,0,0
+333,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \equal { ( \forall N ) } { ( \exists N ) },"if every number is equal to itself , then every number is equal to some number",0,0,0,0,0,0,0,0,0
+334,( \notequal { ( \forall N ) } { 999 } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if every number is not equal to 999 , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+335,\notequal { \square { ( \forall N ) } } { \sum { ( \forall N ) } { ( \forall N ) } },the square of every number is not equal to the sum of every number and every number,0,0,0,0,0,0,0,0,0
+336,\sim ( ( \exists N ) \in \even N ),some number is not an even number,0,0,0,0,0,0,0,0,0
+337,( \equal { ( \exists N ) } { ( \forall N ) } ) \supset \notequal { 999 } { 999 },"if some number is equal to every number , then 999 is not equal to 999","if some number is equal to every number , then 999 is not equal to itself",0,0,0,0,0,0,0,0
+338,( \exists Foo ) ( \notequal { ( \exists N ) } { ( \forall N ) } ),there is an element Foo such that some number is not equal to every number,0,0,0,0,0,0,0,0,0
+339,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+340,( \equal { 999 } { ( \forall N ) } ) \supset \sim \odd { 999 },"if 999 is equal to every number , then 999 is not odd",0,0,0,0,0,0,0,0,0
+341,"\notequal { 999 , 999 }",999 and 999 are not equal,0,0,0,0,0,0,0,0,0
+342,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( \equal { ( \forall N ) } { ( \forall N ) } ),every number is equal to itself or every number is equal to itself,0,0,0,0,0,0,0,0,0
+343,( \forall Foo \in \odd \even \odd N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all odd even odd numbers Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+344,\sim ( \forall \odd N ) \in N,every odd number is not a number,0,0,0,0,0,0,0,0,0
+345,( \forall Foo ) ( \even { 999 } ),"for all Foo , 999 is even",0,0,0,0,0,0,0,0,0
+346,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+347,( \exists Foo \in \odd N ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is an odd number Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+348,"( \exists Foo , Foo \in N ) ( \equal { ( \forall N ) } { ( \exists N ) } )",there is a number Foo and Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+349,\sim \even { \square { 999 } },the square of 999 is not even,0,0,0,0,0,0,0,0,0
+350,\sim ( ( \exists N ) \in N ),some number is not a number,0,0,0,0,0,0,0,0,0
+351,( \odd { ( \exists N ) } ) \vee ( \even { ( \exists N ) } ),some number is odd or even,0,0,0,0,0,0,0,0,0
+352,( \forall Foo ) ( \sim \even { 999 } ),"for all Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+353,( \forall Foo \in N ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all numbers Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+354,( 999 \in N ) \supset \sim ( \exists N ) \in \even N,"if 999 is a number , then some number is not an even number",0,0,0,0,0,0,0,0,0
+355,( \forall Foo \in N ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all numbers Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+356,( ( \exists N ) \in \even N ) \supset \equal { 999 } { 999 },"if some number is an even number , then 999 is equal to itself","if some number is an even number , then 999 is equal to 999",0,0,0,0,0,0,0,0
+357,\sim \product { 999 } { ( \forall N ) } \in \even N,the product of 999 and every number is not an even number,0,0,0,0,0,0,0,0,0
+358,( \forall Foo ) ( \sim 999 \in \odd N ),"for all Foo , 999 is not an odd number",0,0,0,0,0,0,0,0,0
+359,( \equal { ( \forall N ) } { ( \forall N ) } ) \& ( \notequal { ( \forall N ) } { ( \exists N ) } ),every number is equal to itself and every number is not equal to some number,0,0,0,0,0,0,0,0,0
+360,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+361,( \notequal { ( \forall N ) } { 999 } ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is not equal to 999 and some number is not equal to itself,0,0,0,0,0,0,0,0,0
+362,( \exists Foo ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is an element Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+363,( \forall Foo ) ( \sim ( \exists N ) \in N ),"for all Foo , some number is not a number",0,0,0,0,0,0,0,0,0
+364,( \forall Foo \in N ) ( \notequal { ( \forall N ) } { ( \exists N ) } ),"for all numbers Foo , every number is not equal to some number",0,0,0,0,0,0,0,0,0
+365,( \exists Foo \in N ) ( \even { 999 } ),there is a number Foo such that 999 is even,0,0,0,0,0,0,0,0,0
+366,( \sim \even { ( \forall N ) } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if every number is not even , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+367,( \exists Foo ) ( \sim 999 \in \odd N ),there is an element Foo such that 999 is not an odd number,0,0,0,0,0,0,0,0,0
+368,( \odd { 999 } ) \supset \equal { 999 } { 999 },"if 999 is odd , then 999 is equal to itself","if 999 is odd , then 999 is equal to 999",0,0,0,0,0,0,0,0
+369,\sim ( \sim \even { 999 } ),it is not the case that 999 is not even,0,0,0,0,0,0,0,0,0
+370,\equal to ( \exists N ) { Foo },Foo is equal to some number,0,0,0,0,0,0,0,0,0
+371,"( \exists Foo \in \vee [ \even , \even ] \odd N ) ( \equal { ( \exists N ) } { ( \exists N ) } )",there is an even or even odd number Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+372,\equal { ( \exists \even N ) } { ( \exists \even N ) },some even number is equal to itself,0,0,0,0,0,0,0,0,0
+373,( \forall Foo ) ( \sim ( \exists N ) \in N ),"for all Foo , some number is not a number",0,0,0,0,0,0,0,0,0
+374,( ( \forall N ) \in \odd N ) \supset \notequal { 999 } { 999 },"if every number is an odd number , then 999 is not equal to 999","if every number is an odd number , then 999 is not equal to itself",0,0,0,0,0,0,0,0
+375,( \forall Foo \in N ) ( \sim \odd { ( \forall N ) } ),"for all numbers Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+376,\notequal { ( \exists \even N ) } { ( \exists \even N ) },some even number is not equal to itself,0,0,0,0,0,0,0,0,0
+377,\notequal { Foo } { ( \exists \even N ) },Foo is not equal to some even number,0,0,0,0,0,0,0,0,0
+378,"( \exists Foo , Foo \in N ) ( \even { ( \forall N ) } )",there is a number Foo and Foo such that every number is even,0,0,0,0,0,0,0,0,0
+379,( \forall Foo \in \equal to 999 N ) ( ( \forall N ) \in \even N ),"for all numbers equal to 999 Foo , every number is an even number",0,0,0,0,0,0,0,0,0
+380,\sim ( \sim \even { 999 } ),it is not the case that 999 is not even,0,0,0,0,0,0,0,0,0
+381,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+382,( \forall Foo ) ( \even { ( \exists N ) } ),"for all Foo , some number is even",0,0,0,0,0,0,0,0,0
+383,\sim ( \even { 999 } ),999 is not even,0,0,0,0,0,0,0,0,0
+384,"\equal { ( \exists N ) , 999 }",some number and 999 are equal,0,0,0,0,0,0,0,0,0
+385,"( \forall Foo , Foo \in \vee [ \even , \odd ] \even \odd N ) ( 999 \in \even N )","for all even or odd even odd numbers Foo and Foo , 999 is an even number",0,0,0,0,0,0,0,0,0
+386,( \exists Foo ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is an element Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+387,( \odd { ( \exists N ) } ) \supset \sim \odd { ( \forall N ) },"if some number is odd , then every number is not odd",0,0,0,0,0,0,0,0,0
+388,"( \exists Foo , Foo \in \odd N ) ( \even { ( \exists N ) } )",there is an odd number Foo and Foo such that some number is even,0,0,0,0,0,0,0,0,0
+389,( \forall Foo ) ( \equal { ( \exists N ) } { ( \forall N ) } ),"for all Foo , some number is equal to every number",0,0,0,0,0,0,0,0,0
+390,( \sim \even { ( \forall N ) } ) \supset \notequal { 999 } { 999 },"if every number is not even , then 999 is not equal to 999","if every number is not even , then 999 is not equal to itself",0,0,0,0,0,0,0,0
+391,( \even { ( \forall N ) } ) \supset \notequal { 999 } { ( \forall N ) },"if every number is even , then 999 is not equal to every number",0,0,0,0,0,0,0,0,0
+392,( \forall Foo ) ( \sim \odd { ( \forall N ) } ),"for all Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+393,( \exists Foo ) ( \sim \odd { 999 } ),there is an element Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+394,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+395,( \exists Foo ) ( ( \forall N ) \in \odd N ),there is an element Foo such that every number is an odd number,0,0,0,0,0,0,0,0,0
+396,( \odd { 999 } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is odd or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+397,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \odd { ( \exists N ) },"if some number is equal to itself , then some number is odd",0,0,0,0,0,0,0,0,0
+398,( \equal { 999 } { 999 } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is equal to 999 or some number is not equal to itself,999 is equal to itself or some number is not equal to itself,0,0,0,0,0,0,0,0
+399,( \sim 999 \in \even N ) \supset ( \exists N ) \in N,"if 999 is not an even number , then some number is a number",0,0,0,0,0,0,0,0,0
+400,\sim ( \sim 999 \in N ),it is not the case that 999 is not a number,0,0,0,0,0,0,0,0,0
+401,( \exists Foo ) ( \sim \even { 999 } ),there is an element Foo such that 999 is not even,0,0,0,0,0,0,0,0,0
+402,( \forall Foo \in \even N ) ( 999 \in \odd N ),"for all even numbers Foo , 999 is an odd number",0,0,0,0,0,0,0,0,0
+403,( \even { ( \exists N ) } ) \supset \sim 999 \in \even N,"if some number is even , then 999 is not an even number",0,0,0,0,0,0,0,0,0
+404,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+405,\sim ( \notequal { ( \forall N ) } { ( \exists N ) } ),it is not the case that every number is not equal to some number,0,0,0,0,0,0,0,0,0
+406,( \exists Foo ) ( \equal { 999 } { 999 } ),there is an element Foo such that 999 is equal to itself,there is an element Foo such that 999 is equal to 999,0,0,0,0,0,0,0,0
+407,( \exists Foo ) ( \notequal { 999 } { ( \exists N ) } ),there is an element Foo such that 999 is not equal to some number,0,0,0,0,0,0,0,0,0
+408,( \sim ( \forall N ) \in \odd N ) \supset \notequal { ( \forall N ) } { ( \exists N ) },"if every number is not an odd number , then every number is not equal to some number",0,0,0,0,0,0,0,0,0
+409,\notequal { ( \exists N ) } { ( \exists N ) },some number is not equal to itself,0,0,0,0,0,0,0,0,0
+410,"\equal { 999 , 999 }",999 and 999 are equal,0,0,0,0,0,0,0,0,0
+411,( \forall Foo ) ( \sim \odd { ( \forall N ) } ),"for all Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+412,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+413,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+414,( \equal { 999 } { 999 } ) \supset 999 \in \even N,"if 999 is equal to itself , then 999 is an even number","if 999 is equal to 999 , then 999 is an even number",0,0,0,0,0,0,0,0
+415,( \equal { 999 } { ( \forall N ) } ) \vee ( \sim \odd { ( \forall N ) } ),999 is equal to every number or every number is not odd,0,0,0,0,0,0,0,0,0
+416,"( \forall Foo , Foo \in \equal to ( \forall N ) N ) ( ( \forall N ) \in \odd N )","for all numbers equal to every number Foo and Foo , every number is an odd number",0,0,0,0,0,0,0,0,0
+417,( ( \exists N ) \in \odd N ) \supset \notequal { ( \exists N ) } { ( \exists N ) },"if some number is an odd number , then some number is not equal to itself",0,0,0,0,0,0,0,0,0
+418,"( \exists Foo , Foo \in N ) ( \sim \odd { 999 } )",there is a number Foo and Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+419,( \equal { 999 } { ( \forall N ) } ) \supset \sim \odd { ( \forall N ) },"if 999 is equal to every number , then every number is not odd",0,0,0,0,0,0,0,0,0
+420,\notequal { ( \forall N ) } { 999 },every number is not equal to 999,0,0,0,0,0,0,0,0,0
+421,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( 999 \in \even N ),every number is equal to itself or 999 is an even number,0,0,0,0,0,0,0,0,0
+422,( \forall Foo ) ( \odd { ( \exists N ) } ),"for all Foo , some number is odd",0,0,0,0,0,0,0,0,0
+423,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+424,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+425,\sim ( \sim 999 \in \odd N ),it is not the case that 999 is not an odd number,0,0,0,0,0,0,0,0,0
+426,"( \exists Foo , Foo \in N ) ( 999 \in \even N )",there is a number Foo and Foo such that 999 is an even number,0,0,0,0,0,0,0,0,0
+427,"\notequal { ( \exists N ) , ( \forall N ) }",some number and every number are not equal,0,0,0,0,0,0,0,0,0
+428,( \forall Foo ) ( \sim ( \exists N ) \in \even N ),"for all Foo , some number is not an even number",0,0,0,0,0,0,0,0,0
+429,\notequal { 999 } { 999 },999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+430,( \forall Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+431,( \forall Foo ) ( \equal { ( \exists N ) } { ( \forall N ) } ),"for all Foo , some number is equal to every number",0,0,0,0,0,0,0,0,0
+432,( \forall Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+433,"( \exists Foo , Foo \in \odd \odd \odd N ) ( \equal { 999 } { 999 } )",there is an odd odd odd number Foo and Foo such that 999 is equal to 999,there is an odd odd odd number Foo and Foo such that 999 is equal to itself,0,0,0,0,0,0,0,0
+434,( \equal { 999 } { 999 } ) \supset ( \forall N ) \in N,"if 999 is equal to itself , then every number is a number","if 999 is equal to 999 , then every number is a number",0,0,0,0,0,0,0,0
+435,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+436,( ( \forall N ) \in N ) \supset ( \forall N ) \in N,"if every number is a number , then every number is a number",0,0,0,0,0,0,0,0,0
+437,\equal { \product { ( \exists N ) } { ( \forall N ) } } { \square { 999 } },the product of some number and every number is equal to the square of 999,0,0,0,0,0,0,0,0,0
+438,( \exists Foo \in N ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is a number Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+439,( \exists Foo \in \equal to ( \forall N ) N ) ( \odd { ( \exists N ) } ),there is a number equal to every number Foo such that some number is odd,0,0,0,0,0,0,0,0,0
+440,"\equal { ( \exists N ) , 999 }",some number and 999 are equal,0,0,0,0,0,0,0,0,0
+441,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+442,"( \forall Foo , Foo \in N ) ( \equal { 999 } { ( \exists N ) } )","for all numbers Foo and Foo , 999 is equal to some number",0,0,0,0,0,0,0,0,0
+443,( \notequal { 999 } { 999 } ) \supset \sim ( \forall N ) \in N,"if 999 is not equal to 999 , then every number is not a number","if 999 is not equal to itself , then every number is not a number",0,0,0,0,0,0,0,0
+444,\equal { ( \forall \odd N ) } { ( \forall \odd N ) },every odd number is equal to itself,0,0,0,0,0,0,0,0,0
+445,"( \forall Foo , Foo \in \vee [ \odd , \odd ] N ) ( 999 \in N )","for all odd or odd numbers Foo and Foo , 999 is a number",0,0,0,0,0,0,0,0,0
+446,\sim ( ( \exists N ) \in N ),some number is not a number,0,0,0,0,0,0,0,0,0
+447,( \forall Foo \in N ) ( \sim \even { 999 } ),"for all numbers Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+448,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+449,( \exists Foo ) ( \sim \odd { 999 } ),there is an element Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+450,"\notequal { ( \forall N ) , 999 }",every number and 999 are not equal,0,0,0,0,0,0,0,0,0
+451,\square { 999 } \in \odd \odd N,the square of 999 is an odd odd number,0,0,0,0,0,0,0,0,0
+452,( \exists Foo ) ( ( \exists N ) \in \even N ),there is an element Foo such that some number is an even number,0,0,0,0,0,0,0,0,0
+453,\equal { Foo } { \square { 999 } },Foo is equal to the square of 999,0,0,0,0,0,0,0,0,0
+454,( \sim \even { 999 } ) \supset \equal { ( \exists N ) } { 999 },"if 999 is not even , then some number is equal to 999",0,0,0,0,0,0,0,0,0
+455,\odd { \square { ( \exists N ) } },the square of some number is odd,0,0,0,0,0,0,0,0,0
+456,( \forall Foo ) ( \sim 999 \in \odd N ),"for all Foo , 999 is not an odd number",0,0,0,0,0,0,0,0,0
+457,( \exists Foo \in \even \even N ) ( \odd { ( \forall N ) } ),there is an even even number Foo such that every number is odd,0,0,0,0,0,0,0,0,0
+458,( \sim ( \exists N ) \in \even N ) \vee ( \notequal { ( \forall N ) } { ( \forall N ) } ),some number is not an even number or every number is not equal to itself,0,0,0,0,0,0,0,0,0
+459,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+460,( \exists Foo \in \odd \odd \even N ) ( \sim \even { ( \exists N ) } ),there is an odd odd even number Foo such that some number is not even,0,0,0,0,0,0,0,0,0
+461,( \exists Foo \in \odd N ) ( \even { 999 } ),there is an odd number Foo such that 999 is even,0,0,0,0,0,0,0,0,0
+462,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \equal { 999 } { 999 },"if every number is equal to itself , then 999 is equal to itself","if every number is equal to itself , then 999 is equal to 999",0,0,0,0,0,0,0,0
+463,( \forall Foo ) ( \even { ( \forall N ) } ),"for all Foo , every number is even",0,0,0,0,0,0,0,0,0
+464,( \notequal { ( \forall N ) } { ( \forall N ) } ) \supset \odd { 999 },"if every number is not equal to itself , then 999 is odd",0,0,0,0,0,0,0,0,0
+465,( \equal { 999 } { 999 } ) \& ( \equal { ( \exists N ) } { ( \exists N ) } ),999 is equal to itself and some number is equal to itself,999 is equal to 999 and some number is equal to itself,0,0,0,0,0,0,0,0
+466,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+467,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \even { ( \forall N ) },"if every number is equal to itself , then every number is even",0,0,0,0,0,0,0,0,0
+468,( \sim \odd { 999 } ) \vee ( \sim ( \forall N ) \in N ),999 is not odd or every number is not a number,0,0,0,0,0,0,0,0,0
+469,( ( \forall N ) \in N ) \supset \notequal { 999 } { ( \forall N ) },"if every number is a number , then 999 is not equal to every number",0,0,0,0,0,0,0,0,0
+470,( \exists Foo ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is an element Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+471,( \equal { ( \exists N ) } { 999 } ) \vee ( \sim ( \forall N ) \in \odd N ),some number is equal to 999 or every number is not an odd number,0,0,0,0,0,0,0,0,0
+472,( \forall Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+473,( \sim \odd { ( \forall N ) } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if every number is not odd , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+474,"( \exists Foo , Foo \in \even N ) ( \sim \even { 999 } )",there is an even number Foo and Foo such that 999 is not even,0,0,0,0,0,0,0,0,0
+475,( \sim \odd { ( \forall N ) } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is not odd or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+476,\odd { \square { 999 } },the square of 999 is odd,0,0,0,0,0,0,0,0,0
+477,"( \exists Foo , Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } )",there is a number Foo and Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+478,( \sim ( \exists N ) \in \even N ) \supset \sim 999 \in \odd N,"if some number is not an even number , then 999 is not an odd number",0,0,0,0,0,0,0,0,0
+479,( \exists Foo \in \odd \even \odd N ) ( \sim 999 \in N ),there is an odd even odd number Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+480,\sim ( \even { ( \forall N ) } ),every number is not even,0,0,0,0,0,0,0,0,0
+481,"\equal { 999 , 999 }",999 and 999 are equal,0,0,0,0,0,0,0,0,0
+482,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+483,\sim \odd { 999 },999 is not odd,0,0,0,0,0,0,0,0,0
+484,\sim ( \sim 999 \in \even N ),it is not the case that 999 is not an even number,0,0,0,0,0,0,0,0,0
+485,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+486,( \exists Foo ) ( \even { ( \forall N ) } ),there is an element Foo such that every number is even,0,0,0,0,0,0,0,0,0
+487,( \equal { 999 } { 999 } ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is equal to 999 and some number is not equal to itself,999 is equal to itself and some number is not equal to itself,0,0,0,0,0,0,0,0
+488,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+489,\sim \even { \sum { ( \exists N ) } { ( \exists N ) } },the sum of some number and some number is not even,0,0,0,0,0,0,0,0,0
+490,\sim ( \odd { 999 } ),999 is not odd,0,0,0,0,0,0,0,0,0
+491,( \equal { 999 } { ( \forall N ) } ) \& ( \odd { ( \exists N ) } ),999 is equal to every number and some number is odd,0,0,0,0,0,0,0,0,0
+492,\equal { \product { 999 } { ( \forall N ) } } { \square { ( \forall N ) } },the product of 999 and every number is equal to the square of every number,0,0,0,0,0,0,0,0,0
+493,"\notequal { ( \exists N ) , ( \exists N ) }",some number and some number are not equal,0,0,0,0,0,0,0,0,0
+494,\sim ( \sim ( \forall N ) \in N ),it is not the case that every number is not a number,0,0,0,0,0,0,0,0,0
+495,( \notequal { 999 } { ( \exists N ) } ) \supset \even { ( \forall N ) },"if 999 is not equal to some number , then every number is even",0,0,0,0,0,0,0,0,0
+496,( \forall Foo ) ( \sim 999 \in \odd N ),"for all Foo , 999 is not an odd number",0,0,0,0,0,0,0,0,0
+497,( \exists Foo ) ( \sim \even { 999 } ),there is an element Foo such that 999 is not even,0,0,0,0,0,0,0,0,0
+498,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \equal { ( \exists N ) } { ( \exists N ) },"if some number is equal to itself , then some number is equal to itself",0,0,0,0,0,0,0,0,0
+499,( \notequal { 999 } { 999 } ) \& ( \sim ( \forall N ) \in \even N ),999 is not equal to 999 and every number is not an even number,999 is not equal to itself and every number is not an even number,0,0,0,0,0,0,0,0
+500,( \exists Foo ) ( \notequal { 999 } { 999 } ),there is an element Foo such that 999 is not equal to itself,there is an element Foo such that 999 is not equal to 999,0,0,0,0,0,0,0,0
+501,( \notequal { ( \forall N ) } { 999 } ) \supset \equal { 999 } { ( \exists N ) },"if every number is not equal to 999 , then 999 is equal to some number",0,0,0,0,0,0,0,0,0
+502,( \exists Foo \in \equal to 999 N ) ( \equal { 999 } { ( \forall N ) } ),there is a number equal to 999 Foo such that 999 is equal to every number,0,0,0,0,0,0,0,0,0
+503,( \sim \even { 999 } ) \& ( \sim \even { ( \exists N ) } ),999 is not even and some number is not even,0,0,0,0,0,0,0,0,0
+504,( \odd { ( \forall N ) } ) \supset \sim \even { 999 },"if every number is odd , then 999 is not even",0,0,0,0,0,0,0,0,0
+505,( \forall Foo ) ( \odd { ( \forall N ) } ),"for all Foo , every number is odd",0,0,0,0,0,0,0,0,0
+506,( \forall Foo ) ( \sim \odd { ( \exists N ) } ),"for all Foo , some number is not odd",0,0,0,0,0,0,0,0,0
+507,( \equal { 999 } { 999 } ) \supset \equal { 999 } { ( \exists N ) },"if 999 is equal to itself , then 999 is equal to some number","if 999 is equal to 999 , then 999 is equal to some number",0,0,0,0,0,0,0,0
+508,"\equal { ( \forall N ) , 999 }",every number and 999 are equal,0,0,0,0,0,0,0,0,0
+509,( \forall Foo ) ( \sim \even { ( \forall N ) } ),"for all Foo , every number is not even",0,0,0,0,0,0,0,0,0
+510,( \forall Foo ) ( \sim \odd { ( \exists N ) } ),"for all Foo , some number is not odd",0,0,0,0,0,0,0,0,0
+511,\sim ( \sim \odd { ( \exists N ) } ),it is not the case that some number is not odd,0,0,0,0,0,0,0,0,0
+512,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+513,"( \exists Foo , Foo \in \odd N ) ( \equal { ( \exists N ) } { ( \exists N ) } )",there is an odd number Foo and Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+514,( \equal { ( \exists N ) } { ( \forall N ) } ) \& ( \notequal { ( \forall N ) } { ( \forall N ) } ),some number is equal to every number and every number is not equal to itself,0,0,0,0,0,0,0,0,0
+515,"( \exists Foo , Foo \in N ) ( \equal { ( \forall N ) } { 999 } )",there is a number Foo and Foo such that every number is equal to 999,0,0,0,0,0,0,0,0,0
+516,( \forall Foo ) ( \equal { 999 } { ( \forall N ) } ),"for all Foo , 999 is equal to every number",0,0,0,0,0,0,0,0,0
+517,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+518,( \odd { ( \forall N ) } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is odd or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+519,\equal { \square { ( \forall N ) } } { \product { ( \exists N ) } { ( \exists N ) } },the square of every number is equal to the product of some number and some number,0,0,0,0,0,0,0,0,0
+520,\equal { Foo } { Foo },Foo is equal to itself,0,0,0,0,0,0,0,0,0
+521,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset ( \exists N ) \in \odd N,"if some number is equal to itself , then some number is an odd number",0,0,0,0,0,0,0,0,0
+522,\sim ( ( \forall N ) \in \even N ),every number is not an even number,0,0,0,0,0,0,0,0,0
+523,( 999 \in N ) \& ( \equal { ( \forall N ) } { ( \forall N ) } ),999 is a number and every number is equal to itself,0,0,0,0,0,0,0,0,0
+524,( ( \forall N ) \in N ) \vee ( \equal { 999 } { 999 } ),every number is a number or 999 is equal to itself,every number is a number or 999 is equal to 999,0,0,0,0,0,0,0,0
+525,\sim ( \sim ( \exists N ) \in N ),it is not the case that some number is not a number,0,0,0,0,0,0,0,0,0
+526,\notequal { ( \forall N ) } { ( \forall N ) },every number is not equal to itself,0,0,0,0,0,0,0,0,0
+527,( \exists Foo ) ( \sim \odd { ( \exists N ) } ),there is an element Foo such that some number is not odd,0,0,0,0,0,0,0,0,0
+528,( \forall Foo ) ( 999 \in N ),"for all Foo , 999 is a number",0,0,0,0,0,0,0,0,0
+529,( \even { ( \exists N ) } ) \vee ( \sim \even { ( \forall N ) } ),some number is even or every number is not even,0,0,0,0,0,0,0,0,0
+530,"( \forall Foo , Foo \in \even \odd N ) ( \sim ( \exists N ) \in N )","for all even odd numbers Foo and Foo , some number is not a number",0,0,0,0,0,0,0,0,0
+531,( ( \forall N ) \in \odd N ) \supset \sim \odd { ( \forall N ) },"if every number is an odd number , then every number is not odd",0,0,0,0,0,0,0,0,0
+532,( \notequal { ( \forall N ) } { ( \forall N ) } ) \& ( \sim \odd { ( \forall N ) } ),every number is not equal to itself and every number is not odd,0,0,0,0,0,0,0,0,0
+533,"\equal { 999 , 999 }",999 and 999 are equal,0,0,0,0,0,0,0,0,0
+534,"( \forall Foo , Foo \in N ) ( \notequal { 999 } { 999 } )","for all numbers Foo and Foo , 999 is not equal to 999","for all numbers Foo and Foo , 999 is not equal to itself",0,0,0,0,0,0,0,0
+535,\equal { ( \forall \even N ) } { \square { 999 } },every even number is equal to the square of 999,0,0,0,0,0,0,0,0,0
+536,( \equal { 999 } { 999 } ) \supset \sim ( \exists N ) \in \even N,"if 999 is equal to 999 , then some number is not an even number","if 999 is equal to itself , then some number is not an even number",0,0,0,0,0,0,0,0
+537,( \exists Foo ) ( \odd { ( \forall N ) } ),there is an element Foo such that every number is odd,0,0,0,0,0,0,0,0,0
+538,( \sim ( \exists N ) \in \odd N ) \supset ( \exists N ) \in N,"if some number is not an odd number , then some number is a number",0,0,0,0,0,0,0,0,0
+539,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+540,( \notequal { 999 } { 999 } ) \& ( \sim 999 \in \odd N ),999 is not equal to 999 and 999 is not an odd number,999 is not equal to itself and 999 is not an odd number,0,0,0,0,0,0,0,0
+541,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+542,"\notequal { 999 , ( \forall N ) }",999 and every number are not equal,0,0,0,0,0,0,0,0,0
+543,( \notequal { ( \exists N ) } { ( \exists N ) } ) \supset \sim ( \exists N ) \in N,"if some number is not equal to itself , then some number is not a number",0,0,0,0,0,0,0,0,0
+544,\odd { ( \forall \odd N ) },every odd number is odd,0,0,0,0,0,0,0,0,0
+545,( \sim \even { ( \exists N ) } ) \vee ( \even { 999 } ),some number is not even or 999 is even,0,0,0,0,0,0,0,0,0
+546,( \forall Foo \in \equal to 999 \even \odd N ) ( \even { ( \forall N ) } ),"for all even odd numbers equal to 999 Foo , every number is even",0,0,0,0,0,0,0,0,0
+547,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+548,( \forall Foo \in \odd N ) ( \even { ( \exists N ) } ),"for all odd numbers Foo , some number is even",0,0,0,0,0,0,0,0,0
+549,( \exists Foo \in \equal to 999 N ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is a number equal to 999 Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+550,\sim \odd { Foo },Foo is not odd,0,0,0,0,0,0,0,0,0
+551,( \notequal { ( \forall N ) } { ( \forall N ) } ) \supset \odd { ( \forall N ) },"if every number is not equal to itself , then every number is odd",0,0,0,0,0,0,0,0,0
+552,( \exists Foo ) ( \equal { 999 } { 999 } ),there is an element Foo such that 999 is equal to itself,there is an element Foo such that 999 is equal to 999,0,0,0,0,0,0,0,0
+553,( \forall Foo ) ( \sim \odd { 999 } ),"for all Foo , 999 is not odd",0,0,0,0,0,0,0,0,0
+554,\sim \even { ( \exists N ) },some number is not even,0,0,0,0,0,0,0,0,0
+555,( \exists Foo ) ( \sim \even { 999 } ),there is an element Foo such that 999 is not even,0,0,0,0,0,0,0,0,0
+556,( \exists Foo \in N ) ( \sim \odd { 999 } ),there is a number Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+557,( \equal { ( \exists N ) } { ( \exists N ) } ) \& ( \equal { ( \forall N ) } { ( \forall N ) } ),some number is equal to itself and every number is equal to itself,0,0,0,0,0,0,0,0,0
+558,\square { 999 } \in N,the square of 999 is a number,0,0,0,0,0,0,0,0,0
+559,( \notequal { ( \forall N ) } { ( \forall N ) } ) \supset \sim \even { ( \forall N ) },"if every number is not equal to itself , then every number is not even",0,0,0,0,0,0,0,0,0
+560,( \forall Foo \in \odd N ) ( \sim ( \exists N ) \in N ),"for all odd numbers Foo , some number is not a number",0,0,0,0,0,0,0,0,0
+561,999 \in \odd N,999 is an odd number,0,0,0,0,0,0,0,0,0
+562,( \equal { 999 } { ( \exists N ) } ) \& ( ( \exists N ) \in \odd N ),999 is equal to some number and some number is an odd number,0,0,0,0,0,0,0,0,0
+563,\sim ( \odd { 999 } ),999 is not odd,0,0,0,0,0,0,0,0,0
+564,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \sim \odd { 999 },"if every number is equal to itself , then 999 is not odd",0,0,0,0,0,0,0,0,0
+565,( \exists Foo ) ( \sim \even { ( \exists N ) } ),there is an element Foo such that some number is not even,0,0,0,0,0,0,0,0,0
+566,( \forall N ) \in N,every number is a number,0,0,0,0,0,0,0,0,0
+567,"\notequal { ( \exists N ) , ( \exists N ) }",some number and some number are not equal,0,0,0,0,0,0,0,0,0
+568,( \forall Foo \in N ) ( \equal { 999 } { 999 } ),"for all numbers Foo , 999 is equal to 999","for all numbers Foo , 999 is equal to itself",0,0,0,0,0,0,0,0
+569,"\notequal { ( \exists N ) , ( \forall N ) }",some number and every number are not equal,0,0,0,0,0,0,0,0,0
+570,( \even { ( \exists N ) } ) \supset \sim \odd { ( \exists N ) },"if some number is even , then some number is not odd",0,0,0,0,0,0,0,0,0
+571,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \odd { ( \exists N ) },"if some number is equal to itself , then some number is odd",0,0,0,0,0,0,0,0,0
+572,( \forall Foo \in \even \even N ) ( 999 \in \even N ),"for all even even numbers Foo , 999 is an even number",0,0,0,0,0,0,0,0,0
+573,( \sim \even { ( \forall N ) } ) \& ( \equal { ( \exists N ) } { ( \forall N ) } ),every number is not even and some number is equal to every number,0,0,0,0,0,0,0,0,0
+574,( \exists Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+575,\sim ( \sim \odd { 999 } ),it is not the case that 999 is not odd,0,0,0,0,0,0,0,0,0
+576,( \exists Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+577,( \forall Foo ) ( \equal { ( \forall N ) } { 999 } ),"for all Foo , every number is equal to 999",0,0,0,0,0,0,0,0,0
+578,( \notequal { 999 } { 999 } ) \& ( \odd { ( \forall N ) } ),999 is not equal to itself and every number is odd,999 is not equal to 999 and every number is odd,0,0,0,0,0,0,0,0
+579,( 999 \in N ) \vee ( \equal { 999 } { 999 } ),999 is a number or 999 is equal to 999,999 is a number or 999 is equal to itself,0,0,0,0,0,0,0,0
+580,( \exists Foo ) ( \equal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is equal to every number,0,0,0,0,0,0,0,0,0
+581,\notequal { Foo } { Foo },Foo is not equal to itself,0,0,0,0,0,0,0,0,0
+582,\equal to ( \exists N ) { 999 },999 is equal to some number,0,0,0,0,0,0,0,0,0
+583,( \exists Foo \in N ) ( \odd { 999 } ),there is a number Foo such that 999 is odd,0,0,0,0,0,0,0,0,0
+584,( \forall Foo ) ( \equal { 999 } { 999 } ),"for all Foo , 999 is equal to itself","for all Foo , 999 is equal to 999",0,0,0,0,0,0,0,0
+585,( \forall Foo ) ( \sim \even { ( \exists N ) } ),"for all Foo , some number is not even",0,0,0,0,0,0,0,0,0
+586,( \exists Foo ) ( 999 \in \odd N ),there is an element Foo such that 999 is an odd number,0,0,0,0,0,0,0,0,0
+587,"( \forall Foo , Foo \in N ) ( ( \forall N ) \in \even N )","for all numbers Foo and Foo , every number is an even number",0,0,0,0,0,0,0,0,0
+588,( \equal { ( \exists N ) } { 999 } ) \supset \notequal { 999 } { 999 },"if some number is equal to 999 , then 999 is not equal to itself","if some number is equal to 999 , then 999 is not equal to 999",0,0,0,0,0,0,0,0
+589,\sim ( \notequal { ( \forall N ) } { 999 } ),it is not the case that every number is not equal to 999,0,0,0,0,0,0,0,0,0
+590,"\notequal { ( \exists N ) , ( \exists N ) }",some number and some number are not equal,0,0,0,0,0,0,0,0,0
+591,"( \forall Foo , Foo \in \odd N ) ( \notequal { ( \exists N ) } { ( \forall N ) } )","for all odd numbers Foo and Foo , some number is not equal to every number",0,0,0,0,0,0,0,0,0
+592,\equal { \sum { ( \forall N ) } { ( \exists N ) } } { Foo },the sum of every number and some number is equal to Foo,0,0,0,0,0,0,0,0,0
+593,( \forall Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),"for all numbers Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+594,"\notequal { 999 , 999 }",999 and 999 are not equal,0,0,0,0,0,0,0,0,0
+595,( \forall Foo ) ( \even { ( \forall N ) } ),"for all Foo , every number is even",0,0,0,0,0,0,0,0,0
+596,\sim ( \forall \even N ) \in \even \even N,every even number is not an even even number,0,0,0,0,0,0,0,0,0
+597,"( \exists Foo \in \& [ \even , \even ] \odd N ) ( \even { ( \forall N ) } )",there is an even and even odd number Foo such that every number is even,0,0,0,0,0,0,0,0,0
+598,( \exists Foo ) ( \odd { ( \forall N ) } ),there is an element Foo such that every number is odd,0,0,0,0,0,0,0,0,0
+599,( \exists Foo \in \equal to ( \exists N ) N ) ( \notequal { 999 } { ( \exists N ) } ),there is a number equal to some number Foo such that 999 is not equal to some number,0,0,0,0,0,0,0,0,0
+600,\sim ( \sim \even { ( \forall N ) } ),it is not the case that every number is not even,0,0,0,0,0,0,0,0,0
+601,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( \notequal { 999 } { 999 } ),every number is equal to itself or 999 is not equal to itself,every number is equal to itself or 999 is not equal to 999,0,0,0,0,0,0,0,0
+602,( \sim 999 \in N ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is not a number or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+603,( \forall Foo \in N ) ( \sim \odd { ( \exists N ) } ),"for all numbers Foo , some number is not odd",0,0,0,0,0,0,0,0,0
+604,( \equal { ( \forall N ) } { ( \exists N ) } ) \supset \even { 999 },"if every number is equal to some number , then 999 is even",0,0,0,0,0,0,0,0,0
+605,"( \exists Foo , Foo \in N ) ( ( \exists N ) \in N )",there is a number Foo and Foo such that some number is a number,0,0,0,0,0,0,0,0,0
+606,( \forall Foo ) ( \sim ( \exists N ) \in \even N ),"for all Foo , some number is not an even number",0,0,0,0,0,0,0,0,0
+607,\sim Foo \in \even \even N,Foo is not an even even number,0,0,0,0,0,0,0,0,0
+608,( \odd { 999 } ) \supset \notequal { ( \forall N ) } { ( \exists N ) },"if 999 is odd , then every number is not equal to some number",0,0,0,0,0,0,0,0,0
+609,( \exists Foo \in \even \odd \odd N ) ( 999 \in \even N ),there is an even odd odd number Foo such that 999 is an even number,0,0,0,0,0,0,0,0,0
+610,( 999 \in \even N ) \supset \sim \odd { ( \forall N ) },"if 999 is an even number , then every number is not odd",0,0,0,0,0,0,0,0,0
+611,( \sim ( \exists N ) \in N ) \supset ( \exists N ) \in N,"if some number is not a number , then some number is a number",0,0,0,0,0,0,0,0,0
+612,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( \notequal { ( \exists N ) } { ( \forall N ) } ),every number is equal to itself or some number is not equal to every number,0,0,0,0,0,0,0,0,0
+613,"( \forall Foo , Foo \in N ) ( \equal { ( \exists N ) } { 999 } )","for all numbers Foo and Foo , some number is equal to 999",0,0,0,0,0,0,0,0,0
+614,( \equal { 999 } { 999 } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if 999 is equal to 999 , then every number is equal to itself","if 999 is equal to itself , then every number is equal to itself",0,0,0,0,0,0,0,0
+615,( \forall Foo ) ( \even { ( \exists N ) } ),"for all Foo , some number is even",0,0,0,0,0,0,0,0,0
+616,( \sim \even { ( \exists N ) } ) \supset \equal { 999 } { 999 },"if some number is not even , then 999 is equal to 999","if some number is not even , then 999 is equal to itself",0,0,0,0,0,0,0,0
+617,\notequal { 999 } { \product { ( \forall N ) } { ( \forall N ) } },999 is not equal to the product of every number and every number,0,0,0,0,0,0,0,0,0
+618,( \sim ( \forall N ) \in \even N ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if every number is not an even number , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+619,"( \exists Foo , Foo \in N ) ( \notequal { ( \exists N ) } { ( \forall N ) } )",there is a number Foo and Foo such that some number is not equal to every number,0,0,0,0,0,0,0,0,0
+620,( \odd { ( \forall N ) } ) \supset ( \forall N ) \in \even N,"if every number is odd , then every number is an even number",0,0,0,0,0,0,0,0,0
+621,\sim ( \sim 999 \in N ),it is not the case that 999 is not a number,0,0,0,0,0,0,0,0,0
+622,\sim ( \equal { ( \forall N ) } { ( \forall N ) } ),every number is not equal to itself,every number is not equal to every number,0,0,0,0,0,0,0,0
+623,\sim ( 999 \in N ),999 is not a number,0,0,0,0,0,0,0,0,0
+624,"\notequal { ( \forall N ) , ( \exists N ) }",every number and some number are not equal,0,0,0,0,0,0,0,0,0
+625,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+626,"( \forall Foo , Foo \in \odd \odd \even N ) ( \even { 999 } )","for all odd odd even numbers Foo and Foo , 999 is even",0,0,0,0,0,0,0,0,0
+627,( \exists Foo ) ( \sim \even { ( \forall N ) } ),there is an element Foo such that every number is not even,0,0,0,0,0,0,0,0,0
+628,\notequal { ( \forall N ) } { ( \exists \odd N ) },every number is not equal to some odd number,0,0,0,0,0,0,0,0,0
+629,( \sim \odd { 999 } ) \supset \sim \odd { ( \forall N ) },"if 999 is not odd , then every number is not odd",0,0,0,0,0,0,0,0,0
+630,( \forall Foo ) ( ( \exists N ) \in \even N ),"for all Foo , some number is an even number",0,0,0,0,0,0,0,0,0
+631,( 999 \in \even N ) \& ( ( \forall N ) \in N ),999 is an even number and every number is a number,0,0,0,0,0,0,0,0,0
+632,"( \forall Foo , Foo \in \odd N ) ( \notequal { 999 } { 999 } )","for all odd numbers Foo and Foo , 999 is not equal to itself","for all odd numbers Foo and Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+633,"( \forall Foo , Foo \in N ) ( \equal { 999 } { 999 } )","for all numbers Foo and Foo , 999 is equal to 999","for all numbers Foo and Foo , 999 is equal to itself",0,0,0,0,0,0,0,0
+634,( \forall Foo ) ( 999 \in \even N ),"for all Foo , 999 is an even number",0,0,0,0,0,0,0,0,0
+635,\notequal { ( \exists \odd N ) } { ( \exists \odd N ) },some odd number is not equal to itself,0,0,0,0,0,0,0,0,0
+636,( \exists Foo ) ( \notequal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+637,\equal { \square { ( \exists N ) } } { Foo },the square of some number is equal to Foo,0,0,0,0,0,0,0,0,0
+638,\equal { \product { 999 } { ( \forall N ) } } { \sum { ( \exists N ) } { ( \exists N ) } },the product of 999 and every number is equal to the sum of some number and some number,0,0,0,0,0,0,0,0,0
+639,( \forall Foo ) ( \sim \odd { ( \forall N ) } ),"for all Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+640,"\notequal { 999 , 999 }",999 and 999 are not equal,0,0,0,0,0,0,0,0,0
+641,\equal { \square { ( \forall N ) } } { \square { ( \forall N ) } },the square of every number is equal to itself,0,0,0,0,0,0,0,0,0
+642,\square { ( \exists N ) } \in N,the square of some number is a number,0,0,0,0,0,0,0,0,0
+643,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+644,( \sim 999 \in N ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if 999 is not a number , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+645,\sim Foo \in \odd N,Foo is not an odd number,0,0,0,0,0,0,0,0,0
+646,( \exists Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+647,( 999 \in \even N ) \supset \notequal { 999 } { 999 },"if 999 is an even number , then 999 is not equal to 999","if 999 is an even number , then 999 is not equal to itself",0,0,0,0,0,0,0,0
+648,\equal { ( \exists N ) } { \square { ( \exists N ) } },some number is equal to the square of some number,0,0,0,0,0,0,0,0,0
+649,\notequal to ( \forall N ) { ( \forall \even N ) },every even number is not equal to every number,0,0,0,0,0,0,0,0,0
+650,( \exists Foo ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+651,( \forall Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+652,( ( \exists N ) \in N ) \supset \notequal { 999 } { 999 },"if some number is a number , then 999 is not equal to itself","if some number is a number , then 999 is not equal to 999",0,0,0,0,0,0,0,0
+653,( \forall Foo ) ( ( \forall N ) \in \odd N ),"for all Foo , every number is an odd number",0,0,0,0,0,0,0,0,0
+654,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+655,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+656,"\notequal { ( \forall N ) , ( \forall N ) }",every number and every number are not equal,0,0,0,0,0,0,0,0,0
+657,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+658,"( \exists Foo , Foo \in \even \odd \even N ) ( \notequal { ( \forall N ) } { ( \forall N ) } )",there is an even odd even number Foo and Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+659,\sim ( \equal { 999 } { ( \forall N ) } ),999 is not equal to every number,0,0,0,0,0,0,0,0,0
+660,( \exists Foo ) ( \equal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is equal to every number,0,0,0,0,0,0,0,0,0
+661,"( \exists Foo , Foo \in N ) ( \sim \even { ( \forall N ) } )",there is a number Foo and Foo such that every number is not even,0,0,0,0,0,0,0,0,0
+662,\sim \even { 999 },999 is not even,0,0,0,0,0,0,0,0,0
+663,( ( \forall N ) \in \odd N ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if every number is an odd number , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+664,( \sim \even { ( \exists N ) } ) \vee ( \notequal { 999 } { 999 } ),some number is not even or 999 is not equal to itself,some number is not even or 999 is not equal to 999,0,0,0,0,0,0,0,0
+665,"\equal { 999 , 999 }",999 and 999 are equal,0,0,0,0,0,0,0,0,0
+666,( \even { ( \exists N ) } ) \supset \sim \even { ( \exists N ) },"if some number is even , then some number is not even",0,0,0,0,0,0,0,0,0
+667,( ( \exists N ) \in \odd N ) \vee ( \notequal { ( \forall N ) } { 999 } ),some number is an odd number or every number is not equal to 999,0,0,0,0,0,0,0,0,0
+668,"\notequal { ( \exists N ) , 999 }",some number and 999 are not equal,0,0,0,0,0,0,0,0,0
+669,( \forall Foo \in N ) ( \notequal { ( \forall N ) } { ( \exists N ) } ),"for all numbers Foo , every number is not equal to some number",0,0,0,0,0,0,0,0,0
+670,( \equal { 999 } { 999 } ) \& ( ( \exists N ) \in N ),999 is equal to 999 and some number is a number,999 is equal to itself and some number is a number,0,0,0,0,0,0,0,0
+671,\sim ( \equal { 999 } { 999 } ),999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+672,"( \forall Foo , Foo \in \equal to ( \forall N ) \odd \even N ) ( \notequal { ( \exists N ) } { 999 } )","for all odd even numbers equal to every number Foo and Foo , some number is not equal to 999",0,0,0,0,0,0,0,0,0
+673,"( \forall Foo , Foo \in N ) ( \notequal { 999 } { ( \forall N ) } )","for all numbers Foo and Foo , 999 is not equal to every number",0,0,0,0,0,0,0,0,0
+674,( \equal { 999 } { ( \exists N ) } ) \supset \equal { ( \exists N ) } { ( \exists N ) },"if 999 is equal to some number , then some number is equal to itself",0,0,0,0,0,0,0,0,0
+675,\sim 999 \in \even N,999 is not an even number,0,0,0,0,0,0,0,0,0
+676,( \exists Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+677,\sim ( ( \exists N ) \in \even N ),some number is not an even number,0,0,0,0,0,0,0,0,0
+678,( \forall Foo \in N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all numbers Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+679,( \forall Foo ) ( 999 \in \odd N ),"for all Foo , 999 is an odd number",0,0,0,0,0,0,0,0,0
+680,( \equal { ( \forall N ) } { ( \exists N ) } ) \vee ( \even { 999 } ),every number is equal to some number or 999 is even,0,0,0,0,0,0,0,0,0
+681,( \exists Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is a number Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+682,\odd { Foo },Foo is odd,0,0,0,0,0,0,0,0,0
+683,"\& [ \odd , \odd ] { \product { 999 } { ( \forall N ) } }",the product of 999 and every number is odd and odd,the product of 999 and every number is not odd and odd,0,0,0,0,0,0,0,0
+684,( \forall Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all numbers Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+685,"( \forall Foo , Foo \in N ) ( ( \exists N ) \in N )","for all numbers Foo and Foo , some number is a number",0,0,0,0,0,0,0,0,0
+686,\notequal { ( \exists N ) } { ( \exists \odd N ) },some number is not equal to some odd number,0,0,0,0,0,0,0,0,0
+687,( \notequal { ( \exists N ) } { 999 } ) \supset \sim \even { ( \exists N ) },"if some number is not equal to 999 , then some number is not even",0,0,0,0,0,0,0,0,0
+688,\notequal to ( \exists N ) { \square { 999 } },the square of 999 is not equal to some number,0,0,0,0,0,0,0,0,0
+689,"( \forall Foo , Foo \in N ) ( \equal { ( \exists N ) } { ( \exists N ) } )","for all numbers Foo and Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+690,( 999 \in N ) \vee ( ( \forall N ) \in N ),999 is a number or every number is a number,0,0,0,0,0,0,0,0,0
+691,"( \exists Foo , Foo \in \even \even \odd N ) ( \sim \odd { ( \forall N ) } )",there is an even even odd number Foo and Foo such that every number is not odd,0,0,0,0,0,0,0,0,0
+692,\sim Foo \in N,Foo is not a number,0,0,0,0,0,0,0,0,0
+693,"( \exists Foo , Foo \in \odd \even \odd N ) ( \equal { ( \exists N ) } { ( \exists N ) } )",there is an odd even odd number Foo and Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+694,\sim ( ( \forall N ) \in N ),every number is not a number,0,0,0,0,0,0,0,0,0
+695,( \forall Foo ) ( 999 \in N ),"for all Foo , 999 is a number",0,0,0,0,0,0,0,0,0
+696,( \forall Foo \in \equal to ( \forall N ) N ) ( \sim \odd { ( \forall N ) } ),"for all numbers equal to every number Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+697,( \forall Foo ) ( \odd { 999 } ),"for all Foo , 999 is odd",0,0,0,0,0,0,0,0,0
+698,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+699,\sim \even { Foo },Foo is not even,0,0,0,0,0,0,0,0,0
+700,( \forall Foo \in \odd N ) ( \equal { ( \exists N ) } { ( \forall N ) } ),"for all odd numbers Foo , some number is equal to every number",0,0,0,0,0,0,0,0,0
+701,\sim ( \equal { ( \exists N ) } { 999 } ),some number is not equal to 999,0,0,0,0,0,0,0,0,0
+702,\equal { Foo } { ( \forall N ) },Foo is equal to every number,0,0,0,0,0,0,0,0,0
+703,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( \notequal { ( \forall N ) } { ( \forall N ) } ),every number is equal to itself or every number is not equal to itself,0,0,0,0,0,0,0,0,0
+704,\square { ( \exists N ) } \in \odd \odd N,the square of some number is an odd odd number,0,0,0,0,0,0,0,0,0
+705,"( \forall Foo \in \vee [ \even , \even ] N ) ( \notequal { ( \exists N ) } { ( \exists N ) } )","for all even or even numbers Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+706,( \forall Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all numbers Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+707,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+708,\sim ( \forall \even N ) \in N,every even number is not a number,0,0,0,0,0,0,0,0,0
+709,( \notequal { ( \forall N ) } { ( \exists N ) } ) \& ( \equal { 999 } { ( \exists N ) } ),every number is not equal to some number and 999 is equal to some number,0,0,0,0,0,0,0,0,0
+710,\sim ( \sim \even { ( \exists N ) } ),it is not the case that some number is not even,0,0,0,0,0,0,0,0,0
+711,( \notequal { ( \exists N ) } { ( \exists N ) } ) \vee ( \sim \odd { ( \forall N ) } ),some number is not equal to itself or every number is not odd,0,0,0,0,0,0,0,0,0
+712,( \exists Foo ) ( \odd { 999 } ),there is an element Foo such that 999 is odd,0,0,0,0,0,0,0,0,0
+713,\notequal { ( \exists \odd N ) } { \square { ( \exists N ) } },some odd number is not equal to the square of some number,0,0,0,0,0,0,0,0,0
+714,\equal { 999 } { \sum { ( \exists N ) } { 999 } },999 is equal to the sum of some number and 999,0,0,0,0,0,0,0,0,0
+715,( \notequal { 999 } { ( \forall N ) } ) \supset \notequal { ( \forall N ) } { 999 },"if 999 is not equal to every number , then every number is not equal to 999",0,0,0,0,0,0,0,0,0
+716,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset 999 \in N,"if some number is equal to itself , then 999 is a number",0,0,0,0,0,0,0,0,0
+717,( \even { ( \exists N ) } ) \vee ( \even { ( \exists N ) } ),some number is even or even,0,0,0,0,0,0,0,0,0
+718,( \notequal { 999 } { 999 } ) \& ( \notequal { 999 } { 999 } ),999 is not equal to 999 and 999 is not equal to itself,999 is not equal to itself and 999 is not equal to 999,999 is not equal to 999 and 999 is not equal to 999,999 is not equal to itself and 999 is not equal to itself,0,0,0,0,0,0
+719,\sim ( \equal { 999 } { 999 } ),999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+720,( \exists Foo ) ( \equal { 999 } { ( \exists N ) } ),there is an element Foo such that 999 is equal to some number,0,0,0,0,0,0,0,0,0
+721,( \sim \odd { ( \exists N ) } ) \supset \notequal { ( \exists N ) } { ( \forall N ) },"if some number is not odd , then some number is not equal to every number",0,0,0,0,0,0,0,0,0
+722,( \exists N ) \in N,some number is a number,0,0,0,0,0,0,0,0,0
+723,\sim ( \sim \odd { ( \exists N ) } ),it is not the case that some number is not odd,0,0,0,0,0,0,0,0,0
+724,\sim ( \equal { ( \forall N ) } { ( \forall N ) } ),every number is not equal to itself,every number is not equal to every number,0,0,0,0,0,0,0,0
+725,\notequal { ( \forall \even N ) } { ( \forall \even N ) },every even number is not equal to itself,0,0,0,0,0,0,0,0,0
+726,( \sim \odd { ( \exists N ) } ) \vee ( \equal { ( \exists N ) } { ( \exists N ) } ),some number is not odd or some number is equal to itself,0,0,0,0,0,0,0,0,0
+727,"( \exists Foo , Foo \in \& [ \odd , \odd ] \odd \odd N ) ( \equal { ( \forall N ) } { ( \forall N ) } )",there is an odd and odd odd odd number Foo and Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+728,"\& [ \even , \even ] { \square { ( \forall N ) } }",the square of every number is even and even,the square of every number is not even and even,0,0,0,0,0,0,0,0
+729,"( \exists Foo , Foo \in N ) ( \notequal { 999 } { 999 } )",there is a number Foo and Foo such that 999 is not equal to 999,there is a number Foo and Foo such that 999 is not equal to itself,0,0,0,0,0,0,0,0
+730,( ( \forall N ) \in \even N ) \supset \equal { ( \exists N ) } { ( \forall N ) },"if every number is an even number , then some number is equal to every number",0,0,0,0,0,0,0,0,0
+731,"\notequal { 999 , ( \forall N ) }",999 and every number are not equal,0,0,0,0,0,0,0,0,0
+732,( \forall Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+733,( \forall Foo ) ( \even { 999 } ),"for all Foo , 999 is even",0,0,0,0,0,0,0,0,0
+734,"( \exists Foo , Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } )",there is a number Foo and Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+735,( \forall Foo ) ( \even { 999 } ),"for all Foo , 999 is even",0,0,0,0,0,0,0,0,0
+736,( \forall Foo \in \equal to ( \forall N ) N ) ( \equal { ( \exists N ) } { ( \exists N ) } ),"for all numbers equal to every number Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+737,"\equal { 999 , ( \forall N ) }",999 and every number are equal,0,0,0,0,0,0,0,0,0
+738,( \exists Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+739,( \even { ( \exists N ) } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),some number is even or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+740,"( \forall Foo \in \vee [ \even , \odd ] \odd N ) ( \notequal { ( \exists N ) } { ( \forall N ) } )","for all even or odd odd numbers Foo , some number is not equal to every number",0,0,0,0,0,0,0,0,0
+741,"\notequal { 999 , ( \forall N ) }",999 and every number are not equal,0,0,0,0,0,0,0,0,0
+742,"( \forall Foo , Foo \in N ) ( \even { 999 } )","for all numbers Foo and Foo , 999 is even",0,0,0,0,0,0,0,0,0
+743,\sim 999 \in \even \even N,999 is not an even even number,0,0,0,0,0,0,0,0,0
+744,"( \exists Foo , Foo \in \equal to ( \exists N ) N ) ( ( \forall N ) \in N )",there is a number equal to some number Foo and Foo such that every number is a number,0,0,0,0,0,0,0,0,0
+745,( \forall Foo \in \even N ) ( 999 \in \odd N ),"for all even numbers Foo , 999 is an odd number",0,0,0,0,0,0,0,0,0
+746,( \exists Foo ) ( \sim ( \exists N ) \in \odd N ),there is an element Foo such that some number is not an odd number,0,0,0,0,0,0,0,0,0
+747,( \forall \even N ) \in N,every even number is a number,0,0,0,0,0,0,0,0,0
+748,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+749,\sim \square { ( \exists N ) } \in N,the square of some number is not a number,0,0,0,0,0,0,0,0,0
+750,\odd { ( \forall \odd N ) },every odd number is odd,0,0,0,0,0,0,0,0,0
+751,( ( \forall N ) \in \even N ) \& ( 999 \in \even N ),every number is an even number and 999 is an even number,0,0,0,0,0,0,0,0,0
+752,( \exists Foo ) ( \sim ( \forall N ) \in N ),there is an element Foo such that every number is not a number,0,0,0,0,0,0,0,0,0
+753,\notequal to ( \exists N ) { 999 },999 is not equal to some number,0,0,0,0,0,0,0,0,0
+754,( \exists Foo ) ( \sim \even { 999 } ),there is an element Foo such that 999 is not even,0,0,0,0,0,0,0,0,0
+755,\square { ( \forall N ) } \in \odd N,the square of every number is an odd number,0,0,0,0,0,0,0,0,0
+756,( \exists Foo ) ( \sim 999 \in \even N ),there is an element Foo such that 999 is not an even number,0,0,0,0,0,0,0,0,0
+757,( \forall Foo ) ( \sim ( \forall N ) \in \odd N ),"for all Foo , every number is not an odd number",0,0,0,0,0,0,0,0,0
+758,( \forall Foo ) ( ( \exists N ) \in N ),"for all Foo , some number is a number",0,0,0,0,0,0,0,0,0
+759,\equal { \square { 999 } } { 999 },the square of 999 is equal to 999,0,0,0,0,0,0,0,0,0
+760,( \exists \even N ) \in N,some even number is a number,0,0,0,0,0,0,0,0,0
+761,( \forall Foo \in \even \odd N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all even odd numbers Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+762,( ( \forall N ) \in \even N ) \supset ( \exists N ) \in \odd N,"if every number is an even number , then some number is an odd number",0,0,0,0,0,0,0,0,0
+763,( \even { ( \exists N ) } ) \vee ( \notequal { 999 } { 999 } ),some number is even or 999 is not equal to itself,some number is even or 999 is not equal to 999,0,0,0,0,0,0,0,0
+764,"( \forall Foo , Foo \in \even \even N ) ( \sim \odd { ( \exists N ) } )","for all even even numbers Foo and Foo , some number is not odd",0,0,0,0,0,0,0,0,0
+765,( \equal { 999 } { 999 } ) \supset \odd { 999 },"if 999 is equal to 999 , then 999 is odd","if 999 is equal to itself , then 999 is odd",0,0,0,0,0,0,0,0
+766,( \exists Foo \in N ) ( ( \exists N ) \in \even N ),there is a number Foo such that some number is an even number,0,0,0,0,0,0,0,0,0
+767,\notequal { ( \exists N ) } { ( \exists N ) },some number is not equal to itself,0,0,0,0,0,0,0,0,0
+768,( \exists Foo ) ( \notequal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+769,\notequal { 999 } { \sum { 999 } { ( \exists N ) } },999 is not equal to the sum of 999 and some number,0,0,0,0,0,0,0,0,0
+770,( \exists Foo ) ( \odd { ( \exists N ) } ),there is an element Foo such that some number is odd,0,0,0,0,0,0,0,0,0
+771,( \sim \even { 999 } ) \vee ( \sim 999 \in N ),999 is not even or 999 is not a number,0,0,0,0,0,0,0,0,0
+772,\equal { Foo } { Foo },Foo is equal to itself,0,0,0,0,0,0,0,0,0
+773,( \sim ( \exists N ) \in \even N ) \supset \equal { 999 } { 999 },"if some number is not an even number , then 999 is equal to itself","if some number is not an even number , then 999 is equal to 999",0,0,0,0,0,0,0,0
+774,\equal { \product { ( \forall N ) } { 999 } } { \product { ( \forall N ) } { 999 } },the product of every number and 999 is equal to the product of every number and 999,the product of every number and 999 is equal to itself,0,0,0,0,0,0,0,0
+775,\equal { Foo } { ( \forall N ) },Foo is equal to every number,0,0,0,0,0,0,0,0,0
+776,( \forall Foo \in \even \odd N ) ( \sim ( \exists N ) \in \odd N ),"for all even odd numbers Foo , some number is not an odd number",0,0,0,0,0,0,0,0,0
+777,( \forall Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all numbers Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+778,"( \forall Foo , Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } )","for all numbers Foo and Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+779,( \exists Foo ) ( \notequal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+780,"( \forall Foo , Foo \in \& [ \even , \odd ] \odd \even N ) ( \odd { ( \forall N ) } )","for all even and odd odd even numbers Foo and Foo , every number is odd",0,0,0,0,0,0,0,0,0
+781,( \odd { ( \forall N ) } ) \vee ( \notequal { 999 } { 999 } ),every number is odd or 999 is not equal to itself,every number is odd or 999 is not equal to 999,0,0,0,0,0,0,0,0
+782,( \forall Foo ) ( \sim ( \exists N ) \in \odd N ),"for all Foo , some number is not an odd number",0,0,0,0,0,0,0,0,0
+783,"\vee [ \odd , \even ] { ( \forall \odd N ) }",every odd number is not odd or even,every odd number is odd or even,0,0,0,0,0,0,0,0
+784,( \forall Foo ) ( \sim \even { ( \forall N ) } ),"for all Foo , every number is not even",0,0,0,0,0,0,0,0,0
+785,( \sim 999 \in N ) \vee ( \equal { ( \forall N ) } { ( \forall N ) } ),999 is not a number or every number is equal to itself,0,0,0,0,0,0,0,0,0
+786,( \equal { ( \exists N ) } { ( \forall N ) } ) \supset \equal { ( \exists N ) } { ( \exists N ) },"if some number is equal to every number , then some number is equal to itself",0,0,0,0,0,0,0,0,0
+787,( \odd { 999 } ) \supset \sim 999 \in \even N,"if 999 is odd , then 999 is not an even number",0,0,0,0,0,0,0,0,0
+788,( \exists Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),there is a number Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+789,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+790,( \exists Foo \in N ) ( \notequal { 999 } { ( \forall N ) } ),there is a number Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+791,( \exists Foo ) ( \sim \even { ( \forall N ) } ),there is an element Foo such that every number is not even,0,0,0,0,0,0,0,0,0
+792,"( \forall Foo , Foo \in N ) ( \sim \even { ( \forall N ) } )","for all numbers Foo and Foo , every number is not even",0,0,0,0,0,0,0,0,0
+793,"( \exists Foo , Foo \in N ) ( \equal { ( \forall N ) } { ( \forall N ) } )",there is a number Foo and Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+794,( \notequal { 999 } { 999 } ) \vee ( \equal { 999 } { ( \forall N ) } ),999 is not equal to 999 or 999 is equal to every number,999 is not equal to itself or 999 is equal to every number,0,0,0,0,0,0,0,0
+795,( \exists Foo \in \odd N ) ( \sim ( \exists N ) \in N ),there is an odd number Foo such that some number is not a number,0,0,0,0,0,0,0,0,0
+796,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+797,( \equal { ( \exists N ) } { 999 } ) \supset ( \exists N ) \in N,"if some number is equal to 999 , then some number is a number",0,0,0,0,0,0,0,0,0
+798,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+799,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \odd { ( \exists N ) },"if some number is equal to itself , then some number is odd",0,0,0,0,0,0,0,0,0
+800,"( \forall Foo \in \& [ \even , \even ] \odd N ) ( \sim \odd { 999 } )","for all even and even odd numbers Foo , 999 is not odd",0,0,0,0,0,0,0,0,0
+801,( \notequal { ( \forall N ) } { ( \forall N ) } ) \supset ( \exists N ) \in N,"if every number is not equal to itself , then some number is a number",0,0,0,0,0,0,0,0,0
+802,( \forall Foo ) ( 999 \in N ),"for all Foo , 999 is a number",0,0,0,0,0,0,0,0,0
+803,( \exists Foo ) ( \notequal { 999 } { 999 } ),there is an element Foo such that 999 is not equal to itself,there is an element Foo such that 999 is not equal to 999,0,0,0,0,0,0,0,0
+804,"\& [ \odd , \odd ] { 999 }",999 is not odd and odd,999 is odd and odd,0,0,0,0,0,0,0,0
+805,\equal { \square { 999 } } { Foo },the square of 999 is equal to Foo,0,0,0,0,0,0,0,0,0
+806,( \forall Foo ) ( \sim \even { ( \exists N ) } ),"for all Foo , some number is not even",0,0,0,0,0,0,0,0,0
+807,"\equal { ( \exists N ) , ( \forall N ) }",some number and every number are equal,0,0,0,0,0,0,0,0,0
+808,( \forall Foo \in N ) ( \odd { 999 } ),"for all numbers Foo , 999 is odd",0,0,0,0,0,0,0,0,0
+809,( \forall Foo \in N ) ( \equal { 999 } { 999 } ),"for all numbers Foo , 999 is equal to 999","for all numbers Foo , 999 is equal to itself",0,0,0,0,0,0,0,0
+810,( \exists Foo \in N ) ( \sim ( \forall N ) \in \even N ),there is a number Foo such that every number is not an even number,0,0,0,0,0,0,0,0,0
+811,( \forall Foo ) ( \notequal { ( \exists N ) } { 999 } ),"for all Foo , some number is not equal to 999",0,0,0,0,0,0,0,0,0
+812,( \equal { 999 } { 999 } ) \vee ( \even { 999 } ),999 is equal to 999 or 999 is even,999 is equal to itself or 999 is even,999 is equal to 999 or even,0,0,0,0,0,0,0
+813,\sim ( ( \exists N ) \in \even N ),some number is not an even number,0,0,0,0,0,0,0,0,0
+814,"( \exists Foo , Foo \in N ) ( \sim \even { ( \exists N ) } )",there is a number Foo and Foo such that some number is not even,0,0,0,0,0,0,0,0,0
+815,( \forall Foo ) ( \even { ( \exists N ) } ),"for all Foo , some number is even",0,0,0,0,0,0,0,0,0
+816,"( \exists Foo , Foo \in \even N ) ( \sim 999 \in \odd N )",there is an even number Foo and Foo such that 999 is not an odd number,0,0,0,0,0,0,0,0,0
+817,( \exists Foo \in \equal to ( \exists N ) \odd N ) ( \equal { ( \forall N ) } { ( \exists N ) } ),there is an odd number equal to some number Foo such that every number is equal to some number,0,0,0,0,0,0,0,0,0
+818,"( \forall Foo , Foo \in N ) ( \equal { 999 } { ( \exists N ) } )","for all numbers Foo and Foo , 999 is equal to some number",0,0,0,0,0,0,0,0,0
+819,( \notequal { ( \forall N ) } { 999 } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if every number is not equal to 999 , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+820,( \exists Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),there is an element Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+821,( \exists Foo ) ( \sim ( \exists N ) \in N ),there is an element Foo such that some number is not a number,0,0,0,0,0,0,0,0,0
+822,( \sim ( \forall N ) \in \even N ) \supset 999 \in \even N,"if every number is not an even number , then 999 is an even number",0,0,0,0,0,0,0,0,0
+823,\sim ( \even { 999 } ),999 is not even,0,0,0,0,0,0,0,0,0
+824,\equal { ( \exists \even N ) } { ( \exists \even N ) },some even number is equal to itself,0,0,0,0,0,0,0,0,0
+825,( \notequal { ( \exists N ) } { ( \exists N ) } ) \supset ( \forall N ) \in \odd N,"if some number is not equal to itself , then every number is an odd number",0,0,0,0,0,0,0,0,0
+826,( ( \exists N ) \in \even N ) \supset \sim ( \exists N ) \in \even N,"if some number is an even number , then some number is not an even number",0,0,0,0,0,0,0,0,0
+827,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+828,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset 999 \in N,"if some number is equal to itself , then 999 is a number",0,0,0,0,0,0,0,0,0
+829,( \even { 999 } ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if 999 is even , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+830,\equal { \square { 999 } } { \product { 999 } { ( \forall N ) } },the square of 999 is equal to the product of 999 and every number,0,0,0,0,0,0,0,0,0
+831,( \notequal { ( \forall N ) } { ( \forall N ) } ) \& ( \odd { 999 } ),every number is not equal to itself and 999 is odd,0,0,0,0,0,0,0,0,0
+832,\sim ( \even { ( \exists N ) } ),some number is not even,0,0,0,0,0,0,0,0,0
+833,( \exists Foo \in N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is a number Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+834,"( \exists Foo , Foo \in \odd N ) ( \sim \odd { 999 } )",there is an odd number Foo and Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+835,( \sim ( \exists N ) \in N ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if some number is not a number , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+836,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \even { ( \forall N ) },"if every number is equal to itself , then every number is even",0,0,0,0,0,0,0,0,0
+837,\equal { \sum { 999 } { ( \exists N ) } } { \sum { 999 } { ( \exists N ) } },the sum of 999 and some number is equal to itself,the sum of 999 and some number is equal to the sum of 999 and some number,0,0,0,0,0,0,0,0
+838,( \exists Foo ) ( \sim 999 \in N ),there is an element Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+839,"\vee [ \odd , \even ] { \square { ( \exists N ) } }",the square of some number is not odd or even,the square of some number is odd or even,0,0,0,0,0,0,0,0
+840,( \forall Foo \in N ) ( \sim \odd { ( \forall N ) } ),"for all numbers Foo , every number is not odd",0,0,0,0,0,0,0,0,0
+841,( \exists Foo ) ( \odd { ( \forall N ) } ),there is an element Foo such that every number is odd,0,0,0,0,0,0,0,0,0
+842,( \forall Foo ) ( \equal { ( \forall N ) } { ( \exists N ) } ),"for all Foo , every number is equal to some number",0,0,0,0,0,0,0,0,0
+843,( \equal { ( \exists N ) } { ( \exists N ) } ) \& ( \sim 999 \in \odd N ),some number is equal to itself and 999 is not an odd number,0,0,0,0,0,0,0,0,0
+844,( \exists Foo ) ( \sim 999 \in N ),there is an element Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+845,( \forall Foo ) ( \notequal { 999 } { ( \forall N ) } ),"for all Foo , 999 is not equal to every number",0,0,0,0,0,0,0,0,0
+846,\equal { Foo } { Foo },Foo is equal to itself,0,0,0,0,0,0,0,0,0
+847,"\notequal { ( \exists N ) , ( \forall N ) }",some number and every number are not equal,0,0,0,0,0,0,0,0,0
+848,( \equal { ( \forall N ) } { ( \forall N ) } ) \vee ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is equal to itself or some number is not equal to itself,0,0,0,0,0,0,0,0,0
+849,( \exists Foo ) ( \sim \odd { ( \forall N ) } ),there is an element Foo such that every number is not odd,0,0,0,0,0,0,0,0,0
+850,"( \exists Foo , Foo \in \even \even \even N ) ( \sim ( \exists N ) \in \odd N )",there is an even even even number Foo and Foo such that some number is not an odd number,0,0,0,0,0,0,0,0,0
+851,\sim ( \sim ( \exists N ) \in \odd N ),it is not the case that some number is not an odd number,0,0,0,0,0,0,0,0,0
+852,"( \forall Foo , Foo \in \& [ \odd , \odd ] N ) ( \equal { ( \exists N ) } { 999 } )","for all odd and odd numbers Foo and Foo , some number is equal to 999",0,0,0,0,0,0,0,0,0
+853,"( \exists Foo , Foo \in N ) ( \sim \odd { 999 } )",there is a number Foo and Foo such that 999 is not odd,0,0,0,0,0,0,0,0,0
+854,( \exists Foo \in N ) ( 999 \in \even N ),there is a number Foo such that 999 is an even number,0,0,0,0,0,0,0,0,0
+855,( \sim ( \exists N ) \in N ) \vee ( \equal { ( \exists N ) } { ( \exists N ) } ),some number is not a number or some number is equal to itself,0,0,0,0,0,0,0,0,0
+856,\notequal { 999 } { ( \exists N ) },999 is not equal to some number,0,0,0,0,0,0,0,0,0
+857,( ( \forall N ) \in N ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is a number and some number is not equal to itself,0,0,0,0,0,0,0,0,0
+858,\equal to ( \exists N ) { Foo },Foo is equal to some number,0,0,0,0,0,0,0,0,0
+859,"\equal { ( \exists N ) , 999 }",some number and 999 are equal,0,0,0,0,0,0,0,0,0
+860,( \forall Foo \in N ) ( \notequal { ( \exists N ) } { ( \forall N ) } ),"for all numbers Foo , some number is not equal to every number",0,0,0,0,0,0,0,0,0
+861,"( \forall Foo , Foo \in N ) ( \sim 999 \in \even N )","for all numbers Foo and Foo , 999 is not an even number",0,0,0,0,0,0,0,0,0
+862,( \sim \odd { ( \forall N ) } ) \supset \equal { ( \exists N ) } { ( \forall N ) },"if every number is not odd , then some number is equal to every number",0,0,0,0,0,0,0,0,0
+863,( \exists Foo ) ( \notequal { ( \exists N ) } { 999 } ),there is an element Foo such that some number is not equal to 999,0,0,0,0,0,0,0,0,0
+864,"( \exists Foo , Foo \in \vee [ \even , \even ] N ) ( \equal { ( \exists N ) } { ( \forall N ) } )",there is an even or even number Foo and Foo such that some number is equal to every number,0,0,0,0,0,0,0,0,0
+865,( \notequal { 999 } { 999 } ) \supset \notequal { 999 } { ( \exists N ) },"if 999 is not equal to itself , then 999 is not equal to some number","if 999 is not equal to 999 , then 999 is not equal to some number",0,0,0,0,0,0,0,0
+866,\notequal { ( \exists N ) } { ( \exists N ) },some number is not equal to itself,0,0,0,0,0,0,0,0,0
+867,( \exists Foo \in N ) ( \notequal { ( \exists N ) } { ( \forall N ) } ),there is a number Foo such that some number is not equal to every number,0,0,0,0,0,0,0,0,0
+868,( \exists Foo \in \odd \even N ) ( \notequal { 999 } { 999 } ),there is an odd even number Foo such that 999 is not equal to 999,there is an odd even number Foo such that 999 is not equal to itself,0,0,0,0,0,0,0,0
+869,( \equal { 999 } { ( \forall N ) } ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),999 is equal to every number and some number is not equal to itself,0,0,0,0,0,0,0,0,0
+870,( \exists Foo \in N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is a number Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+871,\notequal { ( \exists N ) } { ( \forall \even N ) },some number is not equal to every even number,0,0,0,0,0,0,0,0,0
+872,( \forall Foo \in N ) ( \sim \odd { 999 } ),"for all numbers Foo , 999 is not odd",0,0,0,0,0,0,0,0,0
+873,( \exists Foo \in N ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),there is a number Foo such that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+874,\notequal to 999 { Foo },Foo is not equal to 999,0,0,0,0,0,0,0,0,0
+875,"( \exists Foo , Foo \in N ) ( ( \forall N ) \in N )",there is a number Foo and Foo such that every number is a number,0,0,0,0,0,0,0,0,0
+876,( \forall Foo ) ( \odd { ( \exists N ) } ),"for all Foo , some number is odd",0,0,0,0,0,0,0,0,0
+877,( \exists Foo ) ( \sim 999 \in N ),there is an element Foo such that 999 is not a number,0,0,0,0,0,0,0,0,0
+878,( \exists Foo \in N ) ( \sim \even { ( \forall N ) } ),there is a number Foo such that every number is not even,0,0,0,0,0,0,0,0,0
+879,\sim ( ( \forall N ) \in N ),every number is not a number,0,0,0,0,0,0,0,0,0
+880,( \sim 999 \in \odd N ) \supset \sim 999 \in \odd N,"if 999 is not an odd number , then 999 is not an odd number",0,0,0,0,0,0,0,0,0
+881,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+882,\sim ( 999 \in N ),999 is not a number,0,0,0,0,0,0,0,0,0
+883,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+884,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+885,( \notequal { ( \exists N ) } { ( \exists N ) } ) \supset \notequal { ( \forall N ) } { 999 },"if some number is not equal to itself , then every number is not equal to 999",0,0,0,0,0,0,0,0,0
+886,\equal { ( \exists N ) } { ( \forall \odd N ) },some number is equal to every odd number,0,0,0,0,0,0,0,0,0
+887,\sim ( \sim ( \exists N ) \in N ),it is not the case that some number is not a number,0,0,0,0,0,0,0,0,0
+888,"( \forall Foo , Foo \in N ) ( \notequal { ( \forall N ) } { ( \exists N ) } )","for all numbers Foo and Foo , every number is not equal to some number",0,0,0,0,0,0,0,0,0
+889,( \forall Foo ) ( ( \forall N ) \in \odd N ),"for all Foo , every number is an odd number",0,0,0,0,0,0,0,0,0
+890,( \exists N ) \in N,some number is a number,0,0,0,0,0,0,0,0,0
+891,\sim ( \equal { 999 } { 999 } ),999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+892,\sim ( \sim \even { 999 } ),it is not the case that 999 is not even,0,0,0,0,0,0,0,0,0
+893,( \equal { 999 } { ( \forall N ) } ) \vee ( \sim \even { ( \forall N ) } ),999 is equal to every number or every number is not even,0,0,0,0,0,0,0,0,0
+894,"( \exists Foo , Foo \in N ) ( \sim \even { ( \exists N ) } )",there is a number Foo and Foo such that some number is not even,0,0,0,0,0,0,0,0,0
+895,"( \forall Foo , Foo \in \even \odd N ) ( ( \exists N ) \in N )","for all even odd numbers Foo and Foo , some number is a number",0,0,0,0,0,0,0,0,0
+896,\sim ( \equal { ( \exists N ) } { 999 } ),some number is not equal to 999,0,0,0,0,0,0,0,0,0
+897,( \exists Foo ) ( \notequal { 999 } { ( \forall N ) } ),there is an element Foo such that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+898,\notequal { ( \exists \even N ) } { 999 },some even number is not equal to 999,0,0,0,0,0,0,0,0,0
+899,( ( \exists N ) \in N ) \& ( \sim \odd { ( \forall N ) } ),some number is a number and every number is not odd,0,0,0,0,0,0,0,0,0
+900,\notequal { Foo } { Foo },Foo is not equal to itself,0,0,0,0,0,0,0,0,0
+901,\equal { ( \forall \odd N ) } { ( \forall \odd N ) },every odd number is equal to itself,0,0,0,0,0,0,0,0,0
+902,( \forall Foo \in N ) ( \notequal { 999 } { 999 } ),"for all numbers Foo , 999 is not equal to itself","for all numbers Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+903,\sim ( \equal { 999 } { ( \exists N ) } ),999 is not equal to some number,0,0,0,0,0,0,0,0,0
+904,( \exists Foo ) ( \even { ( \forall N ) } ),there is an element Foo such that every number is even,0,0,0,0,0,0,0,0,0
+905,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+906,"( \exists Foo , Foo \in \equal to ( \forall N ) \even \odd N ) ( \even { 999 } )",there is an even odd number equal to every number Foo and Foo such that 999 is even,0,0,0,0,0,0,0,0,0
+907,\sim \square { ( \forall N ) } \in N,the square of every number is not a number,0,0,0,0,0,0,0,0,0
+908,\sim ( \notequal { 999 } { ( \forall N ) } ),it is not the case that 999 is not equal to every number,0,0,0,0,0,0,0,0,0
+909,( \notequal { ( \forall N ) } { ( \forall N ) } ) \& ( \notequal { 999 } { 999 } ),every number is not equal to itself and 999 is not equal to itself,every number is not equal to itself and 999 is not equal to 999,0,0,0,0,0,0,0,0
+910,\equal to ( \exists N ) { \sum { 999 } { 999 } },the sum of 999 and 999 is equal to some number,0,0,0,0,0,0,0,0,0
+911,\equal { \square { 999 } } { \square { 999 } },the square of 999 is equal to the square of 999,the square of 999 is equal to itself,0,0,0,0,0,0,0,0
+912,( \sim \odd { ( \exists N ) } ) \& ( \odd { 999 } ),some number is not odd and 999 is odd,0,0,0,0,0,0,0,0,0
+913,\equal { ( \exists \even N ) } { \square { ( \forall N ) } },some even number is equal to the square of every number,0,0,0,0,0,0,0,0,0
+914,( \forall Foo ) ( \sim \odd { ( \exists N ) } ),"for all Foo , some number is not odd",0,0,0,0,0,0,0,0,0
+915,\sim ( \sim ( \exists N ) \in \even N ),it is not the case that some number is not an even number,0,0,0,0,0,0,0,0,0
+916,"\notequal { ( \forall N ) , 999 }",every number and 999 are not equal,0,0,0,0,0,0,0,0,0
+917,( \sim 999 \in \odd N ) \supset \sim \odd { ( \exists N ) },"if 999 is not an odd number , then some number is not odd",0,0,0,0,0,0,0,0,0
+918,( \notequal { 999 } { 999 } ) \vee ( ( \forall N ) \in N ),999 is not equal to 999 or every number is a number,999 is not equal to itself or every number is a number,0,0,0,0,0,0,0,0
+919,( \notequal { ( \exists N ) } { ( \exists N ) } ) \supset \equal { ( \exists N ) } { ( \exists N ) },"if some number is not equal to itself , then some number is equal to itself",0,0,0,0,0,0,0,0,0
+920,\sum { ( \forall N ) } { ( \forall N ) } \in \odd \odd N,the sum of every number and every number is an odd odd number,0,0,0,0,0,0,0,0,0
+921,( \forall Foo ) ( \notequal { 999 } { 999 } ),"for all Foo , 999 is not equal to itself","for all Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+922,"( \exists Foo , Foo \in \& [ \even , \odd ] \odd \odd N ) ( \sim \odd { ( \forall N ) } )",there is an even and odd odd odd number Foo and Foo such that every number is not odd,0,0,0,0,0,0,0,0,0
+923,( \forall Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is not equal to itself",0,0,0,0,0,0,0,0,0
+924,( \equal { 999 } { 999 } ) \& ( \sim \odd { ( \exists N ) } ),999 is equal to 999 and some number is not odd,999 is equal to itself and some number is not odd,0,0,0,0,0,0,0,0
+925,( ( \exists N ) \in \odd N ) \supset \notequal { ( \forall N ) } { ( \forall N ) },"if some number is an odd number , then every number is not equal to itself",0,0,0,0,0,0,0,0,0
+926,( \forall Foo ) ( \sim ( \forall N ) \in \odd N ),"for all Foo , every number is not an odd number",0,0,0,0,0,0,0,0,0
+927,"\notequal { 999 , ( \exists N ) }",999 and some number are not equal,0,0,0,0,0,0,0,0,0
+928,Foo \in N,Foo is a number,0,0,0,0,0,0,0,0,0
+929,( \exists Foo \in \even \even \odd N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),there is an even even odd number Foo such that every number is equal to itself,0,0,0,0,0,0,0,0,0
+930,( \forall Foo ) ( \equal { 999 } { ( \exists N ) } ),"for all Foo , 999 is equal to some number",0,0,0,0,0,0,0,0,0
+931,"\notequal { 999 , ( \exists N ) }",999 and some number are not equal,0,0,0,0,0,0,0,0,0
+932,( \forall Foo \in N ) ( \equal { 999 } { 999 } ),"for all numbers Foo , 999 is equal to 999","for all numbers Foo , 999 is equal to itself",0,0,0,0,0,0,0,0
+933,( \odd { ( \exists N ) } ) \& ( \even { ( \forall N ) } ),some number is odd and every number is even,0,0,0,0,0,0,0,0,0
+934,Foo \in \even N,Foo is an even number,0,0,0,0,0,0,0,0,0
+935,( \sim ( \forall N ) \in N ) \supset ( \exists N ) \in \even N,"if every number is not a number , then some number is an even number",0,0,0,0,0,0,0,0,0
+936,\sim ( \sim ( \forall N ) \in \even N ),it is not the case that every number is not an even number,0,0,0,0,0,0,0,0,0
+937,( \exists Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+938,( \equal { ( \exists N ) } { ( \exists N ) } ) \& ( \notequal { ( \forall N ) } { ( \forall N ) } ),some number is equal to itself and every number is not equal to itself,0,0,0,0,0,0,0,0,0
+939,"( \exists Foo , Foo \in \even N ) ( \equal { 999 } { 999 } )",there is an even number Foo and Foo such that 999 is equal to 999,there is an even number Foo and Foo such that 999 is equal to itself,0,0,0,0,0,0,0,0
+940,\sim ( \equal { 999 } { 999 } ),999 is not equal to 999,999 is not equal to itself,0,0,0,0,0,0,0,0
+941,( \forall Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),"for all Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+942,\sim ( \notequal { 999 } { 999 } ),it is not the case that 999 is not equal to itself,it is not the case that 999 is not equal to 999,0,0,0,0,0,0,0,0
+943,( \forall Foo ) ( \sim ( \forall N ) \in \even N ),"for all Foo , every number is not an even number",0,0,0,0,0,0,0,0,0
+944,"( \exists Foo , Foo \in N ) ( 999 \in \odd N )",there is a number Foo and Foo such that 999 is an odd number,0,0,0,0,0,0,0,0,0
+945,( \sim \odd { 999 } ) \vee ( 999 \in \even N ),999 is not odd or 999 is an even number,0,0,0,0,0,0,0,0,0
+946,\notequal { \square { ( \exists N ) } } { \square { ( \exists N ) } },the square of some number is not equal to itself,0,0,0,0,0,0,0,0,0
+947,\sim ( \forall N ) \in N,every number is not a number,0,0,0,0,0,0,0,0,0
+948,( \exists Foo ) ( \sim \even { ( \forall N ) } ),there is an element Foo such that every number is not even,0,0,0,0,0,0,0,0,0
+949,( \exists Foo ) ( ( \forall N ) \in \even N ),there is an element Foo such that every number is an even number,0,0,0,0,0,0,0,0,0
+950,( \notequal { ( \forall N ) } { ( \forall N ) } ) \supset \even { ( \exists N ) },"if every number is not equal to itself , then some number is even",0,0,0,0,0,0,0,0,0
+951,( \exists Foo ) ( \equal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is equal to itself,0,0,0,0,0,0,0,0,0
+952,( \forall Foo \in N ) ( \equal { ( \forall N ) } { ( \forall N ) } ),"for all numbers Foo , every number is equal to itself",0,0,0,0,0,0,0,0,0
+953,"\notequal { ( \exists N ) , 999 }",some number and 999 are not equal,0,0,0,0,0,0,0,0,0
+954,\sim ( \equal { ( \forall N ) } { 999 } ),every number is not equal to 999,0,0,0,0,0,0,0,0,0
+955,( \equal { ( \forall N ) } { ( \exists N ) } ) \supset \sim ( \forall N ) \in \even N,"if every number is equal to some number , then every number is not an even number",0,0,0,0,0,0,0,0,0
+956,( \forall Foo ) ( \sim \even { 999 } ),"for all Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+957,\equal { \sum { ( \forall N ) } { 999 } } { \sum { ( \forall N ) } { 999 } },the sum of every number and 999 is equal to itself,the sum of every number and 999 is equal to the sum of every number and 999,0,0,0,0,0,0,0,0
+958,"\notequal { ( \exists N ) , ( \forall N ) }",some number and every number are not equal,0,0,0,0,0,0,0,0,0
+959,( \exists Foo \in N ) ( \sim ( \exists N ) \in \even N ),there is a number Foo such that some number is not an even number,0,0,0,0,0,0,0,0,0
+960,\sim ( \even { ( \exists N ) } ),some number is not even,0,0,0,0,0,0,0,0,0
+961,( \notequal { 999 } { ( \exists N ) } ) \& ( \notequal { 999 } { 999 } ),999 is not equal to some number and 999 is not equal to 999,999 is not equal to some number and 999 is not equal to itself,0,0,0,0,0,0,0,0
+962,( \forall Foo ) ( \sim \even { 999 } ),"for all Foo , 999 is not even",0,0,0,0,0,0,0,0,0
+963,\equal { 999 } { 999 },999 is equal to 999,999 is equal to itself,0,0,0,0,0,0,0,0
+964,"\equal { ( \exists N ) , ( \exists N ) }",some number and some number are equal,0,0,0,0,0,0,0,0,0
+965,( \sim ( \exists N ) \in \even N ) \vee ( \notequal { ( \forall N ) } { ( \forall N ) } ),some number is not an even number or every number is not equal to itself,0,0,0,0,0,0,0,0,0
+966,( \exists Foo \in N ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is a number Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+967,"( \forall Foo , Foo \in \equal to ( \forall N ) \even \odd N ) ( \equal { ( \exists N ) } { ( \exists N ) } )","for all even odd numbers equal to every number Foo and Foo , some number is equal to itself",0,0,0,0,0,0,0,0,0
+968,( \exists Foo ) ( \notequal { ( \exists N ) } { ( \exists N ) } ),there is an element Foo such that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+969,\sim ( \notequal { ( \exists N ) } { ( \exists N ) } ),it is not the case that some number is not equal to itself,0,0,0,0,0,0,0,0,0
+970,\notequal { ( \forall \even N ) } { ( \forall \even N ) },every even number is not equal to itself,0,0,0,0,0,0,0,0,0
+971,( \equal { ( \exists N ) } { ( \exists N ) } ) \supset \sim \even { 999 },"if some number is equal to itself , then 999 is not even",0,0,0,0,0,0,0,0,0
+972,\equal { ( \exists \odd N ) } { \product { 999 } { ( \exists N ) } },some odd number is equal to the product of 999 and some number,0,0,0,0,0,0,0,0,0
+973,\sim ( \equal { ( \exists N ) } { ( \exists N ) } ),some number is not equal to some number,some number is not equal to itself,0,0,0,0,0,0,0,0
+974,( \notequal { ( \forall N ) } { 999 } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if every number is not equal to 999 , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+975,\equal { ( \exists N ) } { ( \exists N ) },some number is equal to itself,0,0,0,0,0,0,0,0,0
+976,"( \exists Foo , Foo \in N ) ( \equal { 999 } { 999 } )",there is a number Foo and Foo such that 999 is equal to 999,there is a number Foo and Foo such that 999 is equal to itself,0,0,0,0,0,0,0,0
+977,\sim ( \notequal { ( \forall N ) } { ( \forall N ) } ),it is not the case that every number is not equal to itself,0,0,0,0,0,0,0,0,0
+978,( \forall Foo ) ( \equal { ( \exists N ) } { ( \forall N ) } ),"for all Foo , some number is equal to every number",0,0,0,0,0,0,0,0,0
+979,( \forall Foo ) ( ( \forall N ) \in N ),"for all Foo , every number is a number",0,0,0,0,0,0,0,0,0
+980,( \forall Foo ) ( \even { ( \exists N ) } ),"for all Foo , some number is even",0,0,0,0,0,0,0,0,0
+981,"( \forall Foo , Foo \in \even N ) ( \notequal { 999 } { 999 } )","for all even numbers Foo and Foo , 999 is not equal to itself","for all even numbers Foo and Foo , 999 is not equal to 999",0,0,0,0,0,0,0,0
+982,"( \forall Foo , Foo \in N ) ( \sim ( \forall N ) \in N )","for all numbers Foo and Foo , every number is not a number",0,0,0,0,0,0,0,0,0
+983,"\notequal { ( \forall N ) , 999 }",every number and 999 are not equal,0,0,0,0,0,0,0,0,0
+984,( \equal { ( \forall N ) } { ( \forall N ) } ) \supset \equal { ( \forall N ) } { ( \forall N ) },"if every number is equal to itself , then every number is equal to itself",0,0,0,0,0,0,0,0,0
+985,\sim ( \odd { ( \forall N ) } ),every number is not odd,0,0,0,0,0,0,0,0,0
+986,( \forall Foo ) ( \notequal { ( \forall N ) } { ( \forall N ) } ),"for all Foo , every number is not equal to itself",0,0,0,0,0,0,0,0,0
+987,( \forall Foo \in \even N ) ( \sim ( \forall N ) \in N ),"for all even numbers Foo , every number is not a number",0,0,0,0,0,0,0,0,0
+988,( ( \exists N ) \in N ) \vee ( \sim ( \forall N ) \in N ),some number is a number or every number is not a number,0,0,0,0,0,0,0,0,0
+989,( \odd { ( \forall N ) } ) \& ( \equal { 999 } { 999 } ),every number is odd and 999 is equal to 999,every number is odd and 999 is equal to itself,0,0,0,0,0,0,0,0
+990,( \sim \odd { ( \exists N ) } ) \& ( \equal { ( \exists N ) } { 999 } ),some number is not odd and some number is equal to 999,0,0,0,0,0,0,0,0,0
+991,\sim ( \equal { 999 } { ( \exists N ) } ),999 is not equal to some number,0,0,0,0,0,0,0,0,0
+992,"( \forall Foo , Foo \in \equal to ( \exists N ) N ) ( \even { 999 } )","for all numbers equal to some number Foo and Foo , 999 is even",0,0,0,0,0,0,0,0,0
+993,( \equal { ( \forall N ) } { ( \forall N ) } ) \& ( \notequal { ( \exists N ) } { ( \exists N ) } ),every number is equal to itself and some number is not equal to itself,0,0,0,0,0,0,0,0,0
+994,"( \forall Foo \in \& [ \even , \even ] N ) ( \sim ( \exists N ) \in N )","for all even and even numbers Foo , some number is not a number",0,0,0,0,0,0,0,0,0
+995,( \notequal { ( \forall N ) } { ( \forall N ) } ) \supset \equal { ( \exists N ) } { ( \exists N ) },"if every number is not equal to itself , then some number is equal to itself",0,0,0,0,0,0,0,0,0
+996,( \equal { 999 } { 999 } ) \supset \equal { 999 } { 999 },"if 999 is equal to 999 , then 999 is equal to itself","if 999 is equal to itself , then 999 is equal to 999","if 999 is equal to 999 , then 999 is equal to 999","if 999 is equal to itself , then 999 is equal to itself",0,0,0,0,0,0
+997,"( \forall Foo , Foo \in \equal to ( \forall N ) \even \odd N ) ( ( \forall N ) \in N )","for all even odd numbers equal to every number Foo and Foo , every number is a number",0,0,0,0,0,0,0,0,0
+998,\sim ( \equal { ( \forall N ) } { ( \forall N ) } ),every number is not equal to itself,every number is not equal to every number,0,0,0,0,0,0,0,0
+999,( \forall Foo ) ( \sim ( \forall N ) \in N ),"for all Foo , every number is not a number",0,0,0,0,0,0,0,0,0
