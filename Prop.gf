@@ -34,6 +34,7 @@ fun
 
   CAnd, COr : Conj ;                        -- `and' and `or' are both considered conjunctions
 
+
 -- supplementary
 
 cat
@@ -63,8 +64,8 @@ fun
   IUniv  : Kind -> Ind ;                    -- for in-situ quantification
   IExist : Kind -> Ind ;                    -- for in-situ quantification
 
-  Everything_IUniv : Ind ; --Elze: for inSituWithoutKind
-  Something_IExist : Ind ; --Elze: for inSituWithoutKind
+  Everything_IUniv : Ind ;                  -- Elze: for inSituWithoutKind
+  Something_IExist : Ind ;                  -- Elze: for inSituWithoutKind
 
   ConjInd : Conj -> [Ind] -> Ind ;          -- for predicate-sharing aggregation
 
