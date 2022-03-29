@@ -12,9 +12,10 @@ executable trans
     .
   main-is: Trans.hs
   other-modules:
-    TransProp, Prop
+    TransProp, Prop, LogicLaws
   build-depends:
     base,
     gf,
-    mtl
+    mtl,
+    containers
   default-language: Haskell2010
