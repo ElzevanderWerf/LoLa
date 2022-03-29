@@ -4,8 +4,13 @@
 
 module TransProp where
 
-import qualified "gf" PGF (Tree, showExpr)
+--import qualified "gf" PGF (Tree, showExpr)
+import "gf" PGF
 import Prop   -- generated from GF
+import LogicLaws -- Elze
+import Data.Tree
+import Data.List (minimumBy)
+import Data.Ord (comparing)
 
 transfer :: Mode -> PGF.Tree -> PGF.Tree
 transfer m = gf . trans . fg where
@@ -14,7 +19,7 @@ transfer m = gf . trans . fg where
     MMinimalize -> minimalizeP . normalizeP
     MNormalize  -> normalizeP 
     MOptimize   -> optimizeP
-    MSimplify   -> simplifyP      -- Elze TODO add: . optimizeP
+    --MSimplify   -> simplifyP      -- Elze TODO add: . optimizeP
 
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify deriving Show    -- Elze added MSimplify
 
@@ -31,7 +36,7 @@ noFreeVars = null . freeVarsP . fg
 optimizeP :: GProp -> GProp
 optimizeP = optimize
 
-optimize :: forall c. Tree c -> Tree c
+optimize :: forall c. Prop.Tree c -> Prop.Tree c
 optimize t = case t of
   GPNeg (GPAtom a) -> GPNegAtom a
   GPConj co p q -> aggregate co $ optimize $ mergeConj co p q
@@ -185,10 +190,10 @@ type Ind = GInd
 
 newVar i = GVString (GString ("x" ++ show i)) ---
 
-freeVars :: Tree a -> [GVar]
+freeVars :: Prop.Tree a -> [GVar]
 freeVars t = [x | x@(GVString _) <- freeVarsM t]
  where
-  freeVarsM :: forall a. Tree a -> [GVar]
+  freeVarsM :: forall a. Prop.Tree a -> [GVar]
   freeVarsM t = case t of
     GPUniv x p -> filter (/= x) $ freeVarsM p
     GPExist x p -> filter (/= x) $ freeVarsM p
@@ -197,7 +202,7 @@ freeVars t = [x | x@(GVString _) <- freeVarsM t]
     GVString _ -> [t]
     _ -> composOpMPlus freeVarsM t
 
-notFree :: GVar -> Tree a -> Bool
+notFree :: GVar -> Prop.Tree a -> Bool
 notFree x t = notElem x (freeVars t)
 
 --composOpMPlus :: (Compos t, MonadPlus m) => (forall a. t a -> m b) -> t c -> m b
@@ -206,12 +211,28 @@ notFree x t = notElem x (freeVars t)
 ----------------------------------------------------------------------------------------
 -- Simplification by Elze
 
-simplifyP :: GProp -> GProp
+logicLaws = [idempotence1, complement2]
+
+--simplifyProp :: PGF.Tree -> Language -> PGF.Tree
+--simplifyProp = simplifyP
+
+simplifyP :: GProp -> Language -> GProp
 simplifyP = simplify
 
-simplify :: forall c. Tree c -> Tree c
-simplify t = case t of
-  GPNeg (GPNeg p) -> p
-  GPNeg (GPNegAtom a) -> GPAtom a 
-  _ -> composOp simplify t
+simplify :: GProp -> Language -> GProp
+simplify p la = shortestSentence (map lin (map snd (flatten t)))
+ where
+   -- x is a tuple: (depth, Prop)
+   pgf = readPGF "Prop.pgf"
+   lin = linearize pgf la
+   buildNode x = if fst x == 2 then (x, []) else (x, [((fst x) + 1, newP) | law <- logicLaws, newP <- law (snd x)])
+   t = unfoldTree buildNode (0, p)
+   --((fst x)+1, map ($ (snd x)) logicLaws))      
+   --putStr $ drawTree $ fmap show $ t
 
+--Find the shortest sentence in a list of sentences (by word count)
+shortestSentence :: [String] -> String
+shortestSentence l = minimumBy (comparing wordCount) l
+
+wordCount :: String -> Int
+wordCount s = length (words s)
