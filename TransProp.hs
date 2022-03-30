@@ -210,8 +210,6 @@ notFree x t = notElem x (freeVars t)
 ----------------------------------------------------------------------------------------
 -- Simplification by Elze
 
-logicLaws = [idempotence1, complement2]
-
 -- Simplify a proposition given the target language (the chosen simplification
 -- sequence is based on the length of the output translation) 
 simplifyP :: PGF -> Language -> GProp -> String
@@ -224,9 +222,16 @@ simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten 
    
    -- Build tree of possible simplifying operations,
    -- where each node is a tuple: (depth in tree, (simplified) proposition)
-   buildNode x = if fst x == 3 then (x, []) 
+   buildNode x = 
+     if containsTorF (snd x) -- if the Prop contains a redundancy
+       then (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
+     else if fst x == 3      -- if max depth of tree is reached
+       then (x, []) 
      else (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
    t = unfoldTree buildNode (0, p)
+   
+   -- TODO I am afraid that the first if-statement can result in an infinite loop
+   -- or not because if laws do not change the prop, then termination
 
 --Find the shortest sentence in a list of sentences (by word count)
 shortestSentence :: [String] -> String
@@ -234,3 +239,8 @@ shortestSentence l = minimumBy (comparing wordCount) l
 
 wordCount :: String -> Int
 wordCount s = length (words s)
+
+containsTorF :: GProp -> Bool
+containsTorF p = "PTaut" `elem` fs || "PContra" `elem` fs
+ where
+   fs = map show (exprFunctions (gf p))
