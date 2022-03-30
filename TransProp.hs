@@ -16,11 +16,12 @@ transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
 transfer m pgf la t = case m of
   MNone        -> linearize pgf la (id t)
   MMinimalize  -> linearize pgf la ((gf . (minimalizeP . normalizeP) . fg) t)
-  MNormalize   -> linearize pgf la ((gf . (normalizeP) . fg) t)
-  MOptimize    -> linearize pgf la ((gf . (optimizeP) . fg) t)
+  MNormalize   -> linearize pgf la ((gf . normalizeP . fg) t)
+  MOptimize    -> linearize pgf la ((gf . optimizeP . fg) t)
   MSimplify    -> simplifyP pgf la (fg t) -- Simplification's output is already linearized
+  MCheckLaw    -> linearize pgf la ((gf . checklawP . fg) t) -- TODO (debug) remove all occurrences
 
-data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify deriving Show    -- Elze added MSimplify
+data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
 
 noFreeVars :: PGF.Tree -> Bool
 noFreeVars = null . freeVarsP . fg
@@ -225,14 +226,14 @@ simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten 
    buildNode x = 
      if containsTorF (snd x) -- if the Prop contains a redundancy
        then (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
-     else if fst x == 3      -- if max depth of tree is reached
+     else if fst x == 5      -- if max depth of tree is reached
        then (x, []) 
      else (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
    t = unfoldTree buildNode (0, p)
    
    -- TODO I am afraid that the first if-statement can result in an infinite loop
    -- or not because if laws do not change the prop, then termination
-
+   
 --Find the shortest sentence in a list of sentences (by word count)
 shortestSentence :: [String] -> String
 shortestSentence l = minimumBy (comparing wordCount) l
@@ -244,3 +245,7 @@ containsTorF :: GProp -> Bool
 containsTorF p = "PTaut" `elem` fs || "PContra" `elem` fs
  where
    fs = map show (exprFunctions (gf p))
+   
+checklawP :: GProp -> GProp
+checklawP = identity1
+  
