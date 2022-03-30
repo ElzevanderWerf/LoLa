@@ -11,15 +11,14 @@ import LogicLaws -- Elze
 import Data.Tree
 import Data.List (minimumBy)
 import Data.Ord (comparing)
-
-transfer :: Mode -> PGF.Tree -> PGF.Tree
-transfer m = gf . trans . fg where
-  trans = case m of
-    MNone       -> id
-    MMinimalize -> minimalizeP . normalizeP
-    MNormalize  -> normalizeP 
-    MOptimize   -> optimizeP
-    --MSimplify   -> simplifyP      -- Elze TODO add: . optimizeP
+  
+transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
+transfer m pgf la t = case m of
+  MNone        -> linearize pgf la (id t)
+  MMinimalize  -> linearize pgf la ((gf . (minimalizeP . normalizeP) . fg) t)
+  MNormalize   -> linearize pgf la ((gf . (normalizeP) . fg) t)
+  MOptimize    -> linearize pgf la ((gf . (optimizeP) . fg) t)
+  MSimplify    -> simplifyP pgf la (fg t) -- Simplification's output is already linearized
 
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify deriving Show    -- Elze added MSimplify
 
@@ -213,22 +212,21 @@ notFree x t = notElem x (freeVars t)
 
 logicLaws = [idempotence1, complement2]
 
---simplifyProp :: PGF.Tree -> Language -> PGF.Tree
---simplifyProp = simplifyP
-
-simplifyP :: GProp -> Language -> GProp
+-- Simplify a proposition given the target language (the chosen simplification
+-- sequence is based on the length of the output translation) 
+simplifyP :: PGF -> Language -> GProp -> String
 simplifyP = simplify
 
-simplify :: GProp -> Language -> GProp
-simplify p la = shortestSentence (map lin (map snd (flatten t)))
+simplify :: PGF -> Language -> GProp -> String
+simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
  where
-   -- x is a tuple: (depth, Prop)
-   pgf = readPGF "Prop.pgf"
    lin = linearize pgf la
-   buildNode x = if fst x == 2 then (x, []) else (x, [((fst x) + 1, newP) | law <- logicLaws, newP <- law (snd x)])
+   
+   -- Build tree of possible simplifying operations,
+   -- where each node is a tuple: (depth in tree, (simplified) proposition)
+   buildNode x = if fst x == 3 then (x, []) 
+     else (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
    t = unfoldTree buildNode (0, p)
-   --((fst x)+1, map ($ (snd x)) logicLaws))      
-   --putStr $ drawTree $ fmap show $ t
 
 --Find the shortest sentence in a list of sentences (by word count)
 shortestSentence :: [String] -> String
