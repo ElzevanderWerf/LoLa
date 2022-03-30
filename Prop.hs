@@ -116,11 +116,13 @@ data Tree :: * -> * where
   GPAtom :: GAtom -> Tree GProp_
   GPConj :: GConj -> GProp -> GProp -> Tree GProp_
   GPConjs :: GConj -> GListProp -> Tree GProp_
+  GPContra :: Tree GProp_
   GPExist :: GVar -> GProp -> Tree GProp_
   GPExists :: GListVar -> GKind -> GProp -> Tree GProp_
   GPImpl :: GProp -> GProp -> Tree GProp_
   GPNeg :: GProp -> Tree GProp_
   GPNegAtom :: GAtom -> Tree GProp_
+  GPTaut :: Tree GProp_
   GPUniv :: GVar -> GProp -> Tree GProp_
   GPUnivs :: GListVar -> GKind -> GProp -> Tree GProp_
   GVString :: GString -> Tree GVar_
@@ -172,11 +174,13 @@ instance Eq (Tree a) where
     (GPAtom x1,GPAtom y1) -> and [ x1 == y1 ]
     (GPConj x1 x2 x3,GPConj y1 y2 y3) -> and [ x1 == y1 , x2 == y2 , x3 == y3 ]
     (GPConjs x1 x2,GPConjs y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GPContra,GPContra) -> and [ ]
     (GPExist x1 x2,GPExist y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GPExists x1 x2 x3,GPExists y1 y2 y3) -> and [ x1 == y1 , x2 == y2 , x3 == y3 ]
     (GPImpl x1 x2,GPImpl y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GPNeg x1,GPNeg y1) -> and [ x1 == y1 ]
     (GPNegAtom x1,GPNegAtom y1) -> and [ x1 == y1 ]
+    (GPTaut,GPTaut) -> and [ ]
     (GPUniv x1 x2,GPUniv y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GPUnivs x1 x2 x3,GPUnivs y1 y2 y3) -> and [ x1 == y1 , x2 == y2 , x3 == y3 ]
     (GVString x1,GVString y1) -> and [ x1 == y1 ]
@@ -371,11 +375,13 @@ instance Gf GProp where
   gf (GPAtom x1) = mkApp (mkCId "PAtom") [gf x1]
   gf (GPConj x1 x2 x3) = mkApp (mkCId "PConj") [gf x1, gf x2, gf x3]
   gf (GPConjs x1 x2) = mkApp (mkCId "PConjs") [gf x1, gf x2]
+  gf GPContra = mkApp (mkCId "PContra") []
   gf (GPExist x1 x2) = mkApp (mkCId "PExist") [gf x1, gf x2]
   gf (GPExists x1 x2 x3) = mkApp (mkCId "PExists") [gf x1, gf x2, gf x3]
   gf (GPImpl x1 x2) = mkApp (mkCId "PImpl") [gf x1, gf x2]
   gf (GPNeg x1) = mkApp (mkCId "PNeg") [gf x1]
   gf (GPNegAtom x1) = mkApp (mkCId "PNegAtom") [gf x1]
+  gf GPTaut = mkApp (mkCId "PTaut") []
   gf (GPUniv x1 x2) = mkApp (mkCId "PUniv") [gf x1, gf x2]
   gf (GPUnivs x1 x2 x3) = mkApp (mkCId "PUnivs") [gf x1, gf x2, gf x3]
 
@@ -384,11 +390,13 @@ instance Gf GProp where
       Just (i,[x1]) | i == mkCId "PAtom" -> GPAtom (fg x1)
       Just (i,[x1,x2,x3]) | i == mkCId "PConj" -> GPConj (fg x1) (fg x2) (fg x3)
       Just (i,[x1,x2]) | i == mkCId "PConjs" -> GPConjs (fg x1) (fg x2)
+      Just (i,[]) | i == mkCId "PContra" -> GPContra 
       Just (i,[x1,x2]) | i == mkCId "PExist" -> GPExist (fg x1) (fg x2)
       Just (i,[x1,x2,x3]) | i == mkCId "PExists" -> GPExists (fg x1) (fg x2) (fg x3)
       Just (i,[x1,x2]) | i == mkCId "PImpl" -> GPImpl (fg x1) (fg x2)
       Just (i,[x1]) | i == mkCId "PNeg" -> GPNeg (fg x1)
       Just (i,[x1]) | i == mkCId "PNegAtom" -> GPNegAtom (fg x1)
+      Just (i,[]) | i == mkCId "PTaut" -> GPTaut 
       Just (i,[x1,x2]) | i == mkCId "PUniv" -> GPUniv (fg x1) (fg x2)
       Just (i,[x1,x2,x3]) | i == mkCId "PUnivs" -> GPUnivs (fg x1) (fg x2) (fg x3)
 
