@@ -34,6 +34,9 @@ fun
 
   CAnd, COr : Conj ;                        -- `and' and `or' are both considered conjunctions
 
+  PTaut     : Prop ;                        -- Elze: proposition that is always true (tautology)
+  PContra   : Prop ;                        -- Elze: proposition that is always false (contradiction)
+
 
 -- supplementary
 
