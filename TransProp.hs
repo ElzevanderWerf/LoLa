@@ -224,7 +224,7 @@ simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten 
    -- Build tree of possible simplifying operations,
    -- where each node is a tuple: (depth in tree, (simplified) proposition)
    buildNode x = 
-     if containsTorF (snd x) -- if the Prop contains a redundancy
+     if containsTorF (snd x) -- if the Prop contains a tautology or contradiction
        then (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
      else if fst x == 5      -- if max depth of tree is reached
        then (x, []) 
@@ -239,13 +239,8 @@ shortestSentence :: [String] -> String
 shortestSentence l = minimumBy (comparing wordCount) l
 
 wordCount :: String -> Int
-wordCount s = length (words s)
-
-containsTorF :: GProp -> Bool
-containsTorF p = "PTaut" `elem` fs || "PContra" `elem` fs
- where
-   fs = map show (exprFunctions (gf p))
+wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
    
 checklawP :: GProp -> GProp
-checklawP = identity1
+checklawP = quantmov1ltr
   
