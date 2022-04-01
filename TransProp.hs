@@ -23,8 +23,7 @@ import Data.Tree
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
 
 
---TODO (debug) remove all occurrences
---transfer :: Mode -> PGF -> Language -> PGF.Tree -> [String]
+--transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
 transfer :: Mode -> PGF -> Language -> PGF.Tree -> [String]
 transfer m pgf la t = simplifyP pgf la (fg t)
 
@@ -184,6 +183,7 @@ newVar i = GVString (GString ("x" ++ show i)) ---
 --composOpMPlus :: (Compos t, MonadPlus m) => (forall a. t a -> m b) -> t c -> m b
 --composOpM :: (Compos t, Monad m) => (forall a. t a -> m (t a)) -> t c -> m (t c)
 
+
 ----------------------------------------------------------------------------------------
 -- Simplification by Elze
 
@@ -207,14 +207,13 @@ simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten 
    buildNode x = 
      --if containsTorF (snd x) -- if the Prop contains a tautology or contradiction
      --  then (x, [((fst x) + 1, law (snd x)) | law <- identityLaws, law (snd x) /= snd x])
+     --TODO containsTor F well of niet checken?
      if fst x == 5      -- if max depth of tree is reached
        then (x, []) 
      else (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
    t = unfoldTree buildNode (0, p)
-   
-   -- TODO I am afraid that the first if-statement can result in an infinite loop
-   -- or not because if laws do not change the prop, then termination
-   
+
+-- TODO remove   
 checklawP :: GProp -> GProp
 checklawP = quantdist2rtl
   

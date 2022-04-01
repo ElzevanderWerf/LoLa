@@ -59,6 +59,7 @@ getProps t = [p | p <- propsM t]
     GPTaut -> [t]
     GPContra -> [t]
     _ -> composOpMPlus propsM t
-    
+
+-TODO remove?    
 containsTorF :: GProp -> Bool
 containsTorF p = GPTaut `elem` (getProps p) || GPContra `elem` (getProps p)

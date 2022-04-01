@@ -21,7 +21,4 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
 
 -- TODOs: 
 -- Some characters are displayed as unicode numbers, is that okay?
--- Find a way to print the tree of possible simplification sequences. Bc I found a problem:
---   p & (q or -q) is not simplified to p 
-
---TODO m weer zetten op m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify, MCheckLaw]
+-- See TODOs other files

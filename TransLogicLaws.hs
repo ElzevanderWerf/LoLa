@@ -476,7 +476,3 @@ vq2 :: forall c. Tree c -> Tree c
 vq2 p = case p of
   GPExist v1 p1 | not (v1 `elem` (freeVars p1)) -> p1
   _ -> composOp vq2 p
-  
--- TODO Do not forget alphabetic variants!!
-
-  
