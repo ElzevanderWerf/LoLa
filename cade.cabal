@@ -12,7 +12,7 @@ executable trans
     .
   main-is: Trans.hs
   other-modules:
-    TransProp, Prop, LogicLaws
+    TransProp, Prop, TransPropFunctions, TransLogicLaws
   build-depends:
     base,
     gf,

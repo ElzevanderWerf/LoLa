@@ -3,6 +3,7 @@ module Main where
 
 import "gf" PGF
 import TransProp
+import TransPropFunctions
 
 main = do
   pgf <- readPGF "Prop.pgf"

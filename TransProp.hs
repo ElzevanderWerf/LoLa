@@ -7,10 +7,9 @@ module TransProp where
 --import qualified "gf" PGF (Tree, showExpr)
 import "gf" PGF
 import Prop   -- generated from GF
-import LogicLaws -- Elze
+import TransPropFunctions
+import TransLogicLaws -- Elze
 import Data.Tree
-import Data.List (minimumBy)
-import Data.Ord (comparing)
   
 transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
 transfer m pgf la t = case m of
@@ -22,12 +21,6 @@ transfer m pgf la t = case m of
   MCheckLaw    -> linearize pgf la ((gf . checklawP . fg) t) -- TODO (debug) remove all occurrences
 
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
-
-noFreeVars :: PGF.Tree -> Bool
-noFreeVars = null . freeVarsP . fg
-  where
-    freeVarsP :: GProp -> [GVar]
-    freeVarsP = freeVars
 
 -- we want:
 -- it is not the case that x is horizontal and x is vertical ->
@@ -107,14 +100,6 @@ getKindMod x k p = case p of
 -- for all line x , x is vertical or x is horizontal
 -- every line is vertical or horizontal
 
-getPreds :: [GProp] -> Maybe ([GPred1],[GInd])
-getPreds = fmap unzip . mapM getPred where
-  getPred :: GProp -> Maybe (GPred1,GInd)
-  getPred p = case p of
-    GPAtom (GAPred1 f x) ->  return (f,x)
-    _ -> Nothing
-
-
 -- this applies to a normalized Prop and makes it binary
 minimalizeP :: GProp -> GProp
 minimalizeP p = case p of
@@ -190,21 +175,6 @@ type Ind = GInd
 
 newVar i = GVString (GString ("x" ++ show i)) ---
 
-freeVars :: Prop.Tree a -> [GVar]
-freeVars t = [x | x@(GVString _) <- freeVarsM t]
- where
-  freeVarsM :: forall a. Prop.Tree a -> [GVar]
-  freeVarsM t = case t of
-    GPUniv x p -> filter (/= x) $ freeVarsM p
-    GPExist x p -> filter (/= x) $ freeVarsM p
-    GPUnivs (GListVar xs) k p -> freeVarsM k ++ filter (flip notElem xs) (freeVarsM p)
-    GPExists (GListVar xs) k p -> freeVarsM k ++ filter (flip notElem xs) (freeVarsM p)
-    GVString _ -> [t]
-    _ -> composOpMPlus freeVarsM t
-
-notFree :: GVar -> Prop.Tree a -> Bool
-notFree x t = notElem x (freeVars t)
-
 --composOpMPlus :: (Compos t, MonadPlus m) => (forall a. t a -> m b) -> t c -> m b
 --composOpM :: (Compos t, Monad m) => (forall a. t a -> m (t a)) -> t c -> m (t c)
 
@@ -225,7 +195,7 @@ simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten 
    -- where each node is a tuple: (depth in tree, (simplified) proposition)
    buildNode x = 
      if containsTorF (snd x) -- if the Prop contains a tautology or contradiction
-       then (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
+       then (x, [((fst x) + 1, law (snd x)) | law <- identityLaws, law (snd x) /= snd x])
      else if fst x == 5      -- if max depth of tree is reached
        then (x, []) 
      else (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
@@ -234,13 +204,6 @@ simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten 
    -- TODO I am afraid that the first if-statement can result in an infinite loop
    -- or not because if laws do not change the prop, then termination
    
---Find the shortest sentence in a list of sentences (by word count)
-shortestSentence :: [String] -> String
-shortestSentence l = minimumBy (comparing wordCount) l
-
-wordCount :: String -> Int
-wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
-   
 checklawP :: GProp -> GProp
-checklawP = quantmov1ltr
+checklawP = quantdist2rtl
   
