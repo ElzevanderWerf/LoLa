@@ -43,7 +43,7 @@ idempotence2 = ip2
 ip2 :: forall c. Tree c -> Tree c
 ip2 p = case p of
   GPConj GCAnd p1 p2 | p1 == p2 -> p1
-  _ -> composOp ip1 p
+  _ -> composOp ip2 p
   
 -- Associativity 1: (p \vee q) \vee r <-> p \vee (q \vee r)
 associativity1ltr :: GProp -> GProp
@@ -160,7 +160,7 @@ comp1 :: forall c. Tree c -> Tree c
 comp1 p = case p of
   GPConj GCOr p1 (GPNeg p2) | p1 == p2 -> GPTaut
   GPConj GCOr (GPAtom a1) (GPNegAtom a2) | a1 == a2 -> GPTaut
-  _ -> composOp comp2 p
+  _ -> composOp comp1 p
   
 -- Complement 2 (double negation) (only ltr): \sim \sim p <-> p 
 complement2 :: GProp -> GProp
@@ -173,7 +173,7 @@ comp2 p = case p of
   
 -- Complement 3 (only ltr): p \& \sim p <-> F
 complement3 :: GProp -> GProp
-complement3 = comp1
+complement3 = comp3
 comp3 :: forall c. Tree c -> Tree c
 comp3 p = case p of
   GPConj GCAnd p1 (GPNeg p2) | p1 == p2 -> GPContra
