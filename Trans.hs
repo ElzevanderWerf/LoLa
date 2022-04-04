@@ -14,7 +14,7 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
   (sourceL,ts):_ -> unlines [display m t | t <- ts, noFreeVars t, m <- [MSimplify]]
   _ -> "no parse\n"
  where
-   display m t = unlines $ (showExpr [] t) :               -- print the tree
+   display m t = unlines $ --(showExpr [] t) :               -- print the tree
      (show m ++ ":") :                                       -- print the mode
        [unlines (map show (transfer m pgf la t)) | la <- languages pgf]      -- print the translations (for each language)
        --[show (transfer m pgf la t) | la <- languages pgf]  -- print the translations (for each language)

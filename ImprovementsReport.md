@@ -1,7 +1,7 @@
 # BUG FIX AND IMPROVEMENTS REPORT
 **All code lines that are modified or added to the original code (at [cade-2011](https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011)) are commented with "Elze" and an optional explanation.**
 
-## Bug fixes
+## Bug Fixes
 1. 	`PropLatex.gf`) Comment of Ranta `fix negation of in` at `lin AKind`: *1 \in N* is parsed and linearized as both *1 is a number* and *1 is not a number*. New code:
         
         AKind k x = table {True => top x ++ "\\in" ++ k ; False => top (prefix 3 "\\sim" (constant (top x ++ "\\in" ++ k)))} ;
@@ -14,12 +14,14 @@
 
 			slash : Str -> Bool => Str = \f -> table {True => "\\" + f ; False => top (prefix 3 "\\sim" (constant ("\\" + f)))} ;
 		
-## New language
-I added the Dutch language to the application grammar: file `PropDut.gf`.
+## New Language
+As an exercise, to get more acquainted with GF, I added the Dutch language to the application grammar: file `PropDut.gf`.
+
+## Formula Simplification on the Logic Level
+I added a new abstract syntax tree manipulation mode to the function `transfer` in `TransProp.hs`, called `MSimplify`. The function `simplify` builds a tree of possible simplification sequences, based on a large set of logic laws from the module `TransLogicLaws` in `TransLogicLaws.hs`. These laws are realized as `Prop -> Prop` functions and are based on a list of logical equivalences, taken from the book *Mathematical Methods in Linguistics* by Partee and colleagues (1990), and an additional few of my own (TODO right?). The formula nodes in this tree of possible simplifications are optimized and linearized into language, and the shortest of these translations is returned. 
 		
-		
-## IMPROVING TRANSLATIONS
-1. In-situ quantification for quantifiers without a kind predicate is not in the list of Haskell conversions, but should be added to avoid bad translations such as *for all x, x is even* (better is *everything is even*). This is how I added in-situ quantification for quantifiers without a kind predicate:
+## Ranta-like conversions
+1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*).
     - In `Prop.gf`, I added the following abstract functions:
 
 			Everything_IUniv : Ind ;
@@ -57,12 +59,3 @@ I added the Dutch language to the application grammar: file `PropDut.gf`.
 
 			GEverything_IUniv -> let x = newVar 3 in GPUniv  x (f (GIVar x))
 			GSomething_IExist -> let x = newVar 4 in GPExist x (f (GIVar x))
-		
-		  
-	
-	
-## TODOs left:
-- Extend lexicon? More-place predicates? Higher-order functions? Iff? Equality function?
-- Formulas such as *P \& Q \vee R* are accepted by the system, but actually are not well-formed (they are ambiguous because they miss parentheses). Solve this.
-- *( \forall x \in N ) ( \even { x } \supset \sim \odd { x } )* translates to *for all numbers x , if x is even , then x is not odd*. This happens because x occurs twice in the quantified proposition. Solution: use anaphora (?) to make it exactly one occurrence: *for all numbers x, if x is even, then it is not odd*. Now in-situ quantification can be done. But the problem remains for longer formulas with more occurrences of the variable.
-- *\sim \forall* and *\sim \exists* formulas could be translated better. 

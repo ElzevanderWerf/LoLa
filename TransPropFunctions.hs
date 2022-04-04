@@ -47,10 +47,6 @@ shortestSentence l = minimumBy (comparing wordCount) l
 wordCount :: String -> Int
 wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
 
---containsTorF :: GProp -> Bool
---containsTorF p = "PTaut" `isInfixOf` fs || "PContra" `isInfixOf` fs
--- where fs = PGF.showExpr [] (gf p)
-
 getProps :: Tree a -> [GProp]
 getProps t = [p | p <- propsM t]
  where
@@ -60,6 +56,6 @@ getProps t = [p | p <- propsM t]
     GPContra -> [t]
     _ -> composOpMPlus propsM t
 
--TODO remove?    
-containsTorF :: GProp -> Bool
-containsTorF p = GPTaut `elem` (getProps p) || GPContra `elem` (getProps p)
+--TODO remove?   
+--containsTorF :: GProp -> Bool
+--containsTorF p = GPTaut `elem` (getProps p) || GPContra `elem` (getProps p)

@@ -75,8 +75,8 @@ lin
   IUniv k = constant (parenth ("\\forall" ++ k)) ;
   IExist k = constant (parenth ("\\exists" ++ k)) ;
 
-  Everything_IUniv = constant (parenth ("\\forall")) ; --Elze inSituWithoutKind
-  Something_IExist = constant (parenth ("\\exists")) ; --Elze inSituWithoutKind
+  Everything_IUniv = constant (parenth ("\\forall")) ; --Elze: for inSituWithoutKind
+  Something_IExist = constant (parenth ("\\exists")) ; --Elze: for inSituWithoutKind
 
   ConjInd c ps = constant (c ++ bracket ps) ;
 
