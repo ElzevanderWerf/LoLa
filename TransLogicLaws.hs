@@ -17,8 +17,7 @@ logicLaws = [idempotence1, idempotence2, associativity1ltr, associativity1rtl,
   conditional1ltr, conditional1rtl, conditional2ltr, conditional2rtl, 
   quantneg1ltr, quantneg1rtl, quantneg2ltr, quantneg2rtl, quantneg3ltr,
   quantneg3rtl, quantneg4ltr, quantneg4rtl, quantdist1ltr, quantdist1rtl,
-  quantdist2ltr, quantdist2rtl, quantdist3, quantdist4, quantind1, quantind2,
-  quantind3, quantmov1ltr, quantmov1rtl, quantmov2ltr, quantmov2rtl,
+  quantdist2ltr, quantdist2rtl, quantind1, quantind2, quantmov1ltr, quantmov1rtl, quantmov2ltr, quantmov2rtl,
   quantmov3ltr, quantmov3rtl, quantmov4ltr, quantmov4rtl, vacquant1, vacquant2]
   
 identityLaws = [identity1, identity2, identity3, identity4]
@@ -248,7 +247,7 @@ cond2rtl p = case p of
   GPImpl (GPNeg p1) (GPNegAtom a1) -> GPImpl (GPAtom a1) p1
   _ -> composOp cond2rtl p
   
--- FIRST-ORDER LOGIC EQUIVALENCES AND CONSEQUENCES
+-- FIRST-ORDER LOGIC EQUIVALENCES
 -- Quantifier negation 1: \sim (\forall x) \phi(x) <-> (\exists x) \sim phi(x)
 quantneg1ltr :: GProp -> GProp
 quantneg1ltr = qn1ltr
@@ -348,24 +347,6 @@ qd2rtl p = case p of
     -> GPExist v1 (GPConj GCOr p1 p2)
   _ -> composOp qd2rtl p
   
--- Quantifier distribution 3 (consequence): (\forall x) phi(x) \vee (\forall x) \psi(x)) -> (\forall x) (phi(x) \vee psi(x))
-quantdist3 :: GProp -> GProp
-quantdist3 = qd3
-qd3 :: forall c. Tree c -> Tree c
-qd3 p = case p of
-  GPConj GCOr (GPUniv v1 p1) (GPUniv v2 p2) | v1 == v2 && v1 `elem` (freeVars p1) && v1 `elem` (freeVars p2) 
-    -> GPUniv v1 (GPConj GCOr p1 p2)
-  _ -> composOp qd3 p
-  
--- Quantifier distribution 4 (consequence): (\exists x) (phi(x) \& \psi(x)) -> (\exists x) phi(x) \& (\exists x) psi(x)
-quantdist4 :: GProp -> GProp
-quantdist4 = qd4
-qd4 :: forall c. Tree c -> Tree c
-qd4 p = case p of
-  GPExist v1 (GPConj GCAnd p1 p2) | v1 `elem` (freeVars p1) && v1 `elem` (freeVars p2) 
-    -> GPConj GCAnd (GPExist v1 p1) (GPExist v1 p2)
-  _ -> composOp qd4 p
-  
 -- Quantifier independence 1 (ltr and rtl are the same): (\forall x) (\forall y) phi(x,y) <-> (\forall y) (\forall x) phi(x,y)
 quantind1 :: GProp -> GProp
 quantind1 = qi1
@@ -383,15 +364,6 @@ qi2 p = case p of
   GPExist v1 (GPExist v2 p1) | v1 `elem` (freeVars p1) && v2 `elem` (freeVars p1) 
     -> GPExist v2 (GPExist v1 p1)
   _ -> composOp qi2 p
-  
--- Quantifier independence 3 (consequence): (\exists x) (\forall y) phi(x,y) -> (\forall y) (\exists x) phi(x,y)
-quantind3 :: GProp -> GProp
-quantind3 = qi3
-qi3 :: forall c. Tree c -> Tree c
-qi3 p = case p of
-  GPExist v1 (GPUniv v2 p1) | v1 `elem` (freeVars p1) && v2 `elem` (freeVars p1) 
-    -> GPUniv v2 (GPExist v1 p1)
-  _ -> composOp qi3 p
   
 -- Quantifier movement 1: phi \supset (\forall x) psi(x) <-> (\forall x) (phi \supset psi(x))
 quantmov1ltr :: GProp -> GProp
