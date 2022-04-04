@@ -15,10 +15,10 @@
 			slash : Str -> Bool => Str = \f -> table {True => "\\" + f ; False => top (prefix 3 "\\sim" (constant ("\\" + f)))} ;
 		
 ## New Language
-As an exercise, to get more acquainted with GF, I added the Dutch language to the application grammar: file `PropDut.gf`.
+As an exercise, to get more acquainted with GF, I added the Dutch language to the application grammar: file `PropDut.gf`. TODO improve (er gaat volgens mij is mis met de zinsvolgorde in als-dan zinnen)
 
 ## Formula Simplification on the Logic Level
-I added a new abstract syntax tree manipulation mode to the function `transfer` in `TransProp.hs`, called `MSimplify`. The function `simplify` builds a tree of possible simplification sequences, based on a large set of logic laws from the module `TransLogicLaws` in `TransLogicLaws.hs`. These laws are realized as `Prop -> Prop` functions and are based on a list of logical equivalences, taken from the book *Mathematical Methods in Linguistics* by Partee and colleagues (1990), and an additional few of my own (TODO right?). The formula nodes in this tree of possible simplifications are optimized and linearized into language, and the shortest of these translations is returned. 
+I added a new abstract syntax tree manipulation mode to the function `transfer` in `TransProp.hs`, called `MSimplify`. The function `simplify` builds a tree of possible simplification sequences, based on a large set of logic laws from the module `TransLogicLaws` in `TransLogicLaws.hs`. These laws are realized as `Prop -> Prop` functions and are based on a list of logical equivalences, taken from the book *Mathematical Methods in Linguistics* by Partee et al. (1990), and an additional few of my own (TODO right?). The formula nodes in this tree of possible simplifications are optimized (with `optimize`) and linearized into language, and the shortest of these translations is returned. 
 		
 ## Ranta-like conversions
 1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*).
