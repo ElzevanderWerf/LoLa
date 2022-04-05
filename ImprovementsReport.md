@@ -13,6 +13,9 @@
 3.	`PropLatex.gf`) *\even { 2 }* translates to *2 is even* (`PAtom (APred1  Even (IInt 2)`) AND *2 is not even* (`PNegAtom (APred1 Even (IInt 2))`). This happened because of wrong code in the `slash` operation (3rd case of the overload). New code: 
 
 			slash : Str -> Bool => Str = \f -> table {True => "\\" + f ; False => top (prefix 3 "\\sim" (constant ("\\" + f)))} ;
+4.  `TransProp.hs`) The function `iAtom` did not have an exhaustive list of patterns. I added the following line for the last case (TODO correct?):
+
+            _ -> GPAtom a
 		
 ## New Language
 As an exercise, to get more acquainted with GF, I added the Dutch language to the application grammar: file `PropDut.gf`. TODO improve (er gaat volgens mij is mis met de zinsvolgorde in als-dan zinnen)
@@ -21,7 +24,7 @@ As an exercise, to get more acquainted with GF, I added the Dutch language to th
 I added a new abstract syntax tree manipulation mode to the function `transfer` in `TransProp.hs`, called `MSimplify`. The function `simplify` builds a tree of possible simplification sequences, based on a large set of logic laws from the module `TransLogicLaws` in `TransLogicLaws.hs`. These laws are realized as `Prop -> Prop` functions and are based on a list of logical equivalences, taken from the book *Mathematical Methods in Linguistics* by Partee et al. (1990), and an additional few of my own (TODO right?). The formula nodes in this tree of possible simplifications are optimized (with `optimize`) and linearized into language, and the shortest of these translations is returned. 
 		
 ## Ranta-like conversions
-1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*).
+1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*). Code lines for this conversion are commented with "for inSituWithoutKind".
     - In `Prop.gf`, I added the following abstract functions:
 
 			Everything_IUniv : Ind ;
