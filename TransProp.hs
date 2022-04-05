@@ -11,21 +11,21 @@ import TransPropFunctions
 import TransLogicLaws -- Elze
 import Data.Tree
   
---transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
---transfer m pgf la t = case m of
---  MNone        -> linearize pgf la (id t)
---  MMinimalize  -> linearize pgf la ((gf . (minimalizeP . normalizeP) . fg) t)
---  MNormalize   -> linearize pgf la ((gf . normalizeP . fg) t)
---  MOptimize    -> linearize pgf la ((gf . optimizeP . fg) t)
---  MSimplify    -> simplifyP pgf la (fg t) -- Simplification's output is already linearized
---  MCheckLaw    -> linearize pgf la ((gf . checklawP . fg) t) -- TODO (debug) remove all occurrences
+transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
+transfer m pgf la t = case m of
+  MNone        -> linearize pgf la (id t)
+  MMinimalize  -> linearize pgf la ((gf . (minimalizeP . normalizeP) . fg) t)
+  MNormalize   -> linearize pgf la ((gf . normalizeP . fg) t)
+  MOptimize    -> linearize pgf la ((gf . optimizeP . fg) t)
+  MSimplify    -> simplifyP pgf la (fg t) -- Simplification's output is already linearized
+  MCheckLaw    -> linearize pgf la ((gf . checklawP . fg) t) -- TODO (debug) remove all occurrences
 
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
 
-
+--Debug print tree:
 --transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
-transfer :: Mode -> PGF -> Language -> PGF.Tree -> [String]
-transfer m pgf la t = simplifyP pgf la (fg t)
+--transfer :: Mode -> PGF -> Language -> PGF.Tree -> [String]
+--transfer m pgf la t = simplifyP pgf la (fg t)
 
 -- we want:
 -- it is not the case that x is horizontal and x is vertical ->
@@ -138,10 +138,11 @@ iProp p = case p of
 
 iAtom :: GAtom -> Prop
 iAtom a = case a of
-  GAKind  f x    -> iInd x (\i -> GPAtom (GAKind f i))
-  GAPred1 f x    -> iInd x (iPred1 f)
-  GAPred2 f x y  -> iInd x (\u -> iInd y (\v -> iPred2 f u v))
-  GAPredRefl f x -> iInd x (\u -> iPred2 f u u)
+  GAKind  f x     -> iInd x (\i -> GPAtom (GAKind f i))
+  GAPred1 f x     -> iInd x (iPred1 f)
+  GAPred2 f x y   -> iInd x (\u -> iInd y (\v -> iPred2 f u v))
+  GAPredRefl f x  -> iInd x (\u -> iPred2 f u u)
+  _               -> GPAtom a  -- Elze: fixed 'non-exhaustive patterns in case'
 
 iPred1 :: GPred1 -> Ind -> Prop
 iPred1 f i = case f of
@@ -189,16 +190,18 @@ newVar i = GVString (GString ("x" ++ show i)) ---
 
 -- Simplify a proposition given the target language (the chosen simplification
 -- sequence is based on the length of the output translation) 
---simplifyP :: PGF -> Language -> GProp -> String
-simplifyP :: PGF -> Language -> GProp -> [String]
+simplifyP :: PGF -> Language -> GProp -> String
+--simplifyP :: PGF -> Language -> GProp -> [String] --Debug: print tree
 simplifyP = simplify
 
---simplify :: PGF -> Language -> GProp -> String
---simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
-simplify :: PGF -> Language -> GProp -> [String]
-simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t)) :
-  unlines (map ((showExpr []). gf . snd) (flatten t)) :
-    unlines (map (lin . gf . optimizeP . snd) (flatten t)) : []
+simplify :: PGF -> Language -> GProp -> String
+simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
+
+--Debug: print tree
+--simplify :: PGF -> Language -> GProp -> [String] 
+--simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t)) :
+--  unlines (map ((showExpr []). gf . snd) (flatten t)) :
+--    unlines (map (lin . gf . optimizeP . snd) (flatten t)) : []
  where
    lin = linearize pgf la
    

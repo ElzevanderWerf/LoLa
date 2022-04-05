@@ -10,15 +10,14 @@ main = do
   interact (doTrans pgf)
   
 doTrans pgf s = case parseAllLang pgf (startCat pgf) s of 
-  --(sourceL,ts):_ -> unlines [display m t | t <- ts, noFreeVars t, m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify, MCheckLaw]]
-  (sourceL,ts):_ -> unlines [display m t | t <- ts, noFreeVars t, m <- [MSimplify]]
+  (sourceL,ts):_ -> unlines [display m t | t <- ts, noFreeVars t, m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify, MCheckLaw]] 
+  --(sourceL,ts):_ -> unlines [display m t | t <- ts, noFreeVars t, m <- [MSimplify]] --Debug: print tree
   _ -> "no parse\n"
  where
-   display m t = unlines $ --(showExpr [] t) :               -- print the tree
+   display m t = unlines $ (showExpr [] t) :                 -- print the tree
      (show m ++ ":") :                                       -- print the mode
-       [unlines (map show (transfer m pgf la t)) | la <- languages pgf]      -- print the translations (for each language)
-       --[show (transfer m pgf la t) | la <- languages pgf]  -- print the translations (for each language)
+       [show (transfer m pgf la t) | la <- languages pgf]    -- print the translations (for each language)
+       --[unlines (map show (transfer m pgf la t)) | la <- languages pgf]      -- Debug: print tree
 
 -- TODOs: 
 -- Some characters are displayed as unicode numbers, is that okay?
--- See TODOs other files
