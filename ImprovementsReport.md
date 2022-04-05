@@ -28,3 +28,7 @@ Code lines for added conversions are commented with *Elze: for inSituWithoutKind
 1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*). 
 2. reflNegPred) Sometimes 2-place predicates that have the same two individuals as its arguments are not converted into a reflexive in the function `optimize`. This happenes due to two reasons: (1) negated atoms are not further optimized, and (2) the predicates are parsed as APredColls instead of APred2s. I have fixed both problems.
 3. existNeg) In a case that an existential quantifier is negated, the negation is moved inward, because the earlier translation "it is not the case that there exists an element x such that" is quite ugly. New translation: "there is no element x such that".
+        
+        TODO "( \simexists x ) \even { x }" and "there is no element x such that x is even" return nothing, but "\sim ( \exists x ) \even { x }" does.
+4. aggregPred2) In the original version of the code, no aggregation was done for 2-place predicates. I added this option, so that sentences like "a is parallel to b and a is parallel to c" can be aggregated to "a is parallel to b and c". I have done this for what I call predicate-sharing atoms that share either their subject or object argument.
+        TODO does not yet work for subformulas of formulas :-\

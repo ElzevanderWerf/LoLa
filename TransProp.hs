@@ -36,7 +36,7 @@ optimizeP = optimize
 
 optimize :: forall c. Prop.Tree c -> Prop.Tree c
 optimize t = case t of
-  GPNeg (GPAtom a) -> optimize $ GPNegAtom a -- Elze: added optimize (among other things for reflNegPred) 
+  GPNeg (GPAtom a) -> GPNegAtom $ optimize a -- Elze: added optimize (among other things for reflNegPred) 
   GPNeg (GPExist x p) -> GPNegExist x $ optimize p -- Elze: for existNeg
   GPConj co p q -> aggregate co $ optimize $ mergeConj co p q
   GPConjs co p -> aggregate co $ optimize p
@@ -67,10 +67,14 @@ mergeConj co p q = GListProp (getConj p ++ getConj q)
     _ -> [p]
 
 aggregate :: GConj -> GListProp -> GProp
-aggregate co p@(GListProp ps) = case getPreds ps of
+aggregate co p@(GListProp ps) = case getPred1s ps of
   Just (fs,xs@(x:_)) | all (== x) xs -> GPAtom (GAPred1 (GConjPred1 co (GListPred1 fs)) x)
   Just (fs@(f:_),xs) | all (== f) fs -> GPAtom (GAPred1 f (GConjInd co (GListInd xs)))
-  _ -> GPConjs co p
+  _ -> case getPred2s ps of    -- Elze: for aggregPred2
+    Just (fs@(f:_),xs@(x:(_))) | all (== f) fs && all (== (fst x)) (map fst xs) -> GPAtom (GAPred2 f (fst x) (GConjInd co (GListInd (map snd xs))))
+    Just (fs@(f:_),xs@(x:(_))) | all (== f) fs && all (== (snd x)) (map snd xs) -> GPAtom (GAPred2 f (GConjInd co (GListInd (map fst xs))) (snd x))
+    _ -> GPConjs co p
+
 
 inSitu :: (GListVar -> GKind -> GProp -> GProp) -> GInd -> GKind -> GVar -> GProp -> GProp
 inSitu quant qp k x b = case b of

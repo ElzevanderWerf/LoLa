@@ -16,12 +16,21 @@ noFreeVars = null . freeVarsP . fg
   where
     freeVarsP :: GProp -> [GVar]
     freeVarsP = freeVars
+
+getPred1s :: [GProp] -> Maybe ([GPred1],[GInd])
+getPred1s = fmap unzip . mapM getPred1 where
+  getPred1 :: GProp -> Maybe (GPred1,GInd)
+  getPred1 p = case p of
+    GPAtom (GAPred1 f x)   -> return (f,x)
+    _ -> Nothing
     
-getPreds :: [GProp] -> Maybe ([GPred1],[GInd])
-getPreds = fmap unzip . mapM getPred where
-  getPred :: GProp -> Maybe (GPred1,GInd)
-  getPred p = case p of
-    GPAtom (GAPred1 f x) ->  return (f,x)
+-- Elze: for aggregPred2
+getPred2s :: [GProp] -> Maybe ([GPred2],[(GInd, GInd)])
+getPred2s = fmap unzip . mapM getPred2 where
+  getPred2 :: GProp -> Maybe (GPred2,(GInd, GInd))
+  getPred2 p = case p of
+    GPAtom (GAPred2 f x y) -> return (f, (x,y))
+    GPAtom (GAPredColl f (GListInd xs)) | length xs == 2 -> return (f, ((xs !! 0), (xs !! 1)))
     _ -> Nothing
     
 freeVars :: Tree a -> [GVar]
