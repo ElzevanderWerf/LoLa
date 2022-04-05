@@ -36,10 +36,12 @@ optimizeP = optimize
 
 optimize :: forall c. Prop.Tree c -> Prop.Tree c
 optimize t = case t of
-  GPNeg (GPAtom a) -> GPNegAtom a
+  GPNeg (GPAtom a) -> optimize $ GPNegAtom a -- Elze: added optimize (among other things for reflNegPred) 
+  GPNeg (GPExist x p) -> GPNegExist x $ optimize p -- Elze: for existNeg
   GPConj co p q -> aggregate co $ optimize $ mergeConj co p q
   GPConjs co p -> aggregate co $ optimize p
   GAPred2 f x y | x == y -> GAPredRefl f x  ---- and no insitu quant in x
+  GAPredColl f (GListInd xs) | length xs == 2 && (xs !! 0) == (xs !! 1) -> GAPredRefl f (xs !! 0) --Elze: for reflNegPred
   GAPred2 f x y -> GAPred1 (GPartPred f y) x
   GPUniv x (GPImpl (GPAtom (GAKind k (GIVar y))) p) | y == x -> 
     let (km,pm) = getKindMod x k p in optimize $ GPUnivs (GListVar [x]) km pm
@@ -47,7 +49,7 @@ optimize t = case t of
     optimize $ GPExists (GListVar [x]) k p
 
   -- Elze: These two cases only happen if the universal is not followed by a kind predicate 
-  -- (bc if that is true, then it will land up in the previous case of GPUniv or GPExist)
+  -- (bc if that is true, then the algorithm will end up in the previous case of GPUniv or GPExist)
   GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- Elze: if x is a free variable in p, then do in-situ quantification
   GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- Elze: if x is a free variable in p, then do in-situ quantification
 
@@ -130,6 +132,7 @@ normalizeP = iProp
 iProp :: GProp -> Prop
 iProp p = case p of
   GPNegAtom a -> GPNeg (iAtom a)
+  GPNegExist x b -> GPNeg (GPExist x (iProp b)) -- Elze: for existNeg
   GPAtom a -> iAtom a
   GPConjs co (GListProp ps) -> GPConjs co (GListProp (map iProp ps))
   GPUnivs xs k b -> GPUnivs xs k (iProp b)

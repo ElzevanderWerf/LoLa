@@ -24,41 +24,7 @@ As an exercise, to get more acquainted with GF, I added the Dutch language to th
 I added a new abstract syntax tree manipulation mode to the function `transfer` in `TransProp.hs`, called `MSimplify`. The function `simplify` builds a tree of possible simplification sequences, based on a large set of logic laws from the module `TransLogicLaws` in `TransLogicLaws.hs`. These laws are realized as `Prop -> Prop` functions and are based on a list of logical equivalences, taken from the book *Mathematical Methods in Linguistics* by Partee et al. (1990), and an additional few of my own (TODO right?). The formula nodes in this tree of possible simplifications are optimized (with `optimize`) and linearized into language, and the shortest of these translations is returned. 
 		
 ## Ranta-like conversions
-1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*). Code lines for this conversion are commented with "for inSituWithoutKind".
-    - In `Prop.gf`, I added the following abstract functions:
-
-			Everything_IUniv : Ind ;
-			Something_IExist : Ind ;
-    - In `PropI.gf`, I added the linearizations of these functions:
-
-			Everything_IUniv = {s = everything_NP ; isSymbolic = False} ;
-			Something_IExist = {s = something_NP ; isSymbolic = False} ;
-    - In `PropLatex.gf`, I added the linearizations of these functions:
-
-			Everything_IUniv = constant (parenth ("\\forall")) ;
-			Something_IExist = constant (parenth ("\\exists")) ;
-			
-    - Core -> extended syntax) In `TransProp.hs`, I added two new cases to the function optimize:
-
-			GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p
-			GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p
-			
-        And I added a new inSitu function called `inSituWithoutKind`:
-
-			inSituWithoutKind :: (GVar -> GProp -> GProp) -> GInd -> GVar -> GProp -> GProp
-			inSituWithoutKind quant qp x b = case b of
-			  GPAtom (GAPred1 (GPartPred f y) z)              -> inSituWithoutKind quant qp x (GPAtom (GAPred2 f z y))
-			  GPAtom (GAPred1 f y)   | y == vx                -> GPAtom (GAPred1 f qp)
-			  GPAtom (GAPred1 f (GIFun1 h y))   | y == vx     -> GPAtom (GAPred1 f (GIFun1 h qp))
-			  GPAtom (GAKind  f y)   | y == vx                -> GPAtom (GAKind f qp)
-			  GPAtom (GAPredRefl f z)| z == vx                -> GPAtom (GAPredRefl f qp)
-			  GPAtom (GAPred2 f z y) | y == vx && notFree x z -> GPAtom (GAPred2 f z qp)
-			  GPAtom (GAPred2 f z y) | z == vx && notFree x y -> GPAtom (GAPred2 f qp y)
-			  _ -> quant x b
-			 where 
-			  vx = GIVar x
-			  
-    - Extended -> core syntax) In `Transprop.hs`, I added two new cases to the function `iInd`:
-
-			GEverything_IUniv -> let x = newVar 3 in GPUniv  x (f (GIVar x))
-			GSomething_IExist -> let x = newVar 4 in GPExist x (f (GIVar x))
+Code lines for added conversions are commented with *Elze: for inSituWithoutKind*, *Elze: for reflNegPred*, et cetera.
+1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*). 
+2. reflNegPred) Sometimes 2-place predicates that have the same two individuals as its arguments are not converted into a reflexive in the function `optimize`. This happenes due to two reasons: (1) negated atoms are not further optimized, and (2) the predicates are parsed as APredColls instead of APred2s. I have fixed both problems.
+3. existNeg) In a case that an existential quantifier is negated, the negation is moved inward, because the earlier translation "it is not the case that there exists an element x such that" is quite ugly. New translation: "there is no element x such that".
