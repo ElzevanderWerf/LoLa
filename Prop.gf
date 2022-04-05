@@ -54,6 +54,8 @@ fun
 
   PNegAtom  : Atom -> Prop ;                -- for verb negation
 
+  PNegExist : Var -> Prop -> Prop ;         -- Elze : for existNeg
+
   ConjPred1 : Conj -> [Pred1] -> Pred1 ;    -- for subject-sharing aggregation
 
   APredColl : Pred2 -> [Ind] -> Atom ;      -- alternative for Apred2

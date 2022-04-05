@@ -93,6 +93,13 @@ lin
     c = False
     } ;
 
+  -- Elze: for existNeg
+  PNegExist v p = { 
+    s = mkS (mkCl (mkNP no_Quant (mkCN (mkCN element_N (symb v.s)) 
+            (mkAP (mkAP such_A) p.s)))) ;
+    c = False
+    } ;
+
   BaseProp p q = {s = mkListS p.s q.s ; c = orB p.c q.c} ;
   ConsProp p ps = {s = mkListS p.s ps.s ; c = orB p.c ps.c} ;
 
