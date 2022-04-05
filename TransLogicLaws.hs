@@ -370,7 +370,7 @@ quantmov1ltr :: GProp -> GProp
 quantmov1ltr = qm1ltr
 qm1ltr :: forall c. Tree c -> Tree c
 qm1ltr p = case p of
-  GPImpl p1 (GPUniv v1 p2) | v1 `elem` (freeVars p2)
+  GPImpl p1 (GPUniv v1 p2) | v1 `notElem` (freeVars p1) && v1 `elem` (freeVars p2)
     -> GPUniv v1 (GPImpl p1 p2)
   _ -> composOp qm1ltr p
   
@@ -378,7 +378,7 @@ quantmov1rtl :: GProp -> GProp
 quantmov1rtl = qm1rtl
 qm1rtl :: forall c. Tree c -> Tree c
 qm1rtl p = case p of
-  GPUniv v1 (GPImpl p1 p2) | v1 `elem` (freeVars p2)
+  GPUniv v1 (GPImpl p1 p2) | v1 `notElem` (freeVars p1) && v1 `elem` (freeVars p2)
     -> GPImpl p1 (GPUniv v1 p2)
   _ -> composOp qm1rtl p
   
@@ -387,7 +387,7 @@ quantmov2ltr :: GProp -> GProp
 quantmov2ltr = qm2ltr
 qm2ltr :: forall c. Tree c -> Tree c
 qm2ltr p = case p of
-  GPImpl p1 (GPExist v1 p2) | v1 `elem` (freeVars p2)
+  GPImpl p1 (GPExist v1 p2) | v1 `notElem` (freeVars p1) && v1 `elem` (freeVars p2)
     -> GPExist v1 (GPImpl p1 p2)
   _ -> composOp qm2ltr p
   
@@ -395,7 +395,7 @@ quantmov2rtl :: GProp -> GProp
 quantmov2rtl = qm2rtl
 qm2rtl :: forall c. Tree c -> Tree c
 qm2rtl p = case p of
-  GPExist v1 (GPImpl p1 p2) | v1 `elem` (freeVars p2)
+  GPExist v1 (GPImpl p1 p2) | v1 `notElem` (freeVars p1) && v1 `elem` (freeVars p2)
     -> GPImpl p1 (GPExist v1 p2)
   _ -> composOp qm2rtl p
   
@@ -404,7 +404,7 @@ quantmov3ltr :: GProp -> GProp
 quantmov3ltr = qm3ltr
 qm3ltr :: forall c. Tree c -> Tree c
 qm3ltr p = case p of
-  GPImpl (GPUniv v1 p1) p2 | v1 `elem` (freeVars p1)
+  GPImpl (GPUniv v1 p1) p2 | v1 `elem` (freeVars p1) && v1 `notElem` (freeVars p2)
     -> GPExist v1 (GPImpl p1 p2)
   _ -> composOp qm3ltr p
   
@@ -412,7 +412,7 @@ quantmov3rtl :: GProp -> GProp
 quantmov3rtl = qm3rtl
 qm3rtl :: forall c. Tree c -> Tree c
 qm3rtl p = case p of
-  GPExist v1 (GPImpl p1 p2) | v1 `elem` (freeVars p1)
+  GPExist v1 (GPImpl p1 p2) | v1 `elem` (freeVars p1) && v1 `notElem` (freeVars p2)
     -> GPImpl (GPUniv v1 p1) p2
   _ -> composOp qm3rtl p
   
@@ -421,7 +421,7 @@ quantmov4ltr :: GProp -> GProp
 quantmov4ltr = qm4ltr
 qm4ltr :: forall c. Tree c -> Tree c
 qm4ltr p = case p of
-  GPImpl (GPExist v1 p1) p2 | v1 `elem` (freeVars p1)
+  GPImpl (GPExist v1 p1) p2 | v1 `elem` (freeVars p1) && v1 `notElem` (freeVars p2)
     -> GPUniv v1 (GPImpl p1 p2)
   _ -> composOp qm4ltr p
   
@@ -429,7 +429,7 @@ quantmov4rtl :: GProp -> GProp
 quantmov4rtl = qm4rtl
 qm4rtl :: forall c. Tree c -> Tree c
 qm4rtl p = case p of
-  GPUniv v1 (GPImpl p1 p2) | v1 `elem` (freeVars p1)
+  GPUniv v1 (GPImpl p1 p2) | v1 `elem` (freeVars p1) && v1 `notElem` (freeVars p2)
     -> GPImpl (GPExist v1 p1) p2
   _ -> composOp qm4rtl p
   
@@ -438,7 +438,7 @@ vacquant1 :: GProp -> GProp
 vacquant1 = vq1
 vq1 :: forall c. Tree c -> Tree c
 vq1 p = case p of
-  GPUniv v1 p1 | not (v1 `elem` (freeVars p1)) -> p1
+  GPUniv v1 p1 | v1 `notElem` (freeVars p1) -> p1
   _ -> composOp vq1 p
   
 -- Vacuous quantification 2: (\exists x) phi <-> phi
@@ -446,5 +446,5 @@ vacquant2 :: GProp -> GProp
 vacquant2 = vq2
 vq2 :: forall c. Tree c -> Tree c
 vq2 p = case p of
-  GPExist v1 p1 | not (v1 `elem` (freeVars p1)) -> p1
+  GPExist v1 p1 | v1 `notElem` (freeVars p1) -> p1
   _ -> composOp vq2 p
