@@ -44,13 +44,16 @@ lincat
     = Str ;
 
 lin
-  AKind k x = table {True => top x ++ "\\in" ++ k ; False => top (prefix 3 "\\sim" (constant (top x ++ "\\in" ++ k)))} ;  ---- Elze fixed negation of in
+  AKind k x = table {True => top x ++ "\\in" ++ k ; False => top (prefix 3 "\\sim" (constant (top x ++ "\\in" ++ k)))} ;  ---- Elze: fixed negation of in
 
   PConjs c ps = constant (c ++ "[" ++ ps ++ "]") ;
   PUnivs vs k = prefix 4 (parenth ("\\forall" ++ vs ++ "\\in" ++ k)) ;
   PExists vs k = prefix 4 (parenth ("\\exists" ++ vs ++ "\\in" ++ k)) ;
 
   PNegAtom a = constant (a ! False) ;
+  
+  -- Elze: for existNeg
+  PNegExist v = prefix 3 (parenth ("\\simexists" ++ v)) ;
 
   BaseProp a b = top a ++ "," ++ top b ;
   ConsProp a as = top a ++ "," ++ as ;
