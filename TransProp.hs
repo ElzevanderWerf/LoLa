@@ -202,26 +202,25 @@ simplifyP :: PGF -> Language -> GProp -> String
 simplifyP = simplify
 
 simplify :: PGF -> Language -> GProp -> String
-simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
+simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ": " ++ s
+   where
+     lin = linearize pgf la
+     
+     -- Build tree of possible simplifying operations,
+     -- where each node is a tuple: (depth in tree, (simplified) proposition)
+     buildNode n = 
+       if fst n == 5 then (n, [])   -- if max depth of tree is reached, terminate
+         else (n, [((fst n) + 1, law (snd n)) | law <- logicLaws, law (snd n) /= snd n])
+     t = unfoldTree buildNode (0, p)
+     (s, i) = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
 
 --Debug: print tree
 --simplify :: PGF -> Language -> GProp -> [String] 
 --simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t)) :
 --  unlines (map ((showExpr []). gf . snd) (flatten t)) :
 --    unlines (map (lin . gf . optimizeP . snd) (flatten t)) : []
- where
-   lin = linearize pgf la
    
-   -- Build tree of possible simplifying operations,
-   -- where each node is a tuple: (depth in tree, (simplified) proposition)
-   buildNode x = 
-     --if containsTorF (snd x) -- if the Prop contains a tautology or contradiction
-     --  then (x, [((fst x) + 1, law (snd x)) | law <- identityLaws, law (snd x) /= snd x])
-     --TODO containsTor F well of niet checken?
-     if fst x == 5      -- if max depth of tree is reached
-       then (x, []) 
-     else (x, [((fst x) + 1, law (snd x)) | law <- logicLaws, law (snd x) /= snd x])
-   t = unfoldTree buildNode (0, p)
+   
 
 -- TODO remove   
 checklawP :: GProp -> GProp

@@ -6,8 +6,9 @@ module TransPropFunctions where
 
 import qualified "gf" PGF (Tree, showExpr)
 import Prop   -- generated from GF
-import Data.List (minimumBy)
+import Data.List (minimumBy, elemIndex)
 import Data.Ord (comparing)
+import Data.Maybe (fromJust)
 
 -- Useful functions
 -- Ranta 2011 (moved from TransProp.hs)
@@ -50,8 +51,10 @@ notFree x t = notElem x (freeVars t)
 
 -- Elze
 --Find the shortest sentence in a list of sentences (by word count)
-shortestSentence :: [String] -> String
-shortestSentence l = minimumBy (comparing wordCount) l
+shortestSentence :: [String] -> (String, Int)
+shortestSentence l = (shortest, fromJust (elemIndex shortest l))
+ where
+   shortest = (minimumBy (comparing wordCount) l)
 
 wordCount :: String -> Int
 wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
@@ -65,6 +68,5 @@ getProps t = [p | p <- propsM t]
     GPContra -> [t]
     _ -> composOpMPlus propsM t
 
---TODO remove?   
 --containsTorF :: GProp -> Bool
 --containsTorF p = GPTaut `elem` (getProps p) || GPContra `elem` (getProps p)
