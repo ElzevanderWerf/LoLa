@@ -9,7 +9,7 @@ concrete PropDut of Prop = PropI with
 
 flags coding = utf8 ;
 
--- exceptions?
+-- no exceptions?
 
 
 -- instance of interface

@@ -32,3 +32,4 @@ Code lines for added conversions are commented with *Elze: for inSituWithoutKind
         TODO "( \simexists x ) \even { x }" and "there is no element x such that x is even" return nothing, but "\sim ( \exists x ) \even { x }" does.
 4. aggregPred2) In the original version of the code, no aggregation was done for 2-place predicates. I added this option, so that sentences like "a is parallel to b and a is parallel to c" can be aggregated to "a is parallel to b and c". I have done this for what I call predicate-sharing atoms that share either their subject or object argument.
         TODO does not yet work for subformulas of formulas :-\
+        TODO maybe add aggregation for when fs are not the same? e.g. "a is parallel to b and equal to c" "b is equal to and a is parallel to c"?
