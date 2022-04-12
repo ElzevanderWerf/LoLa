@@ -209,7 +209,7 @@ simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ": " ++ s
      -- Build tree of possible simplifying operations,
      -- where each node is a tuple: (depth in tree, (simplified) proposition)
      buildNode n = 
-       if fst n == 5 then (n, [])   -- if max depth of tree is reached, terminate
+       if fst n == 5 then (n, [])   -- if max depth of tree is reached, terminate TODO choose depth and check if works!
          else (n, [((fst n) + 1, law (snd n)) | law <- logicLaws, law (snd n) /= snd n])
      t = unfoldTree buildNode (0, p)
      (s, i) = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))

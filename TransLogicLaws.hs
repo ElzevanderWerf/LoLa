@@ -11,13 +11,13 @@ import TransPropFunctions
 
 logicLaws = [idempotence1, idempotence2, associativity1ltr, associativity1rtl, 
   associativity2ltr, associativity2rtl, commutativity1, commutativity2, 
-  distributivity1ltr, distributivity1rtl, distributivity2ltr, distributivity2rtl, 
-  identity1, identity2, identity3, identity4, complement1, complement2, 
-  complement3, deMorgan1ltr, deMorgan1rtl, deMorgan2ltr, deMorgan2rtl, 
-  conditional1ltr, conditional1rtl, conditional2ltr, conditional2rtl, 
-  quantneg1ltr, quantneg1rtl, quantneg2ltr, quantneg2rtl, quantneg3ltr,
-  quantneg3rtl, quantneg4ltr, quantneg4rtl, quantdist1ltr, quantdist1rtl,
-  quantdist2ltr, quantdist2rtl, quantind1, quantind2, quantmov1ltr, quantmov1rtl, quantmov2ltr, quantmov2rtl,
+  distributivity1, distributivity2, identity1, identity2, identity3, identity4, 
+  complement1, complement2, complement3, deMorgan1ltr, deMorgan1rtl, 
+  deMorgan2ltr, deMorgan2rtl, conditional1ltr, conditional1rtl, 
+  conditional2ltr, conditional2rtl, quantneg1ltr, quantneg1rtl, quantneg2ltr, 
+  quantneg2rtl, quantneg3ltr, quantneg3rtl, quantneg4ltr, quantneg4rtl, 
+  quantdist1ltr, quantdist1rtl, quantdist2ltr, quantdist2rtl, quantind1, 
+  quantind2, quantmov1ltr, quantmov1rtl, quantmov2ltr, quantmov2rtl, 
   quantmov3ltr, quantmov3rtl, quantmov4ltr, quantmov4rtl, vacquant1, vacquant2]
   
 identityLaws = [identity1, identity2, identity3, identity4]
@@ -90,35 +90,21 @@ comm2 p = case p of
   GPConj GCAnd p1 p2 -> GPConj GCAnd p2 p1
   _ -> composOp comm2 p
   
--- Distributivity 1: p \vee (q \& r) <-> (p \vee q) \& (p \vee r)
-distributivity1ltr :: GProp -> GProp
-distributivity1ltr = dist1ltr
-dist1ltr :: forall c. Tree c -> Tree c
-dist1ltr p = case p of
-  GPConj GCOr p1 (GPConj GCAnd p2 p3) -> GPConj GCAnd (GPConj GCOr p1 p2) (GPConj GCOr p1 p3)
-  _ -> composOp dist1ltr p
-  
-distributivity1rtl :: GProp -> GProp
-distributivity1rtl = dist1rtl
-dist1rtl :: forall c. Tree c -> Tree c
-dist1rtl p = case p of
+-- Distributivity 1: (p \vee q) \& (p \vee r) <-> p \vee (q \& r)
+distributivity1 :: GProp -> GProp
+distributivity1 = dist1
+dist1 :: forall c. Tree c -> Tree c
+dist1 p = case p of
   GPConj GCAnd (GPConj GCOr p1 p2) (GPConj GCOr p3 p4) | p1 == p3 -> GPConj GCOr p1 (GPConj GCAnd p2 p4)
-  _ -> composOp dist1rtl p
+  _ -> composOp dist1 p
   
 -- Distributivity 2: p \& (q \vee r) <-> (p \& q) \vee (p \& r)
-distributivity2ltr :: GProp -> GProp
-distributivity2ltr = dist2ltr
-dist2ltr :: forall c. Tree c -> Tree c
-dist2ltr p = case p of
-  GPConj GCAnd p1 (GPConj GCOr p2 p3) -> GPConj GCOr (GPConj GCAnd p1 p2) (GPConj GCAnd p1 p3)
-  _ -> composOp dist2ltr p
-  
-distributivity2rtl :: GProp -> GProp
-distributivity2rtl = dist2rtl
-dist2rtl :: forall c. Tree c -> Tree c
-dist2rtl p = case p of
+distributivity2 :: GProp -> GProp
+distributivity2 = dist2
+dist2 :: forall c. Tree c -> Tree c
+dist2 p = case p of
   GPConj GCOr (GPConj GCAnd p1 p2) (GPConj GCAnd p3 p4) | p1 == p3 -> GPConj GCAnd p1 (GPConj GCOr p2 p4)
-  _ -> composOp dist2rtl p
+  _ -> composOp dist2 p
   
 -- Identity 1 (only ltr): p \vee F <-> p
 identity1 :: GProp -> GProp
