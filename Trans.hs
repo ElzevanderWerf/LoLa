@@ -7,7 +7,7 @@ import TransPropFunctions
 
 main = do
   pgf <- readPGF "Prop.pgf"
-  interact (doTrans pgf)    -- translate the input proposition
+  interact (doTrans pgf)     -- translate the input proposition
 
 -- Parse the input string in all languages and translate it with all 
 -- translation modes into all languages 
