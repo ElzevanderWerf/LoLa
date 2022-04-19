@@ -18,6 +18,7 @@ noFreeVars = null . freeVarsP . fg
     freeVarsP :: GProp -> [GVar]
     freeVarsP = freeVars
 
+-- Returns the 1-place predicates in a given proposition
 getPred1s :: [GProp] -> Maybe ([GPred1],[GInd])
 getPred1s = fmap unzip . mapM getPred1 where
   getPred1 :: GProp -> Maybe (GPred1,GInd)
@@ -25,7 +26,7 @@ getPred1s = fmap unzip . mapM getPred1 where
     GPAtom (GAPred1 f x)   -> return (f,x)
     _ -> Nothing
     
--- Elze: for aggregPred2
+-- Returns the 1-place predicates in a given proposition (Elze: for aggregPred2)
 getPred2s :: [GProp] -> Maybe ([GPred2],[(GInd, GInd)])
 getPred2s = fmap unzip . mapM getPred2 where
   getPred2 :: GProp -> Maybe (GPred2,(GInd, GInd))
@@ -33,7 +34,8 @@ getPred2s = fmap unzip . mapM getPred2 where
     GPAtom (GAPred2 f x y) -> return (f, (x,y))
     GPAtom (GAPredColl f (GListInd xs)) | length xs == 2 -> return (f, ((xs !! 0), (xs !! 1)))
     _ -> Nothing
-    
+
+-- Returns the free variables in a given proposition    
 freeVars :: Tree a -> [GVar]
 freeVars t = [x | x@(GVString _) <- freeVarsM t]
  where
@@ -46,19 +48,23 @@ freeVars t = [x | x@(GVString _) <- freeVarsM t]
     GVString _ -> [t]
     _ -> composOpMPlus freeVarsM t
 
+-- Returns True if an element is not free in a given proposition
 notFree :: GVar -> Tree a -> Bool
 notFree x t = notElem x (freeVars t)
 
--- Elze
---Find the shortest sentence in a list of sentences (by word count)
+------------------------------------------------------------------------------
+-- Functions added by Elze
+-- Find the shortest sentence in a list of sentences (by word count)
 shortestSentence :: [String] -> (String, Int)
 shortestSentence l = (shortest, fromJust (elemIndex shortest l))
  where
    shortest = (minimumBy (comparing wordCount) l)
 
+-- Returns the number of words in a string
 wordCount :: String -> Int
 wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
 
+-- Returns the tautologies and contradictions in a given proposition
 getProps :: Tree a -> [GProp]
 getProps t = [p | p <- propsM t]
  where
