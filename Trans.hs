@@ -18,8 +18,5 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
  where
    display m t = unlines $ (showExpr [] t) :                 -- print the tree
      (show m ++ ":") :                                       -- print the mode
-       [show (transfer m pgf la t) | la <- languages pgf]    -- print the translations (for each language)
+       [transfer m pgf la t | la <- languages pgf]    -- print the translations (for each language)
        --[unlines (map show (transfer m pgf la t)) | la <- languages pgf]      -- Debug: print tree
-
--- TODOs: 
--- Some characters are displayed as unicode numbers, is that okay?
