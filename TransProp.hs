@@ -41,12 +41,14 @@ optimize t = case t of
   -- Verb negation (e.g., "it is not the case that 1 is even" -> "1 is not even")
   GPNeg (GPAtom a) -> GPNegAtom $ optimize a -- Elze: added optimize (among other things for reflNegPred)
   
+  -- Elze: for existNeg & inSituExistNeg
   -- Existential negation ("it is not the case that there is no element x such that P" -> "there is no element x such that P")
-  GPNeg (GPExist x p) -> GPNegExist x $ optimize p -- Elze: for existNeg
+  GPNeg (GPExist x p) | x `notElem` (freeVars p) -> GPNegExist x $ optimize p -- Elze: for existNeg
+  GPNeg (GPExist x p) | x `elem` (freeVars p) -> inSituWithoutKind GPNegExist GNothing_IExist x $ optimize p
   
   -- Aggregation and flattening (e.g., "2 is even and 4 is even" -> "2 and 4 are even")
   GPConj co p q -> aggregate co $ optimize $ mergeConj co p q
-  GPConjs co p -> aggregate co $ optimize p
+  GPConjs co ps -> aggregate co $ optimize ps
   
   -- Reflexivization (e.g., "2 is equal to 2" -> "2 is equal to itself")
   GAPred2 f x y | x == y -> GAPredRefl f x  ---- and no insitu quant in x
@@ -61,12 +63,14 @@ optimize t = case t of
   GPExist x (GPConj GCAnd (GPAtom (GAKind k (GIVar y))) p) | y == x -> 
     optimize $ GPExists (GListVar [x]) k p
 
-  -- Elze: for inSituWithoutKind: These two cases only happen if the universal is not followed by a kind predicate 
-  -- (bc if that is true, then the algorithm will end up in the previous two cases)
+  -- Elze: for inSituWithoutKind
   -- In-situ quantification without kind predicate, e.g., "for all x , x is even" -> "everything is even"
-  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- if x is a free variable in p, then do in-situ quantification
-  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- if x is a free variable in p, then do in-situ quantification
-
+  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p
+  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p
+  
+  -- Elze: for inSituExistNeg
+  GPNegExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPNegExist GNothing_IExist x $ optimize p
+  
   -- In-situ quantification (e.g., "for all numbers x, x is even" -> "every number is even")
   GPUnivs  (GListVar [x]) k p -> inSitu GPUnivs  (GIUniv k)  k x $ optimize p 
   GPExists (GListVar [x]) k p -> inSitu GPExists (GIExist k) k x $ optimize p 
@@ -113,7 +117,7 @@ inSitu quant qp k x b = case b of
  where 
   vx = GIVar x
 
--- In-situ quantification without kind predicate (Elze: for inSituWithoutKind)
+-- In-situ quantification without kind predicate (Elze: for inSituWithoutKind & inSituExistNeg)
 inSituWithoutKind :: (GVar -> GProp -> GProp) -> GInd -> GVar -> GProp -> GProp
 inSituWithoutKind quant qp x b = case b of
   GPAtom (GAPred1 (GPartPred f y) z)              -> inSituWithoutKind quant qp x (GPAtom (GAPred2 f z y))
@@ -209,8 +213,9 @@ iInd q f = case q of
   -- of kind K in the domain
   GIUniv  k -> let x = newVar 1 in GPUnivs  (GListVar [x]) k (f (GIVar x))
   GIExist k -> let x = newVar 2 in GPExists (GListVar [x]) k (f (GIVar x))
-  GEverything_IUniv -> let x = newVar 3 in GPUniv  x (f (GIVar x))  -- Elze: for inSituWithoutKind
-  GSomething_IExist -> let x = newVar 4 in GPExist x (f (GIVar x))  -- Elze: for inSituWithoutKind
+  GEverything_IUniv -> let x = newVar 3 in GPUniv  x (f (GIVar x))     -- Elze: for inSituWithoutKind
+  GSomething_IExist -> let x = newVar 4 in GPExist x (f (GIVar x))     -- Elze: for inSituWithoutKind
+  GNothing_IExist   -> let x = newVar 5 in GPNegExist x (f (GIVar x))  -- Elze: for inSituExistNeg
   
   GIFun1 g r -> iInd r (\x -> f (GIFun1 g x)) 
   GIFun2 g r s -> iInd r (\x -> iInd s (\y -> f (GIFun2 g x y))) 
