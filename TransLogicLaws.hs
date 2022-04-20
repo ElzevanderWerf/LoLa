@@ -298,7 +298,6 @@ qn4rtl p = case p of
   GPNeg (GPExist v1 p1) | v1 `elem` (freeVars p1) -> GPUniv v1 (GPNeg p1)
   _ -> composOp qn4rtl p
 
--- TODO problem with in-situ quantification! Maybe leave out ltr of qd1 and qd2?
 -- Quantifier distribution 1: (\forall x) (phi(x) \& \psi(x)) <-> (\forall x) (phi(x)) \& (\forall x) (psi(x))
 quantdist1ltr :: GProp -> GProp
 quantdist1ltr = qd1ltr
