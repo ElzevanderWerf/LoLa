@@ -43,6 +43,7 @@ freeVars t = [x | x@(GVString _) <- freeVarsM t]
   freeVarsM t = case t of
     GPUniv x p -> filter (/= x) $ freeVarsM p
     GPExist x p -> filter (/= x) $ freeVarsM p
+    GPNegExist x p -> filter (/= x) $ freeVarsM p   -- Elze: for existNeg
     GPUnivs (GListVar xs) k p -> freeVarsM k ++ filter (flip notElem xs) (freeVarsM p)
     GPExists (GListVar xs) k p -> freeVarsM k ++ filter (flip notElem xs) (freeVarsM p)
     GVString _ -> [t]
