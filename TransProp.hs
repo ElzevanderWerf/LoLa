@@ -8,7 +8,7 @@ module TransProp where
 import "gf" PGF
 import Prop   -- generated from GF
 import TransPropFunctions
-import TransLogicLaws -- Elze
+import TransLogicLaws
 import Data.Tree
   
 transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
@@ -17,7 +17,7 @@ transfer m pgf la t = case m of
   MMinimalize  -> lin (transform (minimalizeP . normalizeP))  -- interpretation functions
   MNormalize   -> lin (transform normalizeP)                  -- interpretation functions
   MOptimize    -> lin (transform optimizeP)                   -- the conversion rules of Ranta (2011) section 5.3
-  MSimplify    -> simplifyP pgf la (fg t)                     -- Elze's simplification
+  MSimplify    -> simplifyP pgf la (fg t)                     -- Elze's formula simplification
   MCheckLaw    -> lin (transform checklawP)                   -- TODO (debug) remove all occurrences
  where
    lin :: (PGF.Tree -> PGF.Tree) -> String
@@ -64,8 +64,8 @@ optimize t = case t of
   -- Elze: for inSituWithoutKind: These two cases only happen if the universal is not followed by a kind predicate 
   -- (bc if that is true, then the algorithm will end up in the previous two cases)
   -- In-situ quantification without kind predicate, e.g., "for all x , x is even" -> "everything is even"
-  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- Elze: if x is a free variable in p, then do in-situ quantification
-  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- Elze: if x is a free variable in p, then do in-situ quantification
+  GPUniv x p | x `elem` (freeVars p) -> inSituWithoutKind GPUniv GEverything_IUniv x $ optimize p -- if x is a free variable in p, then do in-situ quantification
+  GPExist x p | x `elem` (freeVars p) -> inSituWithoutKind GPExist GSomething_IExist x $ optimize p -- if x is a free variable in p, then do in-situ quantification
 
   -- In-situ quantification (e.g., "for all numbers x, x is even" -> "every number is even")
   GPUnivs  (GListVar [x]) k p -> inSitu GPUnivs  (GIUniv k)  k x $ optimize p 
@@ -168,7 +168,6 @@ iProp p = case p of
   GPAtom a -> iAtom a
   
   -- Subject negation as existential negation
-  -- TODO change to existential of negated x!
   GPNegExist x b -> GPNeg (GPExist x (iProp b)) -- Elze: for existNeg
   
   -- List conjunction as folding with binary conjunction
