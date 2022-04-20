@@ -21,12 +21,14 @@
 As an exercise, to get more acquainted with GF, I added the Dutch language to the application grammar: file `PropDut.gf`.
 		
 ## Ranta-like conversions
-Code lines for added conversions are commented with *Elze: for inSituWithoutKind*, *Elze: for reflNegPred*, et cetera.
-1. inSituWithoutKind) In-situ quantification for quantifiers without a kind predicate is added to avoid bad translations such as *for all x, x is even* (better is *everything is even*). Happens only if there is exactly one occurrence of `x` in the quantified proposition.
-2. reflNegPred) Sometimes 2-place predicates that have the same two individuals as its arguments are not converted into a reflexive in the function `optimize`. This happenes due to two reasons: (1) negated atoms are not further optimized, and (2) the predicates are parsed as APredColls instead of APred2s. I have fixed both problems.
-3. existNeg) In a case that an existential quantifier is negated, the negation is moved inward, because the earlier translation *it is not the case that there exists an element x such that* is quite ugly. New translation: *there is no element x such that*.
-4. inSituExistNeg) In-situ quantification for a negated existential quantifier, to translate `\sim (\exists x) phi(x)` with *phi(nothing)*. Happens only if there is exactly one occurrence of `x` in `phi`.
-5. aggregPred2) In the original version of the code, no aggregation was done for 2-place predicates. I added this option, so that sentences like "a is parallel to b and a is parallel to c" can be aggregated to "a is parallel to b and c". I have done this for what I call predicate-sharing atoms that share either their subject or object argument.
-        
+Code lines for added conversions are commented with *Elze: for existNeg*, *Elze: for inSituWithoutKind*, et cetera.
+1. existNeg) In a case that an existential quantifier is negated, the negation is moved inward, because the earlier translation *it is not the case that there exists an element x such that* is quite ugly. New translation: *there is no element x such that*.
+2. inSituWithoutKind) I added in-situ quantification for quantifiers without a kind predicate. This is performed only if there is exactly one occurrence of the variable quantified over in the quantified proposition. The three cases are:
+    - Universal: *for all x, x is even* -> *everything is even*;
+    - Existential: *there is an element x such that x is even* -> *something is even*;
+    - Negated existential: *there is no element x such that x is even* -> *nothing is even*.
+3. aggregPred2) In the original version of the code, no aggregation was done for 2-place predicates. I added this option, so that sentences like "a is parallel to b and a is parallel to c" can be aggregated to "a is parallel to b and c". I have done this for what I call predicate-sharing atoms that share either their subject or object argument.
+4. reflNegPred) Sometimes 2-place predicates that have the same two individuals as its arguments are not converted into a reflexive in the function `optimize`. This happenes due to two reasons: (1) negated atoms are not further optimized, and (2) the predicates are parsed as APredColls instead of APred2s. I have fixed both problems.
+     
 ## Formula Simplification on the Logic Level
 I added a new abstract syntax tree manipulation mode to the function `transfer` in `TransProp.hs`, called `MSimplify`. The function `simplify` builds a tree of possible simplification sequences up to a maximum depth, based on a large set of logic laws from the module `TransLogicLaws` in `TransLogicLaws.hs`. These laws are realized as `Prop -> Prop` functions and are based on a list of logical equivalences, taken from the book *Mathematical Methods in Linguistics* by Partee et al. (1990), and two additional ones for vacuous quantification. The formula nodes in this tree of possible simplifications are optimized (with `optimize`) and linearized into language, and the shortest of these translations is returned. 

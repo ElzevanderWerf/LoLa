@@ -71,7 +71,7 @@ fun
 
   Everything_IUniv : Ind ;                  -- Elze: for inSituWithoutKind
   Something_IExist : Ind ;                  -- Elze: for inSituWithoutKind
-  Nothing_IExist : Ind ;                    -- Elze: for inSituExistNeg
+  Nothing_IExist : Ind ;                    -- Elze: for inSituWithoutKind
 
   ConjInd : Conj -> [Ind] -> Ind ;          -- for predicate-sharing aggregation
 
