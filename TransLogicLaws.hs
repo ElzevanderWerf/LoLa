@@ -231,6 +231,8 @@ cond2rtl :: forall c. Tree c -> Tree c
 cond2rtl p = case p of
   GPImpl (GPNeg p1) (GPNeg p2) -> GPImpl p2 p1
   GPImpl (GPNeg p1) (GPNegAtom a1) -> GPImpl (GPAtom a1) p1
+  GPImpl (GPNegAtom a1) (GPNeg p1) -> GPImpl p1 (GPAtom a1)
+  GPImpl (GPNegAtom a1) (GPNegAtom a2) -> GPImpl (GPAtom a2) (GPAtom a1)
   _ -> composOp cond2rtl p
   
 -- FIRST-ORDER LOGIC EQUIVALENCES
@@ -282,7 +284,7 @@ qn3rtl p = case p of
   GPExist v1 p1 | v1 `elem` (freeVars p1) -> GPNeg (GPUniv v1 (GPNeg p1)) 
   _ -> composOp qn3rtl p
   
--- Quantifier negation 4: \sim (\forall x) \phi(x) <-> (\exists x) \sim phi(x)
+-- Quantifier negation 4: (\forall x) \sim \phi(x) <-> \sim (\exists x) phi(x)
 quantneg4ltr :: GProp -> GProp
 quantneg4ltr = qn4ltr
 qn4ltr :: forall c. Tree c -> Tree c

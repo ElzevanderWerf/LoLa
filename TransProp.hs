@@ -278,5 +278,5 @@ simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ": " ++ s
 
 -- TODO remove   
 checklawP :: GProp -> GProp
-checklawP = idempotence1
+checklawP = quantdist1ltr
   
