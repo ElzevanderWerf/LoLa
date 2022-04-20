@@ -80,6 +80,7 @@ lin
 
   Everything_IUniv = constant (parenth ("\\forall")) ; --Elze: for inSituWithoutKind
   Something_IExist = constant (parenth ("\\exists")) ; --Elze: for inSituWithoutKind
+  Nothing_IExist = constant (parenth ("\\simexists")) ; --Elze: for inSituWithoutKind
 
   ConjInd c ps = constant (c ++ bracket ps) ;
 

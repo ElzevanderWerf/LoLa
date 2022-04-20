@@ -95,6 +95,7 @@ data Tree :: * -> * where
   GIInt :: GInt -> Tree GInd_
   GIUniv :: GKind -> Tree GInd_
   GIVar :: GVar -> Tree GInd_
+  GNothing_IExist :: Tree GInd_
   GSomething_IExist :: Tree GInd_
   GLine :: Tree GKind_
   GModKind :: GKind -> GPred1 -> Tree GKind_
@@ -154,6 +155,7 @@ instance Eq (Tree a) where
     (GIInt x1,GIInt y1) -> and [ x1 == y1 ]
     (GIUniv x1,GIUniv y1) -> and [ x1 == y1 ]
     (GIVar x1,GIVar y1) -> and [ x1 == y1 ]
+    (GNothing_IExist,GNothing_IExist) -> and [ ]
     (GSomething_IExist,GSomething_IExist) -> and [ ]
     (GLine,GLine) -> and [ ]
     (GModKind x1 x2,GModKind y1 y2) -> and [ x1 == y1 , x2 == y2 ]
@@ -257,6 +259,7 @@ instance Gf GInd where
   gf (GIInt x1) = mkApp (mkCId "IInt") [gf x1]
   gf (GIUniv x1) = mkApp (mkCId "IUniv") [gf x1]
   gf (GIVar x1) = mkApp (mkCId "IVar") [gf x1]
+  gf GNothing_IExist = mkApp (mkCId "Nothing_IExist") []
   gf GSomething_IExist = mkApp (mkCId "Something_IExist") []
 
   fg t =
@@ -270,6 +273,7 @@ instance Gf GInd where
       Just (i,[x1]) | i == mkCId "IInt" -> GIInt (fg x1)
       Just (i,[x1]) | i == mkCId "IUniv" -> GIUniv (fg x1)
       Just (i,[x1]) | i == mkCId "IVar" -> GIVar (fg x1)
+      Just (i,[]) | i == mkCId "Nothing_IExist" -> GNothing_IExist 
       Just (i,[]) | i == mkCId "Something_IExist" -> GSomething_IExist 
 
 
