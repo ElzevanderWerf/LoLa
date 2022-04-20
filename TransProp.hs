@@ -13,13 +13,18 @@ import Data.Tree
   
 transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
 transfer m pgf la t = case m of
-  MNone        -> linearize pgf la (id t)                                      -- no transformation
-  MMinimalize  -> linearize pgf la ((gf . (minimalizeP . normalizeP) . fg) t)  -- interpretation functions
-  MNormalize   -> linearize pgf la ((gf . normalizeP . fg) t)                  -- interpretation functions
-  MOptimize    -> linearize pgf la ((gf . optimizeP . fg) t)                   -- the conversion rules of Ranta (2011) section 5.3
-  MSimplify    -> simplifyP pgf la (fg t)                                      -- Elze's simplification
-  MCheckLaw    -> linearize pgf la ((gf . checklawP . fg) t)                   -- TODO (debug) remove all occurrences
-
+  MNone        -> lin id                                      -- no transformation
+  MMinimalize  -> lin (transform (minimalizeP . normalizeP))  -- interpretation functions
+  MNormalize   -> lin (transform normalizeP)                  -- interpretation functions
+  MOptimize    -> lin (transform optimizeP)                   -- the conversion rules of Ranta (2011) section 5.3
+  MSimplify    -> simplifyP pgf la (fg t)                     -- Elze's simplification
+  MCheckLaw    -> lin (transform checklawP)                   -- TODO (debug) remove all occurrences
+ where
+   lin :: (PGF.Tree -> PGF.Tree) -> String
+   lin f = linearize pgf la (f t)
+     
+   transform :: (GProp -> GProp) -> (PGF.Tree -> PGF.Tree)
+   transform f = gf . f . fg
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
 
 --Debug print tree:
@@ -241,6 +246,7 @@ newVar i = GVString (GString ("x" ++ show i))
 
 -- Simplify a proposition given the target language (the chosen simplification
 -- sequence is based on the length of the output translation) 
+-- The output string contains the resulting abstract syntax tree + the linearization
 simplifyP :: PGF -> Language -> GProp -> String
 --simplifyP :: PGF -> Language -> GProp -> [String] --Debug: print tree
 simplifyP = simplify
