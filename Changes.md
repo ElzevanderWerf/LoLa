@@ -20,7 +20,7 @@
 ## New Language
 As an exercise, to get more acquainted with GF, I added the Dutch language to the application grammar: file `PropDut.gf`.
 		
-## Ranta-like conversions
+## Ranta-like Conversions
 Code lines for added conversions are commented with *Elze: for existNeg*, *Elze: for inSituWithoutKind*, et cetera.
 1. existNeg) In a case that an existential quantifier is negated, the negation is moved inward, because the earlier translation *it is not the case that there exists an element x such that* is quite ugly. New translation: *there is no element x such that*.
 2. inSituWithoutKind) I added in-situ quantification for quantifiers without a kind predicate. This is performed only if there is exactly one occurrence of the variable quantified over in the quantified proposition. The three cases are:
