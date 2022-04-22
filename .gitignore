@@ -1,5 +1,6 @@
 #files
 *.gfo
+Prop.pgf
 
 #folders
 .stack-work/*
