@@ -12,6 +12,7 @@ import Data.Maybe (fromJust)
 
 -- Useful functions
 -- Ranta 2011 (moved from TransProp.hs)
+-- Returns True if there are no free variables in the tree
 noFreeVars :: PGF.Tree -> Bool
 noFreeVars = null . freeVarsP . fg
   where
