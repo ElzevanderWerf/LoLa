@@ -238,9 +238,6 @@ iInd q f = case q of
 type Prop = GProp
 type Ind = GInd
 
--- Make a new numbered variable
-newVar i = GVString (GString ("x" ++ show i))
-
 --composOpMPlus :: (Compos t, MonadPlus m) => (forall a. t a -> m b) -> t c -> m b
 --composOpM :: (Compos t, Monad m) => (forall a. t a -> m (t a)) -> t c -> m (t c)
 

@@ -53,6 +53,9 @@ freeVars t = [x | x@(GVString _) <- freeVarsM t]
 notFree :: GVar -> Tree a -> Bool
 notFree x t = notElem x (freeVars t)
 
+-- Make a new numbered variable
+newVar i = GVString (GString ("x" ++ show i))
+
 ------------------------------------------------------------------------------
 -- Functions added by Elze
 -- Find the shortest sentence in a list of sentences (by word count)
