@@ -41,9 +41,9 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
 -- Parse the input string in the source language and translate it with
 -- AST simplification into the target language
 doTransFromTo pgf source_l target_l s = case parse pgf source_l (startCat pgf) s of 
-  ts | length ts > 0 -> unlines [transfers t | t <- ts, noFreeVars t]    -- this assumes the input sentences are parsable
+  ts | length ts > 0 -> unlines [transfers t | t <- ts]    -- TODO add noFreeVars t (this assumes the input sentences are parsable)
    where
      transfers t = 
-       if (noFreeVars t) then transfer MSimplify pgf target_l t else "contains free variables"  --TODO last case doesn't work
+       if (noFreeVars t) then transfer MSimplify pgf target_l t 
+       else "contains free variables"
   _  -> "no parse"
---TODO: zorg dat als de tree free variables heeft, dat dat ook zichtbaar wordt in de vertaling
