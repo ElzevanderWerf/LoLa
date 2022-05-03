@@ -246,7 +246,7 @@ simplifyP :: PGF -> Language -> GProp -> String
 simplifyP = simplify
 
 simplify :: PGF -> Language -> GProp -> String
-simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ": " ++ s
+simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ", " ++ s
    where
      lin = linearize pgf la
      

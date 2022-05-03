@@ -81,3 +81,9 @@ getProps t = [p | p <- propsM t]
 
 --containsTorF :: GProp -> Bool
 --containsTorF p = GPTaut `elem` (getProps p) || GPContra `elem` (getProps p)
+
+isWellBehaved :: PGF.Tree -> Bool
+isWellBehaved = isWB . fg
+ where 
+   isWB :: GProp -> Bool
+   isWB p = True
