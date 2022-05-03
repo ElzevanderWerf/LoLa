@@ -7,3 +7,4 @@ In `Trans.hs`, I have added the option to translate all sentences from an input 
 
     stack run trans <source-language> <input-file> <target-language> <output-file>
 
+The translations are printed in the following format: `WB/NWB, Output tree, Translation`, where `WB` stands for *well-behaved* and `NWB` for *ill-behaved*.

@@ -6,7 +6,7 @@ module TransPropFunctions where
 
 import qualified "gf" PGF (Tree, showExpr)
 import Prop   -- generated from GF
-import Data.List (minimumBy, elemIndex)
+import Data.List (minimumBy, elemIndex, isInfixOf)
 import Data.Ord (comparing)
 import Data.Maybe (fromJust)
 
@@ -70,20 +70,34 @@ wordCount :: String -> Int
 wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
 
 -- Returns the tautologies and contradictions in a given proposition
-getProps :: Tree a -> [GProp]
-getProps t = [p | p <- propsM t]
- where
-  propsM :: forall a. Tree a -> [GProp]
-  propsM t = case t of
-    GPTaut -> [t]
-    GPContra -> [t]
-    _ -> composOpMPlus propsM t
+--getTFs :: Tree a -> [GProp]
+--getTFs t = [p | p <- TFsM t]
+-- where
+--  getTFsM :: forall a. Tree a -> [GProp]
+--  getTFsM t = case t of
+--    GPTaut -> [t]
+--    GPContra -> [t]
+--    _ -> composOpMPlus getTFsM t
 
 --containsTorF :: GProp -> Bool
---containsTorF p = GPTaut `elem` (getProps p) || GPContra `elem` (getProps p)
+--containsTorF p = GPTaut `elem` (getTFs p) || GPContra `elem` (getTFs p)
 
+contains :: GProp -> String -> Bool
+contains p s = isInfixOf s (PGF.showExpr [] (gf p))
+
+-- Returns whether a given tree is well-behaved according to my definition
 isWellBehaved :: PGF.Tree -> Bool
 isWellBehaved = isWB . fg
  where 
    isWB :: GProp -> Bool
-   isWB p = True
+   isWB p = case p of
+     GPNeg p1 -> if (contains p1 "PNeg") then False 
+       else isWB p1
+     GPConj c p1 p2 -> isWB p1 && isWB p2
+     GPImpl p1 p2 -> if (contains p1 "PImpl" || contains p2 "PImpl") then False
+       else isWB p1 && isWB p2
+     GPUniv v1 p1 -> if v1 `notElem` (freeVars p1) then False
+       else isWB p1
+     GPExist v1 p1 -> if v1 `notElem` (freeVars p1) then False
+       else isWB p1
+     _ -> True   -- possible cases: GPAtom, GPNegAtom
