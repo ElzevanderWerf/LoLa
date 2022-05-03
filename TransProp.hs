@@ -4,7 +4,6 @@
 
 module TransProp where
 
---import qualified "gf" PGF (Tree, showExpr)
 import "gf" PGF
 import Prop   -- generated from GF
 import TransPropFunctions
@@ -26,11 +25,6 @@ transfer m pgf la t = case m of
    transform :: (GProp -> GProp) -> (PGF.Tree -> PGF.Tree)
    transform f = gf . f . fg
 data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
-
---Debug print tree:
---transfer :: Mode -> PGF -> Language -> PGF.Tree -> String
---transfer :: Mode -> PGF -> Language -> PGF.Tree -> [String]
---transfer m pgf la t = simplifyP pgf la (fg t)
 
 -- the conversion rules of Ranta (2011) section 5.3 (core -> extended syntax)
 optimizeP :: GProp -> GProp
@@ -249,7 +243,6 @@ type Ind = GInd
 -- sequence is based on the length of the output translation) 
 -- The output string contains the resulting abstract syntax tree + the linearization
 simplifyP :: PGF -> Language -> GProp -> String
---simplifyP :: PGF -> Language -> GProp -> [String] --Debug: print tree
 simplifyP = simplify
 
 simplify :: PGF -> Language -> GProp -> String
@@ -264,12 +257,6 @@ simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ": " ++ s
          else (n, [((fst n) + 1, law (snd n)) | law <- logicLaws, law (snd n) /= snd n])
      t = unfoldTree buildNode (0, p)
      (s, i) = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
-
---Debug: print tree
---simplify :: PGF -> Language -> GProp -> [String] 
---simplify pgf la p = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t)) :
---  unlines (map ((showExpr []). gf . snd) (flatten t)) :
---    unlines (map (lin . gf . optimizeP . snd) (flatten t)) : []
    
    
 
