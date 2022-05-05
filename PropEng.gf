@@ -36,23 +36,23 @@ oper
 -- test lexicon
 
 lin
---  Vertical = mkAP (P.mkA "vertical") ;
---  Horizontal = mkAP (P.mkA "horizontal") ;
---  Parallel = P.mkA2 (P.mkA "parallel") to_Prep ;
---  Equal = P.mkA2 (P.mkA "equal") to_Prep ;
---  Line = mkCN (P.mkN "line") ;
---  Point = mkCN (P.mkN "point") ;
---  Centre = mkFun1 "centre" ;
---  Intersection = mkFun2 "intersection" ;
+  Vertical = mkAP (P.mkA "vertical") ;
+  Horizontal = mkAP (P.mkA "horizontal") ;
+  Parallel = P.mkA2 (P.mkA "parallel") to_Prep ;
+  Equal = P.mkA2 (P.mkA "equal") to_Prep ;
+  Line = mkCN (P.mkN "line") ;
+  Point = mkCN (P.mkN "point") ;
+  Centre = mkFun1 "centre" ;
+  Intersection = mkFun2 "intersection" ;
 
---  Set k = mkCN set_N2 (mkNP a_Art plNum k) ; 
+  Set k = mkCN set_N2 (mkNP a_Art plNum k) ; 
 
---  Even = mkAP (P.mkA "even") ;
---  Odd = mkAP (P.mkA "odd") ;
---  Square = mkFun1 "square" ;
---  Sum = mkFun2 "sum" ;
---  Product = mkFun2 "product" ;
---  Nat = mkCN (P.mkN "number") ;
+  Even = mkAP (P.mkA "even") ;
+  Odd = mkAP (P.mkA "odd") ;
+  Square = mkFun1 "square" ;
+  Sum = mkFun2 "sum" ;
+  Product = mkFun2 "product" ;
+  Nat = mkCN (P.mkN "number") ;
 
   Dodec = mkCN (P.mkN "dodecahedron") ;
   Student = mkCN (P.mkN "student") ;

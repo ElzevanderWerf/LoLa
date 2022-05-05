@@ -45,39 +45,40 @@ lincat
 lin
   AKind k x = table {True => appGGC k (top x) ; False => "~" ++ (appGGC k (top x)) } ;
 
-  --PConjs c ps = constant (c ++ "[" ++ ps ++ "]") ; --not part of ggc?
-  --PUnivs vs k = prefix 4 (parenth ("\\forall" ++ vs ++ "\\in" ++ k)) ; --not part of ggc?
-  --PExists vs k = prefix 4 (parenth ("\\exists" ++ vs ++ "\\in" ++ k)) ; --not part of ggc?
+-- All the following linearization functions are commented out because this grammar is only used for parsing GGC formulas (no extended syntax constructs needed).
+  --PConjs c ps = constant (c ++ "[" ++ ps ++ "]") ; 
+  --PUnivs vs k = prefix 4 (parenth ("\\forall" ++ vs ++ "\\in" ++ k)) ; 
+  --PExists vs k = prefix 4 (parenth ("\\exists" ++ vs ++ "\\in" ++ k)) ; 
 
-  --PNegAtom a = constant (a ! False) ; --not part of ggc?
+  --PNegAtom a = constant (a ! False) ; 
 
-  --BaseProp a b = top a ++ "," ++ top b ; --not part of ggc?
-  --ConsProp a as = top a ++ "," ++ as ; --not part of ggc?
+  --BaseProp a b = top a ++ "," ++ top b ; 
+  --ConsProp a as = top a ++ "," ++ as ; 
 
-  --BaseVar a = a ; --not part of ggc?
-  --ConsVar a as = a ++ "," ++ as ; --not part of ggc?
+  --BaseVar a = a ; 
+  --ConsVar a as = a ++ "," ++ as ; 
 
-  --BaseInd a b = top a ++ "," ++ top b ; --not part of ggc?
-  --ConsInd a as = top a ++ "," ++ as ; --not part of ggc?
+  --BaseInd a b = top a ++ "," ++ top b ; 
+  --ConsInd a as = top a ++ "," ++ as ; 
 
-  --BasePred1 a b = (a ! True) ++ "," ++ (b ! True) ; --not part of ggc?
-  --ConsPred1 a as = (a ! True) ++ "," ++ as ; --not part of ggc?
+  --BasePred1 a b = (a ! True) ++ "," ++ (b ! True) ; 
+  --ConsPred1 a as = (a ! True) ++ "," ++ as ; 
 
 --lin
-  --ConjPred1 c ps = \\_ => c ++ bracket ps ; ---- neg --not part of ggc?
+  --ConjPred1 c ps = \\_ => c ++ bracket ps ; ---- neg 
 
-  --APredColl f ps = \\b => appLatex (f ! b) ps ; --not part of ggc?
-  --APredRefl f x  = \\b => appLatex (f ! b) (top x) (top x) ; --not part of ggc?
+  --APredColl f ps = \\b => appLatex (f ! b) ps ; 
+  --APredRefl f x  = \\b => appLatex (f ! b) (top x) (top x) ; 
 
-  --IFunC f ps = constant (appLatex (top f) (bracket ps)) ; --not part of ggc?
+  --IFunC f ps = constant (appLatex (top f) (bracket ps)) ; 
 
-  --IUniv k = constant (parenth ("\\forall" ++ k)) ; --not part of ggc?
-  --IExist k = constant (parenth ("\\exists" ++ k)) ; --not part of ggc?
+  --IUniv k = constant (parenth ("\\forall" ++ k)) ; 
+  --IExist k = constant (parenth ("\\exists" ++ k)) ; 
 
-  --ConjInd c ps = constant (c ++ bracket ps) ; --not part of ggc?
+  --ConjInd c ps = constant (c ++ bracket ps) ; 
 
-  --ModKind k m = (m ! True) ++ k ; -- Elze --not part of ggc?
-  --PartPred f y = \\b => (f ! b)  ++ "to" ++ (top y) ;  -- Elze --not part of ggc?
+  --ModKind k m = (m ! True) ++ k ; -- Elze 
+  --PartPred f y = \\b => (f ! b)  ++ "to" ++ (top y) ;  -- Elze 
 
 -- test lexicon
 

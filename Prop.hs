@@ -97,11 +97,18 @@ data Tree :: * -> * where
   GIVar :: GVar -> Tree GInd_
   GNothing_IExist :: Tree GInd_
   GSomething_IExist :: Tree GInd_
+  GCube :: Tree GKind_
+  GDodec :: Tree GKind_
   GLine :: Tree GKind_
   GModKind :: GKind -> GPred1 -> Tree GKind_
   GNat :: Tree GKind_
+  GPerson :: Tree GKind_
+  GPet :: Tree GKind_
   GPoint :: Tree GKind_
+  GPrime :: Tree GKind_
   GSet :: GKind -> Tree GKind_
+  GStudent :: Tree GKind_
+  GTet :: Tree GKind_
   GListInd :: [GInd] -> Tree GListInd_
   GListPred1 :: [GPred1] -> Tree GListPred1_
   GListProp :: [GProp] -> Tree GListProp_
@@ -109,11 +116,25 @@ data Tree :: * -> * where
   GConjPred1 :: GConj -> GListPred1 -> Tree GPred1_
   GEven :: Tree GPred1_
   GHorizontal :: Tree GPred1_
+  GLarge :: Tree GPred1_
+  GMedium :: Tree GPred1_
   GOdd :: Tree GPred1_
   GPartPred :: GPred2 -> GInd -> Tree GPred1_
+  GSmall :: Tree GPred1_
   GVertical :: Tree GPred1_
+  GAdjoins :: Tree GPred2_
+  GBackOf :: Tree GPred2_
   GEqual :: Tree GPred2_
+  GFrontOf :: Tree GPred2_
+  GLarger :: Tree GPred2_
+  GLeftOf :: Tree GPred2_
   GParallel :: Tree GPred2_
+  GRightOf :: Tree GPred2_
+  GSameCol :: Tree GPred2_
+  GSameRow :: Tree GPred2_
+  GSameShape :: Tree GPred2_
+  GSameSize :: Tree GPred2_
+  GSmaller :: Tree GPred2_
   GPAtom :: GAtom -> Tree GProp_
   GPConj :: GConj -> GProp -> GProp -> Tree GProp_
   GPConjs :: GConj -> GListProp -> Tree GProp_
@@ -157,11 +178,18 @@ instance Eq (Tree a) where
     (GIVar x1,GIVar y1) -> and [ x1 == y1 ]
     (GNothing_IExist,GNothing_IExist) -> and [ ]
     (GSomething_IExist,GSomething_IExist) -> and [ ]
+    (GCube,GCube) -> and [ ]
+    (GDodec,GDodec) -> and [ ]
     (GLine,GLine) -> and [ ]
     (GModKind x1 x2,GModKind y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GNat,GNat) -> and [ ]
+    (GPerson,GPerson) -> and [ ]
+    (GPet,GPet) -> and [ ]
     (GPoint,GPoint) -> and [ ]
+    (GPrime,GPrime) -> and [ ]
     (GSet x1,GSet y1) -> and [ x1 == y1 ]
+    (GStudent,GStudent) -> and [ ]
+    (GTet,GTet) -> and [ ]
     (GListInd x1,GListInd y1) -> and [x == y | (x,y) <- zip x1 y1]
     (GListPred1 x1,GListPred1 y1) -> and [x == y | (x,y) <- zip x1 y1]
     (GListProp x1,GListProp y1) -> and [x == y | (x,y) <- zip x1 y1]
@@ -169,11 +197,25 @@ instance Eq (Tree a) where
     (GConjPred1 x1 x2,GConjPred1 y1 y2) -> and [ x1 == y1 , x2 == y2 ]
     (GEven,GEven) -> and [ ]
     (GHorizontal,GHorizontal) -> and [ ]
+    (GLarge,GLarge) -> and [ ]
+    (GMedium,GMedium) -> and [ ]
     (GOdd,GOdd) -> and [ ]
     (GPartPred x1 x2,GPartPred y1 y2) -> and [ x1 == y1 , x2 == y2 ]
+    (GSmall,GSmall) -> and [ ]
     (GVertical,GVertical) -> and [ ]
+    (GAdjoins,GAdjoins) -> and [ ]
+    (GBackOf,GBackOf) -> and [ ]
     (GEqual,GEqual) -> and [ ]
+    (GFrontOf,GFrontOf) -> and [ ]
+    (GLarger,GLarger) -> and [ ]
+    (GLeftOf,GLeftOf) -> and [ ]
     (GParallel,GParallel) -> and [ ]
+    (GRightOf,GRightOf) -> and [ ]
+    (GSameCol,GSameCol) -> and [ ]
+    (GSameRow,GSameRow) -> and [ ]
+    (GSameShape,GSameShape) -> and [ ]
+    (GSameSize,GSameSize) -> and [ ]
+    (GSmaller,GSmaller) -> and [ ]
     (GPAtom x1,GPAtom y1) -> and [ x1 == y1 ]
     (GPConj x1 x2 x3,GPConj y1 y2 y3) -> and [ x1 == y1 , x2 == y2 , x3 == y3 ]
     (GPConjs x1 x2,GPConjs y1 y2) -> and [ x1 == y1 , x2 == y2 ]
@@ -280,19 +322,33 @@ instance Gf GInd where
       _ -> error ("no Ind " ++ show t)
 
 instance Gf GKind where
+  gf GCube = mkApp (mkCId "Cube") []
+  gf GDodec = mkApp (mkCId "Dodec") []
   gf GLine = mkApp (mkCId "Line") []
   gf (GModKind x1 x2) = mkApp (mkCId "ModKind") [gf x1, gf x2]
   gf GNat = mkApp (mkCId "Nat") []
+  gf GPerson = mkApp (mkCId "Person") []
+  gf GPet = mkApp (mkCId "Pet") []
   gf GPoint = mkApp (mkCId "Point") []
+  gf GPrime = mkApp (mkCId "Prime") []
   gf (GSet x1) = mkApp (mkCId "Set") [gf x1]
+  gf GStudent = mkApp (mkCId "Student") []
+  gf GTet = mkApp (mkCId "Tet") []
 
   fg t =
     case unApp t of
+      Just (i,[]) | i == mkCId "Cube" -> GCube 
+      Just (i,[]) | i == mkCId "Dodec" -> GDodec 
       Just (i,[]) | i == mkCId "Line" -> GLine 
       Just (i,[x1,x2]) | i == mkCId "ModKind" -> GModKind (fg x1) (fg x2)
       Just (i,[]) | i == mkCId "Nat" -> GNat 
+      Just (i,[]) | i == mkCId "Person" -> GPerson 
+      Just (i,[]) | i == mkCId "Pet" -> GPet 
       Just (i,[]) | i == mkCId "Point" -> GPoint 
+      Just (i,[]) | i == mkCId "Prime" -> GPrime 
       Just (i,[x1]) | i == mkCId "Set" -> GSet (fg x1)
+      Just (i,[]) | i == mkCId "Student" -> GStudent 
+      Just (i,[]) | i == mkCId "Tet" -> GTet 
 
 
       _ -> error ("no Kind " ++ show t)
@@ -349,8 +405,11 @@ instance Gf GPred1 where
   gf (GConjPred1 x1 x2) = mkApp (mkCId "ConjPred1") [gf x1, gf x2]
   gf GEven = mkApp (mkCId "Even") []
   gf GHorizontal = mkApp (mkCId "Horizontal") []
+  gf GLarge = mkApp (mkCId "Large") []
+  gf GMedium = mkApp (mkCId "Medium") []
   gf GOdd = mkApp (mkCId "Odd") []
   gf (GPartPred x1 x2) = mkApp (mkCId "PartPred") [gf x1, gf x2]
+  gf GSmall = mkApp (mkCId "Small") []
   gf GVertical = mkApp (mkCId "Vertical") []
 
   fg t =
@@ -358,21 +417,46 @@ instance Gf GPred1 where
       Just (i,[x1,x2]) | i == mkCId "ConjPred1" -> GConjPred1 (fg x1) (fg x2)
       Just (i,[]) | i == mkCId "Even" -> GEven 
       Just (i,[]) | i == mkCId "Horizontal" -> GHorizontal 
+      Just (i,[]) | i == mkCId "Large" -> GLarge 
+      Just (i,[]) | i == mkCId "Medium" -> GMedium 
       Just (i,[]) | i == mkCId "Odd" -> GOdd 
       Just (i,[x1,x2]) | i == mkCId "PartPred" -> GPartPred (fg x1) (fg x2)
+      Just (i,[]) | i == mkCId "Small" -> GSmall 
       Just (i,[]) | i == mkCId "Vertical" -> GVertical 
 
 
       _ -> error ("no Pred1 " ++ show t)
 
 instance Gf GPred2 where
+  gf GAdjoins = mkApp (mkCId "Adjoins") []
+  gf GBackOf = mkApp (mkCId "BackOf") []
   gf GEqual = mkApp (mkCId "Equal") []
+  gf GFrontOf = mkApp (mkCId "FrontOf") []
+  gf GLarger = mkApp (mkCId "Larger") []
+  gf GLeftOf = mkApp (mkCId "LeftOf") []
   gf GParallel = mkApp (mkCId "Parallel") []
+  gf GRightOf = mkApp (mkCId "RightOf") []
+  gf GSameCol = mkApp (mkCId "SameCol") []
+  gf GSameRow = mkApp (mkCId "SameRow") []
+  gf GSameShape = mkApp (mkCId "SameShape") []
+  gf GSameSize = mkApp (mkCId "SameSize") []
+  gf GSmaller = mkApp (mkCId "Smaller") []
 
   fg t =
     case unApp t of
+      Just (i,[]) | i == mkCId "Adjoins" -> GAdjoins 
+      Just (i,[]) | i == mkCId "BackOf" -> GBackOf 
       Just (i,[]) | i == mkCId "Equal" -> GEqual 
+      Just (i,[]) | i == mkCId "FrontOf" -> GFrontOf 
+      Just (i,[]) | i == mkCId "Larger" -> GLarger 
+      Just (i,[]) | i == mkCId "LeftOf" -> GLeftOf 
       Just (i,[]) | i == mkCId "Parallel" -> GParallel 
+      Just (i,[]) | i == mkCId "RightOf" -> GRightOf 
+      Just (i,[]) | i == mkCId "SameCol" -> GSameCol 
+      Just (i,[]) | i == mkCId "SameRow" -> GSameRow 
+      Just (i,[]) | i == mkCId "SameShape" -> GSameShape 
+      Just (i,[]) | i == mkCId "SameSize" -> GSameSize 
+      Just (i,[]) | i == mkCId "Smaller" -> GSmaller 
 
 
       _ -> error ("no Pred2 " ++ show t)

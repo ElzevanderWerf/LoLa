@@ -82,24 +82,22 @@ fun
 -- 3. Test lexicons
 -- test lexicon: geometry
 
--- test lexicon: geometry
-
 fun
---   Vertical, Horizontal : Pred1 ;
---   Parallel, Equal : Pred2 ;
---  Equal : Pred2 ; -- Elze
---   Line, Point : Kind ;
---   Centre : Fun1 ;
---   Intersection : Fun2 ;  
+   Vertical, Horizontal : Pred1 ;
+   Parallel, Equal : Pred2 ;
+  Equal : Pred2 ; -- Elze
+   Line, Point : Kind ;
+   Centre : Fun1 ;
+   Intersection : Fun2 ;  
 
---   Set : Kind -> Kind ;
+   Set : Kind -> Kind ;
 
 -- test lexicon: arithmetic
 
---  Even, Odd    : Pred1 ;
---  Nat          : Kind ;
---  Square       : Fun1 ;
---  Sum, Product : Fun2 ;
+  Even, Odd    : Pred1 ;
+  Nat          : Kind ;
+  Square       : Fun1 ;
+  Sum, Product : Fun2 ;
   IInt         : Int -> Ind ;
 
 -- test lexicon: GGC
