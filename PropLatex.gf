@@ -91,25 +91,48 @@ lin
 -- test lexicon
 
 lin
-  Vertical = slash "vertical" ;
-  Horizontal = slash "horizontal" ;
-  Parallel = slash "parallel" ;
-  Equal = slash "equal" "notequal" ;
-  Line = slash "line" ;
-  Point = slash "point" ;
-  Centre = slash  "centre" ;
-  Intersection = slash  "intersection" ;
+--  Vertical = slash "vertical" ;
+--  Horizontal = slash "horizontal" ;
+--  Parallel = slash "parallel" ;
+--  Equal = slash "equal" "notequal" ;
+--  Line = slash "line" ;
+--  Point = slash "point" ;
+--  Centre = slash  "centre" ;
+--  Intersection = slash  "intersection" ;
 
-  Set k = appLatex "\\set" k ;
+--  Set k = appLatex ("\\set") k ;
 
-  Even = slash "even" ;
-  Odd = slash "odd" ;
-  Square = slash "square" ;
-  Sum = slash "sum" ;
-  Product = slash "product" ;
-  Nat = "N" ;
+--  Even = slash "even" ;
+--  Odd = slash "odd" ;
+--  Square = slash "square" ;
+--  Sum = slash "sum" ;
+--  Product = slash "product" ;
+--  Nat = "N" ;
 
   IInt i = constant i.s ;
+
+  Dodec = "dodec" ;
+  Student = "student" ;
+  Cube = "cube" ;
+  Prime = "prime" ;
+  Person = "person" ;
+  Tet = "tetrahedron" ;
+  Pet = "pet" ;
+  Small = slash "small" ;
+  Medium = slash "medium" ;
+  Large = slash "large" ;
+  Even = slash "even" ;
+  Adjoins = slash "adjoins" ;
+  SameCol = slash "sameCol" ;
+  LeftOf = slash "leftOf" ;
+  RightOf = slash "rightOf" ;
+  Smaller = slash "smaller" ;
+  FrontOf = slash "frontOf" ;
+  Larger = slash "larger" ;
+  SameRow = slash "sameRow" ;
+  SameShape = slash "sameShape" ;
+  SameSize = slash "sameSize" ;
+  BackOf = slash "backOf" ;
 
 oper
   appLatex = overload {

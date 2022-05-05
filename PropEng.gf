@@ -33,24 +33,50 @@ oper
 
 -- test lexicon
 
+-- test lexicon
+
 lin
-  Vertical = mkAP (P.mkA "vertical") ;
-  Horizontal = mkAP (P.mkA "horizontal") ;
-  Parallel = P.mkA2 (P.mkA "parallel") to_Prep ;
-  Equal = P.mkA2 (P.mkA "equal") to_Prep ;
-  Line = mkCN (P.mkN "line") ;
-  Point = mkCN (P.mkN "point") ;
-  Centre = mkFun1 "centre" ;
-  Intersection = mkFun2 "intersection" ;
+--  Vertical = mkAP (P.mkA "vertical") ;
+--  Horizontal = mkAP (P.mkA "horizontal") ;
+--  Parallel = P.mkA2 (P.mkA "parallel") to_Prep ;
+--  Equal = P.mkA2 (P.mkA "equal") to_Prep ;
+--  Line = mkCN (P.mkN "line") ;
+--  Point = mkCN (P.mkN "point") ;
+--  Centre = mkFun1 "centre" ;
+--  Intersection = mkFun2 "intersection" ;
 
-  Set k = mkCN set_N2 (mkNP a_Art plNum k) ; 
+--  Set k = mkCN set_N2 (mkNP a_Art plNum k) ; 
 
+--  Even = mkAP (P.mkA "even") ;
+--  Odd = mkAP (P.mkA "odd") ;
+--  Square = mkFun1 "square" ;
+--  Sum = mkFun2 "sum" ;
+--  Product = mkFun2 "product" ;
+--  Nat = mkCN (P.mkN "number") ;
+
+  Dodec = mkCN (P.mkN "dodecahedron") ;
+  Student = mkCN (P.mkN "student") ;
+  Cube = mkCN (P.mkN "cube") ;
+  Prime = mkCN (P.mkN "prime") ;
+  Person = mkCN (P.mkN "person") ;
+  Tet = mkCN (P.mkN "tetrahedron") ;
+  Pet = mkCN (P.mkN "pet") ;
+  Small = mkAP (P.mkA "small") ;
+  Medium = mkAP (P.mkA "medium") ;
+  Large = mkAP (P.mkA "large") ;
   Even = mkAP (P.mkA "even") ;
-  Odd = mkAP (P.mkA "odd") ;
-  Square = mkFun1 "square" ;
-  Sum = mkFun2 "sum" ;
-  Product = mkFun2 "product" ;
-  Nat = mkCN (P.mkN "number") ;
+  Adjoins = P.mkA2 (P.mkA "adjacent") to_Prep ;
+  SameCol = P.mkA2 (P.mkA "in the same column") (P.mkPrep "as") ;
+  LeftOf = P.mkA2 (P.mkA "to the left") (P.mkPrep "of") ;
+  RightOf = P.mkA2 (P.mkA "to the right") (P.mkPrep "of") ;
+  Smaller = P.mkA2 (P.mkA "smaller") (P.mkPrep "than") ;
+  FrontOf = P.mkA2 (P.mkA "in front") (P.mkPrep "of") ;
+  Larger = P.mkA2 (P.mkA "larger") (P.mkPrep "than") ;
+  SameRow = P.mkA2 (P.mkA "in the same row") (P.mkPrep "as") ;
+  SameShape = P.mkA2 (P.mkA "of the same shape") (P.mkPrep "as") ;
+  SameSize = P.mkA2 (P.mkA "of the same size") (P.mkPrep "as") ;
+  BackOf = P.mkA2 (P.mkA "in back") (P.mkPrep "of") ;
+  
 
 oper
   mkFun1, mkFun2 : Str -> {s : Symb ; v : N2} = \s -> 

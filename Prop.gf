@@ -82,21 +82,29 @@ fun
 -- 3. Test lexicons
 -- test lexicon: geometry
 
-fun
-  Vertical, Horizontal : Pred1 ;
-  Parallel, Equal : Pred2 ;
-  Line, Point : Kind ;
-  Centre : Fun1 ;
-  Intersection : Fun2 ;  
+-- test lexicon: geometry
 
-  Set : Kind -> Kind ;
+fun
+--   Vertical, Horizontal : Pred1 ;
+--   Parallel, Equal : Pred2 ;
+--  Equal : Pred2 ; -- Elze
+--   Line, Point : Kind ;
+--   Centre : Fun1 ;
+--   Intersection : Fun2 ;  
+
+--   Set : Kind -> Kind ;
 
 -- test lexicon: arithmetic
 
-  Even, Odd    : Pred1 ;
-  Nat          : Kind ;
-  Square       : Fun1 ;
-  Sum, Product : Fun2 ;
-  IInt         : Int -> Ind ;               -- parse an integer as an individual constant
+--  Even, Odd    : Pred1 ;
+--  Nat          : Kind ;
+--  Square       : Fun1 ;
+--  Sum, Product : Fun2 ;
+  IInt         : Int -> Ind ;
+
+-- test lexicon: GGC
+  Dodec, Student, Cube, Prime, Person, Tet, Pet : Kind ;
+  Small, Medium, Large, Even : Pred1 ;
+  Adjoins, SameCol, LeftOf, RightOf, Smaller, FrontOf, Larger, SameRow, SameShape, SameSize, BackOf : Pred2 ;
 
 }
