@@ -29,7 +29,7 @@ main = do
 -- Parse the input string in all languages and translate it with all 
 -- translation modes into all languages 
 doTrans pgf s = case parseAllLang pgf (startCat pgf) s of 
-  (sourceL,ts):_ -> unlines [display m t | t <- ts, noFreeVars t, m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify, MCheckLaw]] 
+  (sourceL,ts):_ -> unlines [display m t | t <- ts, m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify, MCheckLaw]] 
   _              -> "no parse\n"
  where
    display m t = unlines $ (showExpr [] t) :           -- print the tree
@@ -39,7 +39,7 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
 -- Parse the input string in the source language and translate it with
 -- AST simplification into the target language
 doTransFromTo pgf source_l target_l s = case parse pgf source_l (startCat pgf) s of 
-  ts | length ts > 0 -> unlines [wb t ++ transfers t | t <- ts, noFreeVars t]    -- this assumes the input sentences are parsable
+  ts | length ts > 0 -> unlines [wb t ++ transfers t | t <- ts]    -- this assumes the input sentences are parsable
    where
      wb t = if (isWellBehaved t) then "WB, " else "NWB, "   -- check well-behavedness
      transfers t = transfer MSimplify pgf target_l t 
