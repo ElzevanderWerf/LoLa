@@ -36,11 +36,13 @@ From the Grade Grinder Corpus (in the ignored file `translationcorpus-1.0.1.csv`
     1. BASELINE: `ggc-base.tmp`, produced by
     
          >stack run trans MNone PropGGC data/ggc-formulas.tmp PropEng data/ggc-base.tmp
+    
     (this took around 15 minutes)
     2. RANTA-I: `ggc-rantaI.tmp`, copied from [cade-2011-study-1](https://github.com/ElzevanderWerf/cade-2011-study-1/blob/master/out/ggc-eng.tmp).
     3. RANTA-II:`ggc-rantaII.tmp`, produced by
             
         >stack run trans MSimplify PropGGC data/ggc-formulas.tmp PropEng data/ggc-rantaII.tmp
+	
 	(this took around 2.5 hours)
 
 
@@ -54,17 +56,19 @@ I designed a random generation function, which generates formulas from the entir
     1. BASELINE: `rg-base.tmp`, produced by
     
          >stack run trans MNone PropGGC data/rg-formulas.tmp PropEng data/rg-base.tmp
+    
     (this took around 1 minute)
     2. RANTA-I: `rg-rantaI.tmp`, translated with Trans in repo [cade-2011-study-1](https://github.com/ElzevanderWerf/cade-2011-study-1/blob/master/out/test3Eng.tmp).
     3. RANTA-II:`rg-rantaII.tmp`, produced by
             
         >stack run trans MSimplify PropGGC data/rg-formulas.tmp PropEng data/rg-rantaII.tmp
+	
 	(this took around 3 minutes)
 
 		
 #### PREPARING EXPERIMENT 1
 **(Filenames start with exp1)**
-1. For readability, I used `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items.csv` and `fr-items.csv`):
+1. For readability, I wrote `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items.csv` and `fr-items.csv`):
 
 		>python makecsv.py   
-2. The Python script in `createForms.py` writes 20 different Google Apps Script files to the folder `scripts`, thereby creating 20 different surveys in Google Forms, each with a different set of experimental items from `exp1-ggc-to-eng.csv` and `exp1-rg-to-eng.csv`, and the same set of fillers from `fillers.csv`.
+2. The Python script in `createForms.py` writes 20 different Google Apps Script files to the folder `formScripts`, thereby creating 20 different surveys in Google Forms, each with a different set of experimental items, according to a Latin Square Design.
