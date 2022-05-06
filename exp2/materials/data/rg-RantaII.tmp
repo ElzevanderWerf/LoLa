@@ -1,0 +1,201 @@
+WB, PConj CAnd (PUniv (VString "x") (PConj COr (PAtom (APred1 Large (IVar (VString "a")))) (PAtom (AKind Tet (IVar (VString "x")))))) (PUniv (VString "x") (PImpl (PAtom (APred2 FrontOf (IVar (VString "b")) (IVar (VString "x")))) (PAtom (AKind Student (IVar (VString "x")))))), for all x , a is large or x is a tetrahedron and for all x , if b is in front of x , then x is a student
+
+WB, PConj COr (PConj COr (PAtom (AKind Tet (IVar (VString "b")))) (PAtom (APred1 Small (IVar (VString "a"))))) (PUniv (VString "x") (PAtom (AKind Cube (IVar (VString "x"))))), b is a tetrahedron , a is small or everything is a cube
+
+WB, PExist (VString "x") (PConj COr (PConj CAnd (PAtom (APred2 Larger (IVar (VString "x")) (IVar (VString "a")))) (PAtom (AKind Cube (IVar (VString "b"))))) (PAtom (APred2 LeftOf (IVar (VString "c")) (IVar (VString "c"))))), there is an element x such that at least one of these holds : \item x is larger than a and b is a cube \item c is to the left of itself
+
+NWB, PImpl (PAtom (APred1 Even (IVar (VString "a")))) (PUniv (VString "x") (PAtom (APred2 BackOf (IVar (VString "x")) (IVar (VString "x"))))), if a is even , then everything is in back of itself
+
+WB, PConj COr (PExist (VString "x") (PConj CAnd (PAtom (AKind Pet (IVar (VString "x")))) (PAtom (AKind Prime (IVar (VString "b")))))) (PExist (VString "x") (PAtom (APred2 RightOf (IVar (VString "a")) (IVar (VString "x"))))), there is a pet x such that b is a prime or a is to the right of something
+
+NWB, PConj CAnd (PConj CAnd (PNeg (PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "b"))))) (PNeg (PAtom (APred1 Small (IVar (VString "a")))))) (PUniv (VString "y") (PAtom (APred1 Medium (IVar (VString "y"))))), a is not adjacent to b , a is not small and everything is medium
+
+NWB, PConj COr (PConj CAnd (PAtom (APred1 Medium (IVar (VString "a")))) (PNeg (PAtom (AKind Tet (IVar (VString "a")))))) (PConj COr (PNeg (PExist (VString "x") (PAtom (AKind Student (IVar (VString "x")))))) (PAtom (AKind Dodec (IVar (VString "b"))))), at least one of these holds : \item a is medium and a is not a tetrahedron , nothing is a student \item b is a dodecahedron
+
+NWB, PImpl (PConj COr (PAtom (APred2 BackOf (IVar (VString "a")) (IVar (VString "b")))) (PUniv (VString "x") (PAtom (APred2 Larger (IVar (VString "x")) (IVar (VString "b")))))) (PConj COr (PExist (VString "y") (PAtom (APred2 FrontOf (IVar (VString "y")) (IVar (VString "y"))))) (PExist (VString "y") (PAtom (AKind Student (IVar (VString "y")))))), if a is in back of b or everything is larger than b , then something is in front of itself or something is a student
+
+NWB, PImpl (PImpl (PAtom (APred1 Large (IVar (VString "a")))) (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "a"))))) (PAtom (APred1 Large (IVar (VString "a")))), if if a is large , then a is in the same column as itself , then a is large
+
+NWB, PConj COr (PConj COr (PAtom (AKind Student (IVar (VString "b")))) (PNeg (PAtom (AKind Student (IVar (VString "a")))))) (PAtom (APred1 Small (IVar (VString "a")))), b is a student , a is not a student or a is small
+
+NWB, PExist (VString "x") (PAtom (APred2 LeftOf (IVar (VString "x")) (IVar (VString "a")))), something is to the left of a
+
+WB, PExist (VString "x") (PConj CAnd (PAtom (AKind Student (IVar (VString "x")))) (PConj CAnd (PConj COr (PAtom (AKind Person (IVar (VString "a")))) (PAtom (AKind Prime (IVar (VString "x"))))) (PAtom (APred2 SameRow (IVar (VString "x")) (IVar (VString "b")))))), there is a student x such that all these hold : \item a is a person or x is a prime \item x is in the same row as b
+
+NWB, PConj CAnd (PNeg (PExist (VString "x") (PAtom (APred2 BackOf (IVar (VString "x")) (IVar (VString "x")))))) (PAtom (AKind Dodec (IVar (VString "a")))), nothing is in back of itself and a is a dodecahedron
+
+NWB, PConj COr (PNeg (PAtom (APred2 SameSize (IVar (VString "b")) (IVar (VString "a"))))) (PNeg (PAtom (APred1 Medium (IVar (VString "a"))))), b is not of the same size as a or a is not medium
+
+WB, PUniv (VString "x") (PConj CAnd (PConj CAnd (PAtom (APred1 Large (IVar (VString "x")))) (PAtom (APred2 FrontOf (IVar (VString "a")) (IVar (VString "b"))))) (PNeg (PAtom (APred1 Large (IVar (VString "x")))))), for all x , x is large , a is in front of b and x is not large
+
+NWB, PConj CAnd (PNeg (PAtom (AKind Cube (IVar (VString "a"))))) (PNeg (PAtom (AKind Prime (IVar (VString "a"))))), a is not a cube and a is not a prime
+
+NWB, PImpl (PAtom (AKind Student (IVar (VString "a")))) (PConj CAnd (PImpl (PAtom (APred1 Small (IVar (VString "b")))) (PAtom (AKind Tet (IVar (VString "a"))))) (PUniv (VString "x") (PAtom (AKind Person (IVar (VString "x")))))), if a is a student , then all these hold : \item if b is small , then a is a tetrahedron \item everything is a person
+
+NWB, PConj COr (PNeg (PExist (VString "x") (PAtom (APred2 SameSize (IVar (VString "x")) (IVar (VString "x")))))) (PAtom (APred1 Large (IVar (VString "a")))), nothing is of the same size as itself or a is large
+
+NWB, PImpl (PConj CAnd (PAtom (AKind Cube (IVar (VString "a")))) (PConj CAnd (PAtom (APred2 BackOf (IVar (VString "a")) (IVar (VString "a")))) (PAtom (APred1 Even (IVar (VString "b")))))) (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "a")))), if a is a cube , a is in back of itself and b is even , then a is smaller than itself
+
+NWB, PConj CAnd (PNeg (PAtom (AKind Cube (IVar (VString "a"))))) (PConj CAnd (PNeg (PAtom (APred1 Small (IVar (VString "a"))))) (PNeg (PAtom (APred1 Medium (IVar (VString "a")))))), a is not a cube , a is not small and a is not medium
+
+NWB, PConj CAnd (PNeg (PAtom (AKind Dodec (IVar (VString "a"))))) (PConj CAnd (PNeg (PAtom (APred1 Small (IVar (VString "b"))))) (PConj COr (PAtom (APred2 SameRow (IVar (VString "b")) (IVar (VString "c")))) (PAtom (APred2 SameShape (IVar (VString "a")) (IVar (VString "a")))))), all these hold : \item a is not a dodecahedron , b is not small \item b is in the same row as c or a is of the same shape as itself
+
+WB, PTaut, 
+
+WB, PConj COr (PUniv (VString "x") (PConj COr (PAtom (AKind Student (IVar (VString "x")))) (PAtom (AKind Dodec (IVar (VString "a")))))) (PUniv (VString "y") (PConj COr (PAtom (APred1 Even (IVar (VString "a")))) (PAtom (APred2 BackOf (IVar (VString "y")) (IVar (VString "b")))))), for all x , x is a student or a is a dodecahedron or for all y , a is even or y is in back of b
+
+NWB, PConj COr (PConj COr (PNeg (PExist (VString "x") (PAtom (APred2 Smaller (IVar (VString "b")) (IVar (VString "x")))))) (PAtom (APred1 Large (IVar (VString "a"))))) (PNeg (PExist (VString "x") (PAtom (APred2 RightOf (IVar (VString "x")) (IVar (VString "a")))))), b is smaller than nothing , a is large or nothing is to the right of a
+
+WB, PNeg (PUniv (VString "x") (PAtom (APred2 SameShape (IVar (VString "x")) (IVar (VString "a"))))), it is not the case that everything is of the same shape as a
+
+NWB, PConj COr (PExist (VString "y") (PAtom (AKind Tet (IVar (VString "y"))))) (PAtom (APred1 Even (IVar (VString "a")))), something is a tetrahedron or a is even
+
+NWB, PConj CAnd (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "a")))) (PConj COr (PAtom (AKind Cube (IVar (VString "b")))) (PConj COr (PAtom (APred2 Larger (IVar (VString "a")) (IVar (VString "c")))) (PAtom (AKind Person (IVar (VString "c")))))), all these hold : \item a is in the same row as itself \item b is a cube , a is larger than c or c is a person
+
+NWB, PConj COr (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "b")))) (PNeg (PAtom (APred2 Larger (IVar (VString "a")) (IVar (VString "c"))))), a is in the same row as b or a is not larger than c
+
+NWB, PImpl (PConj COr (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "a")))) (PAtom (APred2 LeftOf (IVar (VString "b")) (IVar (VString "b"))))) (PNeg (PAtom (AKind Cube (IVar (VString "a"))))), if a is smaller than itself or b is to the left of itself , then a is not a cube
+
+NWB, PImpl (PConj COr (PAtom (AKind Prime (IVar (VString "a")))) (PAtom (APred1 Medium (IVar (VString "a"))))) (PNeg (PExist (VString "y") (PAtom (AKind Tet (IVar (VString "y")))))), if a is a prime or a is medium , then nothing is a tetrahedron
+
+NWB, PConj COr (PAtom (AKind Tet (IVar (VString "b")))) (PAtom (APred1 Medium (IVar (VString "a")))), b is a tetrahedron or a is medium
+
+NWB, PConj CAnd (PExist (VString "x") (PAtom (AKind Prime (IVar (VString "x"))))) (PConj COr (PAtom (AKind Prime (IVar (VString "a")))) (PAtom (AKind Cube (IVar (VString "a"))))), all these hold : \item something is a prime \item a is a prime or a is a cube
+
+NWB, PConj CAnd (PAtom (APred1 Medium (IVar (VString "a")))) (PConj CAnd (PAtom (APred2 Larger (IVar (VString "b")) (IVar (VString "a")))) (PConj CAnd (PAtom (APred2 Smaller (IVar (VString "c")) (IVar (VString "b")))) (PAtom (APred2 SameCol (IVar (VString "c")) (IVar (VString "d")))))), a is medium , b is larger than a , c is smaller than b and c is in the same column as d
+
+WB, PUniv (VString "x") (PImpl (PNeg (PAtom (APred1 Even (IVar (VString "x"))))) (PExist (VString "x") (PConj CAnd (PAtom (APred2 BackOf (IVar (VString "a")) (IVar (VString "x")))) (PAtom (APred1 Even (IVar (VString "x"))))))), for all x , if x is not even , then there is an element x such that a is in back of x and x is even
+
+NWB, PConj COr (PNeg (PAtom (APred1 Large (IVar (VString "b"))))) (PNeg (PAtom (AKind Pet (IVar (VString "a"))))), b is not large or a is not a pet
+
+NWB, PConj CAnd (PImpl (PAtom (AKind Prime (IVar (VString "a")))) (PAtom (APred1 Small (IVar (VString "b"))))) (PNeg (PUniv (VString "x") (PAtom (APred1 Even (IVar (VString "x")))))), all these hold : \item if a is a prime , then b is small \item it is not the case that everything is even
+
+NWB, PConj CAnd (PAtom (AKind Tet (IVar (VString "a")))) (PConj CAnd (PNeg (PAtom (APred2 FrontOf (IVar (VString "a")) (IVar (VString "b"))))) (PAtom (APred1 Small (IVar (VString "b"))))), a is a tetrahedron , a is not in front of b and b is small
+
+NWB, PImpl (PAtom (APred1 Even (IVar (VString "a")))) (PImpl (PConj COr (PAtom (AKind Pet (IVar (VString "a")))) (PAtom (APred1 Even (IVar (VString "b"))))) (PConj CAnd (PAtom (APred1 Even (IVar (VString "c")))) (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "c")))))), if a is even , then if a is a pet or b is even , then c is even and a is in the same column as c
+
+NWB, PUniv (VString "x") (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "x")))), a is in the same column as everything
+
+NWB, PConj COr (PNeg (PAtom (APred1 Large (IVar (VString "a"))))) (PExist (VString "y") (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "y"))))), a is not large or a is in the same row as something
+
+NWB, PConj CAnd (PNeg (PAtom (AKind Prime (IVar (VString "a"))))) (PExist (VString "y") (PAtom (APred1 Medium (IVar (VString "y"))))), a is not a prime and something is medium
+
+WB, PImpl (PUniv (VString "x") (PAtom (APred2 Larger (IVar (VString "b")) (IVar (VString "x"))))) (PConj CAnd (PNeg (PConj CAnd (PAtom (AKind Cube (IVar (VString "a")))) (PAtom (APred2 SameRow (IVar (VString "b")) (IVar (VString "b")))))) (PAtom (AKind Dodec (IVar (VString "b"))))), if b is larger than everything , then it is not the case that a is a cube and b is in the same row as itself and b is a dodecahedron
+
+NWB, PConj COr (PNeg (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "b"))))) (PExist (VString "x") (PConj CAnd (PAtom (AKind Dodec (IVar (VString "x")))) (PAtom (APred2 Larger (IVar (VString "a")) (IVar (VString "x")))))), a is not in the same column as b or a is larger than some dodecahedron
+
+WB, PUniv (VString "x") (PAtom (APred2 BackOf (IVar (VString "x")) (IVar (VString "a")))), everything is in back of a
+
+NWB, PConj COr (PNeg (PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "b"))))) (PNeg (PAtom (APred1 Small (IVar (VString "a"))))), a is not adjacent to b or a is not small
+
+NWB, PExist (VString "y") (PConj CAnd (PAtom (AKind Pet (IVar (VString "y")))) (PAtom (AKind Person (IVar (VString "y"))))), some pet is a person
+
+WB, PExist (VString "x") (PAtom (APred2 BackOf (IVar (VString "x")) (IVar (VString "a")))), something is in back of a
+
+NWB, PConj CAnd (PAtom (APred1 Medium (IVar (VString "a")))) (PAtom (APred2 SameSize (IVar (VString "a")) (IVar (VString "b")))), a is medium and of the same size as b
+
+NWB, PConj COr (PConj CAnd PTaut (PAtom (APred1 Even (IVar (VString "a"))))) (PAtom (APred1 Even (IVar (VString "a")))), at least one of these holds : \item [PTaut] and a is even \item a is even
+
+NWB, PImpl (PUniv (VString "x") (PConj CAnd (PNeg (PAtom (APred1 Medium (IVar (VString "a"))))) (PNeg (PAtom (APred2 Adjoins (IVar (VString "x")) (IVar (VString "x"))))))) (PAtom (AKind Person (IVar (VString "a")))), if for all x , a is not medium and x is not adjacent to itself , then a is a person
+
+NWB, PNeg (PAtom (APred1 Even (IVar (VString "a")))), a is not even
+
+NWB, PAtom (APred1 Medium (IVar (VString "a"))), a is medium
+
+NWB, PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "b"))), a is adjacent to b
+
+WB, PConj CAnd (PNeg (PConj CAnd (PAtom (APred2 FrontOf (IVar (VString "a")) (IVar (VString "a")))) (PAtom (APred1 Medium (IVar (VString "a")))))) (PConj CAnd (PAtom (APred1 Small (IVar (VString "a")))) (PNeg (PAtom (AKind Pet (IVar (VString "a")))))), it is not the case that a is in front of itself and a is medium , a is small and a is not a pet
+
+WB, PConj COr (PNeg (PExist (VString "x") (PAtom (APred2 SameCol (IVar (VString "x")) (IVar (VString "a")))))) (PAtom (APred2 Smaller (IVar (VString "b")) (IVar (VString "a")))), nothing is in the same column as a or b is smaller than a
+
+WB, PExist (VString "x") (PConj CAnd (PNeg (PAtom (APred2 SameShape (IVar (VString "a")) (IVar (VString "b"))))) (PNeg (PAtom (APred1 Medium (IVar (VString "x")))))), there is an element x such that a is not of the same shape as b and x is not medium
+
+WB, PConj CAnd (PNeg (PUniv (VString "x") (PAtom (APred2 SameShape (IVar (VString "x")) (IVar (VString "a")))))) (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "b")))), it is not the case that everything is of the same shape as a and a is in the same row as b
+
+NWB, PConj COr (PAtom (APred2 RightOf (IVar (VString "a")) (IVar (VString "a")))) (PNeg (PAtom (AKind Prime (IVar (VString "b"))))), a is to the right of itself or b is not a prime
+
+NWB, PAtom (APred1 Medium (IVar (VString "a"))), a is medium
+
+NWB, PNeg (PAtom (APred1 Large (IVar (VString "a")))), a is not large
+
+NWB, PConj CAnd (PConj COr (PAtom (AKind Student (IVar (VString "c")))) (PConj COr (PNeg (PAtom (AKind Tet (IVar (VString "a"))))) (PAtom (APred2 SameCol (IVar (VString "b")) (IVar (VString "a")))))) (PConj COr (PNeg (PAtom (AKind Student (IVar (VString "b"))))) (PAtom (AKind Tet (IVar (VString "b"))))), all these hold : \item c is a student , a is not a tetrahedron or b is in the same column as a \item b is not a student or b is a tetrahedron
+
+WB, PImpl (PUniv (VString "x") (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "x"))))) (PNeg (PAtom (AKind Person (IVar (VString "a"))))), if a is in the same column as everything , then a is not a person
+
+NWB, PConj CAnd (PUniv (VString "x") (PAtom (APred2 Larger (IVar (VString "x")) (IVar (VString "x"))))) (PAtom (AKind Dodec (IVar (VString "a")))), everything is larger than itself and a is a dodecahedron
+
+NWB, PImpl (PUniv (VString "x") (PConj COr (PAtom (APred2 Adjoins (IVar (VString "x")) (IVar (VString "x")))) (PAtom (AKind Person (IVar (VString "x")))))) (PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "b")))), if for all x , x is adjacent to itself or x is a person , then a is adjacent to b
+
+NWB, PConj COr (PConj CAnd (PAtom (AKind Dodec (IVar (VString "a")))) (PNeg (PAtom (APred2 SameSize (IVar (VString "b")) (IVar (VString "a")))))) (PAtom (AKind Pet (IVar (VString "b")))), at least one of these holds : \item a is a dodecahedron and b is not of the same size as a \item b is a pet
+
+NWB, PConj COr (PNeg (PAtom (AKind Person (IVar (VString "a"))))) (PUniv (VString "x") (PAtom (AKind Dodec (IVar (VString "x"))))), a is not a person or everything is a dodecahedron
+
+WB, PExist (VString "x") (PConj CAnd (PAtom (AKind Cube (IVar (VString "x")))) (PConj CAnd (PAtom (AKind Person (IVar (VString "x")))) (PConj CAnd (PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "x")))) (PAtom (AKind Pet (IVar (VString "a"))))))), there is a cube x such that x is a person , a is adjacent to x and a is a pet
+
+NWB, PConj CAnd (PAtom (AKind Tet (IVar (VString "a")))) (PAtom (AKind Person (IVar (VString "a")))), a is a tetrahedron and a is a person
+
+WB, PConj CAnd (PNeg (PExist (VString "x") (PAtom (APred1 Large (IVar (VString "x")))))) (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "a")))), nothing is large and a is smaller than itself
+
+WB, PImpl (PUniv (VString "x") (PAtom (APred2 SameShape (IVar (VString "x")) (IVar (VString "d"))))) (PConj CAnd (PConj COr (PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "b")))) (PAtom (AKind Dodec (IVar (VString "b"))))) (PImpl (PAtom (APred1 Large (IVar (VString "c")))) (PAtom (APred1 Medium (IVar (VString "d")))))), if everything is of the same shape as d , then all these hold : \item a is adjacent to b or b is a dodecahedron \item if c is large , then d is medium
+
+NWB, PImpl (PUniv (VString "x") (PConj COr (PAtom (AKind Student (IVar (VString "x")))) (PAtom (AKind Cube (IVar (VString "a")))))) (PConj CAnd (PNeg (PAtom (APred1 Medium (IVar (VString "a"))))) (PImpl (PAtom (AKind Cube (IVar (VString "a")))) (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "b")))))), if for all x , x is a student or a is a cube , then all these hold : \item a is not medium \item if a is a cube , then a is in the same row as b
+
+WB, PConj CAnd (PConj COr (PExist (VString "x") (PAtom (APred2 Larger (IVar (VString "x")) (IVar (VString "a"))))) (PExist (VString "x") (PAtom (APred2 SameRow (IVar (VString "x")) (IVar (VString "x")))))) (PConj CAnd (PImpl (PAtom (APred1 Even (IVar (VString "b")))) (PAtom (APred1 Small (IVar (VString "b"))))) (PUniv (VString "x") (PAtom (AKind Dodec (IVar (VString "x")))))), all these hold : \item something is larger than a or something is in the same row as itself , if b is even , then b is small \item everything is a dodecahedron
+
+NWB, PConj CAnd (PAtom (APred2 FrontOf (IVar (VString "a")) (IVar (VString "b")))) (PExist (VString "x") (PAtom (APred1 Small (IVar (VString "x"))))), a is in front of b and something is small
+
+WB, PConj COr (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "a")))) (PConj COr (PConj COr (PAtom (APred1 Large (IVar (VString "a")))) (PAtom (APred1 Small (IVar (VString "b"))))) (PAtom (APred1 Small (IVar (VString "a"))))), a is in the same row as itself , a is large , b is small or a is small
+
+NWB, PImpl (PConj CAnd (PAtom (AKind Prime (IVar (VString "a")))) (PAtom (AKind Person (IVar (VString "a"))))) (PConj CAnd (PNeg (PAtom (APred1 Large (IVar (VString "b"))))) (PNeg (PAtom (AKind Student (IVar (VString "a")))))), if a is a prime and a is a person , then b is not large and a is not a student
+
+WB, PImpl (PImpl (PAtom (APred1 Small (IVar (VString "a")))) (PAtom (APred2 SameShape (IVar (VString "a")) (IVar (VString "b"))))) (PExist (VString "x") (PAtom (AKind Cube (IVar (VString "x"))))), if if a is small , then a is of the same shape as b , then something is a cube
+
+WB, PConj CAnd (PNeg (PAtom (AKind Dodec (IVar (VString "a"))))) (PNeg (PConj CAnd (PAtom (AKind Tet (IVar (VString "a")))) (PAtom (AKind Pet (IVar (VString "a")))))), a is not a dodecahedron and it is not the case that a is a tetrahedron and a is a pet
+
+WB, PConj COr (PConj COr (PNeg (PExist (VString "x") (PAtom (APred1 Even (IVar (VString "x")))))) (PUniv (VString "y") (PAtom (APred2 SameRow (IVar (VString "y")) (IVar (VString "y")))))) (PConj COr (PNeg (PAtom (APred1 Large (IVar (VString "a"))))) (PNeg (PAtom (APred2 RightOf (IVar (VString "b")) (IVar (VString "a")))))), nothing is even , everything is in the same row as itself , a is not large or b is not to the right of a
+
+WB, PImpl (PUniv (VString "x") (PImpl (PAtom (AKind Person (IVar (VString "x")))) (PNeg (PAtom (AKind Person (IVar (VString "b"))))))) (PNeg (PAtom (AKind Person (IVar (VString "a"))))), if for all persons x , b is not a person , then a is not a person
+
+NWB, PImpl (PUniv (VString "x") (PConj CAnd (PAtom (APred1 Large (IVar (VString "x")))) (PAtom (APred1 Even (IVar (VString "x")))))) (PAtom (APred1 Small (IVar (VString "a")))), if everything is large and even , then a is small
+
+WB, PUniv (VString "x") (PImpl (PConj COr (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "x")))) (PAtom (AKind Person (IVar (VString "b"))))) (PExist (VString "x") (PAtom (APred1 Even (IVar (VString "x")))))), for all x , if a is smaller than x or b is a person , then something is even
+
+WB, PConj CAnd (PExist (VString "x") (PAtom (APred2 Larger (IVar (VString "x")) (IVar (VString "x"))))) (PConj CAnd (PNeg (PAtom (AKind Pet (IVar (VString "a"))))) (PNeg (PAtom (APred1 Small (IVar (VString "a")))))), something is larger than itself , a is not a pet and a is not small
+
+NWB, PUniv (VString "x") (PAtom (APred2 SameShape (IVar (VString "a")) (IVar (VString "x")))), a is of the same shape as everything
+
+NWB, PConj CAnd (PConj CAnd (PAtom (AKind Dodec (IVar (VString "a")))) (PConj COr (PAtom (AKind Dodec (IVar (VString "b")))) (PAtom (APred1 Small (IVar (VString "a")))))) (PConj COr (PAtom (APred2 Smaller (IVar (VString "b")) (IVar (VString "c")))) (PAtom (AKind Cube (IVar (VString "a"))))), all these hold : \item a is a dodecahedron , b is a dodecahedron or a is small \item b is smaller than c or a is a cube
+
+NWB, PConj CAnd (PUniv (VString "x") (PAtom (APred2 BackOf (IVar (VString "x")) (IVar (VString "x"))))) (PAtom (APred2 FrontOf (IVar (VString "a")) (IVar (VString "b")))), everything is in back of itself and a is in front of b
+
+WB, PConj COr (PConj COr (PNeg (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "a"))))) (PExist (VString "x") (PAtom (AKind Tet (IVar (VString "x")))))) (PUniv (VString "x") (PConj CAnd (PAtom (APred1 Small (IVar (VString "x")))) (PAtom (APred1 Large (IVar (VString "x")))))), a is not in the same column as itself , something is a tetrahedron or everything is small and large
+
+NWB, PConj COr (PConj COr (PNeg (PAtom (AKind Person (IVar (VString "a"))))) (PAtom (APred1 Even (IVar (VString "b"))))) (PNeg (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "a"))))), a is not a person , b is even or a is not smaller than itself
+
+NWB, PConj COr (PUniv (VString "x") (PAtom (APred2 SameRow (IVar (VString "a")) (IVar (VString "x"))))) (PConj COr (PAtom (APred2 SameCol (IVar (VString "a")) (IVar (VString "a")))) (PConj COr (PAtom (APred1 Large (IVar (VString "b")))) (PNeg (PAtom (APred2 Smaller (IVar (VString "b")) (IVar (VString "b"))))))), a is in the same row as everything , a is in the same column as itself , b is large or b is not smaller than itself
+
+WB, PConj CAnd (PNeg (PAtom (AKind Pet (IVar (VString "a"))))) (PExist (VString "x") (PAtom (APred2 Larger (IVar (VString "a")) (IVar (VString "x"))))), a is not a pet and a is larger than something
+
+WB, PConj CAnd (PUniv (VString "x") (PConj COr (PAtom (AKind Person (IVar (VString "x")))) (PAtom (AKind Person (IVar (VString "a")))))) (PConj CAnd (PNeg (PAtom (APred1 Even (IVar (VString "b"))))) (PNeg (PAtom (APred1 Medium (IVar (VString "c")))))), for all x , x is a person or a is a person , b is not even and c is not medium
+
+NWB, PAtom (APred1 Even (IVar (VString "a"))), a is even
+
+WB, PExist (VString "x") (PExist (VString "y") (PConj CAnd (PAtom (APred1 Large (IVar (VString "x")))) (PAtom (APred2 Adjoins (IVar (VString "a")) (IVar (VString "y")))))), there is an element x such that there is an element y such that x is large and a is adjacent to y
+
+WB, PUniv (VString "x") (PConj COr (PAtom (APred2 RightOf (IVar (VString "x")) (IVar (VString "x")))) (PConj CAnd (PAtom (APred2 Larger (IVar (VString "x")) (IVar (VString "a")))) (PAtom (AKind Tet (IVar (VString "x")))))), for all x , at least one of these holds : \item x is to the right of itself \item x is larger than a and x is a tetrahedron
+
+NWB, PConj COr (PExist (VString "y") (PAtom (AKind Cube (IVar (VString "y"))))) (PNeg (PExist (VString "x") (PAtom (APred1 Medium (IVar (VString "x")))))), something is a cube or nothing is medium
+
+NWB, PConj COr (PNeg (PAtom (APred1 Small (IVar (VString "a"))))) (PAtom (AKind Tet (IVar (VString "b")))), a is not small or b is a tetrahedron
+
+NWB, PConj COr (PNeg (PAtom (APred1 Small (IVar (VString "a"))))) (PNeg (PExist (VString "x") (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "x")))))), a is not small or a is smaller than nothing
+
+NWB, PConj COr (PConj CAnd (PConj COr (PNeg (PAtom (APred2 BackOf (IVar (VString "a")) (IVar (VString "b"))))) (PNeg (PAtom (AKind Prime (IVar (VString "b")))))) (PNeg (PAtom (APred2 BackOf (IVar (VString "a")) (IVar (VString "a")))))) (PAtom (AKind Pet (IVar (VString "c")))), all these hold : \item a is not in back of b or b is not a prime \item a is not in back of itself or c is a pet
+
+WB, PImpl (PUniv (VString "x") (PAtom (APred1 Even (IVar (VString "x"))))) (PConj COr (PExist (VString "x") (PAtom (APred2 Smaller (IVar (VString "a")) (IVar (VString "x"))))) (PExist (VString "y") (PAtom (APred2 SameCol (IVar (VString "b")) (IVar (VString "y")))))), if everything is even , then a is smaller than something or b is in the same column as something
+
+WB, PConj COr (PAtom (AKind Prime (IVar (VString "a")))) (PConj COr (PConj COr (PAtom (AKind Tet (IVar (VString "b")))) (PAtom (APred2 FrontOf (IVar (VString "a")) (IVar (VString "a"))))) (PConj COr (PAtom (APred1 Even (IVar (VString "a")))) (PAtom (APred1 Large (IVar (VString "c")))))), a is a prime , b is a tetrahedron , a is in front of itself , a is even or c is large
+
+WB, PNeg (PExist (VString "x") (PConj COr (PAtom (APred2 Smaller (IVar (VString "x")) (IVar (VString "a")))) (PAtom (APred1 Large (IVar (VString "x")))))), nothing is smaller than a or large
+
+
