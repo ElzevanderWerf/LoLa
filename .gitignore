@@ -10,4 +10,4 @@ Prop.pgf
 #folders
 .stack-work/*
 .spyproject/*
-__pycache/*
+__pycache__/*
