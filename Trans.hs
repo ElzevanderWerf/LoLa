@@ -12,15 +12,16 @@ main = do
   args <- getArgs
   if (length args) == 1    -- stack run trans <proposition>
     then do putStrLn (doTrans pgf (args !! 0))
-    else do                -- stack run trans <source-language> <input-file> <target-language> <output-file>
-      f <- readFile (args !! 1)
+    else do                -- stack run trans <mode> <source-language> <input-file> <target-language> <output-file>
+      f <- readFile (args !! 2)
       let flines = lines f
-      let sourcelang = mkCId (args !! 0)
-      let targetlang = mkCId (args !! 2)
- 
+      let mode = args !! 0
+      let sourcelang = mkCId (args !! 1)
+      let targetlang = mkCId (args !! 3)
+      
       -- Translate and write to output file
-      outh <- openFile (args !! 3) WriteMode
-      let doTransPGF = doTransFromTo pgf sourcelang targetlang
+      outh <- openFile (args !! 4) WriteMode
+      let doTransPGF = doTransFromTo pgf mode sourcelang targetlang
       hPutStrLn outh (unlines (map doTransPGF flines))
       hClose outh
 
@@ -38,9 +39,16 @@ doTrans pgf s = case parseAllLang pgf (startCat pgf) s of
 
 -- Parse the input string in the source language and translate it with
 -- AST simplification into the target language
-doTransFromTo pgf source_l target_l s = case parse pgf source_l (startCat pgf) s of 
+doTransFromTo pgf mode source_l target_l s = case parse pgf source_l (startCat pgf) s of 
   ts | length ts > 0 -> unlines [wb t ++ transfers t | t <- ts]    -- this assumes the input sentences are parsable
    where
      wb t = if (isWellBehaved t) then "WB, " else "NWB, "   -- check well-behavedness
-     transfers t = transfer MSimplify pgf target_l t 
+     transfers t = case mode of
+       "MNone" -> transferss MNone
+       "MOptimize" -> transferss MOptimize
+       "MNormalize" -> transferss MNormalize
+       "MMinimalize" -> transferss MMinimalize
+       "MSimplify" -> transferss MSimplify
+      where
+        transferss m = transfer m pgf target_l t
   _  -> "no parse"
