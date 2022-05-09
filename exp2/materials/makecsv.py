@@ -54,6 +54,15 @@ csv = df.to_csv("data/nli-items.csv", sep=',')
 # FR
 fr = [ggc[i] for i in ggc_indices[half_items:]] + [rg[i] for i in rg_indices[half_items:]]
 df = pd.DataFrame(fr, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
+df["Translation 1"] = ""
+df["Translation 2"] = ""
+df["Translation 3"] = ""
+for index, row in df.iterrows():
+    l = ["Baseline", "RantaI", "RantaII"]
+    random.shuffle(l)
+    row["Translation 1"] = l[0]
+    row["Translation 2"] = l[1]
+    row["Translation 3"] = l[2]
 csv = df.to_csv("data/fr-items.csv", sep=',')
 
     
