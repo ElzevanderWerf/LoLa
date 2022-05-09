@@ -11,12 +11,8 @@ fr_df = pd.read_csv("data/fr-items.csv", header=0, error_bad_lines=False, encodi
     
 
 # Lists of item variables
-nliNumber = 60
-frNumber = 20
-
-nliItems = ['nli'+str(n) for n in range(1, nliNumber+1)]
-frItems = ['fr'+str(n) for n in range(1, frNumber+1)]
-
+nliNumber = len(nli_df)
+frNumber = len(fr_df)
 
 script = []     # a list of lines to be part of the final script
 
@@ -32,23 +28,23 @@ script += ['']
 # copied from template: instruction + informed consent, personal questions, instructions NLI task
 
 # the NLI questions
-for item_i in range(nliNumber):
-    if item_i < 20:
-        premise = nli_df.loc[item_i, "Baseline"]
-        hypothesis = nli_df.loc[item_i, "Hypothesis"]
-    elif item_i >= 20 and item_i < 40:
-        premise = nli_df.loc[item_i-20, "RantaI"]
-        hypothesis = nli_df.loc[item_i-20, "Hypothesis"]
-    else:
-        premise = nli_df.loc[item_i-40, "RantaII"]
-        hypothesis = nli_df.loc[item_i-40, "Hypothesis"]
-    
-    script += [r'var ' + nliItems[item_i] + r' = form.addMultipleChoiceItem().setTitle("Does the hypothesis automatically follow from the premise?\n\nPremise:\t'
-               + premise
-               + r'\nHypothesis:\t' 
-               + hypothesis 
-               + r'").setChoiceValues(["Yes", "No", "I don\'t know"]).setRequired(true);']
+def makeNLI(premise, hypothesis, index):
+    return [r'var nli' + str(index) + r' = form.addMultipleChoiceItem().setTitle("Does the hypothesis automatically follow from the premise?\n\nPremise:\t'
+              + premise
+              + r'\nHypothesis:\t' 
+              + hypothesis 
+              + r'").setChoiceValues(["Yes", "No", "I don\'t know"]).setRequired(true);']
 
+index = 0
+for item_i in range(nliNumber):
+    hypothesis = nli_df.loc[item_i, "Hypothesis"]
+    index += 1
+    script += makeNLI(hypothesis, nli_df.loc[item_i, "Baseline"], index)
+    index += 1
+    script += makeNLI(hypothesis, nli_df.loc[item_i, "RantaI"], index)
+    index += 1
+    script += makeNLI(hypothesis, nli_df.loc[item_i, "RantaII"], index)
+   
 # the FR instructions
 script += ['']
 script += [r'form.addPageBreakItem().setTitle("Fluency Ranking").setHelpText("The purpose of this task is to evaluate the fluency of English translations from first-order logic formulas. We will present to you, one by one, 20 formulas with 3 candidate translations, like in the example below:\n\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------\nFormula:\t\t\t¬ ∃ x ( Cube ( x ) ∧ LeftOf ( b , x ) )\n\nTranslation 1:\t\tIt is not the case that b is to the left of some cube.\nTranslation 2:\t\tIt is not the case that there exists an element x such that x is a cube and b is to the left of x.\nTranslation 3:\t\tFor all x, b is not to the left of x or x is not even.\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\nPlease rank the translations by the criterion of 𝗳𝗹𝘂𝗲𝗻𝗰𝘆, where rank 1 stands for the most fluent, and 3 for the least fluent translation. Ties are allowed. So, for example, if you think Translation 1 is best and Translation 2 and 3 are equally bad, give Translation 1 the highest rank (1), and Translation 2 and 3 the next highest rank (2), assigning nothing to the third rank.\n\nFor your information, these are the interpretations of the predicates used in the formulas:\nDodec ( x )\t\tx is a dodecahedron\nSmall ( x )\t\tx is small\nStudent ( x )\t\tx is a student\nMedium ( x )\t\tx is medium\nCube ( x )\t\tx is a cube\nPrime ( x )\t\tx is a prime\nPerson ( x )\t\tx is a person\nTet ( x )\t\tx is a tetrahedron\nPet ( x )\t\tx is a pet\nLarge ( x )\t\tx is large\nEven ( x )\t\tx is even\nAdjoins ( x , y )\t\tx is adjacent to y\nSameCol ( x , y )\t\tx is in the same column as y\nLeftOf ( x , y )\t\tx is to the left of y\nRightOf ( x , y )\t\tx is to the right of y\nSmaller ( x , y )\t\tx is smaller than y\nFrontOf ( x , y )\t\tx is in front of y\nLarger ( x , y )\t\tx is larger than y\nSameRow ( x , y )\t\tx is in the same row as y\nSameShape ( x , y )\t\tx is the same shape as y\nSameSize ( x , y )\t\tx is the same size as y\nBackOf ( x , y )\t\tx is in back of y");']
@@ -59,7 +55,7 @@ for item_i in range(frNumber):
     t1 = fr_df.loc[item_i, fr_df.loc[item_i, "Translation 1"]]
     t2 = fr_df.loc[item_i, fr_df.loc[item_i, "Translation 2"]]
     t3 = fr_df.loc[item_i, fr_df.loc[item_i, "Translation 3"]]
-    script += [r'var ' + frItems[item_i] + r' = form.addGridItem().setTitle("Given the following formula and candidate translations, rank the translations from most fluent (1) to least fluent (3).\n\n\nFormula:\t'
+    script += [r'var fr' + str(item_i) + r' = form.addGridItem().setTitle("Given the following formula and candidate translations, rank the translations from most fluent (1) to least fluent (3).\n\n\nFormula:\t'
                + formula
                + r'\n\nTranslation 1:\t'
                + t1

@@ -45,7 +45,7 @@ rg = list(zip(rg_type, rg_WB, rg_formulas, rg_base, rg_rantaI, rg_rantaII))
 
 # Export to CSVs
 # NLI
-nli = [ggc[i] for i in ggc_indices[:half_items]] + [rg[i] for i in rg_indices[:half_items]]
+nli = [ggc[i] for i in ggc_indices[:7]] + [rg[i] for i in rg_indices[:7]] #TODO change 7
 df = pd.DataFrame(nli, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
 df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
 df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
