@@ -71,4 +71,4 @@ I designed a random generation function, which generates formulas from the entir
 1. For readability, I wrote `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items.csv` and `fr-items.csv`):
 
 		>python makecsv.py   
-2. The Python script in `createForms.py` writes 20 different Google Apps Script files to the folder `formScripts`, thereby creating 20 different surveys in Google Forms, each with a different set of experimental items, according to a Latin Square Design.
+2. The Python script in `createForms.py` writes 3 different Google Apps Script files to the folder `formScripts`, thereby creating 3 different surveys in Google Forms, each with a different set of experimental items, according to a Latin Square Design.
