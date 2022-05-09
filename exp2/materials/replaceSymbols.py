@@ -17,6 +17,8 @@ def replace_bulleting(s):
 
 def add_punctuation(s):
     s = str(s)
+    if s.startswith(" "):
+        s = s[1:]
     s = s[0].upper() + s[1:]        # Capitalize
     s = s.replace(" ,", ",")          # Remove space before comma
     s = s + "."              # End sentence with period

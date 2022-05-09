@@ -20,7 +20,7 @@ with open(
     ggc_rantaI = list(filter(None, f3.read().splitlines()))
     ggc_rantaII = list(filter(None, f4.read().splitlines()))
     ggc_WB = [s.split(",")[0] for s in ggc_rantaII]
-    ggc_rantaII = [",".join(s.split(",")[2:]) for s in ggc_rantaII]
+    ggc_rantaII = [", ".join(s.split(", ")[2:]) for s in ggc_rantaII]
     ggc_type = ["GGC"] * len(ggc_formulas)
     
     rg_formulas = [replace_symbols(replace_bulleting(s)) for s in f5.read().splitlines()]
