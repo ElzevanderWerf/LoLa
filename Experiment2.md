@@ -67,7 +67,7 @@ I designed a random generation function, which generates formulas from the entir
 
 		
 #### PREPARING EXPERIMENT 1
-**(Filenames start with exp1)**
+**(See folder exp1. Pilot experiment files end with 0)**
 1. For readability, I wrote `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items.csv` and `fr-items.csv`):
 
 		>python makecsv.py   
