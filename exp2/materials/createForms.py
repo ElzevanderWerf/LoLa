@@ -8,7 +8,6 @@ import pandas as pd
 # Import items
 nli_df = pd.read_csv("data/nli-items.csv", header=0, error_bad_lines=False, encoding="utf-8")
 fr_df = pd.read_csv("data/fr-items.csv", header=0, error_bad_lines=False, encoding="utf-8")
-    
 
 # Lists of item variables
 nliNumber = len(nli_df)

@@ -3,7 +3,7 @@ CSVs of experimental items per task (one for NLI and one for FR)."""
 
 import pandas as pd
 import random
-from replaceSymbols import replace_symbols, replace_bulleting
+from replaceSymbols import replace_symbols, replace_bulleting, add_punctuation
 
 # Import data
 with open(
@@ -49,6 +49,7 @@ nli = [ggc[i] for i in ggc_indices[:7]] + [rg[i] for i in rg_indices[:7]] #TODO 
 df = pd.DataFrame(nli, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
 df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
 df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
+df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(x))
 csv = df.to_csv("data/nli-items.csv", sep=',')
 
 # FR
@@ -63,6 +64,7 @@ for index, row in df.iterrows():
     row["Translation 1"] = l[0]
     row["Translation 2"] = l[1]
     row["Translation 3"] = l[2]
+df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(x))
 csv = df.to_csv("data/fr-items.csv", sep=',')
 
     

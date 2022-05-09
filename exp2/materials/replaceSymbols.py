@@ -14,3 +14,12 @@ def replace_symbols(s):
 
 def replace_bulleting(s):
     return s.replace(r'\item', r'\n\t'+chr(8226)) #TODO enter erna
+
+def add_punctuation(s):
+    s = str(s)
+    s = s[0].upper() + s[1:]        # Capitalize
+    s = s.replace(" ,", ",")          # Remove space before comma
+    s = s + ","              # End sentence with period
+    return s
+    
+    
