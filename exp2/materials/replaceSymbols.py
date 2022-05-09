@@ -19,7 +19,7 @@ def add_punctuation(s):
     s = str(s)
     s = s[0].upper() + s[1:]        # Capitalize
     s = s.replace(" ,", ",")          # Remove space before comma
-    s = s + ","              # End sentence with period
+    s = s + "."              # End sentence with period
     return s
     
     
