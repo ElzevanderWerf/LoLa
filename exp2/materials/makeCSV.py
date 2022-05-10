@@ -35,36 +35,62 @@ for f in [f1, f2, f3, f4, f5, f6, f7, f8]:
     f.close()
 
 # Select subset of items
-items = 42 + 20     # nli + fr
-ggc_indices = random.sample(range(0,len(ggc_formulas)), items)
-rg_indices = range(0,items) #formulas were generated randomly, so they don't have to be picked randomly.
+items = 42 + 20     #nli + fr
+ggc_indices = random.sample(range(0,len(ggc_formulas)), int(items/2))
+rg_indices = range(0,int(items/2))     #formulas were generated randomly, so they don't have to be picked randomly.
 
 ggc = list(zip(ggc_type, ggc_WB, ggc_formulas, ggc_base, ggc_rantaI, ggc_rantaII))
-rg = list(zip(rg_type, rg_WB, rg_formulas, rg_base, rg_rantaI, rg_rantaII))
+ggc_sub = [ggc[i] for i in ggc_indices]
+ggc_df = pd.DataFrame(ggc_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
 
-# Export to CSVs
+rg = list(zip(rg_type, rg_WB, rg_formulas, rg_base, rg_rantaI, rg_rantaII))
+rg_sub = [rg[i] for i in rg_indices]
+rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
+
 # NLI
-nli = [ggc[i] for i in ggc_indices[:7]] + [rg[i] for i in rg_indices[:7]] #TODO change 7
-df = pd.DataFrame(nli, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
-df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
-df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
-df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
-csv = df.to_csv("data/nli-items.csv", sep=',')
+def makeNLI_DF(order):
+    df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
+                         rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
+    systems = 2 * (7 * [order[0]] + 7 * [order[1]] + 7 * [order[2]])
+    df.insert(len(df.columns), "System", systems, allow_duplicates=True)
+    translations = pd.concat([ggc_df.loc[:6, order[0]], 
+                              ggc_df.loc[7:13, order[1]],
+                              ggc_df.loc[14:20, order[2]],
+                              rg_df.loc[:6, order[0]],
+                              rg_df.loc[7:13, order[1]],
+                              rg_df.loc[14:20, order[2]]])
+    translations = [add_punctuation(replace_bulleting(t)) for t in translations]
+    df.insert(len(df.columns), "Translation", translations, allow_duplicates=True)
+    df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
+    df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
+    return df
+
+# Survey 1, 2 and 3
+nli1_df = makeNLI_DF(["Baseline", "RantaI", "RantaII"])
+nli1_df.to_csv("data/nli-items1.csv", sep=',')
+
+nli2_df = makeNLI_DF(["RantaI", "RantaII", "Baseline"])
+nli2_df.to_csv("data/nli-items2.csv", sep=',')
+
+nli3_df = makeNLI_DF(["RantaII", "Baseline", "RantaI"])
+nli3_df.to_csv("data/nli-items3.csv", sep=',')
 
 # FR
-fr = [ggc[i] for i in ggc_indices[half_items:]] + [rg[i] for i in rg_indices[half_items:]]
-df = pd.DataFrame(fr, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
-df["Translation 1"] = ""
-df["Translation 2"] = ""
-df["Translation 3"] = ""
-for index, row in df.iterrows():
+fr_df = pd.concat([ggc_df.loc[21:], 
+                   rg_df.loc[21:]], 
+                  axis=0)
+fr_df[["Baseline", "RantaI", "RantaII"]] = fr_df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
+
+fr_df["Translation 1"] = ""
+fr_df["Translation 2"] = ""
+fr_df["Translation 3"] = ""
+for index, row in fr_df.iterrows():
     l = ["Baseline", "RantaI", "RantaII"]
     random.shuffle(l)
     row["Translation 1"] = l[0]
     row["Translation 2"] = l[1]
     row["Translation 3"] = l[2]
-df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
-csv = df.to_csv("data/fr-items.csv", sep=',')
+csv = fr_df.to_csv("data/fr-items123.csv", sep=',')
 
     
 
