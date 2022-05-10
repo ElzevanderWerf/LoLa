@@ -11,7 +11,7 @@ with open(
             "data/ggc-base.tmp") as f2, open(
                 "data/ggc-rantaI.tmp") as f3, open(
                     "data/ggc-rantaII.tmp") as f4, open(
-                        "data/rg-formulas.tmp") as f5, open(
+                        "data/rg-formulas0.tmp") as f5, open(
                             "data/rg-base.tmp") as f6, open(
                                 "data/rg-rantaI.tmp") as f7, open(
                                     "data/rg-rantaII.tmp") as f8:                    
@@ -50,7 +50,7 @@ df = pd.DataFrame(nli, columns=["Type", "Well-behavedness", "Formula", "Baseline
 df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
 df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
 df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
-csv = df.to_csv("data/nli-items.csv", sep=',')
+csv = df.to_csv("data/nli-items0.csv", sep=',')
 
 # FR
 fr = [ggc[i] for i in ggc_indices[half_items:]] + [rg[i] for i in rg_indices[half_items:]]
@@ -65,7 +65,7 @@ for index, row in df.iterrows():
     row["Translation 2"] = l[1]
     row["Translation 3"] = l[2]
 df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
-csv = df.to_csv("data/fr-items.csv", sep=',')
+csv = df.to_csv("data/fr-items0.csv", sep=',')
 
     
 
