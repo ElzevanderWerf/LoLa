@@ -40,8 +40,6 @@ NWB, PConj CAnd (PNeg (PAtom (AKind Cube (IVar (VString "a"))))) (PConj CAnd (PN
 
 NWB, PConj CAnd (PNeg (PAtom (AKind Dodec (IVar (VString "a"))))) (PConj CAnd (PNeg (PAtom (APred1 Small (IVar (VString "b"))))) (PConj COr (PAtom (APred2 SameRow (IVar (VString "b")) (IVar (VString "c")))) (PAtom (APred2 SameShape (IVar (VString "a")) (IVar (VString "a")))))), all these hold : \item a is not a dodecahedron , b is not small \item b is in the same row as c or a is of the same shape as itself
 
-WB, PTaut, 
-
 WB, PConj COr (PUniv (VString "x") (PConj COr (PAtom (AKind Student (IVar (VString "x")))) (PAtom (AKind Dodec (IVar (VString "a")))))) (PUniv (VString "y") (PConj COr (PAtom (APred1 Even (IVar (VString "a")))) (PAtom (APred2 BackOf (IVar (VString "y")) (IVar (VString "b")))))), for all x , x is a student or a is a dodecahedron or for all y , a is even or y is in back of b
 
 NWB, PConj COr (PConj COr (PNeg (PExist (VString "x") (PAtom (APred2 Smaller (IVar (VString "b")) (IVar (VString "x")))))) (PAtom (APred1 Large (IVar (VString "a"))))) (PNeg (PExist (VString "x") (PAtom (APred2 RightOf (IVar (VString "x")) (IVar (VString "a")))))), b is smaller than nothing , a is large or nothing is to the right of a

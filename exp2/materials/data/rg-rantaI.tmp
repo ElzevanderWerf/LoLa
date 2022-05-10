@@ -40,8 +40,6 @@ it is not the case that if a is not a cube , then a is medium or small
 
 all these hold : \item it is not the case that for all x , a is a dodecahedron , b is not small \item b is in the same row as c or a is of the same shape as itself
 
-if a is to the left of itself , then a is to the left of itself
-
 for all x , x is a student or a is a dodecahedron or for all y , a is even or y is in back of b
 
 for all x , if there is an element x such that x is to the right of a , then if b is smaller than x , then a is large
