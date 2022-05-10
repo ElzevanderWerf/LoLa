@@ -11,7 +11,7 @@ with open(
             "data/ggc-base.tmp") as f2, open(
                 "data/ggc-rantaI.tmp") as f3, open(
                     "data/ggc-rantaII.tmp") as f4, open(
-                        "data/rg-formulas0.tmp") as f5, open(
+                        "data/rg-formulas.tmp") as f5, open(
                             "data/rg-base.tmp") as f6, open(
                                 "data/rg-rantaI.tmp") as f7, open(
                                     "data/rg-rantaII.tmp") as f8:                    
