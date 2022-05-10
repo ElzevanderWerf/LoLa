@@ -1,5 +1,7 @@
-"""This script combines the ggc and rg formulas and translations into two
-CSVs of experimental items per task (one for NLI and one for FR)."""
+"""This script combines the ggc and rg formulas and translations into 4
+CSVs of experimental items: 3 NLI question sets and 1 FR question set
+(126 NLI questions are divided over 3 participant groups according to a
+ Latin Square Design)."""
 
 import pandas as pd
 import random
@@ -34,7 +36,7 @@ with open(
 for f in [f1, f2, f3, f4, f5, f6, f7, f8]:
     f.close()
 
-# Select subset of items
+# Select subset of GGC and RG items
 items = 42 + 20     #nli + fr
 ggc_indices = random.sample(range(0,len(ggc_formulas)), int(items/2))
 rg_indices = range(0,int(items/2))     #formulas were generated randomly, so they don't have to be picked randomly.
@@ -49,6 +51,10 @@ rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Ba
 
 # NLI
 def makeNLI_DF(order):
+    """
+    Returns a DataFrame of NLI items for a given ordering of translation
+    systems over the 3 question sets.
+    """
     df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
                          rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
     systems = 2 * (7 * [order[0]] + 7 * [order[1]] + 7 * [order[2]])
@@ -61,6 +67,8 @@ def makeNLI_DF(order):
                               rg_df.loc[14:20, order[2]]])
     translations = [add_punctuation(replace_bulleting(t)) for t in translations]
     df.insert(len(df.columns), "Translation", translations, allow_duplicates=True)
+    
+    # Empty (to be filled) columns for hypotheses and correct NLI answer
     df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
     df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
     return df
@@ -81,6 +89,7 @@ fr_df = pd.concat([ggc_df.loc[21:],
                   axis=0)
 fr_df[["Baseline", "RantaI", "RantaII"]] = fr_df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
 
+# For shuffling the three translations per FR item
 fr_df["Translation 1"] = ""
 fr_df["Translation 2"] = ""
 fr_df["Translation 3"] = ""
