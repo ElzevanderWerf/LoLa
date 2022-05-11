@@ -51,13 +51,13 @@ rg_sub = [rg[i] for i in rg_indices]
 rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
 
 # NLI
-def makeNLI_DF(df, order, hypotheses, correct_answers):
+def makeNLI_DF(nli_df, order, hypotheses, correct_answers):
     """
     Returns a DataFrame of NLI items for a given ordering of translation
     systems over the 3 question sets.
     """
-
     systems = 2 * (7 * [order[0]] + 7 * [order[1]] + 7 * [order[2]])
+    df = nli_df.copy()
     df.insert(len(df.columns), "System", systems, allow_duplicates=True)
     translations = pd.concat([ggc_df.loc[:6, order[0]], 
                               ggc_df.loc[7:13, order[1]],
