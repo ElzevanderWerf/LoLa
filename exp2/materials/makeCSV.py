@@ -38,6 +38,7 @@ for f in [f1, f2, f3, f4, f5, f6, f7, f8]:
 
 # Select subset of GGC and RG items
 items = 42 + 20     #nli + fr
+random.seed(500)
 ggc_indices = random.sample(range(0,len(ggc_formulas)), int(items/2))
 rg_indices = range(0,int(items/2))     #formulas were generated randomly, so they don't have to be picked randomly.
 
@@ -50,13 +51,12 @@ rg_sub = [rg[i] for i in rg_indices]
 rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
 
 # NLI
-def makeNLI_DF(order):
+def makeNLI_DF(df, order):
     """
     Returns a DataFrame of NLI items for a given ordering of translation
     systems over the 3 question sets.
     """
-    df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
-                         rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
+
     systems = 2 * (7 * [order[0]] + 7 * [order[1]] + 7 * [order[2]])
     df.insert(len(df.columns), "System", systems, allow_duplicates=True)
     translations = pd.concat([ggc_df.loc[:6, order[0]], 
@@ -74,13 +74,18 @@ def makeNLI_DF(order):
     return df
 
 # Survey 1, 2 and 3
-nli1_df = makeNLI_DF(["Baseline", "RantaI", "RantaII"])
+nli_df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
+                rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
+nli_df.to_csv("data/nli-items123.csv", sep=',')
+
+
+nli1_df = makeNLI_DF(nli_df, ["Baseline", "RantaI", "RantaII"])
 nli1_df.to_csv("data/nli-items1.csv", sep=',')
 
-nli2_df = makeNLI_DF(["RantaI", "RantaII", "Baseline"])
+nli2_df = makeNLI_DF(nli_df, ["RantaI", "RantaII", "Baseline"])
 nli2_df.to_csv("data/nli-items2.csv", sep=',')
 
-nli3_df = makeNLI_DF(["RantaII", "Baseline", "RantaI"])
+nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"])
 nli3_df.to_csv("data/nli-items3.csv", sep=',')
 
 # FR

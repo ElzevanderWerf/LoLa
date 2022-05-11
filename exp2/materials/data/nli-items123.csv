@@ -1,0 +1,43 @@
+,Type,Well-behavedness,Formula
+0,GGC,WB,"∀ w ( ( Dodec ( w ) ∧ ¬ ∃ x RightOf ( x , w ) ) → ∃ y LeftOf ( y , w ) )"
+1,GGC,WB,"¬ ∃ x ∃ y ( LeftOf ( x , a ) ∧ LeftOf ( y , b ) ∧ Smaller ( x , y ) )"
+2,GGC,WB,"∃ x ( Large ( x ) ∧ Cube ( x ) ∧ ∀ y ( ( Cube ( y ) ∧ Small ( y ) ) → FrontOf ( x , y ) ) )"
+3,GGC,NWB,"∀ x ∃ y ( Dodec ( x ) → ( ∃ y ( Cube ( y ) ∧ LeftOf ( x , y ) ) → Large ( x ) ) )"
+4,GGC,WB,∀ x ( Dodec ( x ) → ¬ ( Dodec ( x ) ∧ Small ( x ) ) )
+5,GGC,WB,∃ x ∃ y ( Cube ( x ) ∧ Tet ( y ) ) ∧ ∀ z ( Cube ( z ) ∨ Tet ( z ) )
+6,GGC,WB,"∀ y ( Dodec ( y ) → ¬ ∃ x BackOf ( x , y ) )"
+7,GGC,WB,"∃ w ( Large ( w ) ∧ Cube ( w ) ∧ RightOf ( b , w ) )"
+8,GGC,WB,"Small ( c ) → ( RightOf ( c , a ) ∧ Small ( c ) )"
+9,GGC,WB,"∃ x ∃ y ( Cube ( x ) ∧ Cube ( y ) ∧ Large ( x ) ∧ Small ( y ) ∧ FrontOf ( x , y ) )"
+10,GGC,NWB,"∃ x ( Larger ( a , x ) ∧ Cube ( x ) ) → ¬ ∃ y ( Tet ( y ) ∧ ¬ Smaller ( a , y ) )"
+11,GGC,NWB,"¬ ( Larger ( b , a ) → ¬ Larger ( b , e ) )"
+12,GGC,WB,"BackOf ( f , a ) ∨ ( ¬ BackOf ( f , a ) ∧ Smaller ( f , a ) )"
+13,GGC,WB,"∃ z ( Large ( z ) ∧ Cube ( z ) ∧ BackOf ( z , c ) ∧ LeftOf ( z , b ) )"
+14,GGC,NWB,∀ x ¬ ∃ x Cube ( x )
+15,GGC,WB,"∀ x ( RightOf ( a , x ) → ¬ Cube ( x ) )"
+16,GGC,WB,"∀ z ∃ u ( ( Dodec ( z ) ∧ ¬ RightOf ( u , z ) ) → Small ( z ) )"
+17,GGC,WB,"¬ ∀ y ∀ x ( ( Tet ( x ) ∧ Tet ( y ) ) → SameCol ( x , y ) )"
+18,GGC,WB,"Smaller ( b , d ) ∧ Smaller ( b , e ) ∧ FrontOf ( b , d ) ∧ FrontOf ( b , e )"
+19,GGC,WB,Tet ( c ) → ¬ Tet ( a )
+20,GGC,WB,"∃ x ∃ y ( Tet ( x ) ∧ Tet ( y ) ∧ ( LeftOf ( x , y ) ∨ RightOf ( x , y ) ) )"
+0,RG,WB,"∀ x ( Large ( a ) ∨ Tet ( x ) ) ∧ ∀ x ( FrontOf ( b , x ) → Student ( x ) )"
+1,RG,WB,¬ ( Small ( a ) ∨ Tet ( b ) ) → ∀ x Cube ( x )
+2,RG,WB,"∃ x ( ( Larger ( x , a ) ∧ Cube ( b ) ) ∨ LeftOf ( c , c ) )"
+3,RG,NWB,"∀ x ( ∃ x Even ( a ) → ∀ y BackOf ( x , x ) )"
+4,RG,WB,"∃ x ( ¬ RightOf ( a , x ) → ( Prime ( b ) ∧ Pet ( x ) ) )"
+5,RG,NWB,"( ¬ Adjoins ( a , b ) ∧ ¬ Small ( a ) ) ∧ ∃ x ∀ y Medium ( y )"
+6,RG,NWB,( ∀ x Medium ( a ) ∧ ¬ Tet ( a ) ) ∨ ( ∃ x Student ( x ) → ∃ y Dodec ( b ) )
+7,RG,NWB,"( ¬ BackOf ( a , b ) → ∀ x Larger ( x , b ) ) → ∃ y ( FrontOf ( y , y ) ∨ Student ( y ) )"
+8,RG,NWB,"( Large ( a ) → ∀ x SameCol ( a , a ) ) → Large ( a )"
+9,RG,NWB,¬ ¬ Small ( a ) ∨ ( ¬ Student ( b ) → ¬ Student ( a ) )
+10,RG,NWB,"∃ x ¬ ¬ LeftOf ( x , a )"
+11,RG,WB,"∃ x ( ( Prime ( x ) ∨ Person ( a ) ) ∧ ( SameRow ( x , b ) ∧ Student ( x ) ) )"
+12,RG,NWB,"¬ ( ¬ Dodec ( a ) ∨ ∃ x BackOf ( x , x ) )"
+13,RG,NWB,"Medium ( a ) → ∀ x ¬ SameSize ( b , a )"
+14,RG,WB,"∀ x ( ( Large ( x ) ∧ FrontOf ( a , b ) ) ∧ ¬ Large ( x ) )"
+15,RG,NWB,∃ x ¬ ( Prime ( a ) ∨ Cube ( a ) )
+16,RG,NWB,Student ( a ) → ( ( Small ( b ) → Tet ( a ) ) ∧ ∀ x Person ( x ) )
+17,RG,NWB,"∀ x ∀ x ( SameSize ( x , x ) → Large ( a ) )"
+18,RG,NWB,"( ( Cube ( a ) ∧ BackOf ( a , a ) ) ∧ Even ( b ) ) → ∃ x ∀ y Smaller ( a , a )"
+19,RG,NWB,¬ ( ¬ Cube ( a ) → ( Medium ( a ) ∨ Small ( a ) ) )
+20,RG,NWB,"¬ ∀ x Dodec ( a ) ∧ ( ¬ Small ( b ) ∧ ( SameRow ( b , c ) ∨ SameShape ( a , a ) ) )"

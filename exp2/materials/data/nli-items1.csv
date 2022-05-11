@@ -1,25 +1,25 @@
 ,Type,Well-behavedness,Formula,System,Translation,Hypothesis,CorrectAnswer
-0,GGC,WB,Cube ( e ) ∨ Cube ( a ) ∨ Cube ( c ),Baseline,E is a cube or a is a cube or c is a cube.,H,Y/N
-1,GGC,WB,"∀ v ∀ w ( ( Tet ( v ) ∧ Dodec ( w ) ) → FrontOf ( v , w ) )",Baseline,"For all v, for all w, if v is a tetrahedron and w is a dodecahedron, then v is in front of w.",H,Y/N
-2,GGC,WB,Medium ( c ) → ( ¬ ( Cube ( d ) ∨ Cube ( e ) ) ∧ ¬ Cube ( f ) ),Baseline,"If c is medium, then it is not the case that d is a cube or e is a cube and it is not the case that f is a cube.",H,Y/N
-3,GGC,WB,"¬ ∃ x ∃ y ( Cube ( x ) ∧ Dodec ( y ) ∧ Larger ( x , y ) )",Baseline,It is not the case that there is an element x such that there is an element y such that x is a cube and y is a dodecahedron and x is larger than y.,H,Y/N
-4,GGC,WB,"∀ u ( ( Cube ( u ) ∧ ∃ y BackOf ( y , u ) ) → Small ( u ) )",Baseline,"For all u, if u is a cube and there is an element y such that y is in back of u, then u is small.",H,Y/N
-5,GGC,NWB,"∀ w ( LeftOf ( w , a ) → ¬ ∀ z ( LeftOf ( z , b ) → Larger ( w , z ) ) )",Baseline,"For all w, if w is to the left of a, then it is not the case that for all z, if z is to the left of b, then w is larger than z.",H,Y/N
-6,GGC,WB,"∀ y ∃ z ( Dodec ( y ) → ( Cube ( z ) ∧ SameSize ( y , z ) ) )",Baseline,"For all y, there is an element z such that if y is a dodecahedron, then z is a cube and y is of the same size as z.",H,Y/N
-7,GGC,NWB,"∀ x ∀ y ( ( LeftOf ( x , a ) → LeftOf ( x , b ) ) ∧ ( LeftOf ( x , b ) → LeftOf ( x , a ) ) )",RantaI,"For all x, for all y, all these hold : \n\t• if x is to the left of a, then x is to the left of b \n\t• if x is to the left of b, then x is to the left of a.",H,Y/N
-8,GGC,WB,"∃ x ( LeftOf ( e , x ) → ¬ Dodec ( x ) )",RantaI,"There is an element x such that if e is to the left of x, then x is not a dodecahedron.",H,Y/N
-9,GGC,WB,"∀ x ( ¬ Adjoins ( a , c ) ∧ ¬ Adjoins ( a , b ) ∧ ¬ Adjoins ( a , x ) ∧ ¬ Adjoins ( a , a ) )",RantaI,"For all x, a is not adjacent to c, a is not adjacent to b, a is not adjacent to x and a is not adjacent to a.",H,Y/N
-10,GGC,NWB,"∀ x ∀ y ( Tet ( y ) → ( Cube ( x ) → LeftOf ( x , y ) ) )",RantaI,"For all x, for all tetrahedrons y, if x is a cube, then x is to the left of y.",H,Y/N
-11,GGC,NWB,"∀ y ( Cube ( y ) → ∀ x ( Tet ( x ) → LeftOf ( y , x ) ) )",RantaI,Every cube is to the left of every tetrahedron.,H,Y/N
-12,GGC,WB,¬ Tet ( b ) ∨ Tet ( c ),RantaI,B is not a tetrahedron or c is a tetrahedron.,H,Y/N
-13,GGC,NWB,"∀ x ∀ y ( Dodec ( x ) → ( Cube ( y ) → ( Larger ( x , y ) ∨ SameSize ( y , x ) ) ) )",RantaI,"For all x, for all y, if x is a dodecahedron, then if y is a cube, then x is larger than y or y is of the same size as x.",H,Y/N
-14,GGC,WB,"( RightOf ( d , a ) ∨ LeftOf ( d , a ) ) → Cube ( a )",RantaII,"If d is to the right of a or to the left of a, then a is a cube.",H,Y/N
-15,GGC,WB,"RightOf ( f , a ) ∧ LeftOf ( f , b )",RantaII,F is to the right of a and to the left of b.,H,Y/N
-16,GGC,WB,"∀ x ∀ z ∀ y ( ( Cube ( z ) ∧ Cube ( y ) ∧ BackOf ( x , y ) ∧ FrontOf ( x , z ) ) → ¬ Large ( x ) )",RantaII,"For all x, for all z, for all y, if z is a cube, y is a cube, x is in back of y and x is in front of z, then x is not large.",H,Y/N
-17,GGC,WB,"∀ x ∀ y ( BackOf ( x , y ) → Smaller ( y , x ) )",RantaII,"For all x, for all y, if x is in back of y, then y is smaller than x.",H,Y/N
-18,GGC,WB,¬ Tet ( b ) → ¬ Tet ( a ),RantaII,A is not a tetrahedron or b is a tetrahedron.,H,Y/N
-19,GGC,WB,"∃ x ( Large ( x ) ∧ Cube ( x ) ∧ ∃ y ( Small ( y ) ∧ Cube ( y ) ∧ BackOf ( y , x ) ) )",RantaII,"There is a cube x such that there is an element y such that y is small, y is a cube and y is in back of x and x is large.",H,Y/N
-20,GGC,WB,"¬ ∃ x ∃ z ( Cube ( x ) ∧ RightOf ( x , z ) )",RantaII,Some cube is to the right of nothing.,H,Y/N
+0,GGC,WB,"∀ w ( ( Dodec ( w ) ∧ ¬ ∃ x RightOf ( x , w ) ) → ∃ y LeftOf ( y , w ) )",Baseline,"For all w, if w is a dodecahedron and it is not the case that there is an element x such that x is to the right of w, then there is an element y such that y is to the left of w.",H,Y/N
+1,GGC,WB,"¬ ∃ x ∃ y ( LeftOf ( x , a ) ∧ LeftOf ( y , b ) ∧ Smaller ( x , y ) )",Baseline,It is not the case that there is an element x such that there is an element y such that x is to the left of a and y is to the left of b and x is smaller than y.,H,Y/N
+2,GGC,WB,"∃ x ( Large ( x ) ∧ Cube ( x ) ∧ ∀ y ( ( Cube ( y ) ∧ Small ( y ) ) → FrontOf ( x , y ) ) )",Baseline,"There is an element x such that x is large and x is a cube and for all y, if y is a cube and y is small, then x is in front of y.",H,Y/N
+3,GGC,NWB,"∀ x ∃ y ( Dodec ( x ) → ( ∃ y ( Cube ( y ) ∧ LeftOf ( x , y ) ) → Large ( x ) ) )",Baseline,"For all x, there is an element y such that if x is a dodecahedron, then if there is an element y such that y is a cube and x is to the left of y, then x is large.",H,Y/N
+4,GGC,WB,∀ x ( Dodec ( x ) → ¬ ( Dodec ( x ) ∧ Small ( x ) ) ),Baseline,"For all x, if x is a dodecahedron, then it is not the case that x is a dodecahedron and x is small.",H,Y/N
+5,GGC,WB,∃ x ∃ y ( Cube ( x ) ∧ Tet ( y ) ) ∧ ∀ z ( Cube ( z ) ∨ Tet ( z ) ),Baseline,"There is an element x such that there is an element y such that x is a cube and y is a tetrahedron and for all z, z is a cube or z is a tetrahedron.",H,Y/N
+6,GGC,WB,"∀ y ( Dodec ( y ) → ¬ ∃ x BackOf ( x , y ) )",Baseline,"For all y, if y is a dodecahedron, then it is not the case that there is an element x such that x is in back of y.",H,Y/N
+7,GGC,WB,"∃ w ( Large ( w ) ∧ Cube ( w ) ∧ RightOf ( b , w ) )",RantaI,"There is an element w such that w is large, w is a cube and b is to the right of w.",H,Y/N
+8,GGC,WB,"Small ( c ) → ( RightOf ( c , a ) ∧ Small ( c ) )",RantaI,"If c is small, then c is to the right of a and small.",H,Y/N
+9,GGC,WB,"∃ x ∃ y ( Cube ( x ) ∧ Cube ( y ) ∧ Large ( x ) ∧ Small ( y ) ∧ FrontOf ( x , y ) )",RantaI,"There is an element x such that there is an element y such that x is a cube, y is a cube, x is large, y is small and x is in front of y.",H,Y/N
+10,GGC,NWB,"∃ x ( Larger ( a , x ) ∧ Cube ( x ) ) → ¬ ∃ y ( Tet ( y ) ∧ ¬ Smaller ( a , y ) )",RantaI,"If there is an element x such that a is larger than x and x is a cube, then it is not the case that there is a tetrahedron y such that a is not smaller than y.",H,Y/N
+11,GGC,NWB,"¬ ( Larger ( b , a ) → ¬ Larger ( b , e ) )",RantaI,"It is not the case that if b is larger than a, then b is not larger than e.",H,Y/N
+12,GGC,WB,"BackOf ( f , a ) ∨ ( ¬ BackOf ( f , a ) ∧ Smaller ( f , a ) )",RantaI,At least one of these holds : \n\t• f is in back of a \n\t• f is not in back of a and f is smaller than a.,H,Y/N
+13,GGC,WB,"∃ z ( Large ( z ) ∧ Cube ( z ) ∧ BackOf ( z , c ) ∧ LeftOf ( z , b ) )",RantaI,"There is an element z such that z is large, z is a cube, z is in back of c and z is to the left of b.",H,Y/N
+14,GGC,NWB,∀ x ¬ ∃ x Cube ( x ),RantaII,Nothing is a cube.,H,Y/N
+15,GGC,WB,"∀ x ( RightOf ( a , x ) → ¬ Cube ( x ) )",RantaII,"For all cubes x, a is not to the right of x.",H,Y/N
+16,GGC,WB,"∀ z ∃ u ( ( Dodec ( z ) ∧ ¬ RightOf ( u , z ) ) → Small ( z ) )",RantaII,"For all z, if for all u, z is a dodecahedron and u is not to the right of z, then z is small.",H,Y/N
+17,GGC,WB,"¬ ∀ y ∀ x ( ( Tet ( x ) ∧ Tet ( y ) ) → SameCol ( x , y ) )",RantaII,"It is not the case that for all y, for all tetrahedrons x, y is not a tetrahedron or x is in the same column as y.",H,Y/N
+18,GGC,WB,"Smaller ( b , d ) ∧ Smaller ( b , e ) ∧ FrontOf ( b , d ) ∧ FrontOf ( b , e )",RantaII,"B is smaller than d, smaller than e, in front of d and in front of e.",H,Y/N
+19,GGC,WB,Tet ( c ) → ¬ Tet ( a ),RantaII,"If c is a tetrahedron, then a is not a tetrahedron.",H,Y/N
+20,GGC,WB,"∃ x ∃ y ( Tet ( x ) ∧ Tet ( y ) ∧ ( LeftOf ( x , y ) ∨ RightOf ( x , y ) ) )",RantaII,There is an element y such that there is a tetrahedron x such that y is a tetrahedron and x is to the right of y or to the left of y.,H,Y/N
 0,RG,WB,"∀ x ( Large ( a ) ∨ Tet ( x ) ) ∧ ∀ x ( FrontOf ( b , x ) → Student ( x ) )",Baseline,"For all x, a is large or x is a tetrahedron and for all x, if b is in front of x, then x is a student.",H,Y/N
 1,RG,WB,¬ ( Small ( a ) ∨ Tet ( b ) ) → ∀ x Cube ( x ),Baseline,"If it is not the case that a is small or b is a tetrahedron, then for all x, x is a cube.",H,Y/N
 2,RG,WB,"∃ x ( ( Larger ( x , a ) ∧ Cube ( b ) ) ∨ LeftOf ( c , c ) )",Baseline,There is an element x such that x is larger than a and b is a cube or c is to the left of c.,H,Y/N
