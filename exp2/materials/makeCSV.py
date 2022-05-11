@@ -80,7 +80,6 @@ correct_answers = 42 * ["Y/N"]
 # Survey 1, 2 and 3
 nli_df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
                 rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
-nli_df.to_csv("experimental_items/nli-items123.csv", sep=',')
 
 nli1_df = makeNLI_DF(nli_df, ["Baseline", "RantaI", "RantaII"], hypotheses, correct_answers)
 nli1_df.to_csv("experimental_items/nli-items1.csv", sep=',')
@@ -90,6 +89,9 @@ nli2_df.to_csv("experimental_items/nli-items2.csv", sep=',')
 
 nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"], hypotheses, correct_answers)
 nli3_df.to_csv("experimental_items/nli-items3.csv", sep=',')
+
+all_df = pd.concat([ggc_df.loc[:20], rg_df.loc[:20]])
+all_df.to_csv("experimental_items/nli-items123.csv", sep=',')
 
 # FR
 fr_df = pd.concat([ggc_df.loc[21:], 
