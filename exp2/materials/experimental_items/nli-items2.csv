@@ -34,7 +34,7 @@
 11,RG,WB,"∃ x ( ( Prime ( x ) ∨ Person ( a ) ) ∧ ( SameRow ( x , b ) ∧ Student ( x ) ) )",RantaII,There is a student x such that all these hold : \n\t• a is a person or x is a prime \n\t• x is in the same row as b.,H,Y/N
 12,RG,NWB,"¬ ( ¬ Dodec ( a ) ∨ ∃ x BackOf ( x , x ) )",RantaII,Nothing is in back of itself and a is a dodecahedron.,H,Y/N
 13,RG,NWB,"Medium ( a ) → ∀ x ¬ SameSize ( b , a )",RantaII,B is not of the same size as a or a is not medium.,H,Y/N
-14,RG,WB,"∀ x ( ( Large ( x ) ∧ FrontOf ( a , b ) ) ∧ ¬ Large ( x ) )",Baseline,"For all x, x is large and a is in front of b and it is not the case that x is large.",H,Y/N
+14,RG,WB,"∀ x ( Large ( x ) ∧ FrontOf ( a , b ) )",Baseline,"For all x, x is large and a is in front of b.",H,Y/N
 15,RG,NWB,∃ x ¬ ( Prime ( a ) ∨ Cube ( a ) ),Baseline,There is an element x such that it is not the case that a is a prime or a is a cube.,H,Y/N
 16,RG,NWB,Student ( a ) → ( ( Small ( b ) → Tet ( a ) ) ∧ ∀ x Person ( x ) ),Baseline,"If a is a student, then if b is small, then a is a tetrahedron and for all x, x is a person.",H,Y/N
 17,RG,NWB,"∀ x ∀ x ( SameSize ( x , x ) → Large ( a ) )",Baseline,"For all x, for all x, if x is of the same size as x, then a is large.",H,Y/N
