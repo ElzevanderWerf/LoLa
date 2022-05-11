@@ -91,6 +91,7 @@ nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"], hypotheses, corr
 nli3_df.to_csv("experimental_items/nli-items3.csv", sep=',')
 
 all_df = pd.concat([ggc_df.loc[:20], rg_df.loc[:20]])
+all_df[["Baseline", "RantaI", "RantaII"]] = all_df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
 all_df.to_csv("experimental_items/nli-items123.csv", sep=',')
 
 # FR
