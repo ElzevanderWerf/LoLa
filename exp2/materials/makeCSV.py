@@ -51,7 +51,7 @@ rg_sub = [rg[i] for i in rg_indices]
 rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
 
 # NLI
-def makeNLI_DF(df, order):
+def makeNLI_DF(df, order, hypotheses, correct_answers):
     """
     Returns a DataFrame of NLI items for a given ordering of translation
     systems over the 3 question sets.
@@ -69,23 +69,26 @@ def makeNLI_DF(df, order):
     df.insert(len(df.columns), "Translation", translations, allow_duplicates=True)
     
     # Empty (to be filled) columns for hypotheses and correct NLI answer
-    df.insert(len(df.columns), "Hypothesis", "H", allow_duplicates=True)
-    df.insert(len(df.columns), "CorrectAnswer", "Y/N", allow_duplicates=True)
+    df.insert(len(df.columns), "Hypothesis", hypotheses, allow_duplicates=True)
+    df.insert(len(df.columns), "CorrectAnswer", correct_answers, allow_duplicates=True)
     return df
+
+# Hypotheses and correct answers (made them myself)
+hypotheses = 42 * ["H"]
+correct_answers = 42 * ["Y/N"]
 
 # Survey 1, 2 and 3
 nli_df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
                 rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
 nli_df.to_csv("data/nli-items123.csv", sep=',')
 
-
-nli1_df = makeNLI_DF(nli_df, ["Baseline", "RantaI", "RantaII"])
+nli1_df = makeNLI_DF(nli_df, ["Baseline", "RantaI", "RantaII"], hypotheses, correct_answers)
 nli1_df.to_csv("data/nli-items1.csv", sep=',')
 
-nli2_df = makeNLI_DF(nli_df, ["RantaI", "RantaII", "Baseline"])
+nli2_df = makeNLI_DF(nli_df, ["RantaI", "RantaII", "Baseline"], hypotheses, correct_answers)
 nli2_df.to_csv("data/nli-items2.csv", sep=',')
 
-nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"])
+nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"], hypotheses, correct_answers)
 nli3_df.to_csv("data/nli-items3.csv", sep=',')
 
 # FR
