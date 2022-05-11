@@ -6,8 +6,8 @@ Account, so unfortunately this cannot be replicated."""
 import pandas as pd
 
 # Import items
-nli_df = pd.read_csv("data/nli-items.csv", header=0, error_bad_lines=False, encoding="utf-8")
-fr_df = pd.read_csv("data/fr-items.csv", header=0, error_bad_lines=False, encoding="utf-8")
+nli_df = pd.read_csv("experimental_items/nli-items0.csv", header=0, error_bad_lines=False, encoding="utf-8")
+fr_df = pd.read_csv("experimental_items/fr-items0.csv", header=0, error_bad_lines=False, encoding="utf-8")
 
 # Lists of item variables
 nliNumber = len(nli_df)
@@ -32,7 +32,7 @@ def makeNLI(premise, hypothesis, index):
               + premise
               + r'\n\nHypothesis:\n' 
               + hypothesis 
-              + r'").setChoiceValues(["Yes", "No"]).showOtherOption(true).setRequired(true);'] #TODO add I don't know., delete otherOption
+              + r'").setChoiceValues(["Yes", "No"]).showOtherOption(true).setRequired(true);']
 
 index = 0
 for item_i in range(nliNumber):
@@ -65,7 +65,7 @@ for item_i in range(frNumber):
                + r'").setHelpText("Ties are allowed.").setRows(["Translation 1", "Translation 2", "Translation 3"]).setColumns(["(Most fluent) 1", "2", "3 (Least fluent)"]).setRequired(true);']
 
 
-# final questions
+# final question
 script += ['']
 script += [r'final = form.addPageBreakItem().setTitle("Final question");']
 script += [r'form.addParagraphTextItem().setTitle("Do you have any final comments on the survey?");']

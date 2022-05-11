@@ -5,7 +5,7 @@ CSVs of experimental items: 3 NLI question sets and 1 FR question set
 
 import pandas as pd
 import random
-from replaceSymbols import replace_symbols, replace_bulleting, add_punctuation
+from preprocessing import replace_symbols, replace_bulleting, add_punctuation
 
 # Import data
 with open(
@@ -80,16 +80,16 @@ correct_answers = 42 * ["Y/N"]
 # Survey 1, 2 and 3
 nli_df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
                 rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
-nli_df.to_csv("data/nli-items123.csv", sep=',')
+nli_df.to_csv("experimental_items/nli-items123.csv", sep=',')
 
 nli1_df = makeNLI_DF(nli_df, ["Baseline", "RantaI", "RantaII"], hypotheses, correct_answers)
-nli1_df.to_csv("data/nli-items1.csv", sep=',')
+nli1_df.to_csv("experimental_items/nli-items1.csv", sep=',')
 
 nli2_df = makeNLI_DF(nli_df, ["RantaI", "RantaII", "Baseline"], hypotheses, correct_answers)
-nli2_df.to_csv("data/nli-items2.csv", sep=',')
+nli2_df.to_csv("experimental_items/nli-items2.csv", sep=',')
 
 nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"], hypotheses, correct_answers)
-nli3_df.to_csv("data/nli-items3.csv", sep=',')
+nli3_df.to_csv("experimental_items/nli-items3.csv", sep=',')
 
 # FR
 fr_df = pd.concat([ggc_df.loc[21:], 
@@ -107,7 +107,7 @@ for index, row in fr_df.iterrows():
     row["Translation 1"] = l[0]
     row["Translation 2"] = l[1]
     row["Translation 3"] = l[2]
-csv = fr_df.to_csv("data/fr-items123.csv", sep=',')
+csv = fr_df.to_csv("experimental_items/fr-items123.csv", sep=',')
 
     
 

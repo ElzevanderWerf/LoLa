@@ -1,4 +1,5 @@
-"""Module for replacing GGC symbols with common FOL symbols and changing bulleting"""
+"""Module for replacing GGC symbols with common FOL symbols, changing bulleting
+and adding punctuation."""
         
 def replace_symbols(s):
     """

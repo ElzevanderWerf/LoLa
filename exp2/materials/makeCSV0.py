@@ -65,7 +65,7 @@ for index, row in df.iterrows():
     row["Translation 2"] = l[1]
     row["Translation 3"] = l[2]
 df[["Baseline", "RantaI", "RantaII"]] = df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
-csv = df.to_csv("data/fr-items0.csv", sep=',')
+csv = df.to_csv("experimental_items/fr-items0.csv", sep=',')
 
     
 
