@@ -74,8 +74,9 @@ def makeNLI_DF(nli_df, order, hypotheses, correct_answers):
     return df
 
 # Hypotheses and correct answers (made them myself)
-hypotheses = 42 * ["H"]
-correct_answers = 42 * ["Y/N"]
+hyp_df = pd.read_csv("experimental_items/nli-hypotheses123.csv", sep=",", header=0, error_bad_lines=False, encoding="utf-8")
+hypotheses = list(hyp_df.loc[:,"Hypothesis"])
+correct_answers = list(hyp_df.loc[:,"CorrectAnswer"])
 
 # Survey 1, 2 and 3
 nli_df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
@@ -90,8 +91,11 @@ nli2_df.to_csv("experimental_items/nli-items2.csv", sep=',')
 nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"], hypotheses, correct_answers)
 nli3_df.to_csv("experimental_items/nli-items3.csv", sep=',')
 
+#TODO remove all_df (also the file nli-items123.csv) as soon as it is unnecessary
 all_df = pd.concat([ggc_df.loc[:20], rg_df.loc[:20]])
 all_df[["Baseline", "RantaI", "RantaII"]] = all_df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
+all_df.insert(len(all_df.columns), "Hypothesis", hypotheses, allow_duplicates=True)
+all_df.insert(len(all_df.columns), "CorrectAnswer", correct_answers, allow_duplicates=True)
 all_df.to_csv("experimental_items/nli-items123.csv", sep=',')
 
 # FR
