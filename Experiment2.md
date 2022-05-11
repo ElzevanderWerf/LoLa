@@ -50,7 +50,7 @@ From the Grade Grinder Corpus (in the ignored file `translationcorpus-1.0.1.csv`
 **(Filenames start with test3)**
 I designed a random generation function, which generates formulas from the entire space of first-order logic formulas.
 
-1. In `RandomGenerationGGC.py`, I wrote a Python script to randomly generate formulas in GGC notation, with a lexicon similar as the one in GGC. 100 generated formulas are in `rg-formulas.tmp`.
+1. In `RandomGenerationGGC.py`, I wrote a Python script to randomly generate formulas in GGC notation, with a lexicon similar as the one in GGC. 99 generated formulas are in `rg-formulas.tmp`.
 
 5. I obtained the translations of 3 different systems for each of the formulas in `rg-formulas.tmp`:
     1. BASELINE: `rg-base.tmp`, produced by
