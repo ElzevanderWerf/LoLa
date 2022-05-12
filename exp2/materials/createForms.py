@@ -17,7 +17,7 @@ def makeNLI(premise, hypothesis, index):
               + premise
               + r'\n\nHypothesis:\n' 
               + hypothesis 
-              + r'").setChoiceValues(["Yes", "No"]).showOtherOption(true).setRequired(true);'] #TODO add I don't know., delete otherOption
+              + r'").setChoiceValues(["Yes", "No"]).showOtherOption(true).setHelpText("Pick the third answer option if it is unclear whether the hypothesis follows from the premise (e.g., if the premise is open to multiple interpretations, or if you do not understand the premise or hypothesis), and explain why.").setRequired(true);'] #TODO add I don't know., delete otherOption
 
 def makeScript(nli_df, fr_df, index):
     # Lists of item variables
@@ -62,7 +62,7 @@ def makeScript(nli_df, fr_df, index):
                    + t2
                    + r'\n\nTranslation 3:\n'
                    + t3
-                   + r'").setHelpText("Rank only based on the criterion of fluency (how natural the sentence sounds in English). Ties are allowed.").setRows(["Translation 1", "Translation 2", "Translation 3"]).setColumns(["(Most fluent) 1", "2", "3 (Least fluent)"]).setRequired(true);']
+                   + r'").setHelpText("Base your ranking only on the criterion of fluency (how natural the sentence sounds in English). Ties are allowed.").setRows(["Translation 1", "Translation 2", "Translation 3"]).setColumns(["(Most fluent) 1", "2", "3 (Least fluent)"]).setRequired(true);']
     
     
     # final questions
@@ -71,9 +71,12 @@ def makeScript(nli_df, fr_df, index):
     script += [r'form.addParagraphTextItem().setTitle("Do you have any final comments on the survey?");']
     script += ['']
     
-    # Form settings
+    # Write results to spreadsheet
     script += [r'var ss = SpreadsheetApp.create("2.' + str(index) + r'. results");']
     script += [r'form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());']
+    script += [r'var folder = DriveApp.getFoldersByName("AI MSc Thesis Exp2").next();']
+    script += [r'folder.addFile(DriveApp.getFileById(ss.getId()));']
+    script += [r'DriveApp.getRootFolder().removeFile(DriveApp.getFileById(ss.getId()));']
     
     # close function
     script += [r'}']
