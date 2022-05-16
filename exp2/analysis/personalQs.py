@@ -3,7 +3,6 @@ in the survey (gender, age, etc.)."""
 import pandas as pd
 from itertools import chain
 import numpy as np
-from scipy.stats.stats import pearsonr
 
 # TODO change file names
 df1 = pd.read_csv("../results/CSVs/ex1.csv", header=0)
