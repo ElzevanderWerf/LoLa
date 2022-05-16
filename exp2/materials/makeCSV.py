@@ -1,7 +1,10 @@
 """This script combines the ggc and rg formulas and translations into 4
 CSVs of experimental items: 3 NLI question sets and 1 FR question set
 (126 NLI questions are divided over 3 participant groups according to a
- Latin Square Design)."""
+ Latin Square Design).
+
+NB: DO NOT RUN THIS SCRIPT: the nli-items CSVs cannot be overwritten because
+I changed the presentation of the variables and constants."""
 
 import pandas as pd
 import random
