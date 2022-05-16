@@ -17,10 +17,10 @@ col = ["Timestamp", "InformedConsent", "Gender", "Age", "EnglishLevel",
                            "FinalComments"]
 
 # Values to replace                          
-qDict = {"Lower level than the ones below":0,
-         "Level of a bachelor/master student who has followed 1 or 2 classes of logic.":1,
-         "Level of a bachelor/master student who has followed more than 2 classes of logic.":2,
-         "Higher level than the ones above":3,
+qDict = {"Lower level than the ones below":1,
+         "Level of a bachelor/master student who has followed 1 or 2 classes of logic.":2,
+         "Level of a bachelor/master student who has followed more than 2 classes of logic.":3,
+         "Higher level than the ones above":4,
          "(Most fluent) 1":1,
          "2":2,
          "3 (Least fluent)":3
