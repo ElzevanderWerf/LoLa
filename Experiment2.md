@@ -66,9 +66,13 @@ I designed a random generation function, which generates formulas from the entir
 	(this took around 3 minutes)
 
 		
-#### PREPARING EXPERIMENT 1
+### PREPARING EXPERIMENT 1
 **(See folder exp1. Pilot experiment files end with 0)**
 1. For readability, I wrote `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items.csv` and `fr-items.csv`):
 
 		>python makecsv.py   
 2. The Python script in `createForms.py` writes 3 different Google Apps Script files to the folder `formScripts`, thereby creating 3 different surveys in Google Forms, each with a different set of experimental items, according to a Latin Square Design.
+TODO delete fr-items0.csv nli-items0.csv createForms0.py makeCSV0.py when unnecessary
+
+## RESULTS ANALYSIS
+**See folders exp2/results and exp2/analysis**
