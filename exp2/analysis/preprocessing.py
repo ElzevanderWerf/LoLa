@@ -7,8 +7,10 @@ df1 = pd.read_csv("../results/TSVs/ex.tsv", header=0, sep="\t")
 df2 = pd.read_csv("../results/TSVs/ex.tsv", header=0, sep="\t")
 df3 = pd.read_csv("../results/TSVs/ex.tsv", header=0, sep="\t")
 
+DFs = [df1, df2, df3]
+
 # New column names
-col = ["Timestamp", "InformedConsent", "Gender", "Age", "EnglishLevel", 
+cols = ["Timestamp", "InformedConsent", "Gender", "Age", "EnglishLevel", 
        "LogicLevel", "LogicPerspective"] + [
            "NLI-GGC" + str(i) for i in range(0,21)] + [
                "NLI-RG" + str(i) for i in range(0,21)] + [
@@ -26,8 +28,33 @@ qDict = {"Lower level than the ones below":1,
          "3 (Least fluent)":3
          }
 
-# Replace values with qDict and write to CSVs
+# Hypotheses
+hyps = pd.read_csv("../materials/experimental_items/nli-hypotheses123.csv", header=0)
+
+for df in DFs:
+    # Rename columns
+    df.columns = cols
+    
+    # Replace values with qDict
+    df.replace(qDict, value=None, inplace=True)
+    
+    # Process NLI answers as being correct or incorrect
+    nliQs = df.iloc[:,7:49].copy()
+    for colName, col in nliQs.items():
+        if colName.startswith("NLI-GGC"):
+            i = int(colName[7:])
+            correct = hyps.loc[i, "CorrectAnswer"]
+            col.replace(regex={correct:"Correct", "^(.(?<!"+correct+'))*?$':"Incorrect"}, 
+                        inplace=True)
+        elif colName.startswith("NLI-RG"):
+            i = int(colName[6:])
+            correct = hyps.loc[i+21, "CorrectAnswer"]
+            col.replace(regex={correct:"Correct", "^(.(?<!"+correct+'))*?$':"Incorrect"}, 
+                        inplace=True)
+    df.iloc[:,7:49] = nliQs.copy()
+
+# Write to CSVs
 # TODO change file names
-df1.replace(qDict, None).to_csv("../results/CSVs/ex1.csv", header = col)
-df2.replace(qDict, None).to_csv("../results/CSVs/ex2.csv", header = col)
-df3.replace(qDict, None).to_csv("../results/CSVs/ex3.csv", header = col)
+df1.to_csv("../results/CSVs/ex1.csv")
+df2.to_csv("../results/CSVs/ex2.csv")
+df3.to_csv("../results/CSVs/ex3.csv")
