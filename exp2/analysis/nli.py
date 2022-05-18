@@ -16,7 +16,7 @@ participants = sum([len(df) for df in DFs])
 
 
 lines.append("COMPARISON BETWEEN THE 3 SYSTEMS")
-def lookUpNLI(df,formulaType, rrange):
+def lookUpRange(df,formulaType, rrange):
     answersPerParticipant = df.loc[:,
                   "NLI-"+formulaType+str(rrange[0]):
                   "NLI-"+formulaType+str(rrange[-1])].to_numpy()
@@ -31,25 +31,25 @@ GGC1 = RG1 = range(0,7)
 GGC2 = RG2 = range(7,14)
 GGC3 = RG3 = range(14,20)
 
-baseline = lookUpNLI(df1, "GGC", GGC1) + lookUpNLI(
-    df3, "GGC", GGC2) + lookUpNLI(
-    df2, "GGC", GGC3) + lookUpNLI(
-    df1, "RG", RG1) + lookUpNLI(
-    df3, "RG", RG2) + lookUpNLI(
+baseline = lookUpRange(df1, "GGC", GGC1) + lookUpRange(
+    df3, "GGC", GGC2) + lookUpRange(
+    df2, "GGC", GGC3) + lookUpRange(
+    df1, "RG", RG1) + lookUpRange(
+    df3, "RG", RG2) + lookUpRange(
     df2, "RG", RG3) 
         
-rantaI = lookUpNLI(df2, "GGC", GGC1) + lookUpNLI(
-    df1, "GGC", GGC2) + lookUpNLI(
-    df3, "GGC", GGC3) + lookUpNLI(
-    df2, "RG", RG1) + lookUpNLI(
-    df1, "RG", RG2) + lookUpNLI(
+rantaI = lookUpRange(df2, "GGC", GGC1) + lookUpRange(
+    df1, "GGC", GGC2) + lookUpRange(
+    df3, "GGC", GGC3) + lookUpRange(
+    df2, "RG", RG1) + lookUpRange(
+    df1, "RG", RG2) + lookUpRange(
     df3, "RG", RG3) 
         
-rantaII = lookUpNLI(df3, "GGC", GGC1) + lookUpNLI(
-    df2, "GGC", GGC2) + lookUpNLI(
-    df1, "GGC", GGC3) + lookUpNLI(
-    df3, "RG", RG1) + lookUpNLI(
-    df2, "RG", RG2) + lookUpNLI(
+rantaII = lookUpRange(df3, "GGC", GGC1) + lookUpRange(
+    df2, "GGC", GGC2) + lookUpRange(
+    df1, "GGC", GGC3) + lookUpRange(
+    df3, "RG", RG1) + lookUpRange(
+    df2, "RG", RG2) + lookUpRange(
     df1, "RG", RG3) 
         
 # Averages
@@ -69,14 +69,14 @@ lines.append("\tT-test RantaI vs RantaII: {}".format(ttest_ind(rantaI, rantaII))
 
 
 lines.append("\n\nGGC VS RG FORMULAS")
-ggcPerDF = [lookUpNLI(df1, "GGC", range(0,21)), 
-            lookUpNLI(df2, "GGC", range(0,21)), 
-            lookUpNLI(df3, "GGC", range(0,21))]
+ggcPerDF = [lookUpRange(df1, "GGC", range(0,21)), 
+            lookUpRange(df2, "GGC", range(0,21)), 
+            lookUpRange(df3, "GGC", range(0,21))]
 ggc = [np.mean([ggcPerDF[0][i], ggcPerDF[1][i], ggcPerDF[2][i]]) for i in range(len(ggcPerDF[0]))]
 
-rgPerDF = [lookUpNLI(df1, "RG", range(0,21)), 
-            lookUpNLI(df2, "RG", range(0,21)), 
-            lookUpNLI(df3, "RG", range(0,21))]
+rgPerDF = [lookUpRange(df1, "RG", range(0,21)), 
+            lookUpRange(df2, "RG", range(0,21)), 
+            lookUpRange(df3, "RG", range(0,21))]
 rg = [np.mean([rgPerDF[0][i], rgPerDF[1][i], rgPerDF[2][i]]) for i in range(len(rgPerDF[0]))]
 
 # Averages
@@ -92,7 +92,36 @@ lines.append("\n\tT-test GGC vs RG: {}".format(ttest_ind(ggc, rg)))
 
 
 lines.append("\n\nWB VS NWB FORMULAS")
+#TODO check difference between Ranta-I and Ranta-II
+def lookUpIndices(df, indices):
+    nliQs = df.loc[:, df.columns.str.startswith("NLI")]
+    answersPerQ = [list(nliQs.iloc[:,i]) for i in indices]
 
+    correctPercentagePerQ = []
+    for q in range(len(indices)):
+        correctPercentagePerQ.append(answersPerQ[q].count("Correct") / len(answersPerQ[q]))
+    return correctPercentagePerQ
+
+nli_items = pd.read_csv("../materials/experimental_items/nli-items1.csv", header=0)
+WBness = nli_items.loc[:,"Well-behavedness"]
+
+WB_indices = [i for i in range(len(WBness)) if WBness[i] == "WB"]
+NWB_indices = [i for i in range(len(WBness)) if WBness[i] == "NWB"]
+
+WBPerDF = [lookUpIndices(df1, WB_indices), 
+            lookUpIndices(df2, WB_indices), 
+            lookUpIndices(df3, WB_indices)]
+NWBPerDF = [lookUpIndices(df1, NWB_indices), 
+            lookUpIndices(df2, NWB_indices), 
+            lookUpIndices(df3, NWB_indices)]
+
+WB = [np.mean([WBPerDF[0][i], WBPerDF[1][i], WBPerDF[2][i]]) for i in range(len(WBPerDF[0]))]
+NWB = [np.mean([NWBPerDF[0][i], NWBPerDF[1][i], NWBPerDF[2][i]]) for i in range(len(NWBPerDF[0]))]
+
+lines.append("\tWB: {} percent correct".format(
+    np.mean(WB)))
+lines.append("\tNWB: {} percent correct".format(
+    np.mean(NWB)))
 
 for l in lines:
     print(l)
