@@ -22,6 +22,7 @@ warnings.filterwarnings(action="ignore", category=RuntimeWarning)
 
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.use('pdf')
 
 import matplotlib.pyplot as plt
 
@@ -224,18 +225,20 @@ if __name__ == '__main__':
     if args.pdf:
         plt.title('%s (%d runs, %d pct. of %d judgments, %.2f conf. int.)' % (args.langpair, max(args.n, len(files)), int(100 * data_points[1]), data_points[0], args.conf_int))
 
-        plt.boxplot(sys_range_all)
-        plt.xlim([0, len(sys_mu_sigma)+1])
-        plt.xticks(x, tick_lbs, ha='right', rotation=30)
+        plt.boxplot(sys_range_all) #draw a box and whisker plot
+        plt.xlim([0, len(sys_mu_sigma)+1]) #set x limits of the current axes
+        plt.xticks(x, tick_lbs, ha='right', rotation=30) #set the current tick locations and labels of the x-axis
         if args.by_rank:
+            #set tick locations of y-axis etc
             plt.yticks(np.arange(len(sys_mu_sigma)+1))
             plt.ylim([0.5, len(sys_mu_sigma)+0.5])
-        plt.tight_layout()
-        plt.grid()
+        #plt.tight_layout() #subplots nicely fit in figure
+        plt.grid() #whether to show the grid lines
 
         if args.by_rank:
-            ax = plt.gca()
-            ax.invert_yaxis()
-
+            ax = plt.gca() #get current axes
+            ax.invert_yaxis() #invert the y-axis
+            
         #plt.show()
         plt.savefig(args.langpair + '_cluster.pdf')
+        
