@@ -118,10 +118,16 @@ NWBPerDF = [lookUpIndices(df1, NWB_indices),
 WB = [np.mean([WBPerDF[0][i], WBPerDF[1][i], WBPerDF[2][i]]) for i in range(len(WBPerDF[0]))]
 NWB = [np.mean([NWBPerDF[0][i], NWBPerDF[1][i], NWBPerDF[2][i]]) for i in range(len(NWBPerDF[0]))]
 
+# Averages
 lines.append("\tWB: {} percent correct".format(
     np.mean(WB)))
 lines.append("\tNWB: {} percent correct".format(
     np.mean(NWB)))
+# T-tests
+# Mean proportion of correct answers per question. Then compare these
+# percentages per group
+lines.append("\n\tT-test WB vs NWB: {}".format(ttest_ind(WB, NWB)))
+
 
 for l in lines:
     print(l)
