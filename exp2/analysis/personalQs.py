@@ -16,8 +16,12 @@ def lookUp(column):
 
 lines = []
 participants = sum([len(df) for df in DFs])
+lines.append("PARTICIPANTS")
+lines.append("Participants per survey:\n\tSurvey1:\t{}\n\tSurvey2:\t{}\n\tSurvey3:\t{}".format(
+    len(df1), len(df2), len(df3)))
+lines.append("Total:\t{} participants".format(participants))
 
-lines.append("GENDER")
+lines.append("\nGENDER")
 genders = lookUp("Gender")
 lines.append("\tMale: {} out of {} is {} percent".format(
     genders.count("Male"), 
@@ -32,7 +36,7 @@ lines.append("\tPrefer not to say: {} out of {} is {} percent".format(
     participants, 
     genders.count("Prefer not to say")/participants))
 
-lines.append("AGE")
+lines.append("\nAGE")
 ages = lookUp("Age")
 lines.append("\tMean: {}".format(np.mean(ages)))
 lines.append("\tSD: {}".format(np.std(ages)))
