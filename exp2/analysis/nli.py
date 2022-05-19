@@ -81,10 +81,9 @@ lines.append("\n\tT-test GGC vs RG: {}".format(ttest_ind(ggc, rg)))
 
 ##############################################################################
 lines.append("\n\nWB VS NWB FORMULAS")
-#TODO check difference between Ranta-I and Ranta-II
    
 nli_items = pd.read_csv("../materials/experimental_items/nli-items1.csv", header=0)
-WBness = nli_items.loc[:,"Well-behavedness"]
+WBness = list(nli_items.loc[:,"Well-behavedness"])
 
 WB_indices = [i for i in range(len(WBness)) if WBness[i] == "WB"]
 NWB_indices = [i for i in range(len(WBness)) if WBness[i] == "NWB"]
@@ -102,7 +101,79 @@ lines.append("\tNWB: {} percent correct".format(np.mean(NWB)))
 # T-tests
 # Mean proportion of correct answers per question. Then compare these
 # percentages per group
-lines.append("\n\tT-test WB vs NWB: {}".format(ttest_ind(WB, NWB)))
+lines.append("\nT-test WB vs NWB: {}".format(ttest_ind(WB, NWB)))
+
+# ANOVA to test interaction effects:
+# Does understandability of WB vs NWB depend on whether they are translated
+# by RantaI or RantaII?
+import seaborn as sns
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+lines.append("\n\nINTERACTION BETWEEN WELL-BEHAVEDNESS AND SYSTEMS")
+
+# Prepare DF
+anovaDF = pd.DataFrame({"WBness": np.repeat(WBness, 3),
+                       "System": ["Baseline"] * 42 + ["RantaI"] * 42 + ["RantaII"] * 42,
+                       "Correctness":baseline + rantaI + rantaII})
+
+# Make boxplot of data distribution
+sns.boxplot(x="WBness", y="Correctness", hue="System", data=anovaDF, palette="Set3")
+
+# ANOVA
+model = ols('Correctness ~ C(WBness) + C(System) + C(WBness):C(System)', 
+            data=anovaDF).fit()
+lines.append("Two-way ANOVA output for WBness:\n{}".format(sm.stats.anova_lm(model, typ=2)))
+
+# If interaction is significant, visualize interaction plot (the lines should not be parallel, but cross):
+from statsmodels.graphics.factorplots import interaction_plot
+import matplotlib.pyplot as plt
+fig = interaction_plot(x=anovaDF['WBness'], trace=anovaDF['System'], response=anovaDF['Correctness'], 
+    colors=['#4c061d','#d17a22', '#b4c292'])
+plt.show()
+
+# Post-hoc test if statistical differences are found, to see which specific types are different from each other (e.g. RantaI-RantaII or Baseline-RantaI?)
+from bioinfokit.analys import stat
+res = stat()
+
+# 1. For main effect WBness
+res.tukey_hsd(df=anovaDF, res_var='Correctness', xfac_var='WBness', anova_model='Correctness~C(WBness)+C(System)+C(WBness):C(System)')
+lines.append("\nPost-hoc for main effect WBness:\n{}".format(res.tukey_summary))
+
+# 2. For main effect System
+res.tukey_hsd(df=anovaDF, res_var='Correctness', xfac_var='System', anova_model='Correctness ~ C(WBness) + C(System) + C(WBness):C(System)')
+lines.append("\nPost-hoc for main effect System:\n{}".format(res.tukey_summary))
+
+# 3. For interaction effect between WBness and System
+res.tukey_hsd(df=anovaDF, res_var='Correctness', xfac_var=['WBness','System'], anova_model='Correctness ~ C(WBness) + C(System) + C(WBness):C(System)')
+lines.append("\nPost-hoc for interaction effect WBness and System:\n{}".format(res.tukey_summary))
+
+# Checking ANOVA assumptions
+# 1. Normal distribution of residuals
+# res.anova_std_residuals are standardized residuals obtained from two-way ANOVA (check above)
+sm.qqplot(res.anova_std_residuals, line='45')
+plt.xlabel("Theoretical Quantiles")
+plt.ylabel("Standardized Residuals")
+plt.show()
+
+# histogram
+plt.hist(res.anova_model_out.resid, bins='auto', histtype='bar', ec='k') 
+plt.xlabel("Residuals")
+plt.ylabel('Frequency')
+plt.show()
+
+# Shapiro-Wilk test
+import scipy.stats as stats
+w, pvalue = stats.shapiro(res.anova_model_out.resid)
+lines.append("\nShapiro-Wilk test for checking assumption that there is a normal distribution of residuals:\n\tw: {}\n\tp-value:{}".format(w, pvalue))
+# If the p value is non significant, we fail to reject null hypothesis and conclude that data is drawn from normal distribution
+# So if not significant -> normal distribution!
+
+# 2. Homogeneity of variances
+res = stat()
+res.levene(df=anovaDF, res_var='Correctness', xfac_var=['WBness', 'System'])
+lines.append("\nLevene's test for checking homogeneity of variances:\n\t{}".format(res.levene_summary))
+# If the p value  is non-significant, we fail to reject the null hypothesis and conclude that treatments have equal variances.
+# So if not significant -> normal distribution!
 
 
 for l in lines:
