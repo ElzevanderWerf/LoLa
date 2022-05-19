@@ -3,7 +3,7 @@
 This report lists the steps taken to prepare the experiment of my second study. See section 6 of my thesis for an extensive explanation of the method.
 
 ## Experimental items
-**See folder exp2/materials**
+**See materials folder**
 This section explains how the following list of experimental items is created:
 - In `nli-items.csv`: For the Natural Language Inference task, 10 GGC formulas + 10 RG formulas with for each of them the three system translations, with my own hypotheses designed for them.
 - In `fr-items.csv`: For the Fluency Ranking task, 10 GGC formulas + 10 RG formulas  with for each of them the three system translations.
@@ -15,7 +15,6 @@ In `Trans.hs`, I have added the option to translate all sentences from an input 
 The translations are printed in the following format: `WB/NWB, Output AST, Translation`, where `WB` stands for *well-behaved* and `NWB` for *ill-behaved*.
 
 ### (GGC) Grade Grinder Corpus translations
-**(Filenames start with ggc)**
 From the Grade Grinder Corpus (in the ignored file `translationcorpus-1.0.1.csv`), a set of useful formulas was extracted as follows:
 
 1. The Python script in `ggcPreprocessing.py` writes all suitable GGC formulas to the file `ggc-formulas.tmp`, with the following preprocessing to ignore weird formulas and include spacing:
@@ -47,7 +46,6 @@ From the Grade Grinder Corpus (in the ignored file `translationcorpus-1.0.1.csv`
 
 
 ### (RG) Own random generation function
-**(Filenames start with test3)**
 I designed a random generation function, which generates formulas from the entire space of first-order logic formulas.
 
 1. In `RandomGenerationGGC.py`, I wrote a Python script to randomly generate formulas in GGC notation, with a lexicon similar as the one in GGC. 99 generated formulas are in `rg-formulas.tmp`.
@@ -66,13 +64,15 @@ I designed a random generation function, which generates formulas from the entir
 	(this took around 3 minutes)
 
 		
-### PREPARING EXPERIMENT 1
-**(See folder exp1. Pilot experiment files end with 0)**
-1. For readability, I wrote `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items.csv` and `fr-items.csv`):
+### Preparing experiment 1
+**See materials folder**
+1. For readability, I wrote `makeCSV.py` to combine the above mentioned `tmp` files into CSVs for each task (`nli-items1.csv`, `nli-items2.csv`, `nli-items3.csv`, and `fr-items123.csv`), found in the folder `experimental_items`:
 
 		>python makecsv.py   
-2. The Python script in `createForms.py` writes 3 different Google Apps Script files to the folder `formScripts`, thereby creating 3 different surveys in Google Forms, each with a different set of experimental items, according to a Latin Square Design.
-TODO delete fr-items0.csv nli-items0.csv createForms0.py makeCSV0.py when unnecessary
+2. For the NLI questions, I created one hypothesis per formula, and added whether the correct answer should be *Yes* or *No*. See the file `nli-hypotheses 123.csv` in the folder `experimental_items`.
+3. The Python script in `createForms.py` writes 3 different Google Apps Script files to the folder `formScripts`, thereby creating 3 different surveys in Google Forms, each with a different set of experimental items, according to a Latin Square Design.
 
-## RESULTS ANALYSIS
-**See folders exp2/results and exp2/analysis**
+## Results analysis
+**See results and analysis folders**
+1. The results were downloaded from Google Forms as TSV files in `results/TSVs`. The script in `analysis/preprocessing.py` performs some preprocessing to make them more readible and transform them into CSVs, written to the folder `results/CSVs`.
+2. The python scripts `personalQs.py`, `nli.py`, and `fr.py` perform several analyses on the results, writing the results to the command line.
