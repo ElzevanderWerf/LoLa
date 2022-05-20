@@ -75,4 +75,4 @@ I designed a random generation function, which generates formulas from the entir
 ## Results analysis
 **See results and analysis folders**
 1. The results were downloaded from Google Forms as TSV files in `results/TSVs`. The script in `analysis/preprocessing.py` performs some preprocessing to make them more readible and transform them into CSVs, written to the folder `results/CSVs`.
-2. The python scripts `personalQs.py`, `nli.py`, and `fr.py` perform several analyses on the results, writing the results to the command line.
+2. The python scripts `personalQs.py` and `nli.py` perform several analyses on the results, writing the results to the command line. For Fluency Ranking, the *TrueSkill* adaptation of Sakaguchi et al. (2014) is used, extracted from [WMT-TrueSkill](www.github.com/keisks/wmt-trueskill). The script in `fr.py` processes the rankings into a CSV readible by *TrueSkill*.
