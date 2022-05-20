@@ -19,8 +19,7 @@ for df in DFs:
     frQs = df.loc[:,"FR-GGC0-T1":"FR-RG9-T3"]
     for q in range(20):
         for index, row in frQs.iloc[:,q*3:q*3+3].iterrows():
-            colName = frQs.columns[q*3]
-            segmentIds.append(colName[:-2])
+            segmentIds.append(q)
             system1Ids.append(frItems.loc[q, "Translation 1"])
             system2Ids.append(frItems.loc[q, "Translation 2"])
             system3Ids.append(frItems.loc[q, "Translation 3"])
@@ -37,5 +36,8 @@ frDF = pd.DataFrame(data={
     "system2rank":system2ranks,
     "system3rank":system3ranks,
     })
+
+# TODO GGC vs RG
+# TODO WB vs NWB
 
 frDF.to_csv("wmt-trueskill/data/fol-en-all.csv", sep=',')
