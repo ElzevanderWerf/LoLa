@@ -32,6 +32,10 @@ def lookUpNLI(df, indices):
                              for q in range(len(indices))]
 
 ##############################################################################
+# TODO check for participant outliers
+# TODO colors in figures
+
+##############################################################################
 lines.append("HYPOTHESIS 1-3: COMPARING THE THREE SYSTEMS")
 # Question sets
 (GGC1, GGC2, GGC3, RG1, RG2, RG3) = (range(0,7), range(7,14), range(14,21), 
@@ -50,12 +54,12 @@ ranta = latinSquare([df2, df1, df3])
 lola = latinSquare([df3, df2, df1])
 
 # Averages
-lines.append("\tBASELINE: {} percent correct".format(
-    np.mean(baseline)))
-lines.append("\tRANTA: {} percent correct".format(
-    np.mean(ranta)))
-lines.append("\tLoLa: {} percent correct".format(
-    np.mean(lola)))
+lines.append("\tBASELINE percentage correct: Mean: {}, SD:{}".format(
+    np.mean(baseline), np.std(baseline)))
+lines.append("\tRANTA percentage correct: Mean: {}, SD:{}".format(
+    np.mean(ranta), np.std(ranta)))
+lines.append("\tLoLa percentage correct: Mean: {}, SD:{}".format(
+    np.mean(lola), np.std(lola)))
         
 # # T-tests
 # # Mean proportion of correct answers per question. Then compare these
@@ -72,7 +76,9 @@ df_melt.columns = ["index", "Systems", "Correctness"]
 
 ax = sns.boxplot(x='Systems', y='Correctness', data=df_melt, color='#99c2a2')
 ax = sns.swarmplot(x="Systems", y="Correctness", data=df_melt, color='#7d0013')
-plt.show()
+ax.set_xlabel("Translation system")
+ax.set_ylabel("Percentage of correct answers")
+plt.show() #graph of ANOVA results
 
 # stats f_oneway functions takes the groups as input and returns ANOVA F and p value
 fvalue, pvalue = stats.f_oneway(df['BASELINE'], df['RANTA'], df['LoLa'])
@@ -177,7 +183,11 @@ anovaDF = pd.DataFrame({"WBness": np.repeat(WBness, 3),
                        "Correctness":baseline + ranta + lola})
 
 # Make boxplot of data distribution
-sns.boxplot(x="WBness", y="Correctness", hue="System", data=anovaDF, palette="Set3")
+ax = sns.boxplot(x="WBness", y="Correctness", hue="System", data=anovaDF, palette="Set3")
+ax.set_xlabel("Translation system")
+ax.set_ylabel("Percentage of correct answers")
+# TODO legend location
+plt.show() #graph of ANOVA results
 
 # ANOVA
 model = ols('Correctness ~ C(WBness) + C(System) + C(WBness):C(System)', 
@@ -186,7 +196,7 @@ lines.append("Two-way ANOVA output for WBness:\n{}".format(sm.stats.anova_lm(mod
 
 # If interaction is significant, visualize interaction plot (the lines should not be parallel, but cross):
 fig = interaction_plot(x=anovaDF['WBness'], trace=anovaDF['System'], response=anovaDF['Correctness'], 
-    colors=['#4c061d','#d17a22', '#b4c292'])
+    colors=['#4c061d','#d17a22', '#b4c292'], xlabel="Well-behavedness", ylabel = "Translation system")
 plt.show()
 
 # Post-hoc test if statistical differences are found, to see which pairs of systems are different from each other
