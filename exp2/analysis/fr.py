@@ -37,18 +37,14 @@ def makeDF(indices):
         })
     return DF
 
-# All items
+# Hypothesis 4-6: All items
 makeDF(range(20)).to_csv("wmt-trueskill/data/fol-en-all.csv", sep=',')
 
 
-# WB vs NWB
+# Hypothesis 8: WB vs NWB
 WBness = list(frItems.loc[:,"Well-behavedness"])
 WB_indices = [i for i in range(len(WBness)) if WBness[i] == "WB"]
 makeDF(WB_indices).to_csv("wmt-trueskill/data/fol-en-wb.csv", sep=',')
 
 NWB_indices = [i for i in range(len(WBness)) if WBness[i] == "NWB"]
 makeDF(NWB_indices).to_csv("wmt-trueskill/data/fol-en-nwb.csv", sep=',')
-
-
-# # TODO GGC vs RG? I don't think so
-
