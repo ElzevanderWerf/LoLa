@@ -31,9 +31,14 @@ def lookUpNLI(df, indices):
     return [answers[q].count("Correct") / len(answers[q])
                              for q in range(len(indices))]
 
-##############################################################################
-# TODO check for participant outliers
 # TODO colors in figures
+##############################################################################
+lines.append("NUMBER OF CORRECT ANSWERS PER PARTICIPANT (OUT OF 42 NLI QUESTIONS)")
+for i in range(len(DFs)):
+    lines.append("\tSurvey {}".format(i+1))
+    for j in range(len(DFs[i])):
+        answers = list(DFs[i].loc[j, "NLI-GGC0":"NLI-RG20"])
+        lines.append("\t\tParticipant {}: {}".format(j+1, answers.count("Correct")))
 
 ##############################################################################
 lines.append("HYPOTHESIS 1-3: COMPARING THE THREE SYSTEMS")
