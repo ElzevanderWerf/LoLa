@@ -67,20 +67,7 @@ shortestSentence l = (shortest, fromJust (elemIndex shortest l))
 
 -- Returns the number of words in a string
 wordCount :: String -> Int
-wordCount s = length (filter (/= ",") (words s)) -- TODO other punctuation marks to ignore?
-
--- Returns the tautologies and contradictions in a given proposition
---getTFs :: Tree a -> [GProp]
---getTFs t = [p | p <- TFsM t]
--- where
---  getTFsM :: forall a. Tree a -> [GProp]
---  getTFsM t = case t of
---    GPTaut -> [t]
---    GPContra -> [t]
---    _ -> composOpMPlus getTFsM t
-
---containsTorF :: GProp -> Bool
---containsTorF p = GPTaut `elem` (getTFs p) || GPContra `elem` (getTFs p)
+wordCount s = length (filter (/= ",") (words s))
 
 contains :: GProp -> String -> Bool
 contains p s = isInfixOf s (PGF.showExpr [] (gf p))

@@ -17,14 +17,13 @@ transfer m pgf la t = case m of
   MNormalize   -> lin (transform normalizeP)                  -- interpretation functions
   MOptimize    -> lin (transform optimizeP)                   -- the conversion rules of Ranta (2011) section 5.3
   MSimplify    -> simplifyP pgf la (fg t)                     -- Elze's formula simplification
-  MCheckLaw    -> lin (transform checklawP)                   -- TODO (debug) remove all occurrences
  where
    lin :: (PGF.Tree -> PGF.Tree) -> String
    lin f = linearize pgf la (f t)
      
    transform :: (GProp -> GProp) -> (PGF.Tree -> PGF.Tree)
    transform f = gf . f . fg
-data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify | MCheckLaw deriving Show    -- Elze added MSimplify
+data Mode = MNone | MOptimize | MMinimalize | MNormalize | MSimplify deriving Show    -- Elze added MSimplify
 
 -- the conversion rules of Ranta (2011) section 5.3 (core -> extended syntax)
 optimizeP :: GProp -> GProp
@@ -253,14 +252,8 @@ simplify pgf la p = (showExpr [] (gf (snd ((flatten t) !! i)))) ++ ", " ++ s
      -- Build tree of possible simplifying operations,
      -- where each node is a tuple: (depth in tree, (simplified) proposition)
      buildNode n = 
-       if fst n == 5 then (n, [])   -- if max depth of tree is reached, terminate TODO choose depth and check if works!
+       if fst n == 5 then (n, [])   -- if max depth of tree is reached, terminate
          else (n, [((fst n) + 1, law (snd n)) | law <- logicLaws, law (snd n) /= snd n])
      t = unfoldTree buildNode (0, p)
      (s, i) = shortestSentence (map (lin . gf . optimizeP . snd) (flatten t))
-   
-   
-
--- TODO remove   
-checklawP :: GProp -> GProp
-checklawP = quantdist1ltr
   

@@ -27,18 +27,18 @@ main = do
 
       putStrLn "done"
     
--- Parse the input string in all languages and translate it with all 
--- translation modes into all languages 
+-- Translation option 1: Parse the input string in all languages and translate 
+-- it with all translation modes into all languages 
 doTrans pgf s = case parseAllLang pgf (startCat pgf) s of 
-  (sourceL,ts):_ -> unlines [display m t | t <- ts, m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify, MCheckLaw]] 
+  (sourceL,ts):_ -> unlines [display m t | t <- ts, m <- [MNone, MOptimize, MNormalize, MMinimalize, MSimplify]] 
   _              -> "no parse\n"
  where
    display m t = unlines $ (showExpr [] t) :           -- print the tree
        (show m ++ ":") :                               -- print the mode
          [transfer m pgf la t | la <- languages pgf]   -- print the translations (for each language)
 
--- Parse the input string in the source language and translate it with
--- AST simplification into the target language
+-- Translation option 2: Parse the input string in the source language and 
+-- translate it with AST simplification into the target language
 doTransFromTo pgf mode source_l target_l s = case parse pgf source_l (startCat pgf) s of 
   ts | length ts > 0 -> unlines [wb t ++ transfers t | t <- ts]    -- this assumes the input sentences are parsable
    where
