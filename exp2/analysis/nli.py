@@ -12,9 +12,9 @@ import scipy.stats as stats
 
 
 # TODO change file names. Import results
-df1 = pd.read_csv("../results/CSVs/ex1.csv", header=0)
-df2 = pd.read_csv("../results/CSVs/ex2.csv", header=0)
-df3 = pd.read_csv("../results/CSVs/ex3.csv", header=0)
+df1 = pd.read_csv("../results/CSVs/2.1 results - intermediate version.csv", header=0)
+df2 = pd.read_csv("../results/CSVs/2.2 results - intermediate version.csv", header=0)
+df3 = pd.read_csv("../results/CSVs/2.3 results - intermediate version.csv", header=0)
 
 DFs = [df1, df2, df3]
 
@@ -168,8 +168,10 @@ WB = [np.mean([WBPerDF[0][i], WBPerDF[1][i], WBPerDF[2][i]]) for i in range(len(
 NWB = [np.mean([NWBPerDF[0][i], NWBPerDF[1][i], NWBPerDF[2][i]]) for i in range(len(NWBPerDF[0]))]
 
 # Averages
-lines.append("\tWB: {} percent correct".format(np.mean(WB)))
-lines.append("\tNWB: {} percent correct".format(np.mean(NWB)))
+lines.append("\tWB: percentage correct: Mean: {}, SD: {}".format(
+    np.mean(WB), np.std(WB)))
+lines.append("\tNWB: percentage correct: Mean: {}, SD: {}".format(
+    np.mean(NWB), np.std(NWB)))
 
 # # T-tests
 # # Mean proportion of correct answers per question. Then compare these
@@ -194,7 +196,7 @@ ax.set_ylabel("Percentage of correct answers")
 # TODO legend location
 plt.show() #graph of ANOVA results
 
-# ANOVA
+# TWO-WAY ANOVA
 model = ols('Correctness ~ C(WBness) + C(System) + C(WBness):C(System)', 
             data=anovaDF).fit()
 lines.append("Two-way ANOVA output for WBness:\n{}".format(sm.stats.anova_lm(model, typ=2)))
