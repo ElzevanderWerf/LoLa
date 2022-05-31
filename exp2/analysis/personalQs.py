@@ -5,9 +5,10 @@ from itertools import chain
 import numpy as np
 
 # TODO change file names
-df1 = pd.read_csv("../results/CSVs/ex1.csv", header=0)
-df2 = pd.read_csv("../results/CSVs/ex2.csv", header=0)
-df3 = pd.read_csv("../results/CSVs/ex3.csv", header=0)
+df1 = pd.read_csv("../results/CSVs/2.1 results - intermediate version.csv", header=0)
+df2 = pd.read_csv("../results/CSVs/2.2 results - intermediate version.csv", header=0)
+df3 = pd.read_csv("../results/CSVs/2.3 results - intermediate version.csv", header=0)
+
 
 DFs = [df1, df2, df3]
 
@@ -65,6 +66,17 @@ lines.append("\tOther: {} out of {} is {} percent".format(
     logicP.count("Another perspective"), 
     participants, 
     logicP.count("Another perspective")/participants))
+
+lines.append("\nPARTICIPATED IN EXP1")
+prevExp = lookUp("ParticipatedInExp1")
+lines.append("\tYes: {} out of {} is {} percent".format(
+    prevExp.count("Yes"), 
+    participants, 
+    prevExp.count("Yes")/participants))
+lines.append("\tNo: {} out of {} is {} percent".format(
+    prevExp.count("No"), 
+    participants, 
+    prevExp.count("No")/participants))
 
 for l in lines:
     print(l)
