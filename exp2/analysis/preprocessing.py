@@ -39,13 +39,13 @@ cols = ["Timestamp", "InformedConsent", "Gender", "Age", "EnglishLevel",
                            "FinalComments"]
 
 # Values to replace                          
-qDict = {"Lower level than the ones below":1,
-         "Level of a bachelor/master student who has followed 1 or 2 classes of logic.":2,
-         "Level of a bachelor/master student who has followed more than 2 classes of logic.":3,
-         "Higher level than the ones above":4,
-         "(Most fluent) 1":1,
-         "2":2,
-         "3 (Least fluent)":3
+qDict = {"Lower level than the ones below":int(1),
+         "Level of a bachelor/master student who has followed 1 or 2 classes of logic.":int(2),
+         "Level of a bachelor/master student who has followed more than 2 classes of logic.":int(3),
+         "Higher level than the ones above":int(4),
+         "(Most fluent) 1":int(1),
+         "2":int(2),
+         "3 (Least fluent)":int(3)
          }
 
 # Hypotheses
@@ -72,6 +72,13 @@ for df in DFs:
             col.replace(regex={correct:"Correct", "^(.(?<!"+correct+'))*?$':"Incorrect"}, 
                         inplace=True)
     df.iloc[:,7:49] = nliQs.copy()
+    
+    # Process FR answers as integers
+    for col in df.columns:
+        if col.startswith("FR"):
+            df[col] = df[col].astype(int)
+    #df.loc[:,"FR-GGC0-T1":"FR-RG0-T3"] = df.loc[:,"FR-GGC0-T1":"FR-RG0-T3"].astype(int)
+    print(df.dtypes)
 
 # Write to CSVs
 # TODO change file names
