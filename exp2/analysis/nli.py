@@ -9,6 +9,7 @@ from statsmodels.graphics.factorplots import interaction_plot
 import matplotlib.pyplot as plt
 from bioinfokit.analys import stat
 import scipy.stats as stats
+from IPython.display import display
 
 
 # TODO change file names. Import results
@@ -58,13 +59,12 @@ baseline = latinSquare([df1, df3, df2])
 ranta = latinSquare([df2, df1, df3])
 lola = latinSquare([df3, df2, df1])
 
+df = pd.DataFrame(list(zip(baseline, ranta, lola)), 
+                  columns = ["BASELINE", "RANTA", "LoLa"])
+
 # Averages
-lines.append("\tBASELINE percentage correct: Mean: {}, SD:{}".format(
-    np.mean(baseline), np.std(baseline)))
-lines.append("\tRANTA percentage correct: Mean: {}, SD:{}".format(
-    np.mean(ranta), np.std(ranta)))
-lines.append("\tLoLa percentage correct: Mean: {}, SD:{}".format(
-    np.mean(lola), np.std(lola)))
+lines.append("Description of the percentage of correct answers per system:\n{}".format(
+    df.describe()))
         
 # # T-tests
 # # Mean proportion of correct answers per question. Then compare these
@@ -75,14 +75,17 @@ lines.append("\tLoLa percentage correct: Mean: {}, SD:{}".format(
 
 # ANOVA
 lines.append("\nOne-way ANOVA for checking whether there are differences between the systems:")
-df = pd.DataFrame(list(zip(baseline, ranta, lola)), columns = ["BASELINE", "RANTA", "LoLa"])
-df_melt = pd.melt(df.reset_index(), id_vars=['index'], value_vars=["BASELINE", "RANTA", "LoLa"])
+df_melt = pd.melt(df.reset_index(), id_vars=['index'], 
+                  value_vars=["BASELINE", "RANTA", "LoLa"])
 df_melt.columns = ["index", "Systems", "Correctness"]
+display(df_melt)
 
-ax = sns.boxplot(x='Systems', y='Correctness', data=df_melt, color='#99c2a2')
-ax = sns.swarmplot(x="Systems", y="Correctness", data=df_melt, color='#7d0013')
-ax.set_xlabel("Translation system")
-ax.set_ylabel("Percentage of correct answers")
+ax = sns.catplot(x='Systems', y='Correctness', kind="box", 
+                 data=df_melt, palette = "Set2", 
+                 medianprops={'color': 'red', 'lw': 2}) # TODO medianprops red optie verwijderen als ze in final data gewoon zichtbaar zijn
+# TODO swarmplot?
+#ax = sns.swarmplot(x="Systems", y="Correctness", data=df_melt, color='#7d0013')
+ax.set_axis_labels("Translation system", "Percentage of correct answers")
 plt.show() #graph of ANOVA results
 
 # stats f_oneway functions takes the groups as input and returns ANOVA F and p value
@@ -182,15 +185,14 @@ lines.append("\tNWB: percentage correct: Mean: {}, SD: {}".format(
 # Does understandability of WB vs NWB depend on whether they are translated
 # by RANTA or LoLa?
 
-lines.append("\nTwo-way ANOVA for testing interaction between well-behavedness and systems")
-
 # Prepare DF
 anovaDF = pd.DataFrame({"WBness": np.repeat(WBness, 3),
                        "System": ["BASELINE"] * 42 + ["RANTA"] * 42 + ["LoLa"] * 42,
                        "Correctness":baseline + ranta + lola})
 
 # Make boxplot of data distribution
-ax = sns.boxplot(x="WBness", y="Correctness", hue="System", data=anovaDF, palette="Set3")
+ax = sns.boxplot(x="WBness", y="Correctness", hue="System", data=anovaDF, 
+                 palette="Set2")
 ax.set_xlabel("Translation system")
 ax.set_ylabel("Percentage of correct answers")
 # TODO legend location
@@ -199,11 +201,11 @@ plt.show() #graph of ANOVA results
 # TWO-WAY ANOVA
 model = ols('Correctness ~ C(WBness) + C(System) + C(WBness):C(System)', 
             data=anovaDF).fit()
-lines.append("Two-way ANOVA output for WBness:\n{}".format(sm.stats.anova_lm(model, typ=2)))
+lines.append("\nTwo-way ANOVA for testing interaction between well-behavedness and systems:\n{}".format(sm.stats.anova_lm(model, typ=2)))
 
 # If interaction is significant, visualize interaction plot (the lines should not be parallel, but cross):
 fig = interaction_plot(x=anovaDF['WBness'], trace=anovaDF['System'], response=anovaDF['Correctness'], 
-    colors=['#4c061d','#d17a22', '#b4c292'], xlabel="Well-behavedness", ylabel = "Translation system")
+    colors=['#66c2a5','#fc8d62', '#8da0cb'], xlabel="Well-behavedness", ylabel = "Translation system")
 plt.show()
 
 # Post-hoc test if statistical differences are found, to see which pairs of systems are different from each other
