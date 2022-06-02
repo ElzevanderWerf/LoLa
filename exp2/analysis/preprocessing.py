@@ -77,8 +77,6 @@ for df in DFs:
     for col in df.columns:
         if col.startswith("FR"):
             df[col] = df[col].astype(int)
-    #df.loc[:,"FR-GGC0-T1":"FR-RG0-T3"] = df.loc[:,"FR-GGC0-T1":"FR-RG0-T3"].astype(int)
-    print(df.dtypes)
 
 # Write to CSVs
 # TODO change file names
