@@ -33,8 +33,9 @@ def lookUpNLI(df, indices):
                              for q in range(len(indices))]
 
 ##############################################################################
-lines.append("MEAN PERCENTAGE OF CORRECT ANSWERS PER PARTICIPANT")
+lines.append("PARTICIPANT PERFORMANCE")
 
+lines.append("\nMean percentage of correct answers per participant")
 correctPerP = [list(df.loc[j, df.columns.str.startswith("NLI")]).count("Correct")/42
                for df in DFs for j in range(len(df))]
 lines.append("correctPerP: {}".format(correctPerP))
@@ -52,7 +53,7 @@ for i in range(len(DFs)):
         if correct < np.mean(correctPerP) - 2 * np.std(correctPerP) or correct > np.mean(correctPerP) + 2 * np.std(correctPerP):
             lines.append("\t\tParticipant {}: {} percent --> dropped from analysis".format(j + 1, correct))
             DFs[i].drop(j, inplace=True)
-
+            
 ##############################################################################
 lines.append("\n\nHYPOTHESIS 1-3: COMPARING THE THREE SYSTEMS")
 # Question sets

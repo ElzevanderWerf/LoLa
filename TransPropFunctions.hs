@@ -73,6 +73,7 @@ contains :: GProp -> String -> Bool
 contains p s = isInfixOf s (PGF.showExpr [] (gf p))
 
 -- Returns whether a given tree is well-behaved according to my definition
+-- in Section 4 of Elze's thesis
 isWellBehaved :: PGF.Tree -> Bool
 isWellBehaved = isWB . fg
  where 

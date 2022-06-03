@@ -13,27 +13,27 @@ from preprocessing import replace_symbols, replace_bulleting, add_punctuation
 # Import data
 with open(
         "data/ggc-formulas.tmp") as f1, open(
-            "data/ggc-base.tmp") as f2, open(
-                "data/ggc-rantaI.tmp") as f3, open(
-                    "data/ggc-rantaII.tmp") as f4, open(
+            "data/ggc-baseline.tmp") as f2, open(
+                "data/ggc-ranta.tmp") as f3, open(
+                    "data/ggc-lola.tmp") as f4, open(
                         "data/rg-formulas.tmp") as f5, open(
-                            "data/rg-base.tmp") as f6, open(
-                                "data/rg-rantaI.tmp") as f7, open(
-                                    "data/rg-rantaII.tmp") as f8:                    
+                            "data/rg-baseline.tmp") as f6, open(
+                                "data/rg-ranta.tmp") as f7, open(
+                                    "data/rg-lola.tmp") as f8:                    
     ggc_formulas = [replace_symbols(s) for s in f1.read().splitlines()]
-    ggc_base = list(filter(None, f2.read().splitlines()))
-    ggc_rantaI = list(filter(None, f3.read().splitlines()))
-    ggc_rantaII = list(filter(None, f4.read().splitlines()))
-    ggc_WB = [s.split(",")[0] for s in ggc_rantaII]
-    ggc_rantaII = [", ".join(s.split(", ")[2:]) for s in ggc_rantaII]
+    ggc_baseline = list(filter(None, f2.read().splitlines()))
+    ggc_ranta = list(filter(None, f3.read().splitlines()))
+    ggc_lola = list(filter(None, f4.read().splitlines()))
+    ggc_WB = [s.split(",")[0] for s in ggc_lola]
+    ggc_lola = [", ".join(s.split(", ")[2:]) for s in ggc_lola]
     ggc_type = ["GGC"] * len(ggc_formulas)
     
     rg_formulas = [replace_symbols(replace_bulleting(s)) for s in f5.read().splitlines()]
-    rg_base = list(filter(None, f6.read().splitlines()))
-    rg_rantaI = list(filter(None, f7.read().splitlines()))
-    rg_rantaII = list(filter(None, f8.read().splitlines()))
-    rg_WB = [s.split(",")[0] for s in rg_rantaII]
-    rg_rantaII = [",".join(s.split(",")[2:]) for s in rg_rantaII]
+    rg_baseline = list(filter(None, f6.read().splitlines()))
+    rg_ranta = list(filter(None, f7.read().splitlines()))
+    rg_lola = list(filter(None, f8.read().splitlines()))
+    rg_WB = [s.split(",")[0] for s in rg_lola]
+    rg_lola = [",".join(s.split(",")[2:]) for s in rg_lola]
     rg_type = ["RG"] * len(rg_formulas)
 
 for f in [f1, f2, f3, f4, f5, f6, f7, f8]:
@@ -45,13 +45,13 @@ random.seed(500)
 ggc_indices = random.sample(range(0,len(ggc_formulas)), int(items/2))
 rg_indices = range(0,int(items/2))     #formulas were generated randomly, so they don't have to be picked randomly.
 
-ggc = list(zip(ggc_type, ggc_WB, ggc_formulas, ggc_base, ggc_rantaI, ggc_rantaII))
+ggc = list(zip(ggc_type, ggc_WB, ggc_formulas, ggc_baseline, ggc_ranta, ggc_lola))
 ggc_sub = [ggc[i] for i in ggc_indices]
-ggc_df = pd.DataFrame(ggc_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
+ggc_df = pd.DataFrame(ggc_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "Ranta", "LoLa"])
 
-rg = list(zip(rg_type, rg_WB, rg_formulas, rg_base, rg_rantaI, rg_rantaII))
+rg = list(zip(rg_type, rg_WB, rg_formulas, rg_baseline, rg_ranta, rg_lola))
 rg_sub = [rg[i] for i in rg_indices]
-rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "RantaI", "RantaII"])
+rg_df = pd.DataFrame(rg_sub, columns=["Type", "Well-behavedness", "Formula", "Baseline", "Ranta", "LoLa"])
 
 # NLI
 def makeNLI_DF(nli_df, order, hypotheses, correct_answers):
@@ -85,27 +85,27 @@ correct_answers = list(hyp_df.loc[:,"CorrectAnswer"])
 nli_df = pd.concat([ggc_df.loc[:20, ["Type", "Well-behavedness", "Formula"]], 
                 rg_df.loc[:20, ["Type", "Well-behavedness", "Formula"]]])
 
-nli1_df = makeNLI_DF(nli_df, ["Baseline", "RantaI", "RantaII"], hypotheses, correct_answers)
+nli1_df = makeNLI_DF(nli_df, ["Baseline", "Ranta", "LoLa"], hypotheses, correct_answers)
 nli1_df.to_csv("experimental_items/nli-items1.csv", sep=',')
 
-nli2_df = makeNLI_DF(nli_df, ["RantaI", "RantaII", "Baseline"], hypotheses, correct_answers)
+nli2_df = makeNLI_DF(nli_df, ["Ranta", "LoLa", "Baseline"], hypotheses, correct_answers)
 nli2_df.to_csv("experimental_items/nli-items2.csv", sep=',')
 
-nli3_df = makeNLI_DF(nli_df, ["RantaII", "Baseline", "RantaI"], hypotheses, correct_answers)
+nli3_df = makeNLI_DF(nli_df, ["LoLa", "Baseline", "Ranta"], hypotheses, correct_answers)
 nli3_df.to_csv("experimental_items/nli-items3.csv", sep=',')
 
 # FR
 fr_df = pd.concat([ggc_df.loc[21:], 
                    rg_df.loc[21:]], 
                   axis=0)
-fr_df[["Baseline", "RantaI", "RantaII"]] = fr_df[["Baseline", "RantaI", "RantaII"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
+fr_df[["Baseline", "Ranta", "LoLa"]] = fr_df[["Baseline", "Ranta", "LoLa"]].applymap(lambda x: add_punctuation(replace_bulleting(x)))
 
 # For shuffling the three translations per FR item
 fr_df["Translation 1"] = ""
 fr_df["Translation 2"] = ""
 fr_df["Translation 3"] = ""
 for index, row in fr_df.iterrows():
-    l = ["Baseline", "RantaI", "RantaII"]
+    l = ["Baseline", "Ranta", "LoLa"]
     random.shuffle(l)
     row["Translation 1"] = l[0]
     row["Translation 2"] = l[1]

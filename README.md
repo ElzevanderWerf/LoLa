@@ -1,12 +1,12 @@
-13-06-2022
+20-06-2022
 
 ## Grammatical Framework application grammar for translating between language and predicate logic
 
-This system is based on the study of Ranta (2011):
+LoLa is an adaptation of Ranta's (2011) Grammatical Framework application:
 _Translating between language and logic: what is easy and what is difficult._
 A Ranta - International Conference on Automated Deduction, 2011, LNCS/LNAI. See http://www.cse.chalmers.se/~aarne/articles/cade2011.pdf.
 
-The original version of Ranta's code is taken from [cade-2011](https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011). The file `Changes.md` lists all bug fixes and changes to the original code. The file `Experiment2.md` reports the steps taken for setting up experiment 2 and analyzing the results.
+The original version of Ranta's code is taken from [cade-2011](https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011). The file `Changes.md` lists all bug fixes and changes to the original code. The file `Experiment2.md` reports the steps taken for setting up experiment 2 (comparative translation quality assessment) and analyzing the results.
 
 ### Compile with stack
 

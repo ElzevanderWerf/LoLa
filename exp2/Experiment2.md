@@ -32,15 +32,15 @@ From the Grade Grinder Corpus (in the ignored file `translationcorpus-1.0.1.csv`
         >make pgf
 		>stack build
 5. I obtained the translations of 3 different systems for each of the formulas in `ggc-formulas`:
-    1. BASELINE: `ggc-base.tmp`, produced by
+    1. BASELINE: `ggc-baseline.tmp`, produced by
     
-         >stack run trans MNone PropGGC data/ggc-formulas.tmp PropEng data/ggc-base.tmp
+         >stack run trans MNone PropGGC data/ggc-formulas.tmp PropEng data/ggc-baseline.tmp
     
     (this took around 15 minutes)
-    2. RANTA-I: `ggc-rantaI.tmp`, copied from [cade-2011-study-1](https://github.com/ElzevanderWerf/cade-2011-study-1/blob/master/out/ggc-eng.tmp).
-    3. RANTA-II:`ggc-rantaII.tmp`, produced by
+    2. RANTA: `ggc-ranta.tmp`, copied from [cade-2011-study-1](https://github.com/ElzevanderWerf/cade-2011-study-1/blob/master/out/ggc-eng.tmp).
+    3. LoLa:`ggc-lola.tmp`, produced by
             
-        >stack run trans MSimplify PropGGC data/ggc-formulas.tmp PropEng data/ggc-rantaII.tmp
+        >stack run trans MSimplify PropGGC data/ggc-formulas.tmp PropEng data/ggc-lola.tmp
 	
 	(this took around 2.5 hours)
 
@@ -51,15 +51,15 @@ I designed a random generation function, which generates formulas from the entir
 1. In `RandomGenerationGGC.py`, I wrote a Python script to randomly generate formulas in GGC notation, with a lexicon similar as the one in GGC. 99 generated formulas are in `rg-formulas.tmp`.
 
 5. I obtained the translations of 3 different systems for each of the formulas in `rg-formulas.tmp`:
-    1. BASELINE: `rg-base.tmp`, produced by
+    1. BASELINE: `rg-baseline.tmp`, produced by
     
-         >stack run trans MNone PropGGC data/rg-formulas.tmp PropEng data/rg-base.tmp
+         >stack run trans MNone PropGGC data/rg-formulas.tmp PropEng data/rg-baseline.tmp
     
     (this took around 1 minute)
-    2. RANTA-I: `rg-rantaI.tmp`, translated with Trans in repo [cade-2011-study-1](https://github.com/ElzevanderWerf/cade-2011-study-1/blob/master/out/test3Eng.tmp).
-    3. RANTA-II:`rg-rantaII.tmp`, produced by
+    2. RANTA: `rg-ranta.tmp`, translated with Trans in repo [cade-2011-study-1](https://github.com/ElzevanderWerf/cade-2011-study-1/blob/master/out/test3Eng.tmp).
+    3. LoLa:`rg-lola.tmp`, produced by
             
-        >stack run trans MSimplify PropGGC data/rg-formulas.tmp PropEng data/rg-rantaII.tmp
+        >stack run trans MSimplify PropGGC data/rg-formulas.tmp PropEng data/rg-lola.tmp
 	
 	(this took around 3 minutes)
 
@@ -74,6 +74,6 @@ I designed a random generation function, which generates formulas from the entir
 
 ## Results analysis
 **See results and analysis folders**
-1. The results were downloaded from Google Forms as TSV files in `results/TSVs`. The script in `analysis/preprocessing.py` performs some preprocessing to make them more readible and transform them into CSVs, written to the folder `results/CSVs`.
+1. The results per survey were downloaded from Google Forms as TSV files in `results/TSVs`. Note that there were 6 different surveys, because each of the 3 surveys had 2 versions (one for the Barcelona researchers and one for the newly recruited students, because the student version included two extra questionts: (1) about participation in the experiment of Study 1, and (2) asked for their payment info). The script in `analysis/preprocessing.py` performs some preprocessing to make them more readible and transform them into CSVs, written to the folder `results/CSVs`.
 2. The python scripts `personalQs.py` and `nli.py` perform several analyses on the results, writing the results to the command line. For Fluency Ranking, the *TrueSkill* adaptation of Sakaguchi et al. (2014) is used, extracted from [WMT-TrueSkill](www.github.com/keisks/wmt-trueskill). The script in `fr.py` processes the rankings into a CSV readible by *TrueSkill*.
 3. The results are reported and discussed in my master thesis.

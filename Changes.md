@@ -1,5 +1,6 @@
 # BUG FIX AND IMPROVEMENTS REPORT
 **All code that is modified or added to the original code (at [cade-2011](https://github.com/GrammaticalFramework/gf-contrib/tree/master/cade-2011)) are commented with "Elze" and an optional explanation.**
+This report lists all bug fixes and changes to the original implementation.
 
 ## Bug Fixes
 1. 	`PropLatex.gf`) Comment of Ranta `fix negation of in` at `lin AKind`: *1 \in N* is parsed and linearized as both *1 is a number* and *1 is not a number*. New code:
