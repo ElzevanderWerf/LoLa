@@ -77,6 +77,5 @@ lines.append("\tNo: {} out of {} is {} percent".format(
     participants, 
     prevExp.count("No")/participants))
 
-for l in lines:
-    print(l)
-
+with open("out/personalQs.txt", "w") as f:
+    f.writelines("%s\n" % l for l in lines)

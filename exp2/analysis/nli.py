@@ -230,5 +230,5 @@ lines.append("\nLevene's test:\n{}".format(res.levene_summary))
 # If the p value  is non-significant, we fail to reject the null hypothesis and conclude that treatments have equal variances.
 # So if not significant -> homogeneity of variances!
 
-with open("out/analysis.txt", "w") as f:
+with open("out/nli.txt", "w") as f:
     f.writelines("%s\n" % l for l in lines)

@@ -1,0 +1,32 @@
+PARTICIPANTS
+Participants per survey:
+	Survey1:	6
+	Survey2:	8
+	Survey3:	7
+Total:	21 participants
+
+GENDER
+	Male: 9 out of 21 is 0.42857142857142855 percent
+	Female: 12 out of 21 is 0.5714285714285714 percent
+	Prefer not to say: 0 out of 21 is 0.0 percent
+
+AGE
+	Mean: 31.0
+	SD: 12.20850601210562
+
+ENGLISH EXPERIENCE
+	Mean: 3.761904761904762
+	SD: 0.5259695722470125
+
+LOGIC EXPERIENCE
+	Mean: 2.619047619047619
+	SD: 0.8438116736509215
+
+LOGIC PERSPECTIVE
+	Computational/mathematical: 12 out of 21 is 0.5714285714285714 percent
+	Linguistic/philosophical: 7 out of 21 is 0.3333333333333333 percent
+	Other: 2 out of 21 is 0.09523809523809523 percent
+
+PARTICIPATED IN EXP1
+	Yes: 5 out of 21 is 0.23809523809523808 percent
+	No: 16 out of 21 is 0.7619047619047619 percent

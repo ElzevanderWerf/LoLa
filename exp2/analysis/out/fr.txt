@@ -1,0 +1,28 @@
+1. infer_TS.py was run 200 times on each of the datasets (all, wb, and nwb) with:
+	>cat ../data/fol-en-all.csv | py -2 infer_TS.py ../result/all/fol-en{index} -n 2 -d 0 -s 3
+	>cat ../data/fol-en-wb.csv | py -2 infer_TS.py ../result/wb/fol-en{index} -n 2 -d 0 -s 3
+	>cat ../data/fol-en-nwb.csv | py -2 infer_TS.py ../result/nwb/fol-en{index} -n 2 -d 0 -s 3
+		where {index} was given each time a number from the range 0-199
+	This resulted in 200 JSON files written to the folders result/all, result/wb and result/nwb.
+	
+2. cluster.py was run for each of the datasets (all, wb, and nwb) as follows, together with the results:
+	>py -2 cluster.py fol-en ../result/all/fol-en -n 200 -by-rank -i 0.9833
+		LoLa 3.539 (1.0, 1.0)
+		++++++++++
+		Ranta -0.643 (2.0, 2.0)
+		++++++++++
+		Baseline -2.873 (3.0, 3.0)
+
+	>py -2 cluster.py fol-en ../result/wb/fol-en -n 200 -by-rank -i 0.9833
+		LoLa 2.256 (1.0, 1.0)
+		++++++++++
+		Ranta 0.325 (2.0, 2.0)
+		++++++++++
+		Baseline -2.594 (3.0, 3.0)
+
+	>py -2 cluster.py fol-en ../result/nwb/fol-en -n 200 -by-rank -i 0.9833
+		LoLa 3.826 (1.0, 1.0)
+		++++++++++
+		Ranta -1.423 (2.0, 2.0)
+		++++++++++
+		Baseline -2.355 (3.0, 3.0)
