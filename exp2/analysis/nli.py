@@ -38,7 +38,6 @@ lines.append("PARTICIPANT PERFORMANCE")
 lines.append("\nMean percentage of correct answers per participant")
 correctPerP = [list(df.loc[j, df.columns.str.startswith("NLI")]).count("Correct")/42
                for df in DFs for j in range(len(df))]
-lines.append("correctPerP: {}".format(correctPerP))
 lines.append("\tMean: {}".format(np.mean(correctPerP)))
 lines.append("\tSD: {}".format(np.std(correctPerP)))
 
@@ -88,7 +87,6 @@ lines.append("\nOne-way ANOVA for checking whether there are differences between
 df_melt = pd.melt(systemDF.reset_index(), id_vars=['index'], 
                   value_vars=["BASELINE", "RANTA", "LoLa"])
 df_melt.columns = ["index", "Systems", "Correctness"]
-display(df_melt)
 
 ax = sns.catplot(x='Systems', y='Correctness', kind="box", 
                  data=df_melt, palette = "Set2")
@@ -168,16 +166,17 @@ lines.append("\tNWB: percentage correct: Mean: {}, SD: {}".format(
 # by RANTA or LoLa?
 
 # Prepare DF
-systemWBnessDF = pd.DataFrame({"WBness": np.repeat(WBness, 3),
+wellbehavedness = ["Well-behaved" if i == "WB" else "Ill-behaved" for i in WBness]
+systemWBnessDF = pd.DataFrame({"WBness": np.repeat(wellbehavedness, 3),
                        "System": ["BASELINE"] * 42 + ["RANTA"] * 42 + ["LoLa"] * 42,
                        "Correctness":baseline + ranta + lola})
 
 # Make boxplot of data distribution
 ax = sns.boxplot(x="WBness", y="Correctness", hue="System", data=systemWBnessDF, 
                  palette="Set2")
-ax.set_xlabel("Translation system")
+ax.set_xlabel("Formula type")
 ax.set_ylabel("Percentage of correct answers")
-plt.legend(loc="lower center")
+plt.legend(title="Translation system", loc="lower center")
 plt.show() #graph of ANOVA results
 
 # TWO-WAY ANOVA
@@ -187,7 +186,8 @@ lines.append("\nTwo-way ANOVA for testing interaction between well-behavedness a
 
 # If interaction is significant, visualize interaction plot (the lines should not be parallel, but cross):
 fig = interaction_plot(x=systemWBnessDF['WBness'], trace=systemWBnessDF['System'], response=systemWBnessDF['Correctness'], 
-    colors=['#66c2a5','#fc8d62', '#8da0cb'], xlabel="Well-behavedness", ylabel = "percentage of correct answers")
+    colors=['#66c2a5','#8da0cb', '#fc8d62'], xlabel="Formula type", ylabel = "percentage of correct answers")
+plt.legend(title="Translation system")
 plt.show()
 
 # Post-hoc test if statistical differences are found, to see which pairs of systems are different from each other
@@ -230,6 +230,5 @@ lines.append("\nLevene's test:\n{}".format(res.levene_summary))
 # If the p value  is non-significant, we fail to reject the null hypothesis and conclude that treatments have equal variances.
 # So if not significant -> homogeneity of variances!
 
-# TODO write to output txt doc + save the final figures
-for l in lines:
-    print(l)
+with open("out/analysis.txt", "w") as f:
+    f.writelines("%s\n" % l for l in lines)
