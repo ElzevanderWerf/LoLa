@@ -1,10 +1,11 @@
 """Prepare CSV of rankings that can be used by TrueSkill"""
 import pandas as pd
 
-# TODO change file names. Import results
-df1 = pd.read_csv("../results/CSVs/2.1 results - intermediate version.csv", header=0)
-df2 = pd.read_csv("../results/CSVs/2.2 results - intermediate version.csv", header=0)
-df3 = pd.read_csv("../results/CSVs/2.3 results - intermediate version.csv", header=0)
+# Import results
+df1 = pd.read_csv("../results/CSVs/2.1 results.csv", header=0)
+df2 = pd.read_csv("../results/CSVs/2.2 results.csv", header=0)
+df3 = pd.read_csv("../results/CSVs/2.3 results.csv", header=0)
+
 DFs = [df1, df2, df3]
 
 # Import fluency ranking items

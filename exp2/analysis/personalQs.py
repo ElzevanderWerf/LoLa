@@ -4,11 +4,10 @@ import pandas as pd
 from itertools import chain
 import numpy as np
 
-# TODO change file names
-df1 = pd.read_csv("../results/CSVs/2.1 results - intermediate version.csv", header=0)
-df2 = pd.read_csv("../results/CSVs/2.2 results - intermediate version.csv", header=0)
-df3 = pd.read_csv("../results/CSVs/2.3 results - intermediate version.csv", header=0)
-
+# Import results
+df1 = pd.read_csv("../results/CSVs/2.1 results.csv", header=0)
+df2 = pd.read_csv("../results/CSVs/2.2 results.csv", header=0)
+df3 = pd.read_csv("../results/CSVs/2.3 results.csv", header=0)
 
 DFs = [df1, df2, df3]
 

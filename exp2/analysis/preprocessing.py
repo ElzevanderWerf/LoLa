@@ -1,14 +1,13 @@
 """Preprocessing of the 3 TSVs of experimental results."""
 import pandas as pd
 
-# Read results
-# TODO change file names
-df1 = pd.read_csv("../results/TSVs/2.1 results - intermediate version.tsv", header=0, sep="\t")
-df2 = pd.read_csv("../results/TSVs/2.2 results - intermediate version.tsv", header=0, sep="\t")
-df3 = pd.read_csv("../results/TSVs/2.3 results - intermediate version.tsv", header=0, sep="\t")
-df12 = pd.read_csv("../results/TSVs/2.1.2 results - intermediate version.tsv", header=0, sep="\t")
-df22 = pd.read_csv("../results/TSVs/2.2.2 results - intermediate version.tsv", header=0, sep="\t")
-df32 = pd.read_csv("../results/TSVs/2.3.2 results - intermediate version.tsv", header=0, sep="\t")
+# Import results
+df1 = pd.read_csv("../results/TSVs/2.1 results.tsv", header=0, sep="\t")
+df2 = pd.read_csv("../results/TSVs/2.2 results.tsv", header=0, sep="\t")
+df3 = pd.read_csv("../results/TSVs/2.3 results.tsv", header=0, sep="\t")
+df12 = pd.read_csv("../results/TSVs/2.1.2 results.tsv", header=0, sep="\t")
+df22 = pd.read_csv("../results/TSVs/2.2.2 results.tsv", header=0, sep="\t")
+df32 = pd.read_csv("../results/TSVs/2.3.2 results.tsv", header=0, sep="\t")
 
 for df in [df1, df2, df3]:
     # Drop emtpy rows
@@ -78,8 +77,7 @@ for df in DFs:
         if col.startswith("FR"):
             df[col] = df[col].astype(int)
 
-# Write to CSVs
-# TODO change file names
-df1.to_csv("../results/CSVs/2.1 results - intermediate version.csv")
-df2.to_csv("../results/CSVs/2.2 results - intermediate version.csv")
-df3.to_csv("../results/CSVs/2.3 results - intermediate version.csv")
+# Write converted results to CSVs
+df1.to_csv("../results/CSVs/2.1 results.csv")
+df2.to_csv("../results/CSVs/2.2 results.csv")
+df3.to_csv("../results/CSVs/2.3 results.csv")
