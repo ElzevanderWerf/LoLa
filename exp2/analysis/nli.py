@@ -29,14 +29,14 @@ def lookUpNLI(df, indices):
     answers = [list(nliQs.iloc[:,i]) for i in indices] 
     
     #the percentage of correct answers per question
-    return [answers[q].count("Correct") / len(answers[q])
+    return [answers[q].count("Correct") / len(answers[q]) * 100
                              for q in range(len(indices))]
 
 ##############################################################################
 lines.append("PARTICIPANT PERFORMANCE")
 
 lines.append("\nMean percentage of correct answers per participant")
-correctPerP = [list(df.loc[j, df.columns.str.startswith("NLI")]).count("Correct")/42
+correctPerP = [list(df.loc[j, df.columns.str.startswith("NLI")]).count("Correct")/42*100
                for df in DFs for j in range(len(df))]
 lines.append("\tMean: {}".format(np.mean(correctPerP)))
 lines.append("\tSD: {}".format(np.std(correctPerP)))
@@ -46,13 +46,22 @@ for i in range(len(DFs)):
     lines.append("\tSurvey {}".format(i+1))
     for j in range(len(DFs[i])):
         correct = list(DFs[i].loc[j, DFs[i].columns.str.startswith("NLI")]
-                       ).count("Correct") / 42
+                       ).count("Correct") / 42 * 100
+        
+        # lines.append("\t\tParticipant {}: {} percent correct".format(j+1, correct))
+        
+        # PofPsWithHisAnswer = []
+        # for col in [c for c in list(DFs[i].columns) if c.startswith("NLI")]:
+        #     n = list(DFs[i].loc[:, col]).count(DFs[i].loc[j,col]) - 1
+        #     PofPsWithHisAnswer.append(n/len(DFs[i]))
+        # lines.append("Mean percentage of other participants with his answer: {}".format(
+        #     np.mean(PofPsWithHisAnswer)))
         
         # Throw away participants' answers more than 2 SDs from the mean (TODO also in FR?)
         if correct < np.mean(correctPerP) - 2 * np.std(correctPerP) or correct > np.mean(correctPerP) + 2 * np.std(correctPerP):
             lines.append("\t\tParticipant {}: {} percent --> dropped from analysis".format(j + 1, correct))
             DFs[i].drop(j, inplace=True)
-            
+
 ##############################################################################
 lines.append("\n\nHYPOTHESIS 1-3: COMPARING THE THREE SYSTEMS")
 # Question sets
