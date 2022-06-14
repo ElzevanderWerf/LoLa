@@ -85,7 +85,6 @@ fun
 fun
    Vertical, Horizontal : Pred1 ;
    Parallel, Equal : Pred2 ;
-  Equal : Pred2 ; -- Elze
    Line, Point : Kind ;
    Centre : Fun1 ;
    Intersection : Fun2 ;  
