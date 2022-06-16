@@ -9,6 +9,63 @@ Participants with percentage of correct answers more than 2 standard deviations 
 	Survey 2
 	Survey 3
 
+
+####################################################################################################
+RESULTS WITH OUTLIERS
+
+DESCRIPTIVE STATISTICS OF THE PERCENTAGE OF CORRECT ANSWERS PER SYSTEM:
+         BASELINE       RANTA        LoLa
+count   42.000000   42.000000   42.000000
+mean    63.392857   67.602041   79.591837
+std     31.975532   27.500667   24.828057
+min      0.000000    0.000000    0.000000
+25%     38.839286   50.000000   67.857143
+50%     71.428571   71.428571   86.607143
+75%     85.119048   87.500000  100.000000
+max    100.000000  100.000000  100.000000
+
+WB: percentage correct: Mean: 78.98550724637681, SD: 16.34822986024577
+NWB: percentage correct: Mean: 59.55513784461153, SD: 27.090744635021622
+
+HYPOTHESIS 1-3, 7: TWO-WAY ANOVA
+                           sum_sq     df          F    PR(>F)
+C(WBness)            11784.618177    1.0  16.938972  0.000071
+C(System)             5934.311224    2.0   4.264930  0.016242
+C(WBness):C(System)   2931.443029    2.0   2.106798  0.126103
+Residual             83485.241637  120.0        NaN       NaN
+
+Tukey's HSD post-hoc for main effect WBness:
+         group1       group2       Diff      Lower      Upper   q-value  p-value
+0  Well-behaved  Ill-behaved  19.430369  10.083042  28.777697  5.820476    0.001
+
+Tukey's HSD post-hoc for main effect System:
+     group1 group2       Diff     Lower      Upper   q-value   p-value
+0  BASELINE  RANTA   4.209184 -9.451203  17.869570  1.034209  0.726577
+1  BASELINE   LoLa  16.198980  2.538593  29.859366  3.980137  0.015648
+2     RANTA   LoLa  11.989796 -1.670590  25.650182  2.945929  0.097647
+
+Tukey's HSD post-hoc for interaction effect WBness and System:
+                      group1                   group2       Diff      Lower      Upper   q-value   p-value
+0   (Well-behaved, BASELINE)    (Well-behaved, RANTA)   1.216356 -21.310831  23.743543  0.221162  0.900000
+1   (Well-behaved, BASELINE)     (Well-behaved, LoLa)   5.771222 -16.755965  28.298408  1.049343  0.900000
+2   (Well-behaved, BASELINE)  (Ill-behaved, BASELINE)  29.319222   5.636054  53.002390  5.070716  0.006346
+3   (Well-behaved, BASELINE)     (Ill-behaved, RANTA)  21.487142  -2.196027  45.170310  3.716169  0.098471
+4   (Well-behaved, BASELINE)      (Ill-behaved, LoLa)   0.497167 -23.186002  24.180335  0.085984  0.900000
+5      (Well-behaved, RANTA)     (Well-behaved, LoLa)   4.554865 -17.972321  27.082052  0.828181  0.900000
+6      (Well-behaved, RANTA)  (Ill-behaved, BASELINE)  30.535578   6.852410  54.218747  5.281083  0.003849
+7      (Well-behaved, RANTA)     (Ill-behaved, RANTA)  22.703498  -0.979671  46.386666  3.926536  0.068483
+8      (Well-behaved, RANTA)      (Ill-behaved, LoLa)   1.713523 -21.969646  25.396691  0.296351  0.900000
+9       (Well-behaved, LoLa)  (Ill-behaved, BASELINE)  35.090444  11.407275  58.773612  6.068840  0.001000
+10      (Well-behaved, LoLa)     (Ill-behaved, RANTA)  27.258363   3.575195  50.941532  4.714293  0.014187
+11      (Well-behaved, LoLa)      (Ill-behaved, LoLa)   6.268388 -17.414780  29.951557  1.084108  0.900000
+12   (Ill-behaved, BASELINE)     (Ill-behaved, RANTA)   7.832080 -16.953214  32.617374  1.294314  0.900000
+13   (Ill-behaved, BASELINE)      (Ill-behaved, LoLa)  28.822055   4.036761  53.607349  4.763076  0.012746
+14      (Ill-behaved, RANTA)      (Ill-behaved, LoLa)  20.989975  -3.795319  45.775269  3.468762  0.146788
+
+
+####################################################################################################
+RESULTS WITHOUT OUTLIERS
+
 QUESTION OUTLIERS
 
 Mean percentage of correct answers per question

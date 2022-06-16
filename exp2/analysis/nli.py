@@ -13,6 +13,7 @@ from bioinfokit.analys import stat
 df1 = pd.read_csv("../results/CSVs/2.1 results.csv", header=0)
 df2 = pd.read_csv("../results/CSVs/2.2 results.csv", header=0)
 df3 = pd.read_csv("../results/CSVs/2.3 results.csv", header=0)
+nli_items = pd.read_csv("../materials/experimental_items/nli-items1.csv", header=0)
 
 DFs = [df1, df2, df3]
 
@@ -49,6 +50,8 @@ for i in range(len(DFs)):
         if correct < np.mean(correctPerP) - 2 * np.std(correctPerP) or correct > np.mean(correctPerP) + 2 * np.std(correctPerP):
             lines.append("\t\tParticipant {}: {} percent --> dropped from analysis".format(j + 1, correct))
             DFs[i].drop(j, inplace=True)
+            
+# --> Result: no participant outliers
 
 ##############################################################################
 # Question sets
@@ -74,122 +77,131 @@ systems = [baseline, ranta, lola]
 systemDF = pd.DataFrame(list(zip(baseline, ranta, lola)), 
                   columns = ["BASELINE", "RANTA", "LoLa"])
 
-# Throw away outlier questions if more than 2SDs from the mean
-lines.append("\nQUESTION OUTLIERS")
-allSs = baseline + ranta + lola
-lines.append("\nMean percentage of correct answers per question")
-lines.append("\tMean: {}".format(np.mean(allSs)))
-lines.append("\tSD: {}".format(np.std(allSs)))
-
-lines.append("\nQuestions with percentage of correct answers more than 2 standard deviations from the mean:") 
-toDrop = set()
-allSs = baseline + ranta + lola
-for q in range(len(baseline)):
-    m = (baseline[q] + ranta[q] + lola[q]) / 3
-    if m < np.mean(allSs) - 2 * np.std(allSs) or m > np.mean(allSs) + 2 * np.std(allSs):
-        lines.append("\tQuestion {}: {} percent --> dropped from analysis".format(
-                q + 1, m))
-        toDrop.add(q)
-
-systemDF.drop(systemDF.index[list(toDrop)], inplace=True)
+def report_results(withOutliers=True):
+    if withOutliers == False:
+        # Throw away outlier questions if more than 2SDs from the mean
+        lines.append("\nQUESTION OUTLIERS")
+        allSs = baseline + ranta + lola
+        lines.append("\nMean percentage of correct answers per question")
+        lines.append("\tMean: {}".format(np.mean(allSs)))
+        lines.append("\tSD: {}".format(np.std(allSs)))
         
-# Averages
-lines.append("\nDESCRIPTIVE STATISTICS OF THE PERCENTAGE OF CORRECT ANSWERS PER SYSTEM:\n{}".format(
-    systemDF.describe()))
- 
-##############################################################################       
-# Well-behavedness
-nli_items = pd.read_csv("../materials/experimental_items/nli-items1.csv", header=0)
-WBness = list(nli_items.loc[:,"Well-behavedness"])
-WBness = ["" if i in toDrop else WBness[i] for i in range(len(WBness))]
-
-WBPerDF = [lookUpNLI(df, [i for i in range(len(WBness)) if WBness[i] == "WB"]) 
-           for df in DFs]
-NWBPerDF = [lookUpNLI(df, [i for i in range(len(WBness)) if WBness[i] == "NWB"]) 
-            for df in DFs]
-
-WB = [np.mean([WBPerDF[0][i], WBPerDF[1][i], WBPerDF[2][i]]) for i in range(len(WBPerDF[0]))]
-NWB = [np.mean([NWBPerDF[0][i], NWBPerDF[1][i], NWBPerDF[2][i]]) for i in range(len(NWBPerDF[0]))]
-
-lines.append("\nWB: percentage correct: Mean: {}, SD: {}".format(
-    np.mean(WB), np.std(WB)))
-lines.append("NWB: percentage correct: Mean: {}, SD: {}".format(
-    np.mean(NWB), np.std(NWB)))
+        lines.append("\nQuestions with percentage of correct answers more than 2 standard deviations from the mean:") 
+        toDrop = set()
+        allSs = baseline + ranta + lola
+        for q in range(len(baseline)):
+            m = (baseline[q] + ranta[q] + lola[q]) / 3
+            if m < np.mean(allSs) - 2 * np.std(allSs) or m > np.mean(allSs) + 2 * np.std(allSs):
+                lines.append("\tQuestion {}: {} percent --> dropped from analysis".format(
+                        q + 1, m))
+                toDrop.add(q)
+        
+        systemDF.drop(systemDF.index[list(toDrop)], inplace=True)
+            
+    # Averages
+    lines.append("\nDESCRIPTIVE STATISTICS OF THE PERCENTAGE OF CORRECT ANSWERS PER SYSTEM:\n{}".format(
+        systemDF.describe()))
+     
+    ###########################################################################      
+    # Well-behavedness
+    WBness = list(nli_items.loc[:,"Well-behavedness"])
+    if withOutliers == False:
+        WBness = ["" if i in toDrop else WBness[i] for i in range(len(WBness))]
+    
+    WBPerDF = [lookUpNLI(df, [i for i in range(len(WBness)) if WBness[i] == "WB"]) 
+               for df in DFs]
+    NWBPerDF = [lookUpNLI(df, [i for i in range(len(WBness)) if WBness[i] == "NWB"]) 
+                for df in DFs]
+    
+    WB = [np.mean([WBPerDF[0][i], WBPerDF[1][i], WBPerDF[2][i]]) for i in range(len(WBPerDF[0]))]
+    NWB = [np.mean([NWBPerDF[0][i], NWBPerDF[1][i], NWBPerDF[2][i]]) for i in range(len(NWBPerDF[0]))]
+    
+    lines.append("\nWB: percentage correct: Mean: {}, SD: {}".format(
+        np.mean(WB), np.std(WB)))
+    lines.append("NWB: percentage correct: Mean: {}, SD: {}".format(
+        np.mean(NWB), np.std(NWB)))
+    
+    ###########################################################################
+    lines.append("\nHYPOTHESIS 1-3, 7: TWO-WAY ANOVA")
+    # Prepare DF
+    WBness = [i for i in WBness if i != ""]
+    wellbehavedness = ["Well-behaved" if i == "WB" else "Ill-behaved" for i in WBness]
+    systemWBnessDF = pd.DataFrame({"WBness": wellbehavedness * 3,
+                           "System": ["BASELINE"] * len(systemDF) + ["RANTA"] * len(systemDF) + ["LoLa"] * len(systemDF),
+                           "Correctness":list(systemDF.loc[:,"BASELINE"]) + list(systemDF.loc[:,"RANTA"]) + list(systemDF.loc[:,"LoLa"])})
+    
+    # Make boxplot of data distribution
+    ax = sns.boxplot(x="WBness", y="Correctness", hue="System", data=systemWBnessDF, 
+                     palette="Set2", order=["Ill-behaved", "Well-behaved"])
+    ax.set_xlabel("Formula type")
+    ax.set_ylabel("Percentage of correct answers")
+    plt.legend(title="Translation system", loc="lower right")
+    plt.show() #graph of ANOVA results
+    
+    # TWO-WAY ANOVA
+    model = ols('Correctness ~ C(WBness) + C(System) + C(WBness):C(System)', 
+                data=systemWBnessDF).fit()
+    lines.append(sm.stats.anova_lm(model, typ=2))
+    
+    # If interaction is significant, visualize interaction plot (the lines should not be parallel, but cross):
+    fig = interaction_plot(x=systemWBnessDF['WBness'], 
+                           trace=systemWBnessDF['System'], 
+                           response=systemWBnessDF['Correctness'], 
+                           colors=['#66c2a5','#8da0cb', '#fc8d62'], 
+                           xlabel="Formula type", 
+                           ylabel = "percentage of correct answers")
+    plt.legend(title="Translation system")
+    plt.show()
+    
+    # Post-hoc test if statistical differences are found, to see which pairs of systems are different from each other
+    res = stat()
+    
+    # 1. For main effect WBness
+    res.tukey_hsd(df=systemWBnessDF, res_var='Correctness', xfac_var='WBness', 
+                  anova_model='Correctness~C(WBness)+C(System)+C(WBness):C(System)')
+    lines.append("\nTukey's HSD post-hoc for main effect WBness:\n{}".format(res.tukey_summary))
+    
+    # 2. For main effect System
+    res.tukey_hsd(df=systemWBnessDF, res_var='Correctness', xfac_var='System', 
+                  anova_model='Correctness ~ C(WBness) + C(System) + C(WBness):C(System)')
+    lines.append("\nTukey's HSD post-hoc for main effect System:\n{}".format(res.tukey_summary))
+    
+    # 3. For interaction effect between WBness and System
+    res.tukey_hsd(df=systemWBnessDF, res_var='Correctness', xfac_var=['WBness','System'], 
+                  anova_model='Correctness ~ C(WBness) + C(System) + C(WBness):C(System)')
+    lines.append("\nTukey's HSD post-hoc for interaction effect WBness and System:\n{}".format(res.tukey_summary))
+    
+    # # Checking ANOVA assumptions
+    # sm.qqplot(res.anova_std_residuals, line='45')
+    # plt.xlabel("Theoretical Quantiles")
+    # plt.ylabel("Standardized Residuals")
+    # plt.show()
+    
+    # # histogram
+    # plt.hist(res.anova_model_out.resid, bins='auto', histtype='bar', ec='k') 
+    # plt.xlabel("Residuals")
+    # plt.ylabel('Frequency')
+    # plt.show()
+    
+    # # 1. Shapiro-Wilk test for checking assumption that there is a normal distribution of residuals
+    # w, pvalue = stats.shapiro(res.anova_model_out.resid)
+    # lines.append("\nShapiro-Wilk test:\tw: {}\tp-value:{}".format(w, pvalue))
+    # # If the p value is non significant, we fail to reject null hypothesis and conclude that data is drawn from normal distribution
+    # # So if not significant -> normal distribution!
+    
+    # # 2. Levene's test for checking homogeneity of variances
+    # res = stat()
+    # res.levene(df=systemWBnessDF, res_var='Correctness', xfac_var=['WBness', 'System'])
+    # lines.append("\nLevene's test:\n{}".format(res.levene_summary))
+    # # If the p value  is non-significant, we fail to reject the null hypothesis and conclude that treatments have equal variances.
+    # # So if not significant -> homogeneity of variances!
 
 ##############################################################################
-lines.append("\nHYPOTHESIS 1-3, 7: TWO-WAY ANOVA")
-# Prepare DF
-WBness = [i for i in WBness if i != ""]
-wellbehavedness = ["Well-behaved" if i == "WB" else "Ill-behaved" for i in WBness]
-systemWBnessDF = pd.DataFrame({"WBness": wellbehavedness * 3,
-                       "System": ["BASELINE"] * len(systemDF) + ["RANTA"] * len(systemDF) + ["LoLa"] * len(systemDF),
-                       "Correctness":list(systemDF.loc[:,"BASELINE"]) + list(systemDF.loc[:,"RANTA"]) + list(systemDF.loc[:,"LoLa"])})
+lines.append("\n\n"+"#"*100 + "\nRESULTS WITH OUTLIERS")
+report_results()
+lines.append("\n\n"+"#"*100 + "\nRESULTS WITHOUT OUTLIERS")
+report_results(withOutliers=False)
 
-# Make boxplot of data distribution
-ax = sns.boxplot(x="WBness", y="Correctness", hue="System", data=systemWBnessDF, 
-                 palette="Set2", order=["Ill-behaved", "Well-behaved"])
-ax.set_xlabel("Formula type")
-ax.set_ylabel("Percentage of correct answers")
-plt.legend(title="Translation system", loc="lower right")
-plt.show() #graph of ANOVA results
-
-# TWO-WAY ANOVA
-model = ols('Correctness ~ C(WBness) + C(System) + C(WBness):C(System)', 
-            data=systemWBnessDF).fit()
-lines.append(sm.stats.anova_lm(model, typ=2))
-
-# If interaction is significant, visualize interaction plot (the lines should not be parallel, but cross):
-fig = interaction_plot(x=systemWBnessDF['WBness'], 
-                       trace=systemWBnessDF['System'], 
-                       response=systemWBnessDF['Correctness'], 
-                       colors=['#66c2a5','#8da0cb', '#fc8d62'], 
-                       xlabel="Formula type", 
-                       ylabel = "percentage of correct answers")
-plt.legend(title="Translation system")
-plt.show()
-
-# Post-hoc test if statistical differences are found, to see which pairs of systems are different from each other
-res = stat()
-
-# 1. For main effect WBness
-res.tukey_hsd(df=systemWBnessDF, res_var='Correctness', xfac_var='WBness', 
-              anova_model='Correctness~C(WBness)+C(System)+C(WBness):C(System)')
-lines.append("\nTukey's HSD post-hoc for main effect WBness:\n{}".format(res.tukey_summary))
-
-# 2. For main effect System
-res.tukey_hsd(df=systemWBnessDF, res_var='Correctness', xfac_var='System', 
-              anova_model='Correctness ~ C(WBness) + C(System) + C(WBness):C(System)')
-lines.append("\nTukey's HSD post-hoc for main effect System:\n{}".format(res.tukey_summary))
-
-# 3. For interaction effect between WBness and System
-res.tukey_hsd(df=systemWBnessDF, res_var='Correctness', xfac_var=['WBness','System'], 
-              anova_model='Correctness ~ C(WBness) + C(System) + C(WBness):C(System)')
-lines.append("\nTukey's HSD post-hoc for interaction effect WBness and System:\n{}".format(res.tukey_summary))
-
-# # Checking ANOVA assumptions
-# sm.qqplot(res.anova_std_residuals, line='45')
-# plt.xlabel("Theoretical Quantiles")
-# plt.ylabel("Standardized Residuals")
-# plt.show()
-
-# # histogram
-# plt.hist(res.anova_model_out.resid, bins='auto', histtype='bar', ec='k') 
-# plt.xlabel("Residuals")
-# plt.ylabel('Frequency')
-# plt.show()
-
-# # 1. Shapiro-Wilk test for checking assumption that there is a normal distribution of residuals
-# w, pvalue = stats.shapiro(res.anova_model_out.resid)
-# lines.append("\nShapiro-Wilk test:\tw: {}\tp-value:{}".format(w, pvalue))
-# # If the p value is non significant, we fail to reject null hypothesis and conclude that data is drawn from normal distribution
-# # So if not significant -> normal distribution!
-
-# # 2. Levene's test for checking homogeneity of variances
-# res = stat()
-# res.levene(df=systemWBnessDF, res_var='Correctness', xfac_var=['WBness', 'System'])
-# lines.append("\nLevene's test:\n{}".format(res.levene_summary))
-# # If the p value  is non-significant, we fail to reject the null hypothesis and conclude that treatments have equal variances.
-# # So if not significant -> homogeneity of variances!
 
 with open("out/nli.txt", "w") as f:
     f.writelines("%s\n" % l for l in lines)
